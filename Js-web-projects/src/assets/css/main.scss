@@ -6,14 +6,16 @@ $banBgPathAbt:url(../img/banner-fund-mngt.jpg) no-repeat left top;
 // @import "dad-jokes.scss";
 // @import "event-keycodes.scss";
 // @import "faq-collapse.scss";
-// @import "form.scss";
+@import "form.scss";
 // @import "progress-steps.scss";
 // @import "sound-board.scss";
 // @import "incrementing-counter.scss";
 // @import "movie-app.scss";
 // @import url('random-choice-picker.scss');
 // @import url('animated-navigation.scss');
-@import "drink-water.scss";
+// @import "drink-water.scss";
+// @import "theme-clock.scss";
+
 body{
     // background-color:#00205c;
     font-family: Poppins;

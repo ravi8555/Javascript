@@ -33,19 +33,42 @@ sum1()
 // console.log(sum1(2,3,25,10));
 
 // // Create Phone Number
-// function createPhoneNumber(numbers){
-//   // loop through the all the integers in the array
-//   // for(let i = 0; i < numbers.length; i++){
-//   //   console.log(numbers[i]);
-//   // }
 
-//   let fstprt = numbers.slice(0, 3).join("");
-//   let scdPart = numbers.slice(3,6).join("");
-//   let lstPart = numbers.slice(6,10).join("");
-//   return("("+fstprt+")"+ " " +scdPart+ "-" + lstPart);
+// 1
+// function createPhoneNumber(numbers){
+//   var format = "(xxx) xxx-xxxx";
+  
+//   for(var i = 0; i < numbers.length; i++)
+//   {
+//     format = format.replace('x', numbers[i]);
+//   }
+  
+//   return format; 
 // }
-// // createPhoneNumber();
+
 // console.log(createPhoneNumber('1234567890'));
+// // 2
+// numbers = [1234567890]
+// function createPhoneNumber(numbers){
+//   numbers.unshift("(");
+//   numbers.splice(4, 0, ")", " ");
+//   numbers.splice(9, 0, "-");
+//   return numbers.join("");
+// }
+// console.log(createPhoneNumber('1234567890'));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,136 @@
+
+  [
+   {
+      "brandName": "Canon",
+      "brandLogo": "../img/cremica-logo.png",
+      "brandTitle": "Canon India",
+      "campaign": "5",
+      "award": "5Awards",
+      "flmTitle": "Film",
+      "Film": [
+         {
+            "FilmCount": "09",
+            "filmTumb": "assets/thumb.jpg",
+            "filmBig": "assets/big.mp4",
+            "filmHashTag": "#Take Off"
+         },
+         {
+            "FilmCount": "09",
+            "filmTumb": "assets/thumb.jpg",
+            "filmBig": "assets/big.mp4",
+            "filmHashTag": "#Take Off"
+         }
+      ],
+      "SMCtitle": "Social media communication",
+      "SMChashTag": "#Take Off",
+      "uiUxMainTitle": "UI & UX",
+      "uiuxCount": 2,
+      "uiUxsubTitle": "Canon",
+      "uiUxCaseStUrl": "aaa.com",
+      "uiUxWebUrl": "canon.com",
+      "uiUxScreenshot": "assets/screenCanon.jpg",
+      "eOtheTitle": "Explore other brand work",
+      "othLogo": "assets/thumb-24-06-22/bird.jpg",
+      "status": true
+   },
+   {
+      "brand": "Vivo",
+      "brandLogo": "../img/logo-indicas.png",
+      "brandTitle": "Vivo",
+      "campaign": "6",
+      "award": "5Awards",
+      "flmTitle": "Film",
+      "FilmCount": "09",
+      "filmTumb": "assets/thumb.jpg",
+      "filmBig": "assets/big.mp4",
+      "filmHashTag": "#Vivo Off",
+      "SMCtitle": "Social media communication",
+      "SMChashTag": "#Take Off",
+      "uiUxMainTitle": "UI & UX",
+      "uiuxCount": 2,
+      "uiUxsubTitle": "VIvo",
+      "uiUxCaseStUrl": "aaa.com",
+      "uiUxWebUrl": "canon.com",
+      "uiUxScreenshot": "assets/screenCanon.jpg",
+      "eOtheTitle": "Explore other brand work",
+      "othLogo": "assets/thumb-24-06-22/bird.jpg",
+      "status": true
+   },
+   {
+      "brandName": "Cremica",
+      "brandLogo": "../img/cremica-logo.png",
+      "brandTitle": "Vivo",
+      "campaign": "5",
+      "award": "5Awards",
+      "flmTitle": "Film",
+      "FilmCount": "09",
+      "filmTumb": "assets/thumb.jpg",
+      "filmBig": "assets/big.mp4",
+      "filmHashTag": "#Vivo Off",
+      "SMCtitle": "Social media communication",
+      "SMChashTag": "#Take Off",
+      "uiUxMainTitle": "UI & UX",
+      "uiuxCount": 2,
+      "uiUxsubTitle": "VIvo",
+      "uiUxCaseStUrl": "aaa.com",
+      "uiUxWebUrl": "canon.com",
+      "uiUxScreenshot": "assets/screenCanon.jpg",
+      "eOtheTitle": "Explore other brand work",
+      "othLogo": "assets/thumb-24-06-22/bird.jpg",
+      "status": true
+   },
+   {
+      "brandName": "HDFC Life",
+      "brandLogo": "../img/hdfc-life-logo.webp",
+      "brandTitle": "Canon India",
+      "campaign": 43,
+      "award": 5,
+      "flmTitle": "Film",
+      "FilmCount": "09",
+      "Film": [
+         {            
+            "filmTumb": "./img/banner1.jpg",
+            "filmBig": "assets/big.mp4",
+            "filmHashTag": "#Take Off1",
+            "type": "youtube"
+         },
+         {
+            "filmTumb": "./img/banner1.jpg",
+            "filmBig": "assets/big.mp4",
+            "filmHashTag": "#Take Off2"
+         },
+         {
+            "filmTumb": "./img/banner1.jpg",
+            "filmBig": "assets/big.mp4",
+            "filmHashTag": "#Take Off2"
+         },
+         {
+            "filmTumb": "./img/banner1.jpg",
+            "filmBig": "assets/big.mp4",
+            "filmHashTag": "#Take Off2"
+         },
+         {
+            "filmTumb": "./img/banner1.jpg",
+            "filmBig": "assets/big.mp4",
+            "filmHashTag": "#Take Off2"
+         },
+         {
+            "filmTumb": "./img/banner1.jpg",
+            "filmBig": "assets/big.mp4",
+            "filmHashTag": "#Take Off2"
+         }
+      ],
+      "SMCtitle": "Social media communication",
+      "SMChashTag": "#Take Off",
+      "uiUxMainTitle": "UI & UX",
+      "uiuxCount": 2,
+      "uiUxsubTitle": "Canon",
+      "uiUxDesc":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet",
+      "uiUxCaseStUrl": "aaa.com",
+      "uiUxWebUrl": "canon.com",
+      "uiUxScreenshot": "assets/screenCanon.jpg",
+      "eOtheTitle": "Explore other brand work",
+      "othLogo": "assets/thumb-24-06-22/bird.jpg",
+      "status": true
+   }
+   ]

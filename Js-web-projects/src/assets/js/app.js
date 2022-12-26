@@ -1,21 +1,21 @@
-import style from '../css/main.scss';
+import style from '../css/main.scss'
 // import style1 from '../css/main.css';
 // import component from './component.js';
 // import componentCircle from './circle.js'
-// 
+//
 // import Nay from "../js/Nay.js";
 
 // // Edited
 // import editcode from "../js/edited.js";
 
 // codewars
-import codewars from "../js/codewars.js";
+import codewars from '../js/codewars.js'
 
 // // Leetcode
 // import leetCode from "../js/leetcode.js";
 
 // // dad-jokes
-// import DadJoke from "../js/dad-jokes.js";
+import DadJoke from '../js/dad-jokes.js'
 
 // event-keycodes.js
 // import ekeycode from "../js/event-keycodes.js";
@@ -24,19 +24,19 @@ import codewars from "../js/codewars.js";
 // import faqCollapse from "../js/faq-collapse.js";
 
 // form
-// import form from "../js/form.js"; 
+// import form from "../js/form.js";
 
-// // Progress 
+// // Progress
 // import progrssStep from "../js/progress-steps.js";
 
-// Sound Board 
+// Sound Board
 // import soundBrd from "../js/sound-board.js";
 
-// incrementing-counter 
+// incrementing-counter
 // import increMent from "../js/incrementing-counter.js";
 
 // // Movie App
-// import moviApp from "../js/movie-app.js";
+import moviApp from '../js/movie-app.js'
 
 // //random-choice-picker
 // import randChoice from "../js/random-choice-picker.js";
@@ -47,24 +47,11 @@ import codewars from "../js/codewars.js";
 // drinkwater
 // import animatedN from "../js/drink-water.js";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Theme Clock
+// import animatedN from "../js/theme-clock.js";
 
 // const heading = "Welcome to Digiserve";
-// document.querySelector('h2').innerText = heading 
+// document.querySelector('h2').innerText = heading
 
 // console.log("check App JS");
 // cube

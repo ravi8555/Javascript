@@ -34,12 +34,22 @@ function inputType(){
         
 }
 
+
+
 function checkInputs() {
         const fanmeVal = fanme.value.trim();
         const mobileVal = mobile.value.trim();
         const emailVal = email.value.trim();
         var ctselInxVal = ctselInx.value;        
         var prselInxVal = prselInx.value;
+        fanme.addEventListener("keyup", (e)=>{
+         //    console.log("test");
+         var char = /[0-9]/gi;
+         if(/[0-9]/gi){
+            fanme.value = fanme.value.replace(char, "");
+            setErrorFor(fanme, 'Please Enter Letters Only')  
+         }   
+      })
      if(fanmeVal === '' || fanmeVal.length <= 2){
         setErrorFor(fanme, 'Please Enter The First Name')
      } else{
@@ -47,10 +57,21 @@ function checkInputs() {
      }
 
      if(mobileVal === '' || mobileVal.length < 10){
-        setErrorFor(mobile, 'Please Enter valid Mobile Number')
-     } else{
-        setSuccessFor(mobile)
-     }  
+      setErrorFor(mobile, 'Please Enter valid Mobile Number')
+      } else{
+         setSuccessFor(mobile)
+      } 
+
+   mobile.addEventListener("keyup", (e)=>{
+      console.log("test");
+   var num = /[a-zA-Z]/gi;
+   if(/[a-zA-Z]/gi){
+      mobile.value = mobile.value.replace(num, "");
+      setErrorFor(mobile, 'Please Enter Numbers Only')  
+   }
+
+
+   })
 
      if(emailVal === ''){
         setErrorFor(email, 'Blank mail ID')
@@ -83,14 +104,6 @@ function setErrorFor(input, msg) {
    formCntrl.children[0].classList.add('errorbg');
 }
 
-const validateEmail = (email1) => {
-        return String(email1)
-          .toLowerCase()
-          .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          );
-      };
- 
 function setSuccessFor(input){
    const formCntrl = input.parentElement;
    const bElement = formCntrl.querySelector('b');
@@ -98,6 +111,27 @@ function setSuccessFor(input){
    formCntrl.children[0].classList.remove('errorbg')
 
 }
+
+const validateEmail = (email1) => {
+   return String(email1)
+     .toLowerCase()
+     .match(
+       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+     );
+};
+// function numbersonly(e){
+//    console.log("Keydwn");
+//    var char = String.fromCharCode(e.which)
+//    if(!(/[0-9]/.test(char))){
+//       e.preventDefault
+// }
+// var unicode=e.charCode? e.charCode : e.keyCode
+// if (unicode!=8){ //if the key isn't the backspace key (which we should allow)
+//     if (unicode<48||unicode>57) //if not a number
+//        return false //disable key press
+// } 
+//}
+
 // function printError(input, msg){        
 //         const formControl = document.getElementsByClassName('form-control');
 //         console.log(input);
