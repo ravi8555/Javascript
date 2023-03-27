@@ -12,10 +12,10 @@ const htmlPageNames = [
     pageName: 'index.html',
     title: '',
   },
-  // {
-  //     pageName: 'architecture.html',
-  //     title: 'Lsdigital gallery'
-  // },
+  {
+      pageName: 'todo.html',
+      title: 'To Do'
+  },
   // {
   //     pageName: 'detail-page.html',
   //     title: 'Lsdigital gallery'
@@ -130,12 +130,12 @@ module.exports = (env, argv) => ({
     //     location:'faq',
     //     template_filename: htmlFileName
     //    }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, './src/form.html'),
-      location: 'form-validation',
-      // template: path.resolve(__dirname, 'src/index.html')
-      template_filename: htmlFileName,
-    }),
+    // new HtmlWebpackPartialsPlugin({
+    //   path: path.join(__dirname, './src/form.html'),
+    //   location: 'form-validation',
+    //   // template: path.resolve(__dirname, 'src/index.html')
+    //   template_filename: htmlFileName,
+    // }),
     //    new HtmlWebpackPartialsPlugin({
     //     path:path.join(__dirname,'src/progress-steps.html'),
     //     location:'progress-steps',
@@ -151,11 +151,11 @@ module.exports = (env, argv) => ({
     //     location:'counter',
     //     template_filename: htmlFileName
     //    }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, 'src/movie-app.html'),
-      location: 'movie',
-      template_filename: htmlFileName,
-    }),
+    // new HtmlWebpackPartialsPlugin({
+    //   path: path.join(__dirname, 'src/movie-app.html'),
+    //   location: 'movie',
+    //   template_filename: htmlFileName,
+    // }),
     // new HtmlWebpackPartialsPlugin({
     //     path:path.join(__dirname,'src/random-choice-picker.html'),
     //     location:'random-color',
@@ -212,6 +212,12 @@ module.exports = (env, argv) => ({
     //     location:'footer',
     //     template_filename: htmlFileName
     // }),
+          // new HtmlWebpackPartialsPlugin({
+          //   path: path.join(__dirname, './src/todo.html'),
+          //   location: 'header',
+          //   // template: path.resolve(__dirname, 'src/index.html')
+          //   template_filename: htmlFileName,
+          // }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',

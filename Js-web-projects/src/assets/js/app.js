@@ -9,13 +9,13 @@ import style from '../css/main.scss'
 // import editcode from "../js/edited.js";
 
 // codewars
-import codewars from '../js/codewars.js'
+// import codewars from '../js/codewars.js'
 
 // // Leetcode
 // import leetCode from "../js/leetcode.js";
 
 // // dad-jokes
-import DadJoke from '../js/dad-jokes.js'
+// import DadJoke from '../js/dad-jokes.js'
 
 // event-keycodes.js
 // import ekeycode from "../js/event-keycodes.js";
@@ -36,7 +36,7 @@ import DadJoke from '../js/dad-jokes.js'
 // import increMent from "../js/incrementing-counter.js";
 
 // // Movie App
-import moviApp from '../js/movie-app.js'
+// import moviApp from '../js/movie-app.js'
 
 // //random-choice-picker
 // import randChoice from "../js/random-choice-picker.js";
@@ -49,6 +49,26 @@ import moviApp from '../js/movie-app.js'
 
 // Theme Clock
 // import animatedN from "../js/theme-clock.js";
+
+// To do list
+import todo from "../js/to-do.js"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const heading = "Welcome to Digiserve";
 // document.querySelector('h2').innerText = heading
