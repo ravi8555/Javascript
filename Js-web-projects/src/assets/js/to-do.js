@@ -65,14 +65,17 @@ function updateLs(){
 
 }
 */
-/*    Todo List 2      */
 
-const addUserBtn = document.getElementById('addUser');
+
+/*    Todo List 2      */
+/*const addUserBtn = document.getElementById('addUser');
 const usernameInput = document.getElementById('username');
+const btnText = addUserBtn.innerText
 let userEmptyArray = [];
 const userRecords = document.getElementById('userRecords')
-
 let objString = localStorage.getItem('Users');
+let edit_id = null
+
 if (objString != null){
     userEmptyArray = JSON.parse(objString)
 }
@@ -81,18 +84,26 @@ displayRec();
 // console.log(userEmptyArray);
 addUserBtn.onclick=()=>{
     const name = usernameInput.value;
-    userEmptyArray.push(
-        {'name': name}
-    );
+    if(edit_id!=null){
+        // edit
+        userEmptyArray.splice(edit_id,1,{'name': name});
+        edit_id = null
+    }else{
+        // insert        
+        userEmptyArray.push({'name': name});
+    }   
+    
     saveRecord(userEmptyArray);
     usernameInput.value = '';
-    displayRec()
+   
+    addUserBtn.innerHTML = btnText;
     // console.log(userEmptyArray);
 }
 
-function saveRecord(userarray){
+function saveRecord(userEmptyArray){
     let str = JSON.stringify(userEmptyArray);
-    localStorage.setItem('Users', str)
+    localStorage.setItem('Users', str);
+    displayRec();
 }
 
 function displayRec(){
@@ -101,7 +112,8 @@ function displayRec(){
         userData += `<tr>
         <th scope="row">${i+1}</th>
         <td>${user.name}</td>
-        <td><i class="btn text-white fa fa-edit btn-info mx-2" onclick='editRec(${i})'></i> <i class="btn btn-danger text-white fa fa-trash"></i></td>
+        <td><i class="btn text-white fa fa-edit btn-info mx-2" onclick='editRec(${i})' id="edit"></i> 
+        <i class="btn btn-danger text-white fa fa-trash" onclick='deleteRec(${i})'></i></td>
       </tr>`
         
     })
@@ -109,13 +121,54 @@ function displayRec(){
    
 }
 
-function deleteRec(){
+function editRec(id){    
+    // console.log(id);
+    edit_id = id;
+    usernameInput.value = userEmptyArray[id].name;
+    addUserBtn.innerHTML = "Edit User";
 
 }
-function editRec(id){
+
+function deleteRec(id){
+    // console.log(id);
+    userEmptyArray.splice(id,1);
+    saveRecord(userEmptyArray);
+    displayRec()
+
+} */
+
+/*    Todo List 3      */
+const item = document.querySelector('#item');
+const todocnt = document.querySelector('#to-do-box');
+
+
+
+item.addEventListener('keyup', function(e){
+
+    if(e.key == "Enter"){
+        // console.log(this.value);
+        addTodo(this.value);
+        this.value = '';
+
+    }
     
-    console.log(id);
-    // alert(id)
+})
+
+const addTodo = (item)=>{
+    const listItme = document.createElement('li')
+    listItme.innerHTML = `
+        ${item}<i class="fa fa-trash"></i>
+    `;
+    listItme.addEventListener('click', function(){
+        this.classList.toggle("done")
+    })
+
+    listItme.querySelector('i').addEventListener('click', function(){
+        listItme.remove()
+    })
+
+    todocnt.appendChild(listItme)
 
 }
-editRec()
+
+
