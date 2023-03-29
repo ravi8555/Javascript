@@ -138,11 +138,8 @@ function deleteRec(id){
 } */
 
 /*    Todo List 3      */
-const item = document.querySelector('#item');
+/*const item = document.querySelector('#item');
 const todocnt = document.querySelector('#to-do-box');
-
-
-
 item.addEventListener('keyup', function(e){
 
     if(e.key == "Enter"){
@@ -170,5 +167,44 @@ const addTodo = (item)=>{
     todocnt.appendChild(listItme)
 
 }
+*/
+
+/* 4 */
+
+const itemArray = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")): [];
+console.log(itemArray);
+
+document.querySelector('#enter').addEventListener('click', ()=>{
+    const list = document.querySelector('#item');
+    createList(list)
+});
+
+function createList(list){
+    itemArray.push(list.value);
+    localStorage.setItem('items', JSON.stringify(itemArray))
+    location.reload()
+}
+
+
+
+
+
+
+
+
+
+
+function dispDate(){
+    let date = new Date();
+    date = date.toString().split(" ");
+    document.querySelector('#date').innerHTML = date[1] + " " + date[2] + " " + date[3]
+    // console.log(date);
+}
+
+window.onload = function(){
+    dispDate()
+}
+
+
 
 
