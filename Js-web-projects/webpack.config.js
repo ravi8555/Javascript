@@ -15,6 +15,14 @@ const htmlPageNames = [
   {
       pageName: 'todo.html',
       title: 'To Do'
+  },  
+  {
+    pageName: 'calculator.html',
+    title: 'Calculator'
+  },  
+  {
+    pageName: 'quize.html',
+    title: 'Quize'
   },
   // {
   //     pageName: 'detail-page.html',
