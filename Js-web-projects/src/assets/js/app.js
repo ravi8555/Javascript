@@ -51,7 +51,14 @@ import style from '../css/main.scss'
 // import animatedN from "../js/theme-clock.js";
 
 // To do list
-import todo from "../js/to-do.js"
+// import todo from "../js/to-do.js"
+
+
+// Calculator
+// import cal from "../js/calculator.js"
+
+// Calculator
+import quiz from "../js/quize-1.js"
 
 
 
