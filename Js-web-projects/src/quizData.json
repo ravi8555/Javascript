@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "question": "What is the capital of France?",
+      "options": ["Paris", "Madrid", "Rome", "Berlin"],
+      "answer": "Paris"
+    },
+    {
+      "question": "What is the largest planet in our solar system?",
+      "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+      "answer": "Jupiter"
+    },
+    {
+      "question": "Which element has the symbol Au on the periodic table?",
+      "options": ["Silver", "Gold", "Platinum", "Copper"],
+      "answer": "Gold"
+    },
+    {
+      "question": "Which of these is NOT a programming language?",
+      "options": ["Java", "C#", "Python", "Photoshop"],
+      "answer": "Photoshop"
+    }
+  ]
+}
