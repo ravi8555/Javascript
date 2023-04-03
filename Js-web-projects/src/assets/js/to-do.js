@@ -66,8 +66,6 @@ function updateLs(){
 }
 */
 
-const { list } = require("postcss");
-
 
 /*    Todo List 2      */
 /*const addUserBtn = document.getElementById('addUser');
@@ -140,26 +138,18 @@ function deleteRec(id){
 } */
 
 /*    Todo List 3      */
-const item = document.querySelector('#item');
+/*const item = document.querySelector('#item');
 const todocnt = document.querySelector('#to-do-box');
-const listArray = localStorage.getItem('listItme') ? JSON.parse(localStorage.getItem('listItme')) : [];
-item.addEventListener('keyup', function(e){ 
+item.addEventListener('keyup', function(e){
 
     if(e.key == "Enter"){
-        listArray.push(this.value);
-        localStorage.setItem('listItme', JSON.stringify(listArray));
-        updateItem(this.value)
+        // console.log(this.value);
         addTodo(this.value);
         this.value = '';
+
     }
     
-});
-function updateItem(text, i){
-    listArray[i] = text;
-    localStorage.setItem('listItme', JSON.stringify(listArray));
-   
-}
-
+})
 
 const addTodo = (item)=>{
     const listItme = document.createElement('li')
@@ -171,22 +161,16 @@ const addTodo = (item)=>{
     })
 
     listItme.querySelector('i').addEventListener('click', function(){
-        listItme.remove();
-        // listItme.splice(i, 1);
-        // localStorage.setItem('listItme', JSON.stringify(listArray));
-        
-        
-
+        listItme.remove()
     })
 
-    todocnt.appendChild(listItme);
+    todocnt.appendChild(listItme)
 
-    
 }
+*/
 
 /* 4 */
 
-/*
 const itemArray = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")): [];
 console.log(itemArray);
 
@@ -195,95 +179,21 @@ document.querySelector('#enter').addEventListener('click', ()=>{
     createList(list)
 });
 
-function displayItem(){
-    let items = "";
-    for(let i =0; i < itemArray.length; i++){
-        items +=`
-        <div class="item">
-                <div class="input-controller">
-                  <textarea disabled>${itemArray[i]}</textarea>
-                  <div class="edit-controller">
-                    <i class="fa fa-trash-o deleteBtn"></i>
-                    <i class="fa fa-pencil-square-o editBtn"></i>
-                  </div>
-                </div>
-                <div class="update-controller">
-                  <button class="saveBtn"><i fa fa-floppy-o></i>Save</button>
-                  <button class="cancelBtn"><i fa fa-ban></i>Cancel</button>
-                </div>
-        </div>`;
-        document.querySelector('.to-do-list').innerHTML = items
-    };
-
-    deleteItem();
-    editItem();
-    saveItem();
-    cancelItem();
-}
-
-function deleteItem(){
-    document.querySelectorAll('.deleteBtn').forEach((del, i)=>{
-        del.addEventListener('click', ()=>{
-            deletitems(i)
-        })
-    })
-}
-
-function deletitems(i){
-    itemArray.splice(i, 1);
-    localStorage.setItem('items', JSON.stringify(itemArray));
-    location.reload();
-}
-
-function editItem(){
-    const editBtn = document.querySelectorAll('.editBtn');
-    const updateDiv = document.querySelectorAll('.update-controller');
-    let inputs = document.querySelectorAll('.input-controller textarea');
-    editBtn.forEach((eachbtn, i)=>{
-        eachbtn.addEventListener('click', ()=>{
-
-            updateDiv[i].style.cssText = `display:block;`;
-            inputs[i].disabled = false;
-            inputs[i].cssText = `border:1px solid #fff`;
-            
-
-        })
-    })
-}
-
-function saveItem(){
-    let savbtn = document.querySelectorAll('.saveBtn');
-    let inputs = document.querySelectorAll('.input-controller textarea');
-    savbtn.forEach((eachbtn, i)=>{
-        eachbtn.addEventListener('click', ()=>{
-            updateItem(inputs[i].value, i)
-        })
-    })
-}
-function updateItem(text, i){
-    itemArray[i] = text;
-    localStorage.setItem('items', JSON.stringify(itemArray));
-    location.reload()
-}
-function cancelItem(){
-    const canBtn = document.querySelectorAll('.cancelBtn');
-    const updateDiv = document.querySelectorAll('.update-controller');
-    let inputs = document.querySelectorAll('.input-controller textarea');
-    canBtn.forEach((eachbtn, i) =>{
-        eachbtn.addEventListener('click', ()=>{
-            console.log();
-            updateDiv[i].style.cssText = `display:none;`;
-            inputs[i].disabled = true;
-
-        })
-    })
-}
-
 function createList(list){
     itemArray.push(list.value);
     localStorage.setItem('items', JSON.stringify(itemArray))
-    location.reload();
+    location.reload()
 }
+
+
+
+
+
+
+
+
+
+
 function dispDate(){
     let date = new Date();
     date = date.toString().split(" ");
@@ -292,10 +202,9 @@ function dispDate(){
 }
 
 window.onload = function(){
-    dispDate();
-    displayItem()
+    dispDate()
 }
-*/
+
 
 
 
