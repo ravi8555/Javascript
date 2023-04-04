@@ -1,81 +1,81 @@
-const quizData = [
-  {
-    question: 'Which of the following is a client site language?',
-    a: 'Java',
-    b: 'C',
-    c: 'Python',
-    d: 'JavaScript',
-    correct: 'd',
-  },
-  {
-    question: 'What does HTML stand for?',
-    a: 'Hypertext Markup Language',
-    b: 'Cascading Style Sheet',
-    c: 'Jason Object Notation',
-    d: 'Helicopters Terminals Motorboats Lamborginis',
-    correct: 'a',
-  },
-  {
-    question: 'What year was JavaScript launched?',
-    a: '1996',
-    b: '1995',
-    c: '1994',
-    d: 'none of the above',
-    correct: 'b',
-  },
-  {
-    question: 'What does CSS stands for?',
-    a: 'Hypertext Markup Language',
-    b: 'Cascading Style Sheet',
-    c: 'Jason Object Notation',
-    d: 'Helicopters Terminals Motorboats Lamborginis',
-    correct: 'b',
-  },
-]
+// const quizData = [
+//   {
+//     question: 'Which of the following is a client site language?',
+//     a: 'Java',
+//     b: 'C',
+//     c: 'Python',
+//     d: 'JavaScript',
+//     correct: 'd',
+//   },
+//   {
+//     question: 'What does HTML stand for?',
+//     a: 'Hypertext Markup Language',
+//     b: 'Cascading Style Sheet',
+//     c: 'Jason Object Notation',
+//     d: 'Helicopters Terminals Motorboats Lamborginis',
+//     correct: 'a',
+//   },
+//   {
+//     question: 'What year was JavaScript launched?',
+//     a: '1996',
+//     b: '1995',
+//     c: '1994',
+//     d: 'none of the above',
+//     correct: 'b',
+//   },
+//   {
+//     question: 'What does CSS stands for?',
+//     a: 'Hypertext Markup Language',
+//     b: 'Cascading Style Sheet',
+//     c: 'Jason Object Notation',
+//     d: 'Helicopters Terminals Motorboats Lamborginis',
+//     correct: 'b',
+//   },
+// ]
 
-const myQuizData = [
-  {
-    category: 'Music',
-    id: '622a1c357cc59eab6f94fda9',
-    correctAnswer: 'Graceland',
-    incorrectAnswers: ['Neverland', 'Jackson Ranch', 'Graceland', 'Amity'],
-    question: "What Was The Name Of Elvis Presley's Home?",
-    tags: ['places', 'general_knowledge', 'musicians', 'music'],
-    type: 'Multiple Choice',
-    difficulty: 'medium',
-    regions: [],
-    isNiche: false,
-  },
-  {
-    category: 'Geography',
-    id: '625e9ec3796f721e95543f6a',
-    correctAnswer: 'Blue',
-    incorrectAnswers: ['Blue', 'Orange', 'Maroon', 'Black'],
-    question: 'Which of these colors is included on the flag of Guatemala?',
-    tags: ['flags', 'geography'],
-    type: 'Multiple Choice',
-    difficulty: 'hard',
-    regions: [],
-    isNiche: false,
-  },
-  {
-    category: 'Science',
-    id: '622a1c377cc59eab6f95053e',
-    correctAnswer: 'the therapeutic use of plants',
-    incorrectAnswers: [
-      'the Assyrians',
-      'the therapeutic use of plants',
-      'alternative method of massage, manipulative therapy|therapy or pressure on certain points of the sole of the feet as a means of relieving nervous tension',
-      'a branch of medicine that deals with the venous system',
-    ],
-    question: 'What is Herbology the study of?',
-    tags: ['words', 'science'],
-    type: 'Multiple Choice',
-    difficulty: 'medium',
-    regions: [],
-    isNiche: false,
-  },
-]
+// const myQuizData = [
+//   {
+//     category: 'Music',
+//     id: '622a1c357cc59eab6f94fda9',
+//     correctAnswer: 'Graceland',
+//     incorrectAnswers: ['Neverland', 'Jackson Ranch', 'Graceland', 'Amity'],
+//     question: "What Was The Name Of Elvis Presley's Home?",
+//     tags: ['places', 'general_knowledge', 'musicians', 'music'],
+//     type: 'Multiple Choice',
+//     difficulty: 'medium',
+//     regions: [],
+//     isNiche: false,
+//   },
+//   {
+//     category: 'Geography',
+//     id: '625e9ec3796f721e95543f6a',
+//     correctAnswer: 'Blue',
+//     incorrectAnswers: ['Blue', 'Orange', 'Maroon', 'Black'],
+//     question: 'Which of these colors is included on the flag of Guatemala?',
+//     tags: ['flags', 'geography'],
+//     type: 'Multiple Choice',
+//     difficulty: 'hard',
+//     regions: [],
+//     isNiche: false,
+//   },
+//   {
+//     category: 'Science',
+//     id: '622a1c377cc59eab6f95053e',
+//     correctAnswer: 'the therapeutic use of plants',
+//     incorrectAnswers: [
+//       'the Assyrians',
+//       'the therapeutic use of plants',
+//       'alternative method of massage, manipulative therapy|therapy or pressure on certain points of the sole of the feet as a means of relieving nervous tension',
+//       'a branch of medicine that deals with the venous system',
+//     ],
+//     question: 'What is Herbology the study of?',
+//     tags: ['words', 'science'],
+//     type: 'Multiple Choice',
+//     difficulty: 'medium',
+//     regions: [],
+//     isNiche: false,
+//   },
+// ]
 
 /* 1 */
 // let index = 0
@@ -235,25 +235,94 @@ let quest = {
     },
   ],
 }
-// var fetchUrl = 'http://localhost:7000/quizData.json'
-function loadQuizData(fetchUrl) {
-  fetch(fetchUrl)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Network respose was not ok')
-      }
-      return response.json()
-    })
-    .then((data) => {
-      console.log(data)
-    })
-    .catch((error) => {
-      console.error('Error', error)
-    })
-}
 
-const mydata = loadQuizData('http://localhost:7000/quizData.json')
-const questBx = document.getElementById('questionBox')
-var questionArray = JSON.parse(mydata)
-console.log(questionArray.questions[0].question)
-// questBx.innerHTML = questionArray.questions.question[0]
+var index = 0;
+let wrong = 0
+let right = 0
+function loadQuizData(fetchUrl) {
+    return fetch(fetchUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network respose was not ok')
+        }
+        return response.json()
+      })
+      .catch((error) => {
+        console.error('Error', error)
+      })
+  }
+  
+  
+  loadQuizData('http://localhost:7000/quizData.json')
+    .then((questionArray) => {
+    //  check the JSON data   
+      console.log("Fetch Arry", questionArray);
+
+    // Get the question Div
+      const questionDiv = document.getElementById('question');
+    
+    //   set the First Question in the div
+    //   questionDiv.innerHTML = questionArray.questions[0].question;
+
+    //   loop the all question and its options
+      questionArray.questions.forEach((item, indx) => {
+
+        // assing the IDs to options
+        let quid = document.getElementById('qid');
+        quid.innerText = index+1+".";
+
+        // Get the DIV for option 
+        const optionData = document.getElementById('question-options');
+        options ="";
+
+        // loop the all options and display it
+        const optionAllitems = item.options.forEach((optionItem, optionIdx)=>{
+            options += `<li><input class="options" name="option" type="radio" id="${optionIdx+1}" value="${optionItem}" required>
+            <label for="first">"${optionItem}</label></li>`;
+         
+        })
+       
+        // set the question and options to their respective element
+        questionDiv.innerText = item.question;
+        optionData.innerHTML = options;
+
+        // initial the options on next button
+        const nextBtn = document.getElementById('next');
+        const inputs = document.querySelectorAll('.options');
+
+        const getNextOption = ()=>{
+            let selectedOption;
+            inputs.forEach( input=>{
+                if(input.checked){
+                    selectedOption = input.value
+                    console.log("input Value =>", selectedOption);
+                }
+               });
+               return selectedOption
+           
+        }
+         nextBtn.addEventListener('click', (e)=>{            
+               const selectedOption = getNextOption();
+               if(selectedOption == item.answer){
+                right ++;
+               }else{
+                wrong++
+               }
+               index++
+               optionAllitems();
+            e.preventDefault()
+               return
+               
+               
+            })
+        // getNextOption()
+ 
+
+      });
+
+   
+
+ })
+
+
+
