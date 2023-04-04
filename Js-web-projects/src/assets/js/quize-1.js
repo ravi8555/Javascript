@@ -211,117 +211,177 @@ const endQuize = () => {
 loadQuizQues();
 */
 
-let quest = {
-  questions: [
-    {
-      question: 'What is the capital of France?',
-      options: ['Paris', 'Madrid', 'Rome', 'Berlin'],
-      answer: 'Paris',
-    },
-    {
-      question: 'What is the largest planet in our solar system?',
-      options: ['Saturn', 'Jupiter', 'Uranus', 'Neptune'],
-      answer: 'Jupiter',
-    },
-    {
-      question: 'Which element has the symbol Au on the periodic table?',
-      options: ['Silver', 'Gold', 'Platinum', 'Copper'],
-      answer: 'Gold',
-    },
-    {
-      question: 'Which of these is NOT a programming language?',
-      options: ['Java', 'C#', 'Python', 'Photoshop'],
-      answer: 'Photoshop',
-    },
-  ],
-}
+// let quest = {
+//   questions: [
+//     {
+//       question: 'What is the capital of France?',
+//       options: ['Paris', 'Madrid', 'Rome', 'Berlin'],
+//       answer: 'Paris',
+//     },
+//     {
+//       question: 'What is the largest planet in our solar system?',
+//       options: ['Saturn', 'Jupiter', 'Uranus', 'Neptune'],
+//       answer: 'Jupiter',
+//     },
+//     {
+//       question: 'Which element has the symbol Au on the periodic table?',
+//       options: ['Silver', 'Gold', 'Platinum', 'Copper'],
+//       answer: 'Gold',
+//     },
+//     {
+//       question: 'Which of these is NOT a programming language?',
+//       options: ['Java', 'C#', 'Python', 'Photoshop'],
+//       answer: 'Photoshop',
+//     },
+//   ],
+// }
 
-var index = 0;
-let wrong = 0
-let right = 0
-function loadQuizData(fetchUrl) {
-    return fetch(fetchUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network respose was not ok')
-        }
-        return response.json()
-      })
-      .catch((error) => {
-        console.error('Error', error)
-      })
-  }
+// var index = 0;
+// let wrong = 0
+// let right = 0
+// function loadQuizData(fetchUrl) {
+//     return fetch(fetchUrl)
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error('Network respose was not ok')
+//         }
+//         return response.json()
+//       })
+//       .catch((error) => {
+//         console.error('Error', error)
+//       })
+//   }
   
   
-  loadQuizData('http://localhost:7000/quizData.json')
-    .then((questionArray) => {
-    //  check the JSON data   
-      console.log("Fetch Arry", questionArray);
+//   loadQuizData('http://localhost:7000/quizData.json')
+//     .then((questionArray) => {
+//     //  check the JSON data   
+//       console.log("Fetch Arry", questionArray);
 
-    // Get the question Div
-      const questionDiv = document.getElementById('question');
+//     // Get the question Div
+//       const questionDiv = document.getElementById('question');
     
-    //   set the First Question in the div
-    //   questionDiv.innerHTML = questionArray.questions[0].question;
+//       // set the First Question in the div
+//       // questionDiv.innerHTML = questionArray.questions[3].question;
 
-    //   loop the all question and its options
-      questionArray.questions.forEach((item, indx) => {
+//     //   loop the all question and its options
+//       questionArray.questions.forEach((item, ind) => {
 
-        // assing the IDs to options
-        let quid = document.getElementById('qid');
-        quid.innerText = index+1+".";
+//         // assing the IDs to options
+//         let quid = document.getElementById("qid");
+//         quid.innerHTML = ind+1;          
+        
+//         // Get the DIV for option 
+//         const optionData = document.getElementById('question-options');
+//         options ="";
 
-        // Get the DIV for option 
-        const optionData = document.getElementById('question-options');
-        options ="";
-
-        // loop the all options and display it
-        const optionAllitems = item.options.forEach((optionItem, optionIdx)=>{
-            options += `<li><input class="options" name="option" type="radio" id="${optionIdx+1}" value="${optionItem}" required>
-            <label for="first">"${optionItem}</label></li>`;
+//         // loop the all options and display it
+//         item.options.forEach((optionItem, optionIdx)=>{
+//             options += `<li><input class="options" name="option" type="radio" id="${optionIdx+1}" value="${optionItem}" required>
+//             <label for="first">"${optionItem}</label></li>`;
          
-        })
+//         })
        
-        // set the question and options to their respective element
-        questionDiv.innerText = item.question;
-        optionData.innerHTML = options;
+//         // set the question and options to their respective element
+//         // questionDiv.innerText = item.question;
+//         optionData.innerHTML = options;
 
-        // initial the options on next button
-        const nextBtn = document.getElementById('next');
-        const inputs = document.querySelectorAll('.options');
-
-        const getNextOption = ()=>{
-            let selectedOption;
-            inputs.forEach( input=>{
-                if(input.checked){
-                    selectedOption = input.value
-                    console.log("input Value =>", selectedOption);
-                }
-               });
-               return selectedOption
+//         // initial the options on next button
+//         const nextBtn = document.getElementById('next');
+//         const inputs = document.querySelectorAll('.options');
+//         let index = 0;
+        
+//         const getNextOption = ()=>{
+//             let selectedOption;
+//             inputs.forEach( input=>{
+//                 if(input.checked){
+//                     selectedOption = input.value
+//                     console.log("input Value =>", selectedOption);
+//                 }
+//                });
+//                return selectedOption
            
-        }
-         nextBtn.addEventListener('click', (e)=>{            
-               const selectedOption = getNextOption();
-               if(selectedOption == item.answer){
-                right ++;
-               }else{
-                wrong++
-               }
-               index++
-               optionAllitems();
-            e.preventDefault()
-               return
+//         }
+//          nextBtn.addEventListener('click', (e)=>{            
+//                const selectedOption = getNextOption();
+//                if(selectedOption == item.answer){
+//                 right++
+//                }else{
+//                 wrong++
+//                }
+              
+//                index ++;
                
+//                if(index < questionArray.questions.length){
+//                 questionDiv.innerText = questionArray.questions[index].question;
                
-            })
-        // getNextOption()
- 
+//                 let options = "";
+//                  // loop the all options and display it
+//                  questionArray.questions[index].options.forEach((optionItem, optionIdx)=>{
+//                   options += `<li><input class="options" name="option" type="radio" id="${optionIdx+1}" value="${optionItem}" required>
+//                   <label for="first">"${optionItem}</label></li>`;                        
+//                   });
+                  
+//                   optionData.innerHTML = options;
 
-      });
+//                }else{
+//                 document.querySelector('#result').innerHTML = `<div>Thanks You For The Interesting</div>
+//                 <div>The Number of Right Answer is : ${right}</div>`
+//                }
+//                e.preventDefault()
+//             })
 
-   
+//       });   
 
+//  });
+
+
+ function loadData(fetchURL){
+  return fetch(fetchURL)
+  .then((response)=>{
+    if(!response.ok){
+      throw new Error('Network response was not ok')
+    }
+    return response.json()
+  })
+  .catch((error)=>{
+    console.error('Error', error)
+  })
+ }
+
+ loadData('https://opentdb.com/api.php?amount=10')
+ .then((questionApi)=>{
+  console.log("Question",questionApi);
+  const startBtn = document.getElementById('quiz-start-btn');
+  const formSec = document.getElementById('quiz-form');
+
+  const startQues = ()=>{
+    startBtn.addEventListener('click', ()=>{
+      formSec.classList.remove('hide');
+      startBtn.classList.add('hide')
+    })
+  }
+  startQues()
+
+  const newDate = new Date('Tue Apr 03 2023 16:19:49').getTime()
+
+  const coundDown = setInterval(()=>{
+    const date = new Date().getTime();
+    const diff = newDate - date;
+
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.querySelector(".seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds
+    document.querySelector(".minutes").innerHTML = minutes < 10 ? '0' + minutes :minutes
+
+  }, 1000)
+  
+  // const timer = setInterval(coundDown, 1000)
+  coundDown()
+
+
+    
  })
 
 
