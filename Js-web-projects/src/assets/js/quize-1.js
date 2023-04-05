@@ -361,25 +361,20 @@ loadQuizQues();
       startBtn.classList.add('hide')
     })
   }
-  startQues()
+  startQues();
 
-  const newDate = new Date('Tue Apr 03 2023 16:19:49').getTime()
+// REF https://codepen.io/ishanbakshi/details/pgzNMv
+  // const countDown = ()=>{
+  //   document.getElementById('quiz-timer').innerHTML = "Hello";
+  //   startimer()
 
-  const coundDown = setInterval(()=>{
-    const date = new Date().getTime();
-    const diff = newDate - date;
-
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    document.querySelector(".seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds
-    document.querySelector(".minutes").innerHTML = minutes < 10 ? '0' + minutes :minutes
-
-  }, 1000)
-  
-  // const timer = setInterval(coundDown, 1000)
-  coundDown()
-
+  //   startimer = ()=>{
+  //     var presentTime = document.getElementById('quiz-timer').innerHTML;
+  //     var timeArray = presentTime.split(/[:]+/);
+  //     console.log(timeArray);
+  //   }
+  // }
+  // countDown()
 
     
  })
