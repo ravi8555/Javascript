@@ -61,7 +61,8 @@ import style from '../css/main.scss'
 // import cal from "../js/calculator.js"
 
 // Calculator
-import quiz from "../js/quize-1.js"
+// import quiz from "../js/quize-1.js"
+import crio from "../js/crio.js"
 
 
 

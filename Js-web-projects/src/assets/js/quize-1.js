@@ -336,48 +336,110 @@ loadQuizQues();
 //  });
 
 
- function loadData(fetchURL){
-  return fetch(fetchURL)
-  .then((response)=>{
-    if(!response.ok){
-      throw new Error('Network response was not ok')
-    }
-    return response.json()
-  })
-  .catch((error)=>{
-    console.error('Error', error)
-  })
- }
+//  function loadData(fetchURL){
+//   return fetch(fetchURL)
+//   .then((response)=>{
+//     if(!response.ok){
+//       throw new Error('Network response was not ok')
+//     }
+//     return response.json()
+//   })
+//   .catch((error)=>{
+//     console.error('Error', error)
+//   })
+//  }
 
- loadData('https://opentdb.com/api.php?amount=10')
- .then((questionApi)=>{
-  console.log("Question",questionApi);
-  const startBtn = document.getElementById('quiz-start-btn');
-  const formSec = document.getElementById('quiz-form');
+//  loadData('https://opentdb.com/api.php?amount=10')
+//  .then((questionApi)=>{
+//   console.log("Question",questionApi);
+//   const startBtn = document.getElementById('quiz-start-btn');
+//   const formSec = document.getElementById('quiz-form');
 
-  const startQues = ()=>{
-    startBtn.addEventListener('click', ()=>{
-      formSec.classList.remove('hide');
-      startBtn.classList.add('hide')
-    })
-  }
-  startQues();
+//   const startQues = ()=>{
+//     startBtn.addEventListener('click', ()=>{
+//       formSec.classList.remove('hide');
+//       startBtn.classList.add('hide');
+//       countDown();
+//     })
+//   }
+//   startQues();
 
-// REF https://codepen.io/ishanbakshi/details/pgzNMv
-  // const countDown = ()=>{
-  //   document.getElementById('quiz-timer').innerHTML = "Hello";
-  //   startimer()
+// // REF https://codepen.io/ishanbakshi/details/pgzNMv;
+//   // const countDown = ()=>{
 
-  //   startimer = ()=>{
-  //     var presentTime = document.getElementById('quiz-timer').innerHTML;
-  //     var timeArray = presentTime.split(/[:]+/);
-  //     console.log(timeArray);
-  //   }
-  // }
-  // countDown()
+//   // }
+//   // countDown()
+
+//   const countDown = () => {
+//     document.getElementById('quiz-timer').innerHTML = '01:11';
+    
+//     const startTimer = () => {
+//       const presentTime = document.getElementById('quiz-timer').innerHTML;
+//       const timeArray = presentTime.split(':');
+//       let m = parseInt(timeArray[0], 10);
+//       let s = checkSecond(parseInt(timeArray[1], 10) - 1);
+      
+//       if (s === 59) {
+//         m = m - 1;
+//       }
+      
+//       if (m < 0) {
+//         return;
+//       }
+      
+//       document.getElementById('quiz-timer').innerHTML = `${m}:${s}`;
+//       // console.log(m);
+//       setTimeout(startTimer, 1000);
+
+//     };
+    
+//     startTimer();
+//   };
+  
+//   const checkSecond = (sec) => {
+//     if (sec < 10 && sec >= 0) {
+//       sec = `0${sec}`;
+//     }
+//     if (sec < 0) {
+//       sec = '59';
+//     }
+//     return sec;
+//   };
+  
+//   const restartTimer = ()=>{
+//     const restartBtn = document.getElementById('quiz-restart-btn');
+//     restartBtn.addEventListener('click', ()=>{
+
+//     })
+//   }
 
     
- })
+//  })
+
+function threeSum(nums) {
+  const result = [];
+  const n = nums.length;
+  // loop through all possible triplets
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      for (let k = j + 1; k < n; k++) {
+        if (nums[i] + nums[j] + nums[k] === 0) {
+          const triplet = [nums[i], nums[j], nums[k]];
+          // check if the triplet is unique
+          if (!result.some((arr) => arr.join() === triplet.join())) {
+            result.push(triplet);
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
+
+const nums = [-4, -1, -1, 0, 1, 2];
+console.log(threeSum(nums));
+
+ 
 
 
 
