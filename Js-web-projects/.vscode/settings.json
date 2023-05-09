@@ -1,3 +1,4 @@
 {
-    "audioCues.volume": 0
+    "git.ignoreLimitWarning": true
+    // "audioCues.volume": 0
 }
