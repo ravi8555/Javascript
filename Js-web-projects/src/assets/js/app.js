@@ -9,7 +9,7 @@ import style from '../css/main.scss'
 // import editcode from "../js/edited.js";
 
 // // Test
-import test from "../js/test.js";
+// import test from "../js/test.js";
 
 // codewars
 // import codewars from '../js/codewars.js'
@@ -62,6 +62,7 @@ import test from "../js/test.js";
 
 // Calculator
 // import quiz from "../js/quize-1.js"
+import crio from "../js/crio.js"
 
 
 

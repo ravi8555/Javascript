@@ -23,6 +23,10 @@ const htmlPageNames = [
   {
     pageName: 'quize.html',
     title: 'Quize'
+  },  
+  {
+    pageName: 'crio-js.html',
+    title: ''
   },
   // {
   //     pageName: 'detail-page.html',
