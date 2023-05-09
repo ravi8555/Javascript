@@ -294,3 +294,20 @@
 function sayHi() {
   console.log()
 }
+console.log(5 > 10 && console.log('Hello'))
+
+function findTeamName(name1, name2) {
+  // You only need to implement this function.
+  var twoChar1 = name1.charAt(0).toLowerCase()
+  var twoChar2 = name2.charAt(0).toLowerCase()
+  return name1[0] + name2[0]
+}
+
+findTeamName('Anu', 'Rao')
+
+function circleValues(r) {
+  // You only need to implement this function.
+  let circle = r * 2
+  return `A circle of radius ${r} has a diameter ${circle}`
+}
+console.log(circleValues(2))
