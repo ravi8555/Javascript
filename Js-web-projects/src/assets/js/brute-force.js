@@ -109,6 +109,28 @@ function removeFalsyValues(arr) {
 }
 
 console.log(removeFalsyValues(7, "ate", "", false, 9));
+
+function sumTwoArrays(arr1, arr2) {
+    let sum = 0;
+  
+    // Iterate through arr1 and add each element to the sum
+    for (let i = 0; i < arr1.length; i++) {
+      sum += arr1[i];
+    }
+  
+    // Iterate through arr2 and add each element to the sum
+    for (let j = 0; j < arr2.length; j++) {
+      sum += arr2[j];
+    }
+  
+    return sum;
+  }
+  
+  // Example usage
+  const array1 = [1, 2, 3];
+  const array2 = [4, 5, 6];
+  console.log(sumTwoArrays([1, 2, 3], [4, 5, 6]));  // 21 (1 + 2 + 3 + 4 + 5 + 6)
+  
   
 
 
