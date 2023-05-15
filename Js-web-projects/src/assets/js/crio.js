@@ -93,7 +93,7 @@ console.log(sahpe.perameter())
 // let a = 10
 // let b = 20
 
-<<<<<<<<< Temporary merge branch 1
+
 // console.log(a === b)
 // console.log(a >= b)
 // console.log(a <= b)
@@ -182,7 +182,7 @@ const getStringChar = (str, length) => {
   // return str.slice(0, length)
 }
 console.log(getStringChar('I Love Javascript', 34))
-=========
+
 
 function gradeMarks(marks) {
   // You only need to implement this function.
@@ -217,4 +217,4 @@ function potluckDish(name, dish) {
   }
 }
 potluckDish("Dinesha", "Dal Tadaka");
->>>>>>>>> Temporary merge branch 2
+
