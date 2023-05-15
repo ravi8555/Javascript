@@ -18,16 +18,16 @@
 //   setTimeout(() => console.log('test=>', i), 1)
 // }
 
-const sahpe = {
-  radius: 10,
-  diameter() {
-    return this.radius * 2
-  },
-  perameter: () => 2 * Math.PI * this.radius,
-}
+// const sahpe = {
+//   radius: 10,
+//   diameter() {
+//     return this.radius * 2
+//   },
+//   perameter: () => 2 * Math.PI * this.radius,
+// }
 
-console.log(sahpe.diameter())
-console.log(sahpe.perameter())
+// console.log(sahpe.diameter())
+// console.log(sahpe.perameter())
 
 // var btn = document.getElementById('btn')
 // let userInput = document.getElementById('userinput')
@@ -90,77 +90,6 @@ console.log(sahpe.perameter())
 // let a = 10
 // let b = 20
 
-
-function gradeMarks(marks) {
-  // You only need to implement this function.
-  if(marks < 25){
-    return "F"
-  }else if (marks > 25 && marks <= 45){
-    return "E"
-  }else if (marks > 46 && marks <= 50){
-    return "D"
-  }
-  else if (marks > 51 && marks <= 60){
-    return "C"
-  }else if (marks > 61 && marks <= 80){
-    return "B"
-  }else if (marks > 81 && marks <= 100){
-    return "A"
-  }else{
-      return "Invalid" ;
-  }
-}
-
-console.log(  gradeMarks(45));
-
-function potluckDish(name, dish) {
-
-  // You only need to implement this function.
-  if(name.charAt(0) === dish.charAt(0) && name.charAt(name.length-1) === dish.charAt(dish.length-1)){
-    return console.log(  `${name} starts with** ${name.charAt(0)} and ends with ${name.charAt(name.length-1)}** whereas ${dish} starts and 
-    ends with **${dish.charAt(0)} **and **${dish.charAt(dish.length-1)} **respectively. Hence the output is true.`);
-  }else{
-    return console.log("No Match");
-  }
-}
-potluckDish("Dinesha", "Dal Tadaka");
-// console.log(a === b)
-// console.log(a >= b)
-// console.log(a <= b)
-// console.log(a !== b)
-
-// console.log(a !== b && a > b)
-// console.log(a !== b || a > b)
-// console.log('test')
-function gradeMarks(marks) {
-  if (marks < 0 || marks > 100) {
-    return 'E'
-  } else if (marks < 25) {
-    return 'E'
-  } else if (marks >= 25 && marks < 45) {
-    return 'F'
-  } else if (marks >= 45 && marks < 50) {
-    return 'D'
-  } else if (marks >= 50 && marks < 60) {
-    return 'C'
-  } else if (marks >= 60 && marks < 80) {
-    return 'B'
-  } else if (marks >= 80 && marks <= 100) {
-    return 'A'
-  } else {
-    return 'Invalid'
-  }
-}
-
-console.log(gradeMarks(0))
-console.log(gradeMarks(101))
-console.log(gradeMarks(-5))
-console.log(gradeMarks(24))
-console.log(gradeMarks(45))
-console.log(gradeMarks(50))
-console.log(gradeMarks(60))
-console.log(gradeMarks(80))
-
 // function checkString(checkString) {
 //   if (typeof checkString === 'string') {
 //     return true
@@ -193,44 +122,82 @@ console.log(gradeMarks(80))
 // }
 // console.log(exctractChar('I Love Javascript', 1, 4));
 
-const getStringChar = (str, length) => {
-  if (str.constuctor == String && length > 0);
-  return str.slice(0, length)
+// const getStringChar = (str, length) => {
+//   if (str.constuctor == String && length > 0);
+//   return str.slice(0, length)
 
-  // return str.slice(0, length)
-}
-console.log(getStringChar('I Love Javascript', 34))
+//   // return str.slice(0, length)
+// }
+// console.log(getStringChar('I Love Javascript', 34))
 
-function gradeMarks(marks) {
-  // You only need to implement this function.
-  if(marks < 25){
-    return "F"
-  }else if (marks > 25 && marks <= 45){
-    return "E"
-  }else if (marks > 46 && marks <= 50){
-    return "D"
+// function gradeMarks(marks) {
+//   // You only need to implement this function.
+//   if(marks < 25){
+//     return "F"
+//   }else if (marks > 25 && marks <= 45){
+//     return "E"
+//   }else if (marks > 46 && marks <= 50){
+//     return "D"
+//   }
+//   else if (marks > 51 && marks <= 60){
+//     return "C"
+//   }else if (marks > 61 && marks <= 80){
+//     return "B"
+//   }else if (marks > 81 && marks <= 100){
+//     return "A"
+//   }else{
+//       return "Invalid" ;
+//   }
+// }
+
+// console.log(  gradeMarks(45));
+
+// function potluckDish(name, dish) {
+
+//   // You only need to implement this function.
+//   if(name.charAt(0) === dish.charAt(0) && name.charAt(name.length-1) === dish.charAt(dish.length-1)){
+//     return console.log(  `${name} starts with** ${name.charAt(0)} and ends with ${name.charAt(name.length-1)}** whereas ${dish} starts and 
+//     ends with **${dish.charAt(0)} **and **${dish.charAt(dish.length-1)} **respectively. Hence the output is true.`);
+//   }else{
+//     return console.log("No Match");
+//   }
+// }
+// potluckDish("Dinesha", "Dal Tadaka");
+
+// function findSumOfFirstN(n){
+//   // You only need to implement this function.
+//   var sum = 0;
+//   for(let i =1; i <= n; i++){
+//     sum = sum + i;
+//   }
+//   return sum
+// }
+// console.log(findSumOfFirstN(2));
+
+// function repeatString(str, k){
+//   // You only need to implement this function.
+//   let repeatStr ="";
+//   // // for Loop
+//   // for(let i =1; i < k; i++){
+//   //   repeatStr += str
+//   // }
+//   index = 0
+//   while(index < k){
+//     repeatStr += str;
+//     index ++
+//   }
+//   return repeatStr
+// }
+// console.log(repeatString("Aman", 4));
+
+function findSum(n) {
+
+  let i = 1;
+  let sum = 0;
+  while(i <= n){
+    sum += i;
+    i ++
   }
-  else if (marks > 51 && marks <= 60){
-    return "C"
-  }else if (marks > 61 && marks <= 80){
-    return "B"
-  }else if (marks > 81 && marks <= 100){
-    return "A"
-  }else{
-      return "Invalid" ;
-  }
+  return sum;
 }
-
-console.log(  gradeMarks(45));
-
-function potluckDish(name, dish) {
-
-  // You only need to implement this function.
-  if(name.charAt(0) === dish.charAt(0) && name.charAt(name.length-1) === dish.charAt(dish.length-1)){
-    return console.log(  `${name} starts with** ${name.charAt(0)} and ends with ${name.charAt(name.length-1)}** whereas ${dish} starts and 
-    ends with **${dish.charAt(0)} **and **${dish.charAt(dish.length-1)} **respectively. Hence the output is true.`);
-  }else{
-    return console.log("No Match");
-  }
-}
-potluckDish("Dinesha", "Dal Tadaka");
+console.log(findSum(2))
