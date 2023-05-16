@@ -56,30 +56,13 @@ import style from '../css/main.scss'
 // To do list
 // import todo from "../js/to-do.js"
 
-
 // Calculator
 // import cal from "../js/calculator.js"
 
 // Calculator
 // import quiz from "../js/quize-1.js"
-import crio from "../js/crio.js"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import crio from '../js/crio.js'
+import bruteFroce from '../js/brute-force.js'
 
 // const heading = "Welcome to Digiserve";
 // document.querySelector('h2').innerText = heading
