@@ -6,7 +6,7 @@
 // github ref
 // function satHi() {
 //   console.log(name)
-//   console.log(age)
+//   console.log(age)z
 //   var name = 'Advait'
 //   let age = 7
 // }
