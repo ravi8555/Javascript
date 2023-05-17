@@ -61,7 +61,7 @@ import style from '../css/main.scss'
 
 // Calculator
 // import quiz from "../js/quize-1.js"
-import crio from '../js/crio.js'
+// import crio from '../js/crio.js'
 import bruteFroce from '../js/brute-force.js'
 
 // const heading = "Welcome to Digiserve";
