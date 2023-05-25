@@ -221,13 +221,31 @@
 
 // }
 // factorizeNum(5)
-function debugShiftAndPop(arr) {
-  let result = arr.shift()
+// function debugShiftAndPop(arr) {
+//   let result = arr.shift()
+//   return result
+// }
+// console.log(debugShiftAndPop(['Football', 'Cycling', 'Wrestling', ' Shooting']))
+
+// console.log('POOOOOP')
+
+// let arr = ['a', 'b', 'c', 'a', 'd', 'e', 'c', 'f', 'c']
+// console.log(arr.includes('a'))
+
+// sayHi('Ravindra')
+
+// var sayHi = function (name) {
+//   console.log('My Name' + name)
+// }
+
+function matrixSum(arr) {
+  // You only need to implement this function.
+  const result = []
+  for (let i = 0; i < arr; i++) {
+    for (let j = 0; j < arr[i]; j++) {
+      result += arr[i][j]
+    }
+  }
   return result
 }
-console.log(debugShiftAndPop(['Football', 'Cycling', 'Wrestling', ' Shooting']))
-
-console.log('POOOOOP')
-
-let arr = ['a', 'b', 'c', 'a', 'd', 'e', 'c', 'f', 'c']
-console.log(arr.includes('a'))
+console.log(matrixSum([1, 2, 3], [3, 4, 5]))
