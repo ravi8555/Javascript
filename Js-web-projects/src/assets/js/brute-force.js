@@ -242,7 +242,7 @@ console.log('find Longest Word Length ');
 // }
 // console.log(findLongestWordLength("I Love Javascript"));
 
-console.log('Question check Palindrome Or Not');
+console.log('Question check Palindrome Or Not ');
 
 // 1. create var words and convert into Array using split method
 // 2. create var reverseWord to store the reverse string 
@@ -253,25 +253,119 @@ console.log('Question check Palindrome Or Not');
 // 7. check the reverseWord with words using if and comaprison
 // 8. if condtion is true, return ture else false;
 
-function checkPalindrome(str){
-  // You only need to implement this function.
-  const words = str.split("");
-  // console.log(words);
-  let reverseWord = "";
+// function checkPalindrome(str){
+//   // You only need to implement this function.
+//   const words = str.split("");
+//   // console.log(words);
+//   let reverseWord = "";
 
-  for(let i = str.length -1; i >=0; i--){
-    // console.log(str[i]);
-    reverseWord += str[i];   
+//   for(let i = str.length -1; i >=0; i--){
+//     // console.log(str[i]);
+//     reverseWord += str[i];   
 
-  }
+//   }
   
-  if(reverseWord == str){
-    return true
-  }else{
-    return false
-  }
-  // reverseWord = reverseWord.split(" ").join()
+//   if(reverseWord == str){
+//     return true
+//   }else{
+//     return false
+//   }
+//   // reverseWord = reverseWord.split(" ").join()
 
+// }
+// console.log(checkPalindrome("madam"));
+
+console.log('Generate string combinations');
+// 1. create function generateCombinations with 2 arguments (tookes two arrays as input)
+// 2. create the var result asign with empty array to store the combination fo string results
+// 3. I used here the nested for loop to iterate the argument-1 and argument-2 value.
+// 4. In for loop I initite the loop i and j with 0; till the argument length and increment by + 1
+// 5. current value arr1[i] and current value arr2[j] concatination and push to result var\
+// 6. to get the final result of funtion I return the reult var out of loop 
+// function generateCombinations(arr1, arr2){
+//   let result = [];
+//   for (let i =0; i<arr1.length; i++){
+//     for (let j =0; j<arr1.length; j++){
+//       result.push(arr1[i]+arr2[j])
+//     }
+//   }
+//   return result
+// } 
+// console.log(generateCombinations(["a", "c", "e"], ["b", "d", "f"]));
+
+console.log('(2D array of numbers) the sum of all elements of the matrix');
+
+// 1. Create function matrixSum with arr argument.
+// 2. Create var sum with 0 to store the all metrix plus result.
+// 3. To check array value I am using the for loop
+// 4. In for loop i is iterate the value of row till the length of arr
+// 5. To iterate the column of row[i] I am using the nested loop j start with 0 and end of arr[i] length
+// 6. adding the current element[i][j] to the var sum in the loop
+// 7. finaly I return sum to get the function result 
+// function matrixSum(arr) {
+//   // You only need to implement this function.
+//   let sum = 0;
+//   for(let i =0; i < arr.length; i++){
+//     for(let j =0; j <arr[i].length; j++){
+//       sum += arr[i][j]
+//     }
+//   }
+//   // let i, j;
+//   // let n = arr.length;
+//   // let m = arr[0].length;
+//   // for(i = 0; i < n; i ++){
+//   //   for(j =0; j <m; j++){
+//   //     sum += arr[i][j]
+//   //   }
+//   // }
+
+//    return sum
+// }
+
+// console.log(matrixSum([[12, 13, 15], [16, 17, 18]]));
+
+console.log('Create a 2D array with values from 0 to size -1');
+// solution 1
+// 1. to create the matrix array using the 1 input argument. create function createMatrix(size)
+// 2. To crete empty array I am taking  the var matrix  with empty array. this array will store the matrix row 
+// 3. to iterate the first row value I used here i var for current val
+// 4. inside the for loop I took the empty array row to store the column value
+// 5. I used the nested loop to iterate through the column of the current row. The loop var j is used to keep track the current column of th row
+// 6. In the nested loop I am pushig the J current value to row
+// 7. Outer nested loop I am pushing the row var to matrix to add the j to i
+// 8. finaly I returd the matrix to get the output of matrix array
+// function createMatrix(size){
+//   let matrix = [];
+//   for (let i = 0; i < size; i ++){
+//     let row = []
+//     for(let j = 0; j < size; j++){
+//       row.push(j)      
+//     }
+//     matrix.push(row)    
+//   }
+//   return matrix
+// }
+
+// Solution 2
+// To get  2D array as basis of unput
+// 1. create function createMatrix(arr)
+// 2. to store the value of result created the matrix empty array
+// 3. 
+
+function createMatrix(size) {
+  // You only need to implement this function.
+  // CRIO_SOLUTION_START_MODULE_ES6_FOUNDATIONS
+  var arr = [];
+
+  for (var i = 0; i < size; i++) {
+    arr.push([]);
+  for (var j = 0; j < size; j++) {
+      arr[i].push(j);
+    }
+  }
+  return arr;
+  // CRIO_SOLUTION_END_MODULE_ES6_FOUNDATIONS
 }
 
-console.log(checkPalindrome("mdam"));
+console.log(createMatrix(4))
+
