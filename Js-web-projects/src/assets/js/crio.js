@@ -437,32 +437,56 @@ let shinobi = {
 // console.log(personalDetails.address.city);
 // console.log(personalDetails['address']['city']);
 
-const userDetails = {
-  name: {
-    first: "Kapil",
-    last: "Raghuwanshi",
-  },
-  jobTitle: "JS Instructor @ Crio.do",
-  email: {
-    work: "kapil@epsilon.com",
-    personal: "",
-  },
-  status: {
-    isOnline: true,
-    isVerified: false,
-  }
+// const userDetails = {
+//   name: {
+//     first: "Kapil",
+//     last: "Raghuwanshi",
+//   },
+//   jobTitle: "JS Instructor @ Crio.do",
+//   email: {
+//     work: "kapil@epsilon.com",
+//     personal: "",
+//   },
+//   status: {
+//     isOnline: true,
+//     isVerified: false,
+//   }
+// }
+// userDetails.first="Ravindra";
+// userDetails.last="Dhadave";
+// userDetails.status.isProMember=false
+// console.log(userDetails['status']);
+
+// const arr1 = [1,2,3,4,5,6]
+// console.log(typeof(arr1));
+
+// const obj = {'Name':'Ravindra', 'last name': 'Dhadave'}
+// console.log(Array.isArray(obj));
+// console.log(Array.isArray(arr1));
+
+// function mergedString(str){
+//   // You only need to implement this function.
+//   let result = [];
+//   for(let i = 3; i <str.length; i++){
+//     result += str[i]
+//   }
+//   return result
+// }
+// console.log(mergedString(['code','for','good','intent']));
+
+// let a = 0;
+// let b = 0;
+// console.log(a/b)
+
+// let a = 0;
+// var b;
+// console.log(a/b)
+
+const obj = {
+  name: "Ravi"
 }
-userDetails.first="Ravindra";
-userDetails.last="Dhadave";
-userDetails.status.isProMember=false
-console.log(userDetails['status']);
-
-const arr1 = [1,2,3,4,5,6]
-console.log(typeof(arr1));
-
-const obj = {'Name':'Ravindra', 'last name': 'Dhadave'}
-console.log(Array.isArray(obj));
-console.log(Array.isArray(arr));
+const {x} = obj;
+console.log(x);
 
 
 
