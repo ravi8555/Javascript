@@ -368,7 +368,7 @@ console.log('Create a 2D array with values from 0 to size -1')
 
 // console.log(createMatrix(4))
 
-console.log('Create a 2D array with values from 0 onwards')
+console.log('Create a 2D array with values from 0 onwards ')
 // 1. created function mattrixII with arr arguments.
 // 2. inside the function created the matrix var to store the 2D Matrix
 // 3. The counter var is used to keep the track of numbers that are assigned to the each element in the matrix.
@@ -379,17 +379,38 @@ console.log('Create a 2D array with values from 0 onwards')
 // 8. After adding the value I increse the count 1 of metrxi using ++.
 // 9. Outside the loop I return the matrix to get the result.
 
-function mattrixII(arr) {
-  let matrix = []
-  let counter = 0
-  for (let i = 0; i < arr; i++) {
-    matrix.push([])
-    for (let j = 0; j < arr; j++) {
-      matrix[i].push(counter)
-      counter++
-    }
-  }
-  return matrix
-}
+// function mattrixII(arr) {
+//   let matrix = []
+//   let counter = 0
+//   for (let i = 0; i < arr; i++) {
+//     matrix.push([])
+//     for (let j = 0; j < arr; j++) {
+//       matrix[i].push(counter)
+//       counter++
+//     }
+//   }
+//   return matrix
+// }
 
-console.log(mattrixII(3))
+// console.log(mattrixII(3));
+
+console.log('Delete property')
+// 1. To delete property through object we need th check it first Is it exist
+// 2. Here I am checking the propName argument in object hasOwnProperty method in if condition
+// 3. If the propName exist on obj, If does function will continue the next line 
+// 4. then using the delete method delete the property name from the object
+// 5. then return the statement out of If Condition.
+
+function deleteProperty(obj,propName){
+  if(obj.hasOwnProperty(propName)){
+    delete obj[propName]
+  }
+
+  return obj;
+  
+}
+// 6. To check the instance I store the key and value in obj Object
+// 7. To delete middile name I used the deleteProperty accesing object and key middlename
+
+const obj = { firstName: 'Sachin', middleName: 'Ramesh', lastName: 'Tendulkar' };
+const newObj = deleteProperty(obj, 'middleName')

@@ -367,15 +367,102 @@ let shinobi = {
 // console.log(typeOf(shinobi.village))
 // console.log(typeOf(shinobi.isNinja))
 
-let ob = {}
-ob.name = 'Vihan'
-console.log(ob)
+// let ob = {}
+// ob.name = 'Vihan'
+// console.log(ob)
 
-let ob1 = {
-  name: 'Vihan',
+// let ob1 = {
+//   name: 'Vihan',
+// }
+// ob1.age = 2
+// console.log(ob1)
+
+// let name1 = 'Advait'
+// let object = {}
+
+
+// var person={
+//   "name": "Adam Smith",
+//   "age": 24,
+//   "email": "abc@xyz.com",
+//   "phone": 1234567890,
+//   "skills":["HTML", "CSS", "JS", "REACT", "ANGULAR"]
+// }
+
+// console.log(person["age"]);
+
+// let name = "Crio"
+// let ob = {name: "Criodo"}
+// console.log(ob.name) // 1
+// console.log(ob[name]) // 2
+
+// function getAge(obj,perDetails) {
+//   if(obj.hasOwnProperty(perDetails)){
+//      obj[age]
+//   }
+//   return obj.age
+// }
+// console.log(getAge({ name: "Criodo", age: 17 }));
+
+// const ourStorage = {
+//   "cabinet": {
+//     "top drawer": { 
+//       "folder1": "a file",
+//       "folder2": "secrets"
+//     },
+//   }
+//  };
+// console.log(ourStorage.cabinet);
+// console.log(ourStorage.cabinet["top drawer"]);
+// console.log(ourStorage.cabinet["top drawer"].folder1);
+// console.log(ourStorage.cabinet["top drawer"].folder2);
+// console.log(ourStorage.cabinet["top drawer"].folder1 = "Few Files");
+// console.log(ourStorage.cabinet["top drawer"].folder2 = "Secrets Files");
+
+
+// const personalDetails = {
+//   name: "John Doe",
+//   designation: "Data Analyst",
+//   age: 24,
+//   address: {
+//      locality: "1600 roselane colony",
+//      city: "Mumbai",
+//      state: "Maharashtra",
+//      country: "India"
+//   }
+// }
+// console.log(personalDetails);
+// console.log(personalDetails.address);
+// console.log(personalDetails['address'])
+// console.log(personalDetails.address.city);
+// console.log(personalDetails['address']['city']);
+
+const userDetails = {
+  name: {
+    first: "Kapil",
+    last: "Raghuwanshi",
+  },
+  jobTitle: "JS Instructor @ Crio.do",
+  email: {
+    work: "kapil@epsilon.com",
+    personal: "",
+  },
+  status: {
+    isOnline: true,
+    isVerified: false,
+  }
 }
-ob1.age = 2
-console.log(ob1)
+userDetails.first="Ravindra";
+userDetails.last="Dhadave";
+userDetails.status.isProMember=false
+console.log(userDetails['status']);
 
-let name1 = 'Advait'
-let object = {}
+const arr1 = [1,2,3,4,5,6]
+console.log(typeof(arr1));
+
+const obj = {'Name':'Ravindra', 'last name': 'Dhadave'}
+console.log(Array.isArray(obj));
+console.log(Array.isArray(arr));
+
+
+
