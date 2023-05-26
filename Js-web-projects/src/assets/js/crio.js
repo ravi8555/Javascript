@@ -337,18 +337,45 @@
 
 // console.log(createMatrixII(2))
 
-function getFullName(firstName, middleName, lastName) {
-  // You only need to implement this function.
-  var fullName = {
-    fullName: firstName + ' ' + middleName + ' ' + lastName,
-  }
-  return fullName
-}
-console.log(getFullName('Vihaan', 'Ravindra', 'Dhadave'))
+// function getFullName(firstName, middleName, lastName) {
+//   // You only need to implement this function.
+//   var fullName = {
+//     fullName: firstName + ' ' + middleName + ' ' + lastName,
+//   }
+//   return fullName
+// }
+// console.log(getFullName('Vihaan', 'Ravindra', 'Dhadave'))
 
-function updateProperty(obj, propName, str) {
-  obj[propName] = str
+// function updateProperty(obj, propName, str) {
+//   obj[propName] = str
 
-  return obj[propName]
+//   return obj[propName]
+// }
+// console.log(updateProperty('Ravindra'))
+
+let shinobi = {
+  name: 'Naruto Uzumaki',
+  family: 'green',
+  age: 17,
+  village: 'Leaf Village',
+  isNinja: true,
 }
-console.log(updateProperty('Ravindra'))
+
+// console.log(typeOf(shinobi.name))
+// console.log(typeOf(shinobi.family))
+// console.log(typeOf(shinobi.age))
+// console.log(typeOf(shinobi.village))
+// console.log(typeOf(shinobi.isNinja))
+
+let ob = {}
+ob.name = 'Vihan'
+console.log(ob)
+
+let ob1 = {
+  name: 'Vihan',
+}
+ob1.age = 2
+console.log(ob1)
+
+let name1 = 'Advait'
+let object = {}
