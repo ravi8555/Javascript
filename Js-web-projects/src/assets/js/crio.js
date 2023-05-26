@@ -227,25 +227,128 @@
 // }
 // console.log(debugShiftAndPop(['Football', 'Cycling', 'Wrestling', ' Shooting']))
 
-// console.log('POOOOOP')
+// console.log("check Include =>")
 
-// let arr = ['a', 'b', 'c', 'a', 'd', 'e', 'c', 'f', 'c']
-// console.log(arr.includes('a'))
+// // let arr = ['a', 'b', 'c', 'a', 'd', 'e', 'c', 'f', 'c']
+// let arr = "['Ram', 'Shyam', 'Amit'], 'Ram'"
 
-// sayHi('Ravindra')
-
-// var sayHi = function (name) {
-//   console.log('My Name' + name)
+// function debugSortIncludes(arr, ele) {
+//   arr.sort("");
+//   return (arr.includes(ele, 2));
 // }
 
-function matrixSum(arr) {
+// console.log(arr.includes('Ram', 2))
+
+// function matrixSum(arr) {
+//   // You only need to implement this function.
+//   let result = 0;
+//   for (let i = 0; i < arr.length; i++){
+//     for (let j = 0; j < arr[i].length; j++){
+//       result += arr[i]+arr[j]
+//     }
+//   }
+//   return result
+// }
+
+// console.log(matrixSum([[23,48],[12,18]]));
+
+// var firstName = "Ravindra";
+
+// function disp(){
+//   var lastName = "Dhadave";
+//   console.log("Full name ="+ firstName + lastName);
+
+// }
+// disp()
+// // console.log("Full name ="+ firstName + lastName);
+
+// var a = 10; // variable 'a' global scope
+
+// if(a===10){
+//    let b = 20;   // scope within the block ( will be same for const)
+//    console.log("b is accessible within the block:", b);  // 20
+// }
+
+// console.log("b is not accessible outside the block:", b );
+
+// var a = 11;
+// func()
+// function func(){
+//   var a = 20
+// }
+// console.log(a);
+
+// var a = 12;
+// func()
+// function func(){
+//   var a = 20
+// }
+// console.log(a);
+
+// var a = 13;
+// console.log(a);
+// if(a===13){
+//   const a = 20;
+//   console.log(a);
+// }
+// var a = 30;
+// console.log(a);
+
+// function parent(){
+//   const message = "I am from parent";
+//   console.log(message);
+
+//   function child(){
+//     console.log("This is the Child");
+//   }
+// }
+
+// function matrixSum(arr) {
+//   // Initialize the sum to 0.
+//   let sum = 0;
+
+//   // Iterate through the array.
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr[i].length; j++) {
+//       // Add the current element to the sum.
+//       sum += arr[i][j];
+//     }
+//   }
+
+//   // Return the sum.
+//   return sum;
+// }
+// console.log(matrixSum([[12, 13, 15], [16, 17, 18]]));
+
+// function createMatrixII(size) {
+//   // You only need to implement this function.
+//   let matrixII = []
+//   let count = 0
+//   for (let i = 0; i < size; i++) {
+//     let row = []
+//     for (let j = 0; j < size; j++) {
+//       row.push(count)
+//       count++
+//     }
+//     matrixII.push(row)
+//   }
+//   return matrixII
+// }
+
+// console.log(createMatrixII(2))
+
+function getFullName(firstName, middleName, lastName) {
   // You only need to implement this function.
-  const result = []
-  for (let i = 0; i < arr; i++) {
-    for (let j = 0; j < arr[i]; j++) {
-      result += arr[i][j]
-    }
+  var fullName = {
+    fullName: firstName + ' ' + middleName + ' ' + lastName,
   }
-  return result
+  return fullName
 }
-console.log(matrixSum([1, 2, 3], [3, 4, 5]))
+console.log(getFullName('Vihaan', 'Ravindra', 'Dhadave'))
+
+function updateProperty(obj, propName, str) {
+  obj[propName] = str
+
+  return obj[propName]
+}
+console.log(updateProperty('Ravindra'))
