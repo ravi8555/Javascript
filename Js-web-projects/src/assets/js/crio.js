@@ -640,7 +640,7 @@ function halfValues(arr) {
   arr.forEach((ind)=>{
     const devideInd = ind+1;
 
-    console.log();
+    // console.log();
     result.push(ind/devideInd)
 
   })
