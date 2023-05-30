@@ -394,23 +394,135 @@ console.log('Create a 2D array with values from 0 onwards ')
 
 // console.log(mattrixII(3));
 
-console.log('Delete property')
-// 1. To delete property through object we need th check it first Is it exist
-// 2. Here I am checking the propName argument in object hasOwnProperty method in if condition
-// 3. If the propName exist on obj, If does function will continue the next line 
-// 4. then using the delete method delete the property name from the object
-// 5. then return the statement out of If Condition.
+// console.log('Delete property')
+// // 1. To delete property through object we need th check it first Is it exist
+// // 2. Here I am checking the propName argument in object hasOwnProperty method in if condition
+// // 3. If the propName exist on obj, If does function will continue the next line
+// // 4. then using the delete method delete the property name from the object
+// // 5. then return the statement out of If Condition.
 
-function deleteProperty(obj,propName){
-  if(obj.hasOwnProperty(propName)){
-    delete obj[propName]
-  }
+// function deleteProperty(obj,propName){
+//   if(obj.hasOwnProperty(propName)){
+//     delete obj[propName]
+//   }
 
-  return obj;
-  
-}
-// 6. To check the instance I store the key and value in obj Object
-// 7. To delete middile name I used the deleteProperty accesing object and key middlename
+//   return obj;
 
-const obj = { firstName: 'Sachin', middleName: 'Ramesh', lastName: 'Tendulkar' };
-const newObj = deleteProperty(obj, 'middleName')
+// }
+// // 6. To check the instance I store the key and value in obj Object
+// // 7. To delete middile name I used the deleteProperty accesing object and key middlename
+
+// const obj = { firstName: 'Sachin', middleName: 'Ramesh', lastName: 'Tendulkar' };
+// const newObj = deleteProperty(obj, 'middleName')
+
+console.log('Find Car with maximum capacity and type in muliple Car object')
+// 1. created function maxCapacityType with argument arr
+// 2. created maxCapacity var 0 to store the car maximum capacity in the arr result
+// 3. created maxCapacityType var empty string to store the car type result
+// 4. created the for loop with var i to iterate the value of arr. the loop start with 0 and end at index arr.length -1; (continue as long as length of arr array )
+// 5. Inside the to compare the 'capacity' property of the current object. (arr[i].capacity). If the capacity of current object is greater than maxCapacity. I updated the  maxCapacity to the current element of arr[i].cappacity and updated maxCapacityType to the current element arr[i].type.
+//  I cheked the arr[i].
+// 5. check if the capacity of object at index i is greater than current value of maxCapacity
+// 6. finally we return maxCapacityType, which represent type of car with maximum capacity
+
+// function maxCapacityType(arr) {
+//   var maxCapacity = 0
+//   maxCapacityType = ''
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i].capacity > maxCapacity) {
+//       maxCapacity = arr[i].capacity
+//       maxCapacityType = arr[i].type
+//     }
+//   }
+//   return maxCapacityType
+// }
+
+// console.log(
+//   maxCapacityType([
+//     { color: 'Red', type: 'Station Wagon', capacity: 5 },
+//     { color: 'Black', type: 'Sedan', capacity: 4 },
+//   ])
+// )
+console.log('Divide two numbers Check question')
+// Que You are given two numbers num and den. When we divide num with den, if both are equal to 0 it gives NaN. We need to handle this case and return 0. You have to implement the function divide such that it should divide num with den and return the result.
+
+// 1. create function  divide(num, den) with 2 argument.
+// 2. check with logical operator if num and den are 0
+// 3. if its then return 0
+// 4. otherwise devide num and den to return result
+
+// function divide(num, den) {
+//   if (num === 0 && den === 0) {
+//     return 0
+//   }
+//   return num / den
+// }
+
+// console.log(divide(10, 3))
+
+console.log('Difference between min and max')
+
+// 1. create function maxMinDifference with argument arr
+// 2. Initializing the min and max var with the first element of arr[0], by setting min and max to initail arr[0], we insure that they hold valid stating values for the comparision
+// 3. I am starting loop var i = 1 because we already declare the 0 index to min and max. iterate the till the arr of length.
+// 4 Inside the loop I am cheking the current valur arr[i]  is greater than max if condition is true I assigned to max current value
+// In else if condition I cheked the current value arr[i] is less than min var , if its true I assignd the min value to current value arr[i]
+// 5. After processed the loop, to calculate the result I return the max -min
+
+// function maxMinDifference(arr) {
+//   var max = arr[0]
+//   var min = arr[0]
+
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > max) {
+//       max = arr[i]
+//     } else if (arr[i] < min) {
+//       min = arr[i]
+//     }
+//   }
+//   return max - min
+// }
+// console.log(maxMinDifference([9, 1, 3, 4]))
+
+console.log('Pass by reference 1')
+/*you are given an array of numbers arr as an argument. You need to implement the function manipulatingArray which will modify the numbers of the array such that if the number is even, it adds 5 else it multiplies 5. But we don’t have to return anything, remember how arrays are passed and if any changes are made in the passed array does it reflect in the original array? Think about it.*/
+
+// 1. creating the function manipulatingArray with arr argment.
+// 2. To iterate the argument value I am using for loop initializing the i = 0 till the arr of length
+// 3. Inside the loop I am checking the condition for even number using moudler formula using logical operator
+// 4. if condition gets true, I am passing the reference of current array arr[i] and adding 5
+// 5. if condition gets false, I am passing reference of current var to multiply by 5
+// 6. to get the result, I am returning the arr
+// function manipulatingArray(arr) {
+//   // You only need to implement this function.
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 === 0) {
+//       arr[i] = arr[i] + 5
+//     } else {
+//       arr[i] = arr[i] * 5
+//     }
+//   }
+//   return arr
+// }
+
+// console.log(manipulatingArray([9, 1, 7, 4]))
+
+console.log('Pass by reference 2')
+/*You are given an array of numbers arr, a number index, and a number ele as arguments. You need to implement the function replaceElement which will modify the number at index index of the array to ele. Please note if the index is greater than (length of the array - 1), insert the element at the end of the array. But we don’t have to return anything, remember how arrays are passed and if any changes are made in the passed array does it reflect in the original array? Think about it. */
+
+// 1. crete function replaceElement with 3 argument (arr, index, ele);
+// 2. checking the index is greater than or equal to arr.length
+// 3. if its true it means that the specific index is beyond the current bounds hence  I pushed the ele value to the arr
+// 4. if false then the element replace with specifc index using assign operator
+// 6. return the original arr (now arr is now modified by pass by refrence)
+
+// function replaceElement(arr, index, ele) {
+//   // You only need to implement this function.
+//   if (index >= arr.length) {
+//     arr.push(ele)
+//   } else {
+//     arr[index] = ele
+//   }
+//   return arr
+// }
+// console.log(replaceElement([9, 1, 3, 4], 2, 7))

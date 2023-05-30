@@ -380,7 +380,6 @@ let shinobi = {
 // let name1 = 'Advait'
 // let object = {}
 
-
 // var person={
 //   "name": "Adam Smith",
 //   "age": 24,
@@ -406,7 +405,7 @@ let shinobi = {
 
 // const ourStorage = {
 //   "cabinet": {
-//     "top drawer": { 
+//     "top drawer": {
 //       "folder1": "a file",
 //       "folder2": "secrets"
 //     },
@@ -418,7 +417,6 @@ let shinobi = {
 // console.log(ourStorage.cabinet["top drawer"].folder2);
 // console.log(ourStorage.cabinet["top drawer"].folder1 = "Few Files");
 // console.log(ourStorage.cabinet["top drawer"].folder2 = "Secrets Files");
-
 
 // const personalDetails = {
 //   name: "John Doe",
@@ -482,11 +480,142 @@ let shinobi = {
 // var b;
 // console.log(a/b)
 
-const obj = {
-  name: "Ravi"
+// const obj = {
+//   name: "Ravi"
+// }
+// const {x} = obj;
+// console.log(x);
+
+// function checkObject(par1, par2) {
+//   // You only need to implement this function.
+//   if (Array.isArray(par1) === true || Array.isArray(par2) === true) {
+//     return true
+//   } else {
+//     return false
+//   }
+// }
+// console.log(checkObject(['code', 'javascript'], ['language', 'javascript']))
+
+// function maxCapacityType(arr) {
+//   // You only need to implement this function.
+//   const [color, type, capacity] = arr
+// }
+
+// function modifyNestedObject(obj, num) {
+//   // You only need to implement this function.
+//   obj.address.streetNumber = num
+
+//   return obj
+// }
+// console.log(modifyNestedObject({ address: { streetNumber: 7 } }))
+
+// function add(num) {
+//   num = num + 10
+//   console.log(num)
+// }
+
+// var num = 10
+// add(5)
+// console.log(add())
+
+// function findAreaOfCricle(r) {
+//   // You only need to implement this function.
+//   const PI = Math.PI
+//   const area = PI * r * r
+//   return area
+// }
+// console.log(findAreaOfCricle(3))
+// const calculateArea = (len, bre) => {
+//   // You only need to implement this function.
+//   let rectArea = len * bre
+//   let absValue = Math.abs(rectArea)
+//   return absValue
+// }
+// console.log(calculateArea(-2, 3))
+
+// function copy(data, str) {
+//   const data_copy = { ...data }
+//   data_copy.name = str
+
+//   return data_copy
+//   // return data // return original
+// }
+// console.log(copy({ name: 'Kevin', age: 40 }, 'Allen'))
+
+// var a = [1, 2, 3, 4, 5]
+// a.unshift(6)
+// a.unshift(7)
+// a.shift()
+// a.shift()
+// console.log(a)
+
+// console.log('Output', 10 > 9)
+
+function greeting(day) {
+  // You only need to implement this function.
+  var message = `Today is ${day}`
+  return function () {
+    return message
+  }
 }
-const {x} = obj;
-console.log(x);
+// const msg = greeting('Monday')()
+// console.log(msg) // Output: Today is Monday
+// console.log(greeting('Monday')())
 
+// function display() {
+//   var a = 10
+// }
+// console.log(a)
+// // display()
 
+// function work() {
+//   var x = 1
+//   var x = 2
+//   console.log(x)
+// }
+// work()
 
+// function work() {
+//   let x = 1
+//   let x = 2
+//   console.log(x)
+// }
+// work()
+
+// display()
+
+// function display() {
+//   console.log('Will this work!')
+// }
+
+// function greet() {
+//   return function () {
+//     console.log('Inner function')
+//   }
+// }
+// const returnVal = greet()
+// returnVal()
+
+// function greet(message) {
+//   message()
+// }
+// function message() {
+//   console.log('Hello World')
+// }
+
+// greet(message);
+
+// funcExp()
+
+// var funcExp = function display() {
+//   console.log('Will this work!')
+// }
+
+function createBase(baseNumber) {
+  return function (N) {
+    return baseNumber + N
+  }
+}
+
+var addSix = createBase(6)
+console.log(addSix(10))
