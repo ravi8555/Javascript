@@ -611,11 +611,41 @@ function greeting(day) {
 //   console.log('Will this work!')
 // }
 
-function createBase(baseNumber) {
-  return function (N) {
-    return baseNumber + N
-  }
-}
+// function createBase(baseNumber) {
+//   return function (N) {
+//     return baseNumber + N
+//   }
+// }
 
-var addSix = createBase(6)
-console.log(addSix(10))
+// var addSix = createBase(6)
+// console.log(addSix(10))
+
+// function search(arr, key) {
+//   // You only need to implement this function.
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i]=== key){
+//       return true
+//     }
+    
+//   }
+// return false
+
+// }
+// console.log("find");
+// console.log(search([1, 2, 3, 2, 3, 2], 2));
+
+function halfValues(arr) {
+  // You only need to implement this function.
+  var result = []
+  arr.forEach((ind)=>{
+    const devideInd = ind+1;
+
+    console.log();
+    result.push(ind/devideInd)
+
+  })
+
+  return result
+
+}
+console.log(halfValues([2, 3, 4]));

@@ -526,3 +526,51 @@ console.log('Pass by reference 2')
 //   return arr
 // }
 // console.log(replaceElement([9, 1, 3, 4], 2, 7))
+
+console.log('Find the key')
+// You are given an array of numbers arr and number key as arguments. You need to implement the function search in which you have to use for…each to iterate through the array and if the key is present return true else return false.
+// Approch 1 using for
+// 1. I created the function search with 2 argument arr and key
+// 2. To iterate the arr value I took the for loop and i set to 0 and loop the end with arr.length.
+// 3. To find the key  I campare the cuurent value arr[i] with key.
+// 4. If result true is true  I return the true
+// 5. return false out of loop
+
+// function search(arr, key){
+//   for(let i =0; i < arr.length; i++){
+//     if(arr[i] === key){
+//       return true
+//     }
+//   }
+// return false
+// }
+// console.log(search([9, 1, 3, 4], 2));
+
+// Approch 2 using foreach 
+
+// 1. creted the function serach with arr and key arguments.
+// 2. I have took var result and declare to false, This variable will keep track of wheather the key value is present in the arr
+// 3. I used to ieterate the arr each value using foreach method
+// 4. for each iteration I used callback function inside foreach method, taking current element as a num parameter.
+// 5. Inside the callback function, using the if statement checked the num ie current element with key
+// 6. if condition get true, assign result as a true
+// 7. The outside the foreach, return the result
+
+// function serach(arr, key){
+//   result = false;
+//   arr.forEach( (ele)=>{
+//     if(ele === key){
+//       result = true 
+//     }
+//   });
+//   return result 
+// }
+// console.log(serach([9, 1, 3, 4], 2));
+
+console.log('Divide the elements ')
+// You are given an array of numbers arr as an argument. You have to implement the function halfValues in which we need to divide every element in the array by index + 1 using for..each and store the value in a new array. Return the new array.
+
+
+
+
+
