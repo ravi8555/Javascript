@@ -626,7 +626,7 @@ function greeting(day) {
 //     if(arr[i]=== key){
 //       return true
 //     }
-    
+
 //   }
 // return false
 
@@ -634,18 +634,46 @@ function greeting(day) {
 // console.log("find");
 // console.log(search([1, 2, 3, 2, 3, 2], 2));
 
-function halfValues(arr) {
-  // You only need to implement this function.
-  var result = []
-  arr.forEach((ind)=>{
-    const devideInd = ind+1;
+// function halfValues(arr) {
+//   // You only need to implement this function.
+//   var result = []
+//   arr.forEach((ind)=>{
+//     const devideInd = ind+1;
 
-    // console.log();
-    result.push(ind/devideInd)
+//     // console.log();
+//     result.push(ind/devideInd)
 
-  })
+//   })
 
-  return result
+//   return result
 
-}
-console.log(halfValues([2, 3, 4]));
+// }
+
+// function halfValues(arr) {
+//   let newArr = []
+
+//   arr.forEach(function (num, index) {
+//     newArr.push(num / (index + 1))
+//   })
+
+//   return newArr
+// }
+
+// // Example usage
+// // const numbers = [4, 8, 12, 16];
+
+// // console.log(halfValues(numbers));
+
+// console.log(halfValues([2, 3, 4]))
+
+// function firstEven(arr) {
+//   // You only need to implement this function.
+
+//   const resultNum = arr.find((num) => num % 2 === 0)
+//   // if (arr.length === 0 || resultNum === undefined) {
+//   //   return undefined
+//   // }
+//   return resultNum
+// }
+
+// console.log(firstEven([1, 2, 3, 2, 3, 2]))

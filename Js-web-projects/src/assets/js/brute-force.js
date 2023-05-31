@@ -527,7 +527,7 @@ console.log('Pass by reference 2')
 // }
 // console.log(replaceElement([9, 1, 3, 4], 2, 7))
 
-console.log('Find the key')
+console.log('Find the key For and forEach method')
 // You are given an array of numbers arr and number key as arguments. You need to implement the function search in which you have to use for…each to iterate through the array and if the key is present return true else return false.
 // Approch 1 using for
 // 1. I created the function search with 2 argument arr and key
@@ -546,9 +546,9 @@ console.log('Find the key')
 // }
 // console.log(search([9, 1, 3, 4], 2));
 
-// Approch 2 using foreach 
+// Approch 2 using foreach
 
-// 1. creted the function serach with arr and key arguments.
+// 1. created the function serach with arr and key arguments.
 // 2. I have took var result and declare to false, This variable will keep track of wheather the key value is present in the arr
 // 3. I used to ieterate the arr each value using foreach method
 // 4. for each iteration I used callback function inside foreach method, taking current element as a num parameter.
@@ -560,17 +560,61 @@ console.log('Find the key')
 //   result = false;
 //   arr.forEach( (ele)=>{
 //     if(ele === key){
-//       result = true 
+//       result = true
 //     }
 //   });
-//   return result 
+//   return result
 // }
 // console.log(serach([9, 1, 3, 4], 2));
 
 console.log('Divide the elements ')
 // You are given an array of numbers arr as an argument. You have to implement the function halfValues in which we need to divide every element in the array by index + 1 using for..each and store the value in a new array. Return the new array.
 
+// 1. I am using halfValues function with arr argument.
+// 2. I used empty array var result to store the result
+// 3. to ietrate the current value I am using the forEach method.
+// 4. Inside the forEach method I am using callback function with 2 parameter el, index,
+// 5. element parameter stand for the current value of arr element.
+// 6. By using the index parameter in callback fucntion, we can perform the devision operation correctly based on the index of each element.
+// 7 Inside the callback function, To devide every element with current index +1 I calculate in var devideElem
+// 8. Push the devideElem result in the result var
+// 9. return the result to get the function action.
 
+// function halfValues(arr) {
+//     var result = []
+//     arr.forEach(function (ele, ind) {
+//         let devideElem = ele / (ind + 1)
+//         result.push(devideElem)
+//     })
 
+//     return result
+// }
+// console.log(halfValues([2, 3, 4]))
 
+console.log('Find first even')
+// Given an array of numbers arr as an argument. You need to implement the function firstEven which will return the first even number in the array. If there are no even numbers in the array it should return undefined.;
 
+// 1. I have created the firstEven function with arr argument
+// 2. to find even number I am using the find method inside the function
+// 3. find method iterate the number from left to right here we want to find only first even number, so we directly return the arr with even formula.
+
+// function firstEven(arr) {
+//   return arr.find((num) => num % 2 === 0)
+// }
+
+// console.log(firstEven([1, 2, 3, 2, 3, 2]))
+
+console.log('Find any even number in array using find method')
+
+function findAnyNum(arr, n) {
+  var count = 0
+  return arr.find((num) => {
+    if (num === n) {
+      count++
+      return count === n
+    }
+    return false
+  })
+}
+
+console.log(findAnyNum([1, 2, 3, 2, 3, 2]))
