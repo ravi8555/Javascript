@@ -677,3 +677,14 @@ function greeting(day) {
 // }
 
 // console.log(firstEven([1, 2, 3, 2, 3, 2]))
+
+// function sort(arr) {
+//   // You only need to implement this function.
+//   const sortResult = arr.sort()
+//   return sortResult;
+// }
+
+// console.log(sort(["C", "D", "E", "A", "F", "B"]));
+
+
+

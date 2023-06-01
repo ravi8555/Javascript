@@ -604,17 +604,68 @@ console.log('Find first even')
 
 // console.log(firstEven([1, 2, 3, 2, 3, 2]))
 
-console.log('Find any even number in array using find method')
+// console.log('Find any even number in array using find method')
 
-function findAnyNum(arr, n) {
-  var count = 0
-  return arr.find((num) => {
-    if (num === n) {
-      count++
-      return count === n
-    }
-    return false
-  })
+// function findAnyNum(arr, n) {
+//   var count = 0
+//   return arr.find((num) => {
+//     if (num === n) {
+//       count++
+//       return count === n
+//     }
+//     return false
+//   })
+// }
+
+// console.log(findAnyNum([1, 2, 3, 2, 3, 2]));
+
+console.log("Sort numbers in all test cases");
+// // 1. I have created the sortNumerically function with arr argument.
+// // 2. to check the in negative and other cases I did the custom comaprision. I took (a, b) a -b this custom comaprision passed as an argument to the sort method
+// // 3. return the arr
+
+// function sortNumerically(arr) {
+//   // You only need to implement this function.
+//   const sortNum = arr.sort((a, b) => a- b)
+//   return sortNum
+// }
+// var arr = [9, 1, 6, 5, 4, 10];
+
+// console.log(sortNumerically(arr));
+
+console.log("Sort numbers in all test cases in desending order");
+
+// function sortNumericallyDes(arr){
+  //   let sortDescendingNum = arr.sort((a, b) => b-a);
+  //   return sortDescendingNum
+  // }
+  // var arr = [9, 1, 6, 5, 4, 10];
+  
+  // console.log(sortNumericallyDes(arr));
+  
+console.log("Sort objects based on a specific property in ascending order.");
+// 1. I creted function objProperty with 2 argument arr and property
+// 2. Inside the function I called compare callback function
+// 3. In comapre function took 2 parameter a, b which represent the two object from the array
+// 4. Inside the compare function a[property], and b[property] are used to acces the value of the specified property for the objects    a       and b. return substract  a[property]- b[property] this determins the sort order based on the value of the specefied the property
+// 5. finally return the arr to get the result.
+
+const arr = [
+  { name: 'John', age: 30 },
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 35 }
+];
+
+function objProperty(arr, property){
+  function compare(a, b){
+    return a[property] - b[property]
+  }
+  return arr.sort(compare)
 }
 
-console.log(findAnyNum([1, 2, 3, 2, 3, 2]))
+console.log(objProperty(arr, "age"));
+
+
+
+
+
