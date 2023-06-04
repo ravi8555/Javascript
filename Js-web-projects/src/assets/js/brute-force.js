@@ -619,7 +619,7 @@ console.log('Find first even')
 
 // console.log(findAnyNum([1, 2, 3, 2, 3, 2]));
 
-console.log("Sort numbers in all test cases");
+console.log('Sort numbers in all test cases')
 // // 1. I have created the sortNumerically function with arr argument.
 // // 2. to check the in negative and other cases I did the custom comaprision. I took (a, b) a -b this custom comaprision passed as an argument to the sort method
 // // 3. return the arr
@@ -633,39 +633,256 @@ console.log("Sort numbers in all test cases");
 
 // console.log(sortNumerically(arr));
 
-console.log("Sort numbers in all test cases in desending order");
+console.log('Sort numbers in all test cases in desending order')
 
 // function sortNumericallyDes(arr){
-  //   let sortDescendingNum = arr.sort((a, b) => b-a);
-  //   return sortDescendingNum
-  // }
-  // var arr = [9, 1, 6, 5, 4, 10];
-  
-  // console.log(sortNumericallyDes(arr));
-  
-console.log("Sort objects based on a specific property in ascending order.");
+//   let sortDescendingNum = arr.sort((a, b) => b-a);
+//   return sortDescendingNum
+// }
+// var arr = [9, 1, 6, 5, 4, 10];
+
+// console.log(sortNumericallyDes(arr));
+
+console.log('Sort objects based on a specific property in ascending order.')
 // 1. I creted function objProperty with 2 argument arr and property
 // 2. Inside the function I called compare callback function
 // 3. In comapre function took 2 parameter a, b which represent the two object from the array
 // 4. Inside the compare function a[property], and b[property] are used to acces the value of the specified property for the objects    a       and b. return substract  a[property]- b[property] this determins the sort order based on the value of the specefied the property
 // 5. finally return the arr to get the result.
 
-const arr = [
-  { name: 'John', age: 30 },
-  { name: 'Alice', age: 25 },
-  { name: 'Bob', age: 35 }
-];
+// const arr = [
+//   { name: 'John', age: 30 },
+//   { name: 'Alice', age: 25 },
+//   { name: 'Bob', age: 35 }
+// ];
 
-function objProperty(arr, property){
-  function compare(a, b){
-    return a[property] - b[property]
-  }
-  return arr.sort(compare)
+// function objProperty(arr, property){
+//   function compare(a, b){
+//     return a[property] - b[property]
+//   }
+//   return arr.sort(compare)
+// }
+
+// console.log(objProperty(arr, "age"));
+
+console.log('map Method calculate square')
+// 1. create Function squareNumbers with argument array as a input to calculate the square number.
+// 2. Inside the function map method useed on input array map method applies a provided function to each element in the array and return the result as a new array.
+// 3. To represent the each element of array I am taking the number as a argument.
+// 4. within the function number * number expression to calculate the square of the element.
+// const array = [2, 3, 4]
+
+// function squareNumbers(array) {
+//   return array.map((num) => {
+//     return num * num
+//   })
+// }
+
+// console.log(squareNumbers(array))
+console.log('map Method calculate square of index')
+// Implement a function calculateSquares that takes an array of numbers as input and returns a new array where each number is the square of its index.
+
+// 1. create the function calculateSquares with argument arr
+// 2. Inside the function map method using array input.
+// 3. Inside the map method used anonymous function with num and idx parameter for callback function for the map
+// 4. in anonymouse function to get calculate result I used the index * index expressioin.
+
+// function calculateSquares(arr) {
+//   return arr.map((num, idx) => {
+//     return idx * idx
+//   })
+// }
+// const numbers = [2, 3, 4, 5, 6]
+// const resultArray = calculateSquares(numbers)
+
+// console.log(resultArray)
+
+console.log('map Method Uppercase string')
+// Implement a function convertToUpperCase that takes an array of strings as input and returns a new array where each string is converted to uppercase.
+// const inputStr = ['John', 'Mary', 'Peter', 'Susan']
+// function convertToUpperCase(str) {
+//   return str.map((ele) => {
+//     return ele.toUpperCase()
+//   })
+// }
+// console.log(convertToUpperCase(inputStr))
+
+console.log('map extractNames from object')
+// Implement a function extractNames that takes an array of objects, where each object represents a person with a name property, and returns a new array containing only the names of the people.
+// const people = [
+//   {
+//     name: 'John',
+//     age: 30,
+//     gender: 'Male',
+//   },
+//   {
+//     name: 'Mary',
+//     age: 25,
+//     gender: 'Female',
+//   },
+//   {
+//     name: 'Peter',
+//     age: 40,
+//     gender: 'Male',
+//   },
+//   {
+//     name: 'Susan',
+//     age: 35,
+//     gender: 'Female',
+//   },
+//   {
+//     name: 'David',
+//     age: 20,
+//     gender: 'Male',
+//   },
+// ]
+
+// function extractNames(obj, name) {
+//   return obj.map((ele) => {
+//     return ele.age
+//     // return `Name : ${ele.name} Age : ${ele.age}`
+//   })
+// }
+// console.log(extractNames(people));
+
+console.log('map calculateAverage from numbers input')
+
+// Implement a function calculateAverage that takes an array of numbers as input and returns the average of all the numbers in the array.
+
+// 1. taking the function calculateAverage with argument avg
+// 2. we are checking the condition if avg length is empty then retutn 0
+// 3. to calculate the sum I am using the reduce method first argument initail value of accumalator initial value 0 second argument with ananomouse function, Inside function I have taken the two parameter acc(accumalate) and numbers (current element of the array)
+// 4. To get the average of sum here I am storing the var avarage with expression sum / arr.length
+// 5. finally I created avarageArray var with map function to used to create new array and get average result in single array
+
+// const inputnumbers = [1, 2, 4, 5]
+
+// function calculateAverage(avg) {
+//   if (avg.length === 0) {
+//     return 0
+//   }
+
+//   var sum = avg.reduce(function (acc, numbers) {
+//     return acc + numbers
+//   }, 0)
+
+//   var avarage = sum / avg.length
+
+//   var avarageArray = avg.map((numbers) => {
+//     return avarage
+//   })
+//   return avarageArray
+// }
+// console.log(calculateAverage(inputnumbers))
+
+console.log('Filter out even numbers')
+//  Implement a function that takes an array of numbers as input and returns a new array containing only the even numbers.
+// const arrEven = [2, 3, 4, 5, 6, 9, 7]
+// function filterEven(arr) {
+//   const getEvenNum = arr.filter((num) => {
+//     return num % 2 === 0
+//   })
+//   return getEvenNum
+// }
+
+// console.log(filterEven(arrEven))
+
+console.log('Filter by string length:')
+// Create a function that takes an array of strings as input and returns a new array with strings that have a length greater than a specified value.
+const stringArray = ['Hello', 'World', 'This', 'Is', 'A', '7-item', 'String']
+// function stringLength(str) {
+//   // return str.filter((item) => item.length > 4);
+//   if (str.length < 0) {
+//     return false
+//   }
+//   const strResult = str.filter((item) => {
+//     return item.length > 4
+//   })
+//   return strResult
+// }
+// console.log(stringLength(stringArray))
+
+console.log('Filter by prime numbers:')
+// Write a function that takes an array of numbers as input and returns a new array containing only the prime numbers.
+// 1. created function filterPrimeNumbers with argument arr
+// 2. filter method used on the input num array to create new array that will contain only new array
+// 3. cheked the condition the num is less than 2. The number is less than 2 are not prime. So return false to exclude them from filter array.
+// 4. then I used for loop to get the divisible number. we only check the divisiblity of array square root using Math,sqrt()
+// 5. if i less than or equal to  Math.sqrt() than return false
+// 6. Inside the loop I checked if num moduler with current value 0 than retutn the false to exclude from the filter array
+// 7. to get the final result return true
+
+// const inputnumbers = [1, 2, 4, 5, 7, 8, 9, 11, 10, 22, 3]
+// function filterPrimeNumbers(arr) {
+//   return arr.filter((num) => {
+//     if (num < 2) {
+//       return false
+//     }
+//     for (let i = 2; i <= Math.sqrt(num); i++) {
+//       if (num % 2 === 0) {
+//         return false
+//       }
+//     }
+//     return true
+//   })
+// }
+// console.log(filterPrimeNumbers(inputnumbers))
+
+console.log('Filter by object property:')
+
+// Filter by object property: Implement a function that takes an array of objects and a property name as input, and returns a new array containing objects that have a specific value for that property.
+
+// const objPeople = [
+//   {
+//     name: 'John',
+//     age: 30,
+//     gender: 'Male',
+//   },
+//   {
+//     name: 'Mary',
+//     age: 25,
+//     gender: 'Female',
+//   },
+//   {
+//     name: 'Peter',
+//     age: 40,
+//     gender: 'Male',
+//   },
+//   {
+//     name: 'Susan',
+//     age: 35,
+//     gender: 'Female',
+//   },
+//   {
+//     name: 'David',
+//     age: 20,
+//     gender: 'Male',
+//   },
+// ]
+
+// function filterObjProperty(obj, propname, propval) {
+//   return obj.filter((objName) => {
+//     return objName[propname] === propval
+//   })
+// }
+// console.log(filterObjProperty(objPeople, 'name', 'Susan'));
+
+console.log('Filter unique values remove any duplicate elements')
+// Create a function that takes an array as input and returns a new array containing only the unique values, removing any duplicate elements.
+// 1. created function filterUnique with array as input.
+// 2. inside the function filter method used on the array. It iterate over each element in the array and filter out the elements that are not unique.
+// 3. Callback function used with filter took 3 parameter value, (the current element being processed), index (index of current element) and array (the array being filterd)
+// 4. Within the callback function 'array indexOf(value) is used to find the current value index of the array. This method returns the first index at which is the value is found. If the indexOf is the equal to the parameter of index, It means that the current element is the first occurence of that value in the array and hence it is unique.
+// 5. The Filter method only keep the element for which the callback function return true. In this case keep elements that are only unique.
+const arrUnique = [1, 2, 5, 2, 3, 4, 6, 3, 7, 8, 9, 5]
+function filterUniqueElement(array) {
+  return array.filter(function (value, index, array) {
+    return array.indexOf(value) === index
+  })
+
+  // .filter((value, index, self) => self.indexOf(value) === index)
+  // .sort()
 }
+// return sortArr.sort()
 
-console.log(objProperty(arr, "age"));
-
-
-
-
-
+console.log(filterUniqueElement(arrUnique))

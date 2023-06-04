@@ -1,6 +1,8 @@
 // https://www.w3resource.com/javascript-exercises/javascript-string-exercises.php
 // https://github.com/lydiahallie/javascript-questions
 
+const { map } = require('jquery')
+
 //replit.com/@MayankTiwari9/crio-js-1-b2-May-2023#session-6/exercise.js
 // https://replit.com/@RavindraDhadave/ravindra-crio-js1#session-5/index.js
 // github ref
@@ -686,5 +688,61 @@ function greeting(day) {
 
 // console.log(sort(["C", "D", "E", "A", "F", "B"]));
 
+// function multiplyThree(arr) {
+//   var multiPlyAr = []
+//   // You only need to implement this function.
+//   for (let i = 0; i < arr.length; i++) {
+//     const multiPlyarr = arr[i] * 3
+//     multiPlyAr.push(multiPlyarr)
+//   }
+//   // console.log(multiPlyarr.push())
+//   return multiPlyAr
+// }
+// const arr = [5, 1, 2, 3, 9, 3]
+// function multiplyThree(item) {
+//   return item * 3
+// }
+// const arryMultiply = arr.map(multiplyThree)
+// console.log(arryMultiply)
 
+// const multiPlyRe = arr.map(function (item) {
+//   return item * 3
+// })
+// console.log(multiPlyRe)
 
+// console.log(multiplyThree([1, 3, 5, 6]))
+
+// const arritem = [5, 1, 2, 3, 9, 3]
+// function multiplyThree(arr) {
+//   return arr * 3
+// }
+// const result = arritem.map(multiplyThree)
+// console.log(result)
+
+// const arritem1 = [1, 2, 3, 9, 3]
+
+// const multiPlyThree = arritem1.map((item) => {
+//   return item * 3
+// })
+// console.log(multiPlyThree)
+// const obj = [
+//   { firstname: 'Robert', lastname: 'Obrain' },
+
+//   { firstname: 'Kevin', lastname: 'Hart' },
+
+//   { firstname: 'Dane', lastname: 'Cobby' },
+// ]
+// function getFullName(obj) {
+//   // You only need to implement this function.
+//   return obj.map((ele) => {
+//     return `Full Nmae: ${ele.firstname} ${ele.lastname} `
+//   })
+// }
+// console.log(getFullName(obj));
+// var ages = [32, 33, 16, 40]
+// function canVote(ages) {
+//   const voterAge = ages.filter((age) => age >= 18)
+//   return voterAge
+//   // You only need to implement this function.
+// }
+// console.log(canVote(ages))
