@@ -14,12 +14,12 @@
     <body>
 	<h1>Countdown Clock</h1>
 	<div id="enddate"></div>
+	<p>Previous </p>
 	<div id="clockdiv">
-	  <div>
-		<span class="days"></span>
-		<div class="smalltext">Days</div>
-	  </div>
-	  <div>
+		<div><span class="days"></span>
+			<div class="smalltext">Days</div>.
+		</div>
+		<div>
 		<span class="hours"></span>
 		<div class="smalltext">Hours</div>
 	  </div>
@@ -31,15 +31,87 @@
 		<span class="seconds"></span>
 		<div class="smalltext">Seconds</div>
 	  </div>
-     </div>
+	</div>
+	<p>Next </p>
 
 	 <h1>Countdown Clock</h1>
 	<div id="demo">
 
 	</div>
 
-	
-         
+	<div id="table-div">
+
+	</div>
+
+	<script>
+		var clockdivCnt = document.querySelector('#clockdiv');
+			contentElements = clockdivCnt.children;
+			contentChldNodes = clockdivCnt.childNodes
+			// firstChildNode = clockdivCnt.firstChildNode
+			firstChildNode = clockdivCnt.firstChild
+			lastChildNode = clockdivCnt.lastChild
+			lastElechild = clockdivCnt.lastElementChild
+			firstElechild = clockdivCnt.firstElementChild
+
+		// console.log(clockdiv);
+		// console.log(contentElements);
+		// console.log(contentNodes);
+		// console.log("First Child",firstChildNode);
+		// console.log("Last Child",lastChildNode);
+		// console.log("Last Element Child",lastElechild);
+		// console.log("First Element Child",firstElechild);
+		// console.log("total Child Count",clockdivCnt.childElementCount);
+
+
+
+
+
+
+		var clockdivCnt = document.getElementById('clockdiv');
+			clockPreNode = clockdivCnt.previousSibling
+			clockNextNode = clockdivCnt.nextSibling;
+			clockPrevEle = clockdivCnt.previousElementSibling
+			clockNextEle = clockdivCnt.nextElementSibling
+			
+
+		console.log(clockPreNode, clockNextNode);
+		console.log(clockPrevEle, clockNextEle);
+		
+		const tableDiv = document.getElementById('table-div');
+const tbl = document.createElement('table');
+const tblHead = document.createElement('thead');
+const tblHBody = document.createElement('tbody');
+const tblRow = document.createElement('tr');
+const tblCell = document.createElement('td');
+
+tbl.appendChild(tblHead);
+tbl.appendChild(tblHBody);
+
+// Append the row to the tbody element
+tblHBody.appendChild(tblRow);
+
+// Append the row to the thead element
+tblHead.appendChild(tblRow);
+
+console.log(tbl);
+
+
+
+	</script>
+         <table>
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Name</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>LS Digital</td>
+				</tr>
+			</tbody>
+		 </table>
 		
     </body>
 </html>
