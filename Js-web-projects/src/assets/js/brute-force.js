@@ -874,15 +874,89 @@ console.log('Filter unique values remove any duplicate elements')
 // 3. Callback function used with filter took 3 parameter value, (the current element being processed), index (index of current element) and array (the array being filterd)
 // 4. Within the callback function 'array indexOf(value) is used to find the current value index of the array. This method returns the first index at which is the value is found. If the indexOf is the equal to the parameter of index, It means that the current element is the first occurence of that value in the array and hence it is unique.
 // 5. The Filter method only keep the element for which the callback function return true. In this case keep elements that are only unique.
-const arrUnique = [1, 2, 5, 2, 3, 4, 6, 3, 7, 8, 9, 5]
-function filterUniqueElement(array) {
-  return array.filter(function (value, index, array) {
-    return array.indexOf(value) === index
-  })
+// const arrUnique = [1, 2, 5, 2, 3, 4, 6, 3, 7, 8, 9, 5]
+// function filterUniqueElement(array) {
+//   return array.filter(function (value, index, array) {
+//     return array.indexOf(value) === index
+//   })
 
-  // .filter((value, index, self) => self.indexOf(value) === index)
-  // .sort()
+//   // .filter((value, index, self) => self.indexOf(value) === index)
+//   // .sort()
+// }
+// // return sortArr.sort()
+
+// console.log(filterUniqueElement(arrUnique));
+
+console.log('Sum of Array: using Reduce')
+
+// Sum of Array: Write a function that takes an array of numbers as input and returns the sum of all the numbers.
+// const inputnumbers = [1, 2, 4, 5, 7, 8, 9, 11, 10, 22, 3, 10]
+// function sumOfArray(arr) {
+//   const result = arr.reduce((sum, index) => {
+//     return sum + index
+//   })
+//   return result
+// }
+// console.log(sumOfArray(inputnumbers))
+// console.log('Return Product of Array: Reduce')
+// // Implement a function that takes an array of numbers as input and returns the product of all the numbers.
+
+// const productNum = [1, 2, 4, 5]
+// function calProduct(num) {
+//   const result = num.reduce((acc, idx) => {
+//     return acc * idx
+//   }, 3)
+//   return result
+// }
+// console.log(calProduct(productNum))
+
+console.log('Flatten Array reduce method')
+// Flatten Array: Create a function that takes an array of arrays as input and returns a flattened array containing all the elements from the nested arrays.
+
+// 1. created the function flattenedArray with parameter array which represent the input od array.
+// 2. In the function the reduce method called on the array argument. It takes 2 parameter one is callback function and other is accumalate the value. Inside the callback function took 2 parameter flattern and currentValue.
+// 3. Callback function defined 2 parameter flattern and currentValue. It concanate currentArray with flattern. Array used concat to merge 2 array into single array.
+// The initail value for accumolater is empty array which will populate the flatten element from the nested array
+const flatteenArray = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+]
+
+function flattenedArray(array) {
+  return array.reduce((flattern, currentArray) => {
+    return flattern.concat(currentArray)
+  }, [])
 }
-// return sortArr.sort()
+console.log(flattenedArray(flatteenArray))
 
-console.log(filterUniqueElement(arrUnique))
+const numArray = [1, 2, 4, 5, 7, 8, 9, 11, 10, 22, 3, 10]
+const game = ['Football', 'Cycling', 'Wrestling', ' Shooting']
+const sportName = ['Football', 'Cycling', 'Wrestling', ' Shooting']
+const peopleObj = [
+  {
+    name: 'John',
+    age: 30,
+    gender: 'Male',
+  },
+  {
+    name: 'Mary',
+    age: 25,
+    gender: 'Female',
+  },
+  {
+    name: 'Peter',
+    age: 40,
+    gender: 'Male',
+  },
+  {
+    name: 'Susan',
+    age: 35,
+    gender: 'Female',
+  },
+  {
+    name: 'David',
+    age: 20,
+    gender: 'Male',
+  },
+]

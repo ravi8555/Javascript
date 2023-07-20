@@ -1,10 +1,15 @@
 // https://www.w3resource.com/javascript-exercises/javascript-string-exercises.php
 // https://github.com/lydiahallie/javascript-questions
 
-const { map } = require('jquery')
+// const { map } = require('jquery')
 
 //replit.com/@MayankTiwari9/crio-js-1-b2-May-2023#session-6/exercise.js
 // https://replit.com/@RavindraDhadave/ravindra-crio-js1#session-5/index.js
+// Dom Visualizer
+// http://bioub.github.io/dom-visualizer/
+
+// https://codesandbox.io/s/fe2-july-w98p2y?file=/activity-users-list.js
+
 // github ref
 // function satHi() {
 //   console.log(name)
@@ -746,3 +751,26 @@ function greeting(day) {
 //   // You only need to implement this function.
 // }
 // console.log(canVote(ages))
+
+// setTimeout(getFn("You should log in"), 3000); // only works when this fn returns a fn
+// setTimeout(() => alert("You should log in"), 3000); right, and can pass parameters
+// setTimeout(alert, 3000); // right, but can't pass parameters
+// --------------------------------------------
+
+// const a = getNum()
+// setTimeout(a);
+
+// setTimeout(getNum()); // passing number
+// setTimeout(getNum); // function
+
+// fetch("https://ipinfo.io/json")
+// .then(res => res.json())
+// .then(data => {
+//   document.getElementById("ip").textContent = data.ip;
+// })
+
+fetch('https://api.kanye.rest/')
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data)
+  })
