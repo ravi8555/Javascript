@@ -774,3 +774,137 @@ fetch('https://api.kanye.rest/')
   .then((data) => {
     console.log(data)
   })
+// const arr = [1,1,2,2,3,4,1]
+// const without = [1,2];
+// function removeListedValues(arr, without) {
+//  const res = arr.filter( item => !without.includes(item))
+//   return res
+
+// }
+
+// console.log(removeListedValues(arr, without));
+
+// function personDetail(a, b) {
+//   return{
+//         firstName : a,
+//         lastName : b,
+//         fullName : a + " " +b
+//   }
+// }
+// console.log(personDetail("LS", "digital"));
+
+// function getdateFunTests() {
+//   var d = new Date();
+// const result = ()=>{
+//   return{
+//   year:d.getFullYear(),
+//   date:d.getDate(),
+//   month:d.getMonth()
+// }
+
+// }
+//   // d.getFullYear()
+//   return result()
+
+// }
+// console.log(getdateFunTests('year, date, month'));
+date = '18-07-2023'
+
+// function getNumbersOfDay(date) {
+//   // data - "DD/MM/YYYY" eg 28/01/23
+//   let dateSplit = date.split("/")
+//   // const dd = dateArray[0]
+//   // const mm = dateArray[1]
+//   // const yy = dateArray[2]
+//   const formattedDate = [dateSplit[1], dateSplit[0], dateSplit[2]].join("/");
+//   const dateTs = new Date(formattedDate).getTime();
+//   // console.log(dateTs);
+//   currentDateTs = new Date().getTime();
+
+//   const diffInmiliSec = currentDateTs - dateTs;
+
+//   const diffDays = Math.floor(diffInmiliSec / ( 1000* 60 *60 * 24 ));
+//   return diffDays
+//   // return dateObj
+
+// }
+
+// console.log(getNumbersOfDay("18/05/2023"));
+
+// function IsPrimeNum(num) {
+
+//     if (num <= 1) {
+//       return false
+//     }
+//     for (let i = 2; i < num; i++) {
+//       if (num % i == 0) {
+//         return false
+//       }
+//     }
+
+//     return true
+//   }
+
+//   function modify (array){
+//     for( i = 0 ; i < array.length; i ++){
+//       if (IsPrimeNum(array[i])){
+//         array[i] = array[i] + 1
+//       }
+//       else{
+//         array[i] = array[i] * 2
+//       }
+//     }
+
+//     return array
+
+//   }
+//   console.log(modify([1,2,3,4,5,6]));
+
+// try{
+//   var a = null;
+//   document.write(a)
+//   console.log(a);
+// }catch (error){
+//   console.log("An Error occured" + error.message);
+// }
+
+// try {
+//   // This code may throw an error
+//   try {
+//     var a = asasas;
+//     document.write(a);
+//   } catch (error) {
+//     console.log("An error occurred in the inner try block: " + error.message);
+//   }
+// } catch (error) {
+//   // This code will be executed if an error is thrown in the outer try block
+//   console.log("An error occurred in the outer try block: " + error.message);
+// }
+
+// function findLength(arr) {
+//   const ruslt = arr.map((item)=>{
+//     if(item === undefined || item === null){
+//       return 0
+//     }
+//     return item.length
+//   })
+//   return ruslt
+// }
+// console.log(findLength(["LSDigital", "Aug", undefined]));
+
+function filterArr(arr) {
+  let dataFilter = arr.filter((data) => {
+    let lowerCasecity = data.city.toLowerCase()
+    return lowerCasecity === 'bangalore' || lowerCasecity === 'hyderabad'
+  })
+  return dataFilter
+}
+
+const arr = [
+  { name: 'John', city: 'delhi' },
+  { name: 'Peter', city: 'bangalore' },
+  { name: 'Mike', city: 'Bangalore' },
+  { name: 'Rachel', city: 'Hyderabad' },
+]
+
+console.log(filterArr(arr))

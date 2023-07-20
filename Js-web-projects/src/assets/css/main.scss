@@ -29,3 +29,10 @@ body{
 }
 .webGl{position: fixed;left: 0;top: 0;outline: none;}
 
+.gridTable{display: grid;grid-template-columns: 2;grid-template-rows: 1;}
+.gridTable .avtaar_img{}
+.gridTable .content{grid-template-columns: 2;grid-template-rows: 1;}
+.gridTable .content .key-value{}
+.gridTable .content .details{}
+
+

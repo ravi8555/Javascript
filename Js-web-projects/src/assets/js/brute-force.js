@@ -40,7 +40,7 @@
 // //   Find the prime numbers
 
 // // if the number is divisible by 1 or number itself
-
+console.log('find Prime Num')
 // function findPrimeNum(num) {
 //   /*case 1
 // we are checking cases if number is less than 1 or 1 that number is not prime */
@@ -960,3 +960,74 @@ const peopleObj = [
     gender: 'Male',
   },
 ]
+
+//   // .filter((value, index, self) => self.indexOf(value) === index)
+//   // .sort()
+// }
+// // return sortArr.sort()
+
+// console.log(filterUniqueElement(arrUnique))
+
+console.log('Get the number of days Left')
+// I have created the function getNumbersOfDay() with parameter date
+// date is an input in string format DD/MM/YYYY
+// to split the date in 3 parts day month and year I have used the split method dateSplit
+// I have took the var formattedDate to store the combine value of split indexing. The date() method get the output im MM/DD/YYYY
+// here we have to re arrange the date format DD/MM/YYYY hence I assign the index with rearrange format. To use seperator ("/") I have used the join method here.
+// To calculate the how many days are remaning, we want total miliesecond which is called Timestamp, timestamp we can access using the getTime() method. dateTs var is used to timestamp var to store formattedDate.
+// currentTs var are being used here to get current timestamp, current time stamp we can use also .now() method also;
+// differenceTs var have been used to get the result of currentTs - dateTs (input date). To store the result
+// getDiffdays var have been used here to calculate the milisecod(1000), second 60, minutes 60, hours 24 by dividing to differenceTs var . The result is being rounded down to the nearest number has used the Math.round method
+// to get the number of days between two number result I return the getDiffdays
+// function getDiffdays(date){
+// const dateSplit = date.split("/");
+// const formattedDate = [dateSplit[1], dateSplit[0], dateSplit[2]];
+// // console.log(formattedDate);
+// const dateTs = new Date(formattedDate).getTime()
+// // console.log(dateTs);
+// // const currentTs = new Date().getTime();
+// const currentTs = Date.now();
+// // console.log("now,",currentTs);
+
+// const differenceTs = currentTs - dateTs;
+// const getDiffdays = Math.floor(differenceTs/ (1000 * 60*60*24));
+// return getDiffdays
+
+// }
+// console.log(getDiffdays("10/03/2023"));
+
+console.log('Check given input whether is an alphabet or not')
+
+// to find the alphabet we require the ASCII code, the each keyboard letter has own ascii
+// alphLetter letter has asc key start from 65 to 90 and small letters has 97 to 122
+// I have used the function IsAlphabet();
+// In the function using the var n to check the index of input using charCodeAt()
+// In the function here I am the storing the input using the var capLetter to ascii
+// Then I checked the condition alphLetter is match return the true else false
+// function isAlphabet(X) {
+//         let n = X.charCodeAt(0);
+//         let alphLetter = (n>= 65 && n <= 91) || (n >= 97 && n <= 123);
+
+//         if(alphLetter){
+//             return "yes"
+//         } else{
+//             return false
+//         }
+
+// };
+// var X = "B"
+// console.log(isAlphabet(X));
+
+function convertArray(arr) {
+  // let sum = 0;
+  arr.forEach((item, idx) => {
+    arr[idx] = (idx + 1) * item
+  })
+
+  // for( var i =0; i < arr.length; i++){
+  //     arr[i] = (i + 1) * arr[i]
+  // }
+  return arr
+}
+const arr = [1, 2, 2, 3, 1, 2]
+console.log(convertArray(arr))
