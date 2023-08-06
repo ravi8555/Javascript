@@ -1,10 +1,24 @@
 // https://www.w3resource.com/javascript-exercises/javascript-string-exercises.php
 // https://github.com/lydiahallie/javascript-questions
 
+// API
+// https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo
+
 // const { map } = require('jquery')
 
 //replit.com/@MayankTiwari9/crio-js-1-b2-May-2023#session-6/exercise.js
-// https://replit.com/@RavindraDhadave/ravindra-crio-js1#session-5/index.js
+
+// FE-2
+// Crio
+// https://codesandbox.io/s/session-code-fe-2-ge4uq?file=/Session_6/
+// Gulati
+// https://codesandbox.io/s/fe2-july-w98p2y?file=/activity-users-list.js
+// fe-2 seesion 9 - form validation - post data
+// https://codesandbox.io/s/dont-edit-fe-2-session-activity-solutions-krdcu?file=/session8/bookAMeeting/index.html
+// https://replit.com/@RavindraDhadave/ravindra-crio-js1#seesion-8/index.html
+// fe-2 session-10
+// https://codesandbox.io/s/dreamy-sea-7g4zly?file=/InterviewChallenge/index.html
+
 // Dom Visualizer
 // http://bioub.github.io/dom-visualizer/
 
@@ -908,3 +922,71 @@ const arr = [
 ]
 
 console.log(filterArr(arr))
+
+async function init() {
+  console.log('From INIT')
+  console.log(config.backendEndpoint)
+
+  try {
+    // Fetches list of all cities along with their images and description
+    let cities = await fetchCities()
+
+    // Updates the DOM with the cities
+    if (cities) {
+      cities.forEach((key) => {
+        const link = `pages/adventures/${key.id}.html`
+        addCityToDOM(key.id, key.city, key.description, key.image, link)
+      })
+    }
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+//Implementation of fetch call
+async function fetchCities() {
+  // TODO: MODULE_CITIES
+  // 1. Fetch cities using the Backend API and return the data
+  try {
+    let res = await fetch('http://3.109.8.118:8082/cities')
+    if (!res.ok) {
+      throw new Error('Network response was not ok.')
+    }
+    let data = await res.json()
+    return data
+  } catch (err) {
+    console.log(err)
+    return null // Return null to indicate an error or handle it according to your application's needs.
+  }
+}
+
+// async function fetchCities() {
+//   // TODO: MODULE_CITIES
+//   // 1. Fetch cities using the Backend API and return the data
+//   try {
+//     let res = fetch('http://3.109.8.118:8082/cities')
+//     if (!res.ok) {
+//       throw new Error('Network response was not ok.')
+//     }
+//     let data = (await res).json()
+//     return data
+//   } catch (err) {
+//     console.log(err)
+//     return null // Return null to
+//   }
+// }
+
+let promise1 = new Promise(function (resolve, reject) {
+  resolve('1')
+})
+
+let promise2 = new Promise(function (resolve, reject) {
+  resolve('2')
+})
+
+console.log(promise1)
+console.log(promise2)
+
+const fn = (callbackFn, value) => console.log(callbackFn(value))
+const double = (num) => num * 2
+fn(double, 10)

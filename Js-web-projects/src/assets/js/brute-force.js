@@ -252,27 +252,48 @@ console.log('Question check Palindrome Or Not ')
 // 7. check the reverseWord with words using if and comaprison
 // 8. if condtion is true, return ture else false;
 
-// function checkPalindrome(str){
+// function checkPalindrome(str) {
 //   // You only need to implement this function.
-//   const words = str.split("");
+//   const words = str.split('')
 //   // console.log(words);
-//   let reverseWord = "";
+//   let reverseWord = ''
 
-//   for(let i = str.length -1; i >=0; i--){
+//   for (let i = str.length - 1; i >= 0; i--) {
 //     // console.log(str[i]);
-//     reverseWord += str[i];
-
+//     reverseWord += str[i]
 //   }
 
-//   if(reverseWord == str){
+//   if (reverseWord == str) {
 //     return true
-//   }else{
+//   } else {
 //     return false
 //   }
 //   // reverseWord = reverseWord.split(" ").join()
-
 // }
 // console.log(checkPalindrome("madam"));
+
+console.log('Mask Palindrome input ')
+
+// 1. create function with 2 parameter one is input and second is maskchar
+// 2. I have created the function maskPalindrome(str, maskChar = '*');
+// 3. Inside the function I am checking the input is either palindrome or not (using pre function)
+// 4. In if condition I have created the const modifiedStr which is modified version of str. the str covrting to lowercase to avoide the case sensitivity with replace method to regular expression
+// 5. I have took the firstLetter and lastLetter var to store the first and last charector using charAt method
+// 6. The maskedPalindrome variable is created, which contains the masked version of the palindrome. It concatenates the firstLetter, maskChar repeated modifiedStr.length - 2 times (to account for the first and last letters), and the lastLetter
+
+// function maskPalindrome(str, mask = '*') {
+//   if (checkPalindrome(str)) {
+//     const modifiedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '')
+//     const firstLetter = modifiedStr.charAt(0)
+//     const lastLetter = modifiedStr.charAt(modifiedStr.length - 1)
+//     const maskedPalindrome =
+//       firstLetter + mask.repeat(modifiedStr.length - 2) + lastLetter
+//     return maskedPalindrome
+//   }
+//   return str
+// }
+
+// console.log(maskPalindrome('Madam'))
 
 console.log('Generate string combinations')
 // 1. create function generateCombinations with 2 arguments (tookes two arrays as input)
