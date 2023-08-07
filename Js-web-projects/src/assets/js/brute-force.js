@@ -40,7 +40,7 @@
 // //   Find the prime numbers
 
 // // if the number is divisible by 1 or number itself
-console.log("find Prime Num");
+console.log('find Prime Num')
 // function findPrimeNum(num) {
 //   /*case 1
 // we are checking cases if number is less than 1 or 1 that number is not prime */
@@ -252,27 +252,48 @@ console.log('Question check Palindrome Or Not ')
 // 7. check the reverseWord with words using if and comaprison
 // 8. if condtion is true, return ture else false;
 
-// function checkPalindrome(str){
+// function checkPalindrome(str) {
 //   // You only need to implement this function.
-//   const words = str.split("");
+//   const words = str.split('')
 //   // console.log(words);
-//   let reverseWord = "";
+//   let reverseWord = ''
 
-//   for(let i = str.length -1; i >=0; i--){
+//   for (let i = str.length - 1; i >= 0; i--) {
 //     // console.log(str[i]);
-//     reverseWord += str[i];
-
+//     reverseWord += str[i]
 //   }
 
-//   if(reverseWord == str){
+//   if (reverseWord == str) {
 //     return true
-//   }else{
+//   } else {
 //     return false
 //   }
 //   // reverseWord = reverseWord.split(" ").join()
-
 // }
 // console.log(checkPalindrome("madam"));
+
+console.log('Mask Palindrome input ')
+
+// 1. create function with 2 parameter one is input and second is maskchar
+// 2. I have created the function maskPalindrome(str, maskChar = '*');
+// 3. Inside the function I am checking the input is either palindrome or not (using pre function)
+// 4. In if condition I have created the const modifiedStr which is modified version of str. the str covrting to lowercase to avoide the case sensitivity with replace method to regular expression
+// 5. I have took the firstLetter and lastLetter var to store the first and last charector using charAt method
+// 6. The maskedPalindrome variable is created, which contains the masked version of the palindrome. It concatenates the firstLetter, maskChar repeated modifiedStr.length - 2 times (to account for the first and last letters), and the lastLetter
+
+// function maskPalindrome(str, mask = '*') {
+//   if (checkPalindrome(str)) {
+//     const modifiedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '')
+//     const firstLetter = modifiedStr.charAt(0)
+//     const lastLetter = modifiedStr.charAt(modifiedStr.length - 1)
+//     const maskedPalindrome =
+//       firstLetter + mask.repeat(modifiedStr.length - 2) + lastLetter
+//     return maskedPalindrome
+//   }
+//   return str
+// }
+
+// console.log(maskPalindrome('Madam'))
 
 console.log('Generate string combinations')
 // 1. create function generateCombinations with 2 arguments (tookes two arrays as input)
@@ -885,17 +906,98 @@ console.log('Filter unique values remove any duplicate elements')
 // }
 // // return sortArr.sort()
 
+// console.log(filterUniqueElement(arrUnique));
+
+console.log('Sum of Array: using Reduce')
+
+// Sum of Array: Write a function that takes an array of numbers as input and returns the sum of all the numbers.
+// const inputnumbers = [1, 2, 4, 5, 7, 8, 9, 11, 10, 22, 3, 10]
+// function sumOfArray(arr) {
+//   const result = arr.reduce((sum, index) => {
+//     return sum + index
+//   })
+//   return result
+// }
+// console.log(sumOfArray(inputnumbers))
+// console.log('Return Product of Array: Reduce')
+// // Implement a function that takes an array of numbers as input and returns the product of all the numbers.
+
+// const productNum = [1, 2, 4, 5]
+// function calProduct(num) {
+//   const result = num.reduce((acc, idx) => {
+//     return acc * idx
+//   }, 3)
+//   return result
+// }
+// console.log(calProduct(productNum))
+
+console.log('Flatten Array reduce method')
+// Flatten Array: Create a function that takes an array of arrays as input and returns a flattened array containing all the elements from the nested arrays.
+
+// 1. created the function flattenedArray with parameter array which represent the input od array.
+// 2. In the function the reduce method called on the array argument. It takes 2 parameter one is callback function and other is accumalate the value. Inside the callback function took 2 parameter flattern and currentValue.
+// 3. Callback function defined 2 parameter flattern and currentValue. It concanate currentArray with flattern. Array used concat to merge 2 array into single array.
+// The initail value for accumolater is empty array which will populate the flatten element from the nested array
+const flatteenArray = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+]
+
+function flattenedArray(array) {
+  return array.reduce((flattern, currentArray) => {
+    return flattern.concat(currentArray)
+  }, [])
+}
+console.log(flattenedArray(flatteenArray))
+
+const numArray = [1, 2, 4, 5, 7, 8, 9, 11, 10, 22, 3, 10]
+const game = ['Football', 'Cycling', 'Wrestling', ' Shooting']
+const sportName = ['Football', 'Cycling', 'Wrestling', ' Shooting']
+const peopleObj = [
+  {
+    name: 'John',
+    age: 30,
+    gender: 'Male',
+  },
+  {
+    name: 'Mary',
+    age: 25,
+    gender: 'Female',
+  },
+  {
+    name: 'Peter',
+    age: 40,
+    gender: 'Male',
+  },
+  {
+    name: 'Susan',
+    age: 35,
+    gender: 'Female',
+  },
+  {
+    name: 'David',
+    age: 20,
+    gender: 'Male',
+  },
+]
+
+//   // .filter((value, index, self) => self.indexOf(value) === index)
+//   // .sort()
+// }
+// // return sortArr.sort()
+
 // console.log(filterUniqueElement(arrUnique))
 
-console.log("Get the number of days Left");
+console.log('Get the number of days Left')
 // I have created the function getNumbersOfDay() with parameter date
-// date is an input in string format DD/MM/YYYY 
+// date is an input in string format DD/MM/YYYY
 // to split the date in 3 parts day month and year I have used the split method dateSplit
 // I have took the var formattedDate to store the combine value of split indexing. The date() method get the output im MM/DD/YYYY
 // here we have to re arrange the date format DD/MM/YYYY hence I assign the index with rearrange format. To use seperator ("/") I have used the join method here.
-// To calculate the how many days are remaning, we want total miliesecond which is called Timestamp, timestamp we can access using the getTime() method. dateTs var is used to timestamp var to store formattedDate. 
+// To calculate the how many days are remaning, we want total miliesecond which is called Timestamp, timestamp we can access using the getTime() method. dateTs var is used to timestamp var to store formattedDate.
 // currentTs var are being used here to get current timestamp, current time stamp we can use also .now() method also;
-// differenceTs var have been used to get the result of currentTs - dateTs (input date). To store the result 
+// differenceTs var have been used to get the result of currentTs - dateTs (input date). To store the result
 // getDiffdays var have been used here to calculate the milisecod(1000), second 60, minutes 60, hours 24 by dividing to differenceTs var . The result is being rounded down to the nearest number has used the Math.round method
 // to get the number of days between two number result I return the getDiffdays
 // function getDiffdays(date){
@@ -915,7 +1017,7 @@ console.log("Get the number of days Left");
 // }
 // console.log(getDiffdays("10/03/2023"));
 
-console.log("Check given input whether is an alphabet or not");
+console.log('Check given input whether is an alphabet or not')
 
 // to find the alphabet we require the ASCII code, the each keyboard letter has own ascii
 // alphLetter letter has asc key start from 65 to 90 and small letters has 97 to 122
@@ -926,29 +1028,27 @@ console.log("Check given input whether is an alphabet or not");
 // function isAlphabet(X) {
 //         let n = X.charCodeAt(0);
 //         let alphLetter = (n>= 65 && n <= 91) || (n >= 97 && n <= 123);
-    
+
 //         if(alphLetter){
 //             return "yes"
 //         } else{
 //             return false
 //         }
-  
+
 // };
 // var X = "B"
 // console.log(isAlphabet(X));
 
 function convertArray(arr) {
-    // let sum = 0;
-    arr.forEach((item, idx)=>{
-        arr[idx] = (idx +1) * item
-    });
+  // let sum = 0;
+  arr.forEach((item, idx) => {
+    arr[idx] = (idx + 1) * item
+  })
 
-    // for( var i =0; i < arr.length; i++){
-    //     arr[i] = (i + 1) * arr[i]
-    // }
-    return arr
-
-
+  // for( var i =0; i < arr.length; i++){
+  //     arr[i] = (i + 1) * arr[i]
+  // }
+  return arr
 }
 const arr = [1, 2, 2, 3, 1, 2]
-console.log(convertArray(arr));
+console.log(convertArray(arr))

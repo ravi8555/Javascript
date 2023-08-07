@@ -1,22 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+    <link rel="icon" src="assets/img/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@200;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="form-container" style="margin-bottom: 30px">
+      <form action="" name="book" id="bookAppointment">
+        <div class="title">Book an Appointment</div>
+        <div class="form-control" id="">
+          <input
+            type="text"
+            id="fullname"
+            class="inputVal"
+            required
+            name="fullname"
+          />
+          <label>Full Name</label>
+          <b class="formerror" id=""></b>
+        </div>
 
-         
-    <div class="form-container">  
+        <div class="form-control" id="email1">
+          <input
+            type="text"
+            id="emailid1"
+            class="inputVal"
+            required
+            name="email1"
+          />
+          <label>Email</label>
+          <b class="formerror"></b>
+        </div>
+
+        <div class="form-control" id="location">
+          <input
+            type="text"
+            id="locationVal"
+            class="inputVal"
+            required
+            name="location"
+          />
+          <label>Location</label>
+          <b class="formerror"></b>
+        </div>
+
+        <div class="form-control" id="">
+          <select name="" name="drdrpdwn" id="drDrpdwn">
+            <option value="Select Pragram">Select Your Doctor</option>
+            <option value="Doctor 1">Doctor 1</option>
+            <option value="Doctor 2">Doctor 2</option>
+            <option value="Doctor 3">Doctor 3</option>
+          </select>
+          <b class="formerror"></b>
+        </div>
+
+        <div class="form-control" id="where">
+          <p>Where</p>
+          <span for="googleMeet">Google Meet</span>
+          <input type="radio" id="" name="where" />
+          <span for="phone">phone</span>
+          <input type="radio" id="" name="where" />
+        </div>
+
+        <div class="form-control" id="when">
+          <p>When</p>
+          <input type="date" id="date" class="inputVal" name="name" />
+          <b class="formerror" id=""></b>
+        </div>
+
+        <div class="form-control">
+          <button class="btn" id="confbook">Confirm Booking</button>
+        </div>
+      </form>
+    </div>
+    <!-- enqury form -->
+    <div class="form-container">
       <form name="myForm" id="form" action="#" method="post">
         <div class="title">Enquire Now</div>
         <div class="form-control" id="name">
-          <input type="text" id="fname" class="inputVal" required name="name">
+          <input type="text" id="fname" class="inputVal" required name="name" />
           <label>Name</label>
           <b class="formerror" id=""></b>
         </div>
 
-       <div class="form-control" id="mobile">
-          <input type="text" id="mblno" class="inputVal" required  name="mobile">
+        <div class="form-control" id="mobile">
+          <input
+            type="text"
+            id="mblno"
+            class="inputVal"
+            required
+            name="mobile"
+          />
           <label>Mobile Number</label>
           <b class="formerror"></b>
         </div>
 
-         <div class="form-control" id="email">
-          <input type="text" id="emailid" class="inputVal" required name="email">
+        <div class="form-control" id="email">
+          <input
+            type="text"
+            id="emailid"
+            class="inputVal"
+            required
+            name="email"
+          />
           <label>Email</label>
           <b class="formerror"></b>
         </div>
@@ -27,27 +124,24 @@
             <option value="Pragram 1">Pragram 1</option>
             <option value="Pragram 2">Pragram 2</option>
             <option value="Pragram 3">Pragram 3</option>
-          </select> 
+          </select>
           <b class="formerror"></b>
-          
         </div>
 
         <div class="form-control" id="cityDrpdwn">
           <select name="" name="drpdwn" id="citydrpdwn">
-            <option value="Select City"> Select City</option>
+            <option value="Select City">Select City</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Delhi">Delhi</option>
             <option value="Chennai">Chennai</option>
-          </select>   
-          <b class="formerror"></b>        
+          </select>
+          <b class="formerror"></b>
         </div>
 
         <div class="form-control">
-         
           <button class="btn" id="enq">Enquire Now</button>
         </div>
-               
       </form>
-      </div>
- 
-       
+    </div>
+  </body>
+</html>

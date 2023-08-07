@@ -5,10 +5,29 @@
 // list of Leetcode questions.
 // https://run.mocky.io/v3/511fa794-6bfb-4c9f-9adb-9e18d62d7003
 
-const { map } = require('jquery')
+// API
+// https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo
+
+// const { map } = require('jquery')
 
 //replit.com/@MayankTiwari9/crio-js-1-b2-May-2023#session-6/exercise.js
-// https://replit.com/@RavindraDhadave/ravindra-crio-js1#session-5/index.js
+
+// FE-2
+// Crio
+// https://codesandbox.io/s/session-code-fe-2-ge4uq?file=/Session_6/
+// Gulati
+// https://codesandbox.io/s/fe2-july-w98p2y?file=/activity-users-list.js
+// fe-2 seesion 9 - form validation - post data
+// https://codesandbox.io/s/dont-edit-fe-2-session-activity-solutions-krdcu?file=/session8/bookAMeeting/index.html
+// https://replit.com/@RavindraDhadave/ravindra-crio-js1#seesion-8/index.html
+// fe-2 session-10
+// https://codesandbox.io/s/dreamy-sea-7g4zly?file=/InterviewChallenge/index.html
+
+// Dom Visualizer
+// http://bioub.github.io/dom-visualizer/
+
+// https://codesandbox.io/s/fe2-july-w98p2y?file=/activity-users-list.js
+
 // github ref
 // function satHi() {
 //   console.log(name)
@@ -751,12 +770,34 @@ function greeting(day) {
 // }
 // console.log(canVote(ages))
 
+// setTimeout(getFn("You should log in"), 3000); // only works when this fn returns a fn
+// setTimeout(() => alert("You should log in"), 3000); right, and can pass parameters
+// setTimeout(alert, 3000); // right, but can't pass parameters
+// --------------------------------------------
+
+// const a = getNum()
+// setTimeout(a);
+
+// setTimeout(getNum()); // passing number
+// setTimeout(getNum); // function
+
+// fetch("https://ipinfo.io/json")
+// .then(res => res.json())
+// .then(data => {
+//   document.getElementById("ip").textContent = data.ip;
+// })
+
+fetch('https://api.kanye.rest/')
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data)
+  })
 // const arr = [1,1,2,2,3,4,1]
 // const without = [1,2];
-// function removeListedValues(arr, without) { 
+// function removeListedValues(arr, without) {
 //  const res = arr.filter( item => !without.includes(item))
 //   return res
-      
+
 // }
 
 // console.log(removeListedValues(arr, without));
@@ -783,11 +824,9 @@ function greeting(day) {
 //   // d.getFullYear()
 //   return result()
 
-
 // }
 // console.log(getdateFunTests('year, date, month'));
-date = "18-07-2023";
-
+date = '18-07-2023'
 
 // function getNumbersOfDay(date) {
 //   // data - "DD/MM/YYYY" eg 28/01/23
@@ -828,14 +867,14 @@ date = "18-07-2023";
 //     for( i = 0 ; i < array.length; i ++){
 //       if (IsPrimeNum(array[i])){
 //         array[i] = array[i] + 1
-//       } 
+//       }
 //       else{
 //         array[i] = array[i] * 2
 //       }
 //     }
 
 //     return array
-   
+
 //   }
 //   console.log(modify([1,2,3,4,5,6]));
 
@@ -871,14 +910,12 @@ date = "18-07-2023";
 // }
 // console.log(findLength(["LSDigital", "Aug", undefined]));
 
-// function filterArr(arr){
-
-//   let dataFilter = arr.filter((data)=>{
-//     let lowerCasecity = data.city.toLowerCase();
-//     return lowerCasecity === "bangalore" || lowerCasecity === "hyderabad"
+// function filterArr(arr) {
+//   let dataFilter = arr.filter((data) => {
+//     let lowerCasecity = data.city.toLowerCase()
+//     return lowerCasecity === 'bangalore' || lowerCasecity === 'hyderabad'
 //   })
 //   return dataFilter
-
 // }
 
 //  const arr = [
@@ -898,13 +935,85 @@ async function getApiData(){
   console.log(question);
 }
 
+const arr = [
+  { name: 'John', city: 'delhi' },
+  { name: 'Peter', city: 'bangalore' },
+  { name: 'Mike', city: 'Bangalore' },
+  { name: 'Rachel', city: 'Hyderabad' },
+]
 async function fetchApi(){
   let apiData = await getApiData();
   console.log(apiData);
 
+console.log(filterArr(arr))
 }
 
 fetchApi()
+async function init() {
+  console.log('From INIT')
+  console.log(config.backendEndpoint)
 
+  try {
+    // Fetches list of all cities along with their images and description
+    let cities = await fetchCities()
 
+    // Updates the DOM with the cities
+    if (cities) {
+      cities.forEach((key) => {
+        const link = `pages/adventures/${key.id}.html`
+        addCityToDOM(key.id, key.city, key.description, key.image, link)
+      })
+    }
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+//Implementation of fetch call
+async function fetchCities() {
+  // TODO: MODULE_CITIES
+  // 1. Fetch cities using the Backend API and return the data
+  try {
+    let res = await fetch('http://3.109.8.118:8082/cities')
+    if (!res.ok) {
+      throw new Error('Network response was not ok.')
+    }
+    let data = await res.json()
+    return data
+  } catch (err) {
+    console.log(err)
+    return null // Return null to indicate an error or handle it according to your application's needs.
+  }
+}
+
+// async function fetchCities() {
+//   // TODO: MODULE_CITIES
+//   // 1. Fetch cities using the Backend API and return the data
+//   try {
+//     let res = fetch('http://3.109.8.118:8082/cities')
+//     if (!res.ok) {
+//       throw new Error('Network response was not ok.')
+//     }
+//     let data = (await res).json()
+//     return data
+//   } catch (err) {
+//     console.log(err)
+//     return null // Return null to
+//   }
+// }
+
+let promise1 = new Promise(function (resolve, reject) {
+  resolve('1')
+})
+
+let promise2 = new Promise(function (resolve, reject) {
+  resolve('2')
+})
+
+console.log(promise1)
+console.log(promise2)
+
+const fn = (callbackFn, value) => console.log(callbackFn(value))
+const double = (num) => num * 2
+fn(double, 10)
 

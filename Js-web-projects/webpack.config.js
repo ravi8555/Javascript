@@ -13,20 +13,28 @@ const htmlPageNames = [
     title: '',
   },
   {
-      pageName: 'todo.html',
-      title: 'To Do'
-  },  
+    pageName: 'todo.html',
+    title: 'To Do',
+  },
   {
     pageName: 'calculator.html',
-    title: 'Calculator'
-  },  
+    title: 'Calculator',
+  },
   {
     pageName: 'quize.html',
-    title: 'Quize'
-  },  
+    title: 'Quize',
+  },
   {
     pageName: 'crio-js.html',
-    title: ''
+    title: '',
+  },
+  {
+    pageName: 'leet-code-question-api.html',
+    title: '',
+  },
+  {
+    pageName: 'form.html',
+    title: 'Form',
   },
   // {
   //     pageName: 'detail-page.html',
@@ -224,12 +232,12 @@ module.exports = (env, argv) => ({
     //     location:'footer',
     //     template_filename: htmlFileName
     // }),
-          // new HtmlWebpackPartialsPlugin({
-          //   path: path.join(__dirname, './src/todo.html'),
-          //   location: 'header',
-          //   // template: path.resolve(__dirname, 'src/index.html')
-          //   template_filename: htmlFileName,
-          // }),
+    // new HtmlWebpackPartialsPlugin({
+    //   path: path.join(__dirname, './src/todo.html'),
+    //   location: 'header',
+    //   // template: path.resolve(__dirname, 'src/index.html')
+    //   template_filename: htmlFileName,
+    // }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
