@@ -20,4 +20,3 @@ const students = [
       name: "Megha",
     },
   ];
-  

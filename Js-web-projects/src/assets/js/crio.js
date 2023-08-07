@@ -1,6 +1,10 @@
 // https://www.w3resource.com/javascript-exercises/javascript-string-exercises.php
 // https://github.com/lydiahallie/javascript-questions
 
+// API 
+// list of Leetcode questions.
+// https://run.mocky.io/v3/511fa794-6bfb-4c9f-9adb-9e18d62d7003
+
 const { map } = require('jquery')
 
 //replit.com/@MayankTiwari9/crio-js-1-b2-May-2023#session-6/exercise.js
@@ -867,24 +871,40 @@ date = "18-07-2023";
 // }
 // console.log(findLength(["LSDigital", "Aug", undefined]));
 
-function filterArr(arr){
+// function filterArr(arr){
 
-  let dataFilter = arr.filter((data)=>{
-    let lowerCasecity = data.city.toLowerCase();
-    return lowerCasecity === "bangalore" || lowerCasecity === "hyderabad"
-  })
-  return dataFilter
+//   let dataFilter = arr.filter((data)=>{
+//     let lowerCasecity = data.city.toLowerCase();
+//     return lowerCasecity === "bangalore" || lowerCasecity === "hyderabad"
+//   })
+//   return dataFilter
+
+// }
+
+//  const arr = [
+//   { name: "John", city: "delhi" },
+//   { name: "Peter", city: "bangalore" },
+//   { name: "Mike", city: "Bangalore" },
+//   { name: "Rachel", city: "Hyderabad" },
+// ];
+
+// console.log(filterArr(arr));
+
+async function getApiData(){
+  let response = await fetch("https://run.mocky.io/v3/511fa794-6bfb-4c9f-9adb-9e18d62d7003");
+  let question = await response.json();
+
+  return question
+  console.log(question);
+}
+
+async function fetchApi(){
+  let apiData = await getApiData();
+  console.log(apiData);
 
 }
 
- const arr = [
-  { name: "John", city: "delhi" },
-  { name: "Peter", city: "bangalore" },
-  { name: "Mike", city: "Bangalore" },
-  { name: "Rachel", city: "Hyderabad" },
-];
-
-console.log(filterArr(arr));
+fetchApi()
 
 
 

@@ -283,10 +283,11 @@ const team = [
   
 //   console.log(team);
 
+
+/*  need to resolve
 fetch('https://api.github.com/users')
 .then((res) => res.json())
 .then((data)=>{
-    // console.log(data);
     function getImageElement(src, alt){
         const avtaarDiv = document.createElement('div');
         const img = document.createElement('img');
@@ -349,9 +350,35 @@ fetch('https://api.github.com/users')
     console.log(memberArry);
     // console.log(displayUserInfo("abc.png", "1", "Myname", "GitUrl", "organizations_url"));
 });
-
+*/
 
 // inputEle.addEventListener('change', updateValue)
 // function updateValue(e){
 //     dispContent.textContent = e.target.value
 // }
+
+async function getApiData(){
+    let response = await fetch("https://run.mocky.io/v3/511fa794-6bfb-4c9f-9adb-9e18d62d7003");
+    let question = await response.json();
+  
+    console.log(question);
+    return question
+}
+getApiData()
+
+  async function fetchApi(){
+    let apiData = await getApiData();
+    console.log(apiData);
+  
+  }
+fetchApi()
+
+function getTableRow(title, acRate, difficulty){
+    // const tblrow = `<tr><td>${title}</td><td>${acRate}</td><td>${difficulty}</td></tr>`;
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    
+    const tbody = document.getElementById('')
+}
+
+
