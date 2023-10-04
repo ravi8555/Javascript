@@ -1039,16 +1039,129 @@ console.log('Check given input whether is an alphabet or not')
 // var X = "B"
 // console.log(isAlphabet(X));
 
-function convertArray(arr) {
-  // let sum = 0;
-  arr.forEach((item, idx) => {
-    arr[idx] = (idx + 1) * item
-  })
+class Combinatorics {
+  constructor(N, R) {
+      this.N = N;
+      this.R = R;
+  }
 
-  // for( var i =0; i < arr.length; i++){
-  //     arr[i] = (i + 1) * arr[i]
-  // }
-  return arr
+  factorial(num) {
+      if (num === 0 || num === 1) return 1;
+      let result = 1;
+      for (let i = num; i >= 1; i--) {
+          result *= i;
+      }
+      return result;
+  }
+
+  findCombinations(N, R) {
+      if (N >= R) {
+          return this.factorial(N) / (this.factorial(R) * this.factorial(N - R));
+      } else {
+          return 0;
+      }
+  }
+
+  findPermutations(N, R) {
+      if (R > N) {
+          return 0;
+      } else {
+          return this.factorial(N) / this.factorial(N - R);
+      }
+  }
 }
-const arr = [1, 2, 2, 3, 1, 2]
-console.log(convertArray(arr))
+
+
+// Example usage:
+const combinatorics = new Combinatorics();
+
+console.log(combinatorics.findCombinations(5, 2)); // Output: 10
+console.log(combinatorics.findPermutations(5, 2)); // Output: 20
+
+// class WordKit {
+//   constructor(str){
+//         this.str = str
+//   }
+//   reverse(str){
+//         return str.split("").reverse().join("")
+//   }
+//   isPalindrome(str){
+//         // const words = str.split('');
+//         let revserveWord = "";
+//         for(let i = str.length -1; i>= 0; i--){
+//               revserveWord += str[i]
+//         }
+//         return revserveWord === str
+//   }
+//   makePalindrome(str){
+//         if (this.isPalindrome(this.str)){
+//               return true
+//         }else{
+//          return this.reverse(this.str)
+//         }
+//   }
+// }
+// const result = new WordKit("Ravindra")
+// console.log(result.makePalindrome())
+// console.log(resutl);
+
+class WordKit {
+  constructor(str){
+        this.str = str
+  }
+  reverse(str){
+        return this.str.split('').reverse().join('')
+  }
+  isPalindrome(str){
+    // let reverseWords = "";
+    // for(let i = str.length -1; i>= 0; i --){
+    //       reverseWords += str[i]
+    // }
+    // return reverseWords === str
+    return str === this.reverse(str)
+  }
+
+  makePalindrome(str){
+      if(!this.str === isPalindrome(str)){
+        return str + this.reverse(str)
+      }else{
+        return str
+      }
+  }
+}
+
+const newWords = new WordKit("Ravindra");
+const palindrom = new WordKit("racecar");
+console.log(newWords.reverse());
+console.log(palindrom.isPalindrome());
+console.log(newWords.makePalindrome());
+
+
+// class WordKit {
+//   constructor(str) {
+//     this.str = str;
+//   }
+
+//   reverse(str) {
+//     return str.split("").reverse().join("");
+//   }
+
+//   isPalindrome(str) {
+//     return str === this.reverse(str);
+//   }
+
+//   makePalindrome(str) {
+//     if (!this.isPalindrome(str)) {
+//       return str + this.reverse(str);
+//     } else {
+//       return str;
+//     }
+//   }
+// }
+
+// const newWords = new WordKit("alpha");
+// console.log(newWords.makePalindrome()); // "alphaahpla"
+
+
+
+

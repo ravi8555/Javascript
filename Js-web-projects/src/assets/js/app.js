@@ -27,7 +27,7 @@ import style from '../css/main.scss'
 // import faqCollapse from "../js/faq-collapse.js";
 
 // form
-import form from '../js/form.js'
+// import form from '../js/form.js'
 
 // // Progress
 // import progrssStep from "../js/progress-steps.js";
@@ -63,6 +63,7 @@ import form from '../js/form.js'
 // import quiz from "../js/quize-1.js"
 // import bruteFroce from '../js/brute-force.js'
 // import crio from '../js/crio.js'
+import dsa from '../js/dsa.js'
 // import studentJson from '../js/student_data.js'
 // import LeetQApi from '../js/leet-code-question-api.js'
 // import jsDomManu from '../js/me_jsDom_v2.js'

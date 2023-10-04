@@ -491,7 +491,7 @@ const newArra = runsScored.map((currentScore) => {
 })
 console.log(newArray) // prints [ 0, 100, 53, 0, 0 ]
 console.log(newArra) // prints [ 0, 100, 53, 0, 0 ]
-
+/*
 function isPalindrome(str) {
   const words = str.split('')
   let reversWord = ''
