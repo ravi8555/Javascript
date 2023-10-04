@@ -1,9 +1,9 @@
 const bookform = document.getElementById('bookAppointment')
 bookform.addEventListener('submit', (e) => {
   e.preventDefault()
-  const fulName = e.target.elements['fullname'].value
-  const email = e.target.elements['email1'].value
-  const location = e.target.elements['locationVal'].value
+  // const fulName = e.target.elements['fullname'].value
+  // const email = e.target.elements['email1'].value
+  // const location = e.target.elements['locationVal'].value
 
   const data = {
     fullName: e.target.elements['fullname'].value,
@@ -41,6 +41,12 @@ async function addPostToServer(dataObj) {
       },
       body: JSON.stringify(dataObj),
     })
+    if(res.ok){
+      alert("Sucess!");
+      window.location.reload()
+    }else{
+      throw new Error("The respone not ok")
+    }
     const resData = await res.json()
     console.log('Data Response', resData)
 
@@ -69,6 +75,46 @@ labels.forEach((inptlabel) => {
     .join('')
   // console.log(inptlabel);
 })
+
+
+// script used for Reservation form
+const resvationCostDiv= document.getElementById('reservationCost')
+function calculateReservationCostAndUpdateDOM(adventure, persons) {  
+  const total = adventure * persons;
+  resvationCostDiv.textContent = total
+}
+let adventureDetails = 5200;
+function onPersonsChange(event) {  
+  calculateReservationCostAndUpdateDOM(adventureDetails, event.target.value);
+}
+
+const numInput = document.getElementById('num');
+numInput.addEventListener('change', onPersonsChange);
+
+const reservationForm = document.getElementById('myForm');
+reservationForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  console.log(e.target.elements);
+  const reservationFormData = {
+    name: e.target.elements['name'].value,
+    date: e.target.elements['dateInput'].value,
+    numberOfPerson: e.target.elements['num'].value,
+    // totalCost: e.target.elements['reservationCost'].innerHTML
+  }
+  console.log(reservationFormData);
+
+});
+
+
+// script used for Reservation form END
+
+
+
+
+
+
+
+
 
 // Method 1
 
@@ -365,3 +411,7 @@ form.addEventListener('click', (e)=>{
 // alert(document.URL);
 //         window.open('https://www.google.com', '_blank');
 // }, false)
+
+
+
+// console.log(methodOnObject("Ankur", 20, "IIT Kanpur", "Kanpur", "India").getCity())

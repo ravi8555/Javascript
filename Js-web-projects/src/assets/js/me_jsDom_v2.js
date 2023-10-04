@@ -491,7 +491,7 @@ const newArra = runsScored.map((currentScore) => {
 })
 console.log(newArray) // prints [ 0, 100, 53, 0, 0 ]
 console.log(newArra) // prints [ 0, 100, 53, 0, 0 ]
-
+/*
 function isPalindrome(str) {
   const words = str.split('')
   let reversWord = ''
@@ -507,7 +507,7 @@ function isPalindrome(str) {
   }
 }
 console.log(isPalindrome('madam'))
-
+*/
 function maskPalindrome(str, mask = '*') {
   if (isPalindrome(str)) {
     const modifiedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '')
@@ -522,3 +522,30 @@ function maskPalindrome(str, mask = '*') {
 
 console.log(maskPalindrome('madam')) // Output: "m***m"
 console.log(maskPalindrome('hello')) // Output: "hello"
+
+async function getApiData(){
+    let response = await fetch("https://run.mocky.io/v3/511fa794-6bfb-4c9f-9adb-9e18d62d7003");
+    let question = await response.json();
+  
+    console.log(question);
+    return question
+}
+getApiData()
+
+  async function fetchApi(){
+    let apiData = await getApiData();
+    console.log(apiData);
+  
+  }
+fetchApi()
+
+function getTableRow(title, acRate, difficulty){
+    // const tblrow = `<tr><td>${title}</td><td>${acRate}</td><td>${difficulty}</td></tr>`;
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    
+
+    const tbody = document.getElementById('')
+}
+
+
