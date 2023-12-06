@@ -97,7 +97,7 @@ labels.forEach((inptlabel) => {
 //   const emailVal = email.value.trim()
 //   var ctselInxVal = ctselInx.value
 //   var prselInxVal = prselInx.value
-//   fanme.addEventListener('keyup', (e) => {
+//   fanme.addEventListener('   up', (e) => {
 //     //    console.log("test");
 //     var char = /[0-9]/gi
 //     if (/[0-9]/gi) {
