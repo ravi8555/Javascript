@@ -1,6 +1,10 @@
 // https://www.w3resource.com/javascript-exercises/javascript-string-exercises.php
 // https://github.com/lydiahallie/javascript-questions
 
+// API 
+// list of Leetcode questions.
+// https://run.mocky.io/v3/511fa794-6bfb-4c9f-9adb-9e18d62d7003
+
 // API
 // https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo
 
@@ -914,59 +918,81 @@ date = '18-07-2023'
 // }
 // console.log(findLength(["LSDigital", "Aug", undefined]));
 
-function filterArr(arr) {
-  let dataFilter = arr.filter((data) => {
-    let lowerCasecity = data.city.toLowerCase()
-    return lowerCasecity === 'bangalore' || lowerCasecity === 'hyderabad'
-  })
-  return dataFilter
-}
+// function filterArr(arr) {
+//   let dataFilter = arr.filter((data) => {
+//     let lowerCasecity = data.city.toLowerCase()
+//     return lowerCasecity === 'bangalore' || lowerCasecity === 'hyderabad'
+//   })
+//   return dataFilter
+// }
 
-const arr = [
-  { name: 'John', city: 'delhi' },
-  { name: 'Peter', city: 'bangalore' },
-  { name: 'Mike', city: 'Bangalore' },
-  { name: 'Rachel', city: 'Hyderabad' },
-]
+//  const arr = [
+//   { name: "John", city: "delhi" },
+//   { name: "Peter", city: "bangalore" },
+//   { name: "Mike", city: "Bangalore" },
+//   { name: "Rachel", city: "Hyderabad" },
+// ];
 
-console.log(filterArr(arr))
+// console.log(filterArr(arr));
 
-async function init() {
-  console.log('From INIT')
-  console.log(config.backendEndpoint)
+// async function getApiData(){
+//   let response = await fetch("https://run.mocky.io/v3/511fa794-6bfb-4c9f-9adb-9e18d62d7003");
+//   let question = await response.json();
 
-  try {
-    // Fetches list of all cities along with their images and description
-    let cities = await fetchCities()
+//   return question
+//   console.log(question);
+// }
 
-    // Updates the DOM with the cities
-    if (cities) {
-      cities.forEach((key) => {
-        const link = `pages/adventures/${key.id}.html`
-        addCityToDOM(key.id, key.city, key.description, key.image, link)
-      })
-    }
-  } catch (err) {
-    console.log(err)
-  }
-}
+// const arr = [
+//   { name: 'John', city: 'delhi' },
+//   { name: 'Peter', city: 'bangalore' },
+//   { name: 'Mike', city: 'Bangalore' },
+//   { name: 'Rachel', city: 'Hyderabad' },
+// ]
+// async function fetchApi(){
+//   let apiData = await getApiData();
+//   console.log(apiData);
 
-//Implementation of fetch call
-async function fetchCities() {
-  // TODO: MODULE_CITIES
-  // 1. Fetch cities using the Backend API and return the data
-  try {
-    let res = await fetch('http://3.109.8.118:8082/cities')
-    if (!res.ok) {
-      throw new Error('Network response was not ok.')
-    }
-    let data = await res.json()
-    return data
-  } catch (err) {
-    console.log(err)
-    return null // Return null to indicate an error or handle it according to your application's needs.
-  }
-}
+// console.log(filterArr(arr))
+// }
+
+// fetchApi()
+// async function init() {
+//   console.log('From INIT')
+//   console.log(config.backendEndpoint)
+
+//   try {
+//     // Fetches list of all cities along with their images and description
+//     let cities = await fetchCities()
+
+//     // Updates the DOM with the cities
+//     if (cities) {
+//       cities.forEach((key) => {
+//         const link = `pages/adventures/${key.id}.html`
+//         addCityToDOM(key.id, key.city, key.description, key.image, link)
+//       })
+//     }
+//   } catch (err) {
+//     console.log(err)
+//   }
+// }
+
+// //Implementation of fetch call
+// async function fetchCities() {
+//   // TODO: MODULE_CITIES
+//   // 1. Fetch cities using the Backend API and return the data
+//   try {
+//     let res = await fetch('http://3.109.8.118:8082/cities')
+//     if (!res.ok) {
+//       throw new Error('Network response was not ok.')
+//     }
+//     let data = await res.json()
+//     return data
+//   } catch (err) {
+//     console.log(err)
+//     return null // Return null to indicate an error or handle it according to your application's needs.
+//   }
+// }
 
 // async function fetchCities() {
 //   // TODO: MODULE_CITIES
@@ -984,16 +1010,99 @@ async function fetchCities() {
 //   }
 // }
 
-let promise1 = new Promise(function (resolve, reject) {
-  resolve('1')
-})
+// let promise1 = new Promise(function (resolve, reject) {
+//   resolve('1')
+// })
 
-let promise2 = new Promise(function (resolve, reject) {
-  resolve('2')
-})
+// let promise2 = new Promise(function (resolve, reject) {
+//   resolve('2')
+// })
 
-console.log(promise1)
-console.log(promise2)
+// console.log(promise1)
+// console.log(promise2)
+
+// const fn = (callbackFn, value) => console.log(callbackFn(value))
+// const double = (num) => num * 2
+// fn(double, 10);
+
+function constructArg(name, city, country) {
+  let constructArgument = {
+    name :name,
+    city : city,
+    country :country,
+    getConstructArgu : function(){
+      return "name :" + this.name + " age :" + this.city + " occupation : "+ this.country
+    }
+  }
+  return constructArgument
+
+}
+const result = constructArg("Ravindra", 30, "Ghana")
+console.log(result.getConstructArgu());
+
+function Dog(name, color, numLegs){
+  this.name = name,
+  this.color = color,
+  this.numLegs = numLegs
+}
+
+function constructor(par1, par2, par3) {
+  // You need to debug this problem. Just a hint constructor is not defined.
+  let terrier = new Dog(par1, par2, par3);
+  return terrier;
+}
+console.log(constructor("Tommy","Balck", "4"));
+
+
+// // Method 1
+
+// function constructorArgument1(prp1, prp2, prp3) {
+//   // You only need to implement this function and also create a constructor.
+//   const result = new Showdata (prp1, prp2, prp3);
+//   return result
+// }
+
+// function Showdata(name, age, occupation){
+//   this.name = name
+//   this.age = age
+//   this.occupation = occupation
+// }
+// console.log(constructorArgument1("John", 25, "Engineer"))
+
+
+// // Method 2
+// function constructorArgument(name, age, occupation) {
+//   // You only need to implement this function and also create a constructor.
+//   const objData = {
+//     name: name,
+//     age : age,
+//     occupation : occupation,
+//     getData : function (){
+//       return `My name is ${this.name}. I am years  ${this.age} old. I worked in  ${this.occupation}`
+//     }    
+//   }
+//   return objData
+// }
+
+// console.log(constructorArgument("Rakesh", "35", "LS Digital").getData());
+
+
+function methodOnObject(name, age, college, city, country) {
+  const person = {
+      name : name,
+      age : age,
+      getCity : function(){
+        return name +" Lives in "+ city + "."
+      },
+      college: college,
+      country : country
+}
+return person
+}
+const person = new methodOnObject("Abhinav", 22, "IIT Patna", "Patna", "India")
+
+console.log(person.getCity());
+console.log("test case",methodOnObject("Ankit Ghosh", 21, "IIT Delhi", "Delhi", "India").getCity())
 
 const fn = (callbackFn, value) => console.log(callbackFn(value))
 const double = (num) => num * 2
