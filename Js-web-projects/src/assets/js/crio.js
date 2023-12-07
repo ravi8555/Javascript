@@ -28,6 +28,14 @@
 
 // https://codesandbox.io/s/fe2-july-w98p2y?file=/activity-users-list.js
 
+// EF-3 Aug
+// https://replit.com/@AdityaSingh152/FE-3-Aug-23#session7/util.js
+// Crio News Feed
+// https://nf93pt.csb.app/xboard/index.html
+
+// DSA JS 1
+// https://replit.com/@marshal4world/DSA-JS-Sept-23#index.js
+
 // github ref
 // function satHi() {
 //   console.log(name)
@@ -1098,6 +1106,203 @@ const person = new methodOnObject("Abhinav", 22, "IIT Patna", "Patna", "India")
 console.log(person.getCity());
 console.log("test case",methodOnObject("Ankit Ghosh", 21, "IIT Delhi", "Delhi", "India").getCity())
 
+const fn = (callbackFn, value) => console.log(callbackFn(value))
+const double = (num) => num * 2
+fn(double, 10)
 
+// function methodOnObject(name, age, college, city, country) {
+//   const person = {
+//     name: name,
+//     age: age,
+//     getCity: function () {
+//       return name + ' Lives in ' + city + '.'
+//     },
+//     college: college,
+//     country: country,
+//   }
+//   // return person
+// }
+// const aa = methodOnObject('Ankit Ghosh', 21, 'IIT Delhi', 'Mumbai', 'India')
+// console.log(aa.person)
 
+// const getTea = (typeOfTea, numberOfCups) => {
+//   const tea_cups = []
 
+//   for (let cups = 1; cups <= numberOfCups; cups += 1) {
+//     const tea_cup = prepareTea(typeOfTea)
+//     tea_cups.push(tea_cup)
+//   }
+//   return tea_cups
+// }
+// const prepareTea = (typeOfTea) => {
+//   return typeOfTea
+// }
+// const tea = (typeOfTea, numberOfCups) => {
+//   // You need to implement this function.
+//   const teaResult = getTea(typeOfTea, numberOfCups)
+//   return teaResult
+// }
+// console.log('TeaFunc', tea('blackTea', 3))
+
+const bookList = [
+  'A Brief History of Time',
+  'The Works of Archimedes',
+  'The Theory of Relativity',
+  'Opticks',
+  'Sun',
+]
+
+function add(arr, bookName) {
+  arr.push(bookName)
+  return arr
+}
+
+function remove(arr, bookName) {
+  const book_index = arr.indexOf(bookName)
+  if (book_index >= 0) {
+    arr.splice(book_index, 1)
+    return arr
+  }
+}
+function manageBooks(bookAdded, bookRemoved) {
+  const newBooklit = [...bookList]
+  add(newBooklit, bookAdded)
+  remove(newBooklit, bookRemoved)
+  return newBooklit
+}
+// const
+console.log(manageBooks('Moon', 'Sun'))
+
+class Calculator {
+  constructor() {
+    this.total = 0
+  }
+
+  addTotal(value) {
+    this.total += value
+  }
+
+  substractFromTotal(value) {
+    this.total -= value
+  }
+
+  getTotal() {
+    return this.total
+  }
+}
+
+const calculator = new Calculator()
+calculator.addTotal(10)
+calculator.substractFromTotal(2)
+console.log(calculator.getTotal())
+
+function subarray(arr, start, end) {
+  // You need to implement this function.
+  const resultNewArry = arr.slice(start, end + 1)
+  return resultNewArry
+}
+
+console.log(subarray([0], 0, 0))
+console.log(subarray([0, 2, 4, 6], 1, 3))
+console.log(subarray([4, 3], 1, 1))
+console.log(subarray([4, 3], 1, 1))
+
+function nonMutatingConcat(original, attach) {
+  // You only need to implement this function.
+  const resultConcate = original.concat(attach)
+  return resultConcate
+}
+
+const ans = nonMutatingConcat([1, 2, 3], [4, 5])
+console.log(ans)
+
+function sentensify(str) {
+  // You only need to implement this function.
+  const strString = str.split('-')
+  const result = strString.join(' ')
+  return result
+}
+console.log(sentensify('May-the-force-be-with-you'))
+
+function sentensify1(str) {
+  // You only need to implement this function.
+  const delimeters = ['-', ',', '.']
+
+  for (const delimeter of delimeters) {
+    if (str.includes(delimeter)) {
+      const newStr = str.split(delimeter)
+      return newStr.join(' ')
+    }
+  }
+
+  return str
+}
+console.log(sentensify1('May,the,force,be,with,you'))
+
+function methodOnObject(name, age, college, city, country) {
+  const person = {
+    name: name,
+    age: age,
+    getCity: function () {
+      return name + ' Lives in ' + city + '.'
+    },
+    college: college,
+    country: country,
+  }
+  return person
+}
+
+console.log(
+  methodOnObject('Ankit Ghosh', 21, 'IIT Delhi', 'Delhi', 'India').getCity()
+)
+// async function fetchApi() {
+//   try {
+//     const fetchData = await fetch('https://api.github.com/users')
+//     const response = await fetchData.json()
+//     // if (!response.ok) {
+//     //   throw new Error('The Network not oK')
+//     // }
+//     console.log('Data==>', response)
+//     return response
+//   } catch (err) {
+//     console.log(err)
+//   }
+//   return null
+// }
+// ;(async function () {
+//   fetchApi()
+// })()
+
+// console.log(data)
+class WordKit {
+  // Method to reverse a string
+  reverse(str) {
+    return str.split('').reverse().join('')
+  }
+
+  // Method to check if a word is a palindrome
+  isPalindrome(str) {
+    const sanitizedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '')
+    const reversedStr = this.reverse(sanitizedStr)
+    return sanitizedStr === reversedStr
+  }
+
+  // Method to make a word a palindrome
+  makePalindrome(str) {
+    const sanitizedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '')
+    const reversedStr = this.reverse(sanitizedStr)
+    return str + reversedStr
+  }
+}
+
+// Example usage:
+const wordKit = new WordKit()
+
+const word1 = 'racecar'
+console.log(`Is "${word1}" a palindrome? ${wordKit.isPalindrome(word1)}`) // Should print true
+
+const word2 = 'alpha'
+console.log(`Is "${word2}" a palindrome? ${wordKit.isPalindrome(word2)}`) // Should print false
+
+const word3 = 'alpha'
+console.log(`Make "${word3}" a palindrome: "${wordKit.makePalindrome(word3)}"`) // Should print "alphaahpla"

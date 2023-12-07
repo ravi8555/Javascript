@@ -26,15 +26,15 @@
 // console.log(factorilization(5))
 
 // /**===== Quesstion 2 ====**/
-// function findFactorial(n) {
-//   // You only need to implement this function.
-//   if (n === 0 || n === 1) return 1
-//   for (var i = n - 1; i >= 1; i--) {
-//     n = n * i
-//   }
-//   return n
-// }
-// console.log(findFactorial(6))
+function findFactorial(n) {
+  // You only need to implement this function.
+  if (n === 0 || n === 1) return 1
+  for (var i = n - 1; i >= 1; i--) {
+    n = n * i
+  }
+  return n
+}
+console.log('findFactorial', findFactorial(6))
 
 // /**===== Quesstion 3 ====**/
 // //   Find the prime numbers
@@ -668,7 +668,7 @@ console.log('Sort objects based on a specific property in ascending order.')
 // 1. I creted function objProperty with 2 argument arr and property
 // 2. Inside the function I called compare callback function
 // 3. In comapre function took 2 parameter a, b which represent the two object from the array
-// 4. Inside the compare function a[property], and b[property] are used to acces the value of the specified property for the objects    a       and b. return substract  a[property]- b[property] this determins the sort order based on the value of the specefied the property
+// 4. Inside the compare function a[property], and b[property] are used to acces the value of the specified property for the objects a and b. return substract  a[property]- b[property] this determins the sort order based on the value of the specefied the property
 // 5. finally return the arr to get the result.
 
 // const arr = [
@@ -1039,6 +1039,55 @@ console.log('Check given input whether is an alphabet or not')
 // var X = "B"
 // console.log(isAlphabet(X));
 
+<<<<<<< HEAD
+// function convertArray(arr) {
+//   // let sum = 0;
+//   arr.forEach((item, idx) => {
+//     arr[idx] = (idx + 1) * item
+//   })
+
+//   // for( var i =0; i < arr.length; i++){
+//   //     arr[i] = (i + 1) * arr[i]
+//   // }
+//   return arr
+// }
+// const arr = [1, 2, 2, 3, 1, 2]
+// console.log(convertArray(arr))
+
+class Length {
+  constructor(ft, inch) {
+    this.ft = ft
+    this.inch = inch
+  }
+  isValidObject(lengthObj) {
+    //     if(ft.length >= lengthObj && inch.length >= lengthObj){
+    if (lengthObj.ft >= 0 && lengthObj.inch >= 0) {
+      return true
+    } else {
+      return false
+    }
+  }
+  addLength(lengthObj) {
+    if (this.isValidObject(this) && this.isValidObject(lengthObj)) {
+      let ft = this.ft + lengthObj.ft
+      let inch = this.inch + lengthObj.inch
+
+      if (ft >= 12) {
+        ft = ft + Math.floor(inch / 12)
+        inch = inch % 12
+      }
+      return [ft, inch]
+    } else {
+      return [0, 0]
+    }
+  }
+}
+const length1 = new Length(5, 18)
+const length2 = new Length(2, 11)
+const sum = length1.addLength(length2)
+console.log('Using Constructor Function ==>')
+console.log(sum)
+=======
 class Combinatorics {
   constructor(N, R) {
       this.N = N;
@@ -1165,3 +1214,4 @@ console.log(newWords.makePalindrome());
 
 
 
+>>>>>>> 129bdaad4677dfe4ffe9e9037daafe03fc8df189
