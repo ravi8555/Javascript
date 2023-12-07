@@ -798,8 +798,11 @@ function greeting(day) {
 fetch('https://api.kanye.rest/')
   .then((res) => res.json())
   .then((data) => {
-    console.log(data)
+    console.log("DATA",data)
   })
+
+
+
 // const arr = [1,1,2,2,3,4,1]
 // const without = [1,2];
 // function removeListedValues(arr, without) {
@@ -943,17 +946,16 @@ date = '18-07-2023'
 //   console.log(question);
 // }
 
-// const arr = [
-//   { name: 'John', city: 'delhi' },
-//   { name: 'Peter', city: 'bangalore' },
-//   { name: 'Mike', city: 'Bangalore' },
-//   { name: 'Rachel', city: 'Hyderabad' },
-// ]
+// // const arr = [
+// //   { name: 'John', city: 'delhi' },
+// //   { name: 'Peter', city: 'bangalore' },
+// //   { name: 'Mike', city: 'Bangalore' },
+// //   { name: 'Rachel', city: 'Hyderabad' },
+// // ]
 // async function fetchApi(){
 //   let apiData = await getApiData();
-//   console.log(apiData);
-
-// console.log(filterArr(arr))
+//   console.log("run.mocky",apiData);
+// // console.log(filterArr(arr))
 // }
 
 // fetchApi()

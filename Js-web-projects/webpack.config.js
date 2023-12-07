@@ -36,6 +36,10 @@ const htmlPageNames = [
     pageName: 'form.html',
     title: 'Form',
   },
+  {
+    pageName: 'dsa.html',
+    title: 'DSA',
+  },
   // {
   //     pageName: 'detail-page.html',
   //     title: 'Lsdigital gallery'
