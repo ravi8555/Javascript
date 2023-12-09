@@ -311,7 +311,7 @@ switch (x) {
         break;
 }
 // console.log(result);
-console.log("Question ==>  generate a square matrix filled with elements from 1 to A*A in spiral order. The spiral order will be clockwise in nature starting from (0,0)");
+console.log("Question ==>  Print Matrix in Spiral Order");
 
 function rotateImage(matrix) {
     let n = matrix.length
@@ -324,6 +324,7 @@ function rotateImage(matrix) {
     for(let i =0; i < n; i++){
         matrix[i].reverse()
     }
+
     return matrix
 }
 
@@ -354,74 +355,110 @@ function rotateImage(matrix) {
 //   const rotatedMatrix = rotateImage(matrix);
 //   console.log(rotatedMatrix);
 
-function setZeroes(matrix) {
-    const m = matrix.length;
-    const n = matrix[0].length;
+console.log("Increment number represented as array");
+function incrementNumber(N, A) {
+  A.reverse();
 
-    let firstRowZero = false;
-    let firstColZero = false;
+  let carry = 1;
+  for(let i =0; i < A.length; i++){
+      let sum = A[i] + carry;
+      A[i] = sum%10;
+      carry = Math.floor(sum/10)
+  }
 
-    // Check if the first row contains a zero
-    for (let j = 0; j < n; j++) {
-        if (matrix[0][j] === 0) {
-            firstRowZero = true;
-            break;
-        }
-    }
+  if(carry){
+    // A.unshift(carry)
+      A.push(carry)
+  }
+  A.reverse()
 
-    // Check if the first column contains a zero
-    for (let i = 0; i < m; i++) {
-        if (matrix[i][0] === 0) {
-            firstColZero = true;
-            break;
-        }
-    }
-
-    // Mark zeros in the first row and column based on the rest of the matrix
-    for (let i = 1; i < m; i++) {
-        for (let j = 1; j < n; j++) {
-            if (matrix[i][j] === 0) {
-                matrix[i][0] = 0;
-                matrix[0][j] = 0;
-            }
-        }
-    }
-
-    // Set zeros in the entire matrix based on marks in the first row and column
-    for (let i = 1; i < m; i++) {
-        for (let j = 1; j < n; j++) {
-            if (matrix[i][0] === 0 || matrix[0][j] === 0) {
-                matrix[i][j] = 0;
-            }
-        }
-    }
-
-    // Set zeros in the first row if needed
-    if (firstRowZero) {
-        for (let j = 0; j < n; j++) {
-            matrix[0][j] = 0;
-        }
-    }
-
-    // Set zeros in the first column if needed
-    if (firstColZero) {
-        for (let i = 0; i < m; i++) {
-            matrix[i][0] = 0;
-        }
-    }
-
-    return matrix;
+  return A
 }
+
+console.log(incrementNumber(1, [1,3,9,9]));
+
+console.log("Set Matrix Rows and Columns to Zero");
+function setMatrixZeroes(matrix) {
+  const m = matrix.length;
+  const n = matrix[0].length;
+
+  let firstRowZero = false;
+  let firstColZero = false;
+
+  // check the first row contains 0
+  for(let j = 0; j < n; j++){
+      if(matrix[0][j]===0){
+          firstRowZero = true;
+          break
+      }
+  }
+  // check first column contains the 0
+  for(let i =0; i < m; i++){
+      if(matrix[i][0] ===0){
+          firstColZero = true;
+          break
+      }
+  }
+  // mark zero in first row and column
+  for(let i =1; i < m; i++){
+      for(let j = 1; j < n; j++){
+          if(matrix[i][j]===0){
+              matrix[i][0] = 0;
+              matrix[0][j] = 0
+          }
+      }
+  }
+  // set zeros in the entire matrix based on marked first row and column
+  for(let i =1; i < m ; i++){
+      for(let j =1; j <n ; j++){
+          if(matrix[i][0] === 0 || matrix[0][j] === 0){
+              matrix[i][j] = 0
+          }
+      }
+  } 
+  // Sets zeros in the first row if needd
+  if(firstRowZero) {
+      for(let j =0; j < n; j++){
+          matrix[0][j] = 0
+      }
+  }
+  // Sets zeros to the colulm if needed
+  if(firstColZero){
+      for(let i =0; i < m; i++){
+          matrix[i][0] = 0
+      }
+  }
+  return matrix
+}
+
+
 
 // Example usage:
 const matrix = [
-    [0, 1, 2, 0],
-    [3, 4, 5, 2],
-    [1, 3, 1, 5]
+  [0, 1, 2, 0],
+  [3, 4, 5, 2],
+  [1, 3, 1, 5]
 ];
 
-const resultz = setZeroes(matrix);
+const resultz = setMatrixZeroes(matrix);
 console.log(resultz);
 
-  
+let matrixN = [];
+matrixN[0] = [1, 2, 3];
+matrixN[1] = [4, 5];
+matrixN[2] = [6, 7, 8, 9];
+console.log(matrixN[1].length);
+
+
+let matrix1 = [[1, 2], [3, 4]];
+let transposedmatrix1 = Array.from({length: matrix1[0].length}, () => Array(matrix1.length).fill(0));
+for (let i = 0; i < matrix1.length; i++) {
+    for (let j = 0; j < matrix1[i].length; j++) {
+        transposedmatrix1[j][i] = matrix1[i][j];
+    }
+}
+console.log("Trans",transposedmatrix1[1][0]);
+
+
+
   
