@@ -459,6 +459,63 @@ for (let i = 0; i < matrix1.length; i++) {
 }
 console.log("Trans",transposedmatrix1[1][0]);
 
+console.log("Question => Find first missing positive number in array");
+
+function findMissPostNum(n, arr){
+
+  let setArry = new Set();
+
+  for(let i =0 ; i < arr.length; i++){
+    setArry.add(arr[i])
+  }
+
+  console.log(`Input array: ${arr}`);
+
+  for(let i = 1; i < n+1; i++){
+    if(!setArry.has(i)){
+      // return i
+      console.log(`The first missing positive number is: ${i}`);
+      return
+    }
+  }
+  // return undefined
+    console.log(`There is no missing positive number.`);
+}
+
+// function firstMissingPositiveNum(n, arr) {
+//   // Create a set to store seen numbers.
+//   const seenNumbers = new Set();
+
+//   // Add positive elements from the array to the set.
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > 0) {
+//       seenNumbers.add(arr[i]);
+//     }
+//   }
+
+//   // Print the input array
+//   console.log(`Input array: ${arr}`);
+
+//   // Check for missing numbers from 1 to n+1.
+//   for (let i = 1; i <= n + 1; i++) {
+//     if (!seenNumbers.has(i)) {
+//       console.log(`The first missing positive number is: ${i}`);
+//       return;
+//     }
+//   }
+
+//   // No missing positive number found.
+//   console.log(`There is no missing positive number.`);
+// }
+
+// Example usage
+const n = 7;
+const arr2 = [1, 2, 3,4, 5,];
+console.log(findMissPostNum(n, arr2));
+
+console.log("Question => Find if the string permutation can form a palindrome");
+
+
 
 
   
