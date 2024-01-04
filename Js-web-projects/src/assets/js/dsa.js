@@ -514,42 +514,6 @@ const arr2 = [1, 2, 3,4, 5,];
 console.log(findMissPostNum(n, arr2));
 
 console.log("Question => Find if the string permutation can form a palindrome");
-console.log("Question => Merge Two Sorted Arrays");
-
-function mergeSortedArray(m, nums1, n, nums2) {
-  let i =0;
-  let j =0;
-  let k =0 ;
-  let nums3 = new Array(m+n)
-    while(i < m.length && j < n.length){
-      if(nums1[i] < nums2[j]){
-        nums3[k] = nums1[i];
-        k++
-        i++
-      }else{
-        nums3[k]= nums2[j];
-        k++
-        j++
-      }
-    }
-
-    while(i<m){
-      nums3[k] = nums1[i];;
-      k++;
-      i++
-    }
-    while(j<n){
-      nums3[k] = nums2[j];;
-      k++;
-      j++
-    }
-}
-
-
-
-console.log("Question => Find if the string permutation can form a palindrome");
-
-
 
 // function isPermutationPalidrome(s){
 //   let freQuencyMap = new Map();
@@ -732,3 +696,34 @@ const arr5 = [3, 2,1];
 console.log(maxSumTriplet(n1 ,arr3));
 console.log(maxSumTriplet(n3 ,arr4));
 console.log(maxSumTriplet(n2 ,arr5));
+
+console.log("Question => Merge Two Sorted Arrays");
+
+function mergeSortedArray(m, nums1, n, nums2) {
+  let i =0;
+  let j =0;
+  let k =0 ;
+  let nums3 = new Array(m+n)
+    while(i < m.length && j < n.length){
+      if(nums1[i] < nums2[j]){
+        nums3[k] = nums1[i];
+        k++
+        i++
+      }else{
+        nums3[k]= nums2[j];
+        k++
+        j++
+      }
+    }
+
+    while(i<m){
+      nums3[k] = nums1[i];;
+      k++;
+      i++
+    }
+    while(j<n){
+      nums3[k] = nums2[j];;
+      k++;
+      j++
+    }
+}
