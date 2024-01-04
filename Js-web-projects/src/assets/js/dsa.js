@@ -601,3 +601,47 @@ console.log("Question => Find Pair with Given Sum in Sorted Array");
     } 
     return false
 } */
+
+console.log("Question => Find Triplet with Maximum Sum in Unsorted Array");
+function maxSumTriplet(n, arr2) {
+ let maxTripletSum =0;
+ for(let i =1; i < n-1; i++){
+  let b = arr2[i]
+
+  // find the max value which is less than b
+  let maxA = 0;
+  for( let j = i-1; j >=0; j --){
+    if(arr2[j]<b){
+      maxA = Math.max(arr2[j], maxA)
+    }
+  }
+
+  // find the c which is greater than b
+  let maxC = 0;
+  for(let j = i+1; j < n ; j++ ){
+    if(arr2[j] > b){
+      maxC = Math.max(arr2[j], maxC)
+    }
+  }
+  if(maxA > 0 && maxC > 0){
+    let currentTripletSum = maxA + b + maxC
+    if(currentTripletSum > maxTripletSum){
+      maxTripletSum = currentTripletSum
+    }
+    
+  }
+  
+ }
+
+ return maxTripletSum
+
+}
+const n1 = 7; // length of array
+const arr3 = [3, 7, 4, 2, 5, 7, 5];
+const n3 = 4; // length of array
+const arr4 = [5, 2, 4, 5];
+const n2 = 3; // length of array
+const arr5 = [3, 2,1];
+console.log(maxSumTriplet(n1 ,arr3));
+console.log(maxSumTriplet(n3 ,arr4));
+console.log(maxSumTriplet(n2 ,arr5));
