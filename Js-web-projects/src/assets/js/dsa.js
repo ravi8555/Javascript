@@ -692,19 +692,21 @@ const arr3 = [3, 7, 4, 2, 5, 7, 5];
 const n3 = 4; // length of array
 const arr4 = [5, 2, 4, 5];
 const n2 = 3; // length of array
-const arr5 = [3, 2,1];
+const arr5 = [3, 2, 1];
 console.log(maxSumTriplet(n1 ,arr3));
 console.log(maxSumTriplet(n3 ,arr4));
 console.log(maxSumTriplet(n2 ,arr5));
 
 console.log("Question => Merge Two Sorted Arrays");
-
+/* 
 function mergeSortedArray(m, nums1, n, nums2) {
   let i =0;
   let j =0;
   let k =0 ;
-  let nums3 = new Array(m+n)
-    while(i < m.length && j < n.length){
+
+  let nums3 = new Array(m + n);
+
+    while(i < m && j < n){
       if(nums1[i] < nums2[j]){
         nums3[k] = nums1[i];
         k++
@@ -715,7 +717,6 @@ function mergeSortedArray(m, nums1, n, nums2) {
         j++
       }
     }
-
     while(i<m){
       nums3[k] = nums1[i];;
       k++;
@@ -726,4 +727,144 @@ function mergeSortedArray(m, nums1, n, nums2) {
       k++;
       j++
     }
+    return nums3
 }
+const nums1 = [1, 2, 3];
+const nums2 = [2, 5, 6];
+const result3 = mergeSortedArray(3, nums1, 3, nums2);
+console.log(result3); // Output: [1, 2, 2, 3, 5, 6]
+*/
+
+console.log("Question => You have two sorted lists of tasks: one sorted by priority and another sorted by deadline. You need to create a single schedule that merges both lists, ensuring tasks with higher priority and those with earlier deadlines are completed first.");
+/* 
+const tasksByPriority = [
+  { name: 'Task A', priority: 'High' },
+  { name: 'Task C', priority: 'Medium' },
+  { name: 'Task E', priority: 'Medium' },
+  { name: 'Task B', priority: 'Low' },
+  { name: 'Task D', priority: 'Low' },
+];
+const tasksByDeadline = [
+  { name: 'Task B', deadline: '2023-04-15' },
+  { name: 'Task E', deadline: '2023-05-01' },
+  { name: 'Task A', deadline: '2023-05-10' },
+  { name: 'Task C', deadline: '2023-06-01' },
+  { name: 'Task D', deadline: '2023-07-01' },
+];
+
+function sortedTaskList(n, taskPriority, m, taskDeadline){
+  let i =0;
+  let j = 0;
+  let k = 0;
+
+  let mergTaskArray = new Array(n + m)
+
+  while(i < n && m < j){
+    if(taskPriority[i] < taskDeadline[j]){
+      mergTaskArray[k] = taskPriority[i];
+      k++
+      i++
+    }else{
+      mergTaskArray[k] = taskDeadline[j];
+    }
+  }
+
+  while(i < n){
+    mergTaskArray[k] = taskPriority[i];
+    k++
+    i++
+  }
+
+  while (j < m){
+    mergTaskArray[k] = taskDeadline[j];
+    k++
+    j++
+  }
+
+  return mergTaskArray
+
+}
+
+const result4 = sortedTaskList(5,tasksByPriority, 5,tasksByDeadline)
+console.log(result4);
+*/
+console.log("Problem Statement:=> You have two sorted contact lists from different applications—one sorted alphabetically by first name and another sorted by last name. You need to merge them into a single, unified contact list that maintains alphabetical order.");
+/* 
+const contactsByFirstName = [
+  { firstName: 'Alice', lastName: 'Smith', email: 'alice@example.com' },
+  { firstName: 'Bob', lastName: 'Jones', email: 'bob@example.com' },
+  { firstName: 'Charlie', lastName: 'Williams', email: 'charlie@example.com' },
+  { firstName: 'David', lastName: 'Brown', email: 'david@example.com' },
+  { firstName: 'Eva', lastName: 'Davis', email: 'eva@example.com' },
+];
+const contactsByLastName = [
+  { firstName: 'David', lastName: 'Brown', email: 'david@example.com' },
+  { firstName: 'Eva', lastName: 'Davis', email: 'eva@example.com' },
+  { firstName: 'Bob', lastName: 'Jones', email: 'bob@example.com' },
+  { firstName: 'Alice', lastName: 'Smith', email: 'alice@example.com' },
+  { firstName: 'Charlie', lastName: 'Williams', email: 'charlie@example.com' },
+];
+
+function sortByalphabetical(firstName, lastName){
+  let i =0;
+  let j = 0;
+ 
+
+  let mergeFirstNameLastName = []
+
+  while(i < firstName.length && j < lastName.length){
+    const compareResult = firstName[i].firstName.localeCompare(lastName[j].lastName)
+
+    if(compareResult< 0)  {
+      mergeFirstNameLastName.push(firstName[i++])
+    }else{
+      mergeFirstNameLastName.push(lastName[j++])
+    }
+
+  }
+  // 
+  while( i < firstName.length){
+    mergeFirstNameLastName.push(firstName[i++])
+  }
+  while( j < lastName.length){
+    mergeFirstNameLastName.push(lastName[j++])
+  }
+// 
+
+// OR  spread operator
+// mergeFirstNameLastName.push(...firstName.slice(i), ...lastName.slice(j))
+
+
+  return mergeFirstNameLastName
+
+}
+
+const result5 = sortByalphabetical(contactsByFirstName, contactsByLastName);
+console.log(result5)
+*/
+console.log("Given a sorted array, remove the duplicates in-place, such that each element in the array appears at most twice, and return the new length.");
+
+function removeDuplicatesFromSortedArrayII(n, nums) {
+  let count = 1;
+  let index = 1;
+
+  for(let i = 1; i < n ;i++){
+    if(nums[i] === nums[i-1] ){
+      count ++
+    }else{
+      count = 1
+    }
+
+    if( count <= 2 ){
+      nums[index++] = nums[i]      
+    }
+  }
+  return index
+}
+
+const nums = [1, 1, 1, 2, 2, 3,3,3];
+const length = removeDuplicatesFromSortedArrayII(nums.length, nums);
+console.log(removeDuplicatesFromSortedArrayII(8, nums));
+// console.log(`Original Array: [${nums.join(', ')}]`);
+// console.log(`New Length: ${length}`);
+// console.log(`Modified Array: [${nums.slice(0, length).join(', ')}]`);
