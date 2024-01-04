@@ -547,5 +547,188 @@ function mergeSortedArray(m, nums1, n, nums2) {
 
 
 
+console.log("Question => Find if the string permutation can form a palindrome");
 
+
+
+// function isPermutationPalidrome(s){
+//   let freQuencyMap = new Map();
+
+//   for(let i = 0; i < s.length; i++){
+//       if(freQuencyMap.has(s[i])){
+//           freQuencyMap.set(s[i], freQuencyMap.get(s[i])+1)
+//       }else {
+//           freQuencyMap.set(s[i], 1)
+//       }
+//   }
+//   let oddFrquency = 0;
+
+//   for( let [key, value] of freQuencyMap){
+//       if(value % 2!=0){
+//           oddFrquency = oddFrquency+1
+//       }
+//       if(oddFrquency > 1){
+//           return false
+//       }
+//   }
+//   return true
+// }
+
+
+// function isPermutationPalindrome(str){
+//   // create a new map object to store the str each frequency
+
+//   let frequencyMap = new Map();
+
+//   // iterate the STR
+//   for(let i =0 ; i < str.length; i++){
+//       // now check if current charector is present the frequencyMap
+//       if(frequencyMap.has(str[i])){
+//         // if charector in present in the frequencyMap than increment the COUNT of that charector in the map by 1
+//         frequencyMap.set(str[i], frequencyMap.get(str[1]) +1)
+//       }else{
+//         // if the charector is not present, it adds the charector to the map with the count of 1
+//         frequencyMap.set(str[i], 1)
+//       }
+//   }
+
+//   // get empty var to store the odd frequency
+//   let oddFrequency = 0;
+//   // iterate the loop over each key and value pair in the frequencyMap
+//   for(let [key, value] of frequencyMap){
+//     // check the charector value is odd
+//     if(value % 2 != 0){
+//       // if value is odd than it increament the oddFrequency value by 1
+//       oddFrequency = oddFrequency +1
+//     }
+//     // if there are more than 1 oddFrequency charector in the string the return false
+//     if(oddFrequency > 1){
+//       return false
+//     }
+//   }
+
+// return true
+
+// }
+// // Test cases
+// const str1 = 'tactcoa';
+// const str2 = 'tactco';
+// const str3 = 'apple';
+
+// console.log(`'${str1}' is a permutation of a palindrome: ${isPermutationPalindrome(str1)}`);
+// console.log(`'${str2}' is a permutation of a palindrome: ${isPermutationPalindrome(str2)}`);
+// console.log(`'${str3}' is a permutation of a palindrome: ${isPermutationPalindrome(str3)}`);
+
+
+// console.log("Question => Reverse Order of Words in a String");
+// function reverseWordsInString(str){
+//   // temp var that will be used to store temporary individual word
+//   let tempStr = "";
+//   // to store the reversd word from temp var
+//   let res = []; //stack
+//   // to hold the eventully reversed string
+//   let finalReesultInStr = ""
+// // to append the space at the end of string. This is done for simplify the logic for identify the last world in the string
+//   str = str + " ";
+
+//   // iterating loop till str and checked current charector(str[i]) is not space. 
+//   // if current charector has space than appended to the temStr
+//   for ( let i =0; i < str.length; i++){
+//     if(str[i]!= " "){
+//       tempStr = tempStr + str[i]
+//     }
+//     // else need to check tempStr is not empty and current charector is space
+//     else if (str[i] !="" && str[i] == " "){
+//       // if the both condition are met, the tempStr add to the res array and empty the tempStr to store the another charector
+//       res.push(tempStr);
+//       tempStr = ""
+//     }
+//   }
+
+//   // revers the order of word in the res Array
+//   res.reverse();
+//   // check the if res is empty return finalReesultInStr
+//   if(res.length ==0){
+//     return finalReesultInStr
+//   }
+
+//   // add the first element of the res array to the finalReesultInStr
+//   finalReesultInStr = finalReesultInStr + res[0]
+
+//   // iterate the over the remaining the res array. adding each element to the finalReesultInStr with a space before it
+
+//   for(let i =1; i < res.length; i++){
+//     finalReesultInStr = finalReesultInStr + " ";
+//     finalReesultInStr = finalReesultInStr + res[i]
+//   }
+//   return finalReesultInStr
+ 
+// }
+
+// const str = "This is a sentence to be reversed.";
+// const reversedStr = reverseWordsInString(str);
+// console.log(`Original string: ${str}`);
+// console.log(`Reversed string: ${reversedStr}`);
+
+console.log("Question => Find Pair with Given Sum in Sorted Array");
+// here we are using the two pointer approach
+/* function twoSumInSortedArray(n, arr, target_sum) {
+    let L =0, R = n-1;  
+    while ( L<R){
+        if(arr[L]+arr[R] > target_sum){
+            R--;
+
+        }else if(arr[L]+arr[R] < target_sum){
+            L++
+
+        }else{
+            return true
+
+        }
+    } 
+    return false
+} */
+
+console.log("Question => Find Triplet with Maximum Sum in Unsorted Array");
+function maxSumTriplet(n, arr2) {
+ let maxTripletSum =0;
+ for(let i =1; i < n-1; i++){
+  let b = arr2[i]
+
+  // find the max value which is less than b
+  let maxA = 0;
+  for( let j = i-1; j >=0; j --){
+    if(arr2[j]<b){
+      maxA = Math.max(arr2[j], maxA)
+    }
+  }
+
+  // find the c which is greater than b
+  let maxC = 0;
+  for(let j = i+1; j < n ; j++ ){
+    if(arr2[j] > b){
+      maxC = Math.max(arr2[j], maxC)
+    }
+  }
+  if(maxA > 0 && maxC > 0){
+    let currentTripletSum = maxA + b + maxC
+    if(currentTripletSum > maxTripletSum){
+      maxTripletSum = currentTripletSum
+    }
+    
+  }
   
+ }
+
+ return maxTripletSum
+
+}
+const n1 = 7; // length of array
+const arr3 = [3, 7, 4, 2, 5, 7, 5];
+const n3 = 4; // length of array
+const arr4 = [5, 2, 4, 5];
+const n2 = 3; // length of array
+const arr5 = [3, 2,1];
+console.log(maxSumTriplet(n1 ,arr3));
+console.log(maxSumTriplet(n3 ,arr4));
+console.log(maxSumTriplet(n2 ,arr5));

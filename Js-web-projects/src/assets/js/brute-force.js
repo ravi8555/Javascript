@@ -1039,7 +1039,6 @@ console.log('Check given input whether is an alphabet or not')
 // var X = "B"
 // console.log(isAlphabet(X));
 
-<<<<<<< HEAD
 // function convertArray(arr) {
 //   // let sum = 0;
 //   arr.forEach((item, idx) => {
@@ -1087,7 +1086,6 @@ const length2 = new Length(2, 11)
 const sum = length1.addLength(length2)
 console.log('Using Constructor Function ==>')
 console.log(sum)
-=======
 class Combinatorics {
   constructor(N, R) {
       this.N = N;
@@ -1214,4 +1212,3 @@ console.log(newWords.makePalindrome());
 
 
 
->>>>>>> 129bdaad4677dfe4ffe9e9037daafe03fc8df189
