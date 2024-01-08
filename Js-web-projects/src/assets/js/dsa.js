@@ -859,12 +859,16 @@ function removeDuplicatesFromSortedArrayII(n, nums) {
       nums[index++] = nums[i]      
     }
   }
-  return index
+  return {
+    length : index,
+    modifiedArray : nums.slice(0, index)
+  }
 }
 
-const nums = [1, 1, 1, 2, 2, 3,3,3];
-const length = removeDuplicatesFromSortedArrayII(nums.length, nums);
-console.log(removeDuplicatesFromSortedArrayII(8, nums));
+const nums = [1, 1, 1, 2, 2, 3,3,3,4,4,4,5,8];
+console.log(removeDuplicatesFromSortedArrayII(nums.length, nums));
+
+// const length = removeDuplicatesFromSortedArrayII(nums.length, nums);
 // console.log(`Original Array: [${nums.join(', ')}]`);
 // console.log(`New Length: ${length}`);
 // console.log(`Modified Array: [${nums.slice(0, length).join(', ')}]`);
