@@ -872,3 +872,34 @@ console.log(removeDuplicatesFromSortedArrayII(nums.length, nums));
 // console.log(`Original Array: [${nums.join(', ')}]`);
 // console.log(`New Length: ${length}`);
 // console.log(`Modified Array: [${nums.slice(0, length).join(', ')}]`);
+
+/**
+ DSA -3
+ **/
+
+ console.log("Question=> Find next larger element [Pattern Introduction]");
+
+//  created function nextLargerElement name with two arguments n and arr. The n is represent to number of length of array. arr is the array.
+//  create nGe empty array with the size(n) of the given array to store the  next larger element
+//  filled it with -1 initialy that no larger number found yet
+//  created the stack array to keep track of indices for potential to larger element update
+//  created loop to iterate each element in arr
+// stored the current value index[i] in the currentValue var
+
+
+ function nextLargerElement(n, arr) {
+  const nGe = new Array(n).fill(-1);
+  const stack = []
+
+  for( let i =0 ; i < n; i++){
+    const currentValue = arr[i];
+    while(stack.length >0 && currentValue > arr[stack[stack.length -1]]){
+      nGe[stack[stack.length -1]] = currentValue;
+      stack.pop()
+    }
+    stack.push(i)
+  }
+
+  return nGe
+
+}
