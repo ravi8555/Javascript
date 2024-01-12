@@ -885,7 +885,11 @@ console.log(removeDuplicatesFromSortedArrayII(nums.length, nums));
 //  created the stack array to keep track of indices for potential to larger element update
 //  created loop to iterate each element in arr
 // stored the current value index[i] in the currentValue var
-
+// created while loop as long as stack is not empty and currentValue is greater than top of stack element
+// updated the nGe array at the index stored in the top of the stack with current value, indicating that the current element is the next larger element for that element
+// then its pop the top index from the stack, as it found the larger next element.
+// outer while loop pushed the current index i to the stack for potential future update.
+// return the nGe
 
  function nextLargerElement(n, arr) {
   const nGe = new Array(n).fill(-1);
