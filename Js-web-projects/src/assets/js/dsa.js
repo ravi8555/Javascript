@@ -232,6 +232,31 @@ console.log(countVowels('q'))
 // const k = 2;
 
 // console.log(cyclicRotation(n, arr11, k))
+console.log("Given two arrays A and B, write a function to compute their intersection.Note: Each element in the result should appear as many times as it shows in both arrays. The result needs to be in sorted order.");
+
+function intersectionOfTwoArraysBasic(n, arry1, m, array2){
+  const hashMap = new Map()
+  for(const el of arry1){
+    let freqHashMap= hashMap.get(el) || 0;
+
+    hashMap.set(el, hashMap+1)
+  }
+
+  let res = []
+
+  for (const ele of array2){
+    let freqHashMp = hashMap.get(ele) || 0;
+    if(freqHashMp > 0){
+      res.push(ele)
+
+      hashMap.set(ele, freqHashMp -1)
+    }
+  }
+
+  return res
+}
+
+
 
 console.log("Question ==> Given a paragraph of words, capitalise the first character of each word and return the updated paragraph.");
 // travers through the string
@@ -859,9 +884,12 @@ function removeDuplicatesFromSortedArrayII(n, nums) {
       nums[index++] = nums[i]      
     }
   }
-  return index
+  return {
+    length: index,
+    modifiedArray: nums.slice(0, length).join(', ')
+  }
 }
-
+  
 const nums = [1, 1, 1, 2, 2, 3,3,3];
 const length = removeDuplicatesFromSortedArrayII(nums.length, nums);
 console.log(removeDuplicatesFromSortedArrayII(8, nums));
