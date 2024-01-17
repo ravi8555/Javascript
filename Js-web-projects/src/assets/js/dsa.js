@@ -933,148 +933,265 @@ console.log(removeDuplicatesFromSortedArrayII(nums.length, nums));
 
 }
 
-console.log("Question=> Compare String Given 2 strings S and T containing lowercase and '#' characters. You have to check whether these 2 strings are same or not when typed into an editor('#' being the backspace character).");
+console.log("Question=>  Zigzag level order traversal of binary tree using Queue [Pattern Introduction]");
 
-// took the pointer i and j initilize to 0. These two ponter will track the current position in the S and T respectivly 
-// created the while loop to iterate the till end of corresponding strings
-// created the nested while loop to handle the backspaces in input string S
-// It iterate as long as current charactor in S[i] "#" and less than the length
-//  to ensuring the non negative index we used the Math.max(0, i-1) method here if the i is non negative, the ponter will moved on and return the i-1 if the i found the negative number its return 0, 
-//  the result store in i = 
-// same nested loop iterated for input T over here
-// used if condition i and j is less than S and T length also comparion !=== if both pointers are within bound and charector are their position dont match means string are not the same, so function retutn false
+// create TreeNode class object constructor to represnt the binary tree. Each node has a value (val) and reference to its left and right children
 
-// if no backspaces and charector missmatched occurred the both pointers are increamented to move to next charector in the respective strings i ++ j ++
+class TreeNode {
+  constructor( val, left=null, middle=null, right = null){
+    this.val = val;
+    this.left = left;
+    this.right = right;
+  }
+}
 
-//  if both pointer hav reached end of their strings it means string has identical after considering the backspace and function return true
-// return i === S.length && j === T.length
+function ZigzagLevelOrder(root){
+  // handel the base case. if tree is empty (no root) return the empty array
+  if(!root){
+    return []
+  }
 
-// below code is not works for all test cases
-// function backspaceStringCompare(S, T){
-//   let i = 0, j =0;
-//   while(i < S.length || j < T.length){
+  // to store the result created empty result array
+  const res = [];
 
-//     while( i < S.length && S[i] === "#"){
-//       i = Math.max(0, i-1)
-//     }
+  // created the queue and enqueue root noot to start the travesal
+  const queue = [root];
 
-//     while (j < T.length && T[i] === "#"){
-//       i = Math.max(0, j -1)
-//     }
+  // initialised the flag to track whether to travers left-to-right or right-to-left at each level
+  let leftToRight = true
 
-//     if( i < S.length && j < T.length && S[i] === T[j]){
-//       return false
-//     }
-//     i++;
-//     j++
+  // loop the process each level of tree untill the queue is empty
+  while(queue.length > 0){
+    //  For each level it calculate the current levelSize indicating that number nodes at current level
+    const levelSize = queue.length;
+    // create a empty array to store the nodes at current level.
+    const currentLevel = [];
 
-//     return i === S.length && j === T.length
-//   }
-// }
+    // iterate through the each node at current level
+    for(let i = 0; i < levelSize; i ++){
+      // dequeue the first node from queue
+      const node = queue.shift()
 
-// for all test cases
-// function backspaceStringCompare(s, t) {
-//   const processString = (str) => {
-//     const stack = [];
-
-//     for (let char of str) {
-//       if (char === '#' && stack.length > 0) {
-//         stack.pop(); // Remove the last character due to backspace
-//       } else if (char !== '#') {
-//         stack.push(char); // Add non-backspace characters to the stack
-//       }
-//     }
-
-//     return stack.join('');
-//   };
-
-//   const procsedS = processString(s);
-//   const procsedT = processString(t);
-
-//   return procsedS === procsedT;
-// }
-
-console.log("Question =>  Find length of longest valid parentheses substring");
-
-function longestValidParentheses(s) {
-  // initilize  stack with -1 to starting from the base on index
-  const stack = [-1];
-  // to store the result
-  let mxLength = 0;
-  
-  //iterate the loop till the end of input 
-  for( let i =0 ; i < s.length; i++){
-    // get the current charector 
-
-    const currentCharat = s[i];
-
-    // if current charector is opening "(" parenthesse
-    if(currentCharat === "("){
-      // push the index of  "(" into the stack
-      stack.push(i)
-    }else{
-      // if currentCharat is the closing ")" parantheses 
-      // pop the last index from the stack
-      stack.pop();
-
-      //  if stack is empty 
-      if( stack.length === 0){
-        // push the current index to serve the new base
-        stack.push(i)
+      // conditional logic for the zigzag travesal
+      if(leftToRight){
+        // if left to right append the value at the end of current level array
+        currentLevel.push(node.val)
       }else{
-        // calculate the length of valid paranthesis
-
-        mxLength = Math.max(mxLength, i - stack[stack.length -1])
+        // if right to left prepend the value at the start of current level arry
+        currentLevel.unshift(node.val)
       }
+
+      // Enques the left child of the dequeue nodes if it is exists
+      if(node.left){
+        queue.push(node.left)
+      }
+      // Enques the right child of the dequeu nodes if it is exists
+      if(node.right){
+        queue.push(node.right)
+      }
+
     }
+    // adds the completed current level array to the result
+    res.push(currentLevel);
+    // toggle the direction flag for the next level
+    leftToRight = !leftToRight
 
 
   }
-return mxLength
+
+  // return the result
+  return res
 
 }
-const parenthesesString = "(()())";
-console.log(longestValidParentheses(parenthesesString));
+
+const root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.right = new TreeNode(2)
+root.middle = new TreeNode(2)
+root.middle.left = new TreeNode(3)
+root.middle.right = new TreeNode(3)
+root.right.left = new TreeNode(4);
+root.right.right = new TreeNode(4);
+
+console.log(ZigzagLevelOrder(root));
+
+console.log("Question => Count Distinct Elements in Window");
+
+function countDistinctWindows(arr, B) {
+  // to store the result of sliding windows
+  const result = [];
+
+  // return the empty array if the count not found, corner case
+  if(B > arr.length){
+    return result
+  }
+
+  // crrate the frequency map to travers the current window element
+  const frequencyMap = new Map();
+
+  // create the first slide window, iterate the B first element through the arr
+  for (let i = 0; i < B; i++) {
+        if (!frequencyMap.has(arr[i])) {
+          frequencyMap.set(arr[i], 1);
+        } else {
+          frequencyMap.set(arr[i], frequencyMap.get(arr[i]) + 1);
+        }
+      }
+    
+      result.push(frequencyMap.size);
+    
+      // Process subsequent windows using sliding window technique
+      for (let i = B; i < arr.length; i++) {
+        // Remove the leftmost element from the window
+        const leftElement = arr[i - B];
+        if (frequencyMap.get(leftElement) === 1) {
+          frequencyMap.delete(leftElement);
+        } else {
+          frequencyMap.set(leftElement, frequencyMap.get(leftElement) - 1);
+        }
+    
+        // Add the rightmost element to the window
+        const rightElement = arr[i];
+        if (!frequencyMap.has(rightElement)) {
+          frequencyMap.set(rightElement, 1);
+        } else {
+          frequencyMap.set(rightElement, frequencyMap.get(rightElement) + 1);
+        }
+    
+        result.push(frequencyMap.size);
+      }
+    
+      return result;
+  
+}
 
 
-// function longestValidParentheses(s) {
-//   // Initialize stack with -1 to represent the base index
-//   const stack = [-1];
-//   // Initialize variable to track the maximum length of valid parentheses substring
-//   let maxLen = 0;
+function countDistinctElements(num, win, arr) {
+  // to store the result of sliding windows
+  const result = [];
 
-//   // Iterate through the characters of the input string 's'
-//   for (let i = 0; i < s.length; i++) {
-//     // Get the current character
-//     const currentChar = s[i];
+  // return the empty array if the count not found, corner case
+  if(win > num){
+    return result
+  }
 
-//     // If the current character is an opening parenthesis '('
-//     if (currentChar === '(') {
-//       // Push the index of the opening parenthesis onto the stack
-//       stack.push(i);
-//     } else {
-//       // If the current character is a closing parenthesis ')'
-//       // Pop the last index from the stack (represents the last unmatched opening parenthesis)
-//       stack.pop();
+  // crrate the frequency map to travers the current window element
+  const freqMap = new Map();
 
-//       // If the stack is empty after popping
-//       if (stack.length === 0) {
-//         // Push the current index to serve as the new base
-//         stack.push(i);
-//       } else {
-//         // Calculate the length of the valid parentheses substring
-//         maxLen = Math.max(maxLen, i - stack[stack.length - 1]);
-//       }
-//     }
-//   }
-
-//   // Return the maximum length of the valid parentheses substring
-//   return maxLen;
-// }
-
-// // Example usage:
-// const parenthesesString = "(()())";
-// console.log(longestValidParentheses(parenthesesString)); // Output: 6
+  // to store the count of the first win-1 element.
+  for(let i =0; i < win-1; i++ ){
+    if(freqMap.has(arr[i])){
+      freqMap.set(arr[i], freqMap.get(arr[i]) + 1)
+    }else{
+      freqMap.set(arr[i],1)
+    }
+  }
 
 
+  for(let i = win -1; i < num; i++){
+    // include the current index in the map
+    const currentVal = arr[i];
+    if(freqMap.has(currentVal)){
+      freqMap.set(currentVal, freqMap.get(currentVal) +1)
+    }else{
+      freqMap.set(currentVal, 1)
+    }
 
+    // store the size in the result
+  result.push(freqMap.size);
+
+  // drop the first element of the window
+  const win_first_indx = i -win +1;
+  if(freqMap.has(arr[win_first_indx])){
+    freqMap.set(arr[win_first_indx], freqMap.get(arr[win_first_indx])- 1);
+    if(freqMap.get(arr[win_first_indx])===0){
+      freqMap.delete(arr[win_first_indx])
+    }
+
+  }
+  
+}
+
+return result
+}
+
+const arr6 = [1, 2, 1, 3, 4, 3];
+const num1 = 6;
+const windowSize = 3;
+const distinctCounts = countDistinctElements(num1,windowSize,arr6);
+const distinctCountsWin = countDistinctWindows(arr6,windowSize);
+console.log(distinctCounts); // Output: [2, 3, 3, 2]
+console.log(distinctCountsWin); // Output: [2, 3, 3, 2]
+
+console.log("Question => Find min element present in stack");
+
+class MinStack{
+  constructor(){
+    // main stack to store the element
+    this.stack = []
+    // Auxilery stack to store the minimum element
+    this.minStack = []
+  }
+
+  push(x){
+    // push the element into the main stack
+    this.stack.push(x);
+
+    // if minStack is empty or new element is the smaller than the current minimum
+    // push the new element into the minStack
+
+    if(this.minStack.length === 0 || x <= this.minStack[this.minStack.length -1]){
+      this.minStack.push(x)
+    }
+  }
+
+  pop(){
+    // if the main stack in not empty 
+    if(this.stack.length > 0){
+      // get the top element from the main stack
+      const popElement = this.stack.pop()
+
+      // if the pop element is equal to the current minimum pop from the minStack
+      if(popElement === this.minStack[this.minStack.length -1]){
+        this.minStack.pop()
+      }
+      return popElement
+    }
+  }
+
+  findMin(){
+    // if minStack is not empty, return the top element
+    if(this.minStack.length >0){
+      return this.minStack[this.minStack.length -1]
+    }
+    else{
+      return -1
+    }
+  }
+
+}
+
+console.log("Question => First Unique Integer");
+function firstUniqueInteger( array){
+  // create an empty object to store the frequesncy of each integer
+  const freqUniqueNumberMap = {};
+
+  // popuplate the frequency of map
+  for(const num of array){
+    // increase the frequency count for the current number in the map
+    freqUniqueNumberMap[num] = (freqUniqueNumberMap[num] || 0) + 1
+  }
+
+  // find the first unique integer
+  for( const num of array){
+    if(freqUniqueNumberMap[num] === 1){
+      return num
+    }
+  }
+
+  // if no unique number found retuen -1
+  return -1
+}
+const nums2 = [2, 3, 5, 3, 7, 2, 5];
+const result5 = firstUniqueInteger(nums2);
+console.log(result5); // Output: 7
