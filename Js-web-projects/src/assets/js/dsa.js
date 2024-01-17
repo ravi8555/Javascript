@@ -885,14 +885,196 @@ function removeDuplicatesFromSortedArrayII(n, nums) {
     }
   }
   return {
-    length: index,
-    modifiedArray: nums.slice(0, length).join(', ')
+    length : index,
+    modifiedArray : nums.slice(0, index)
   }
 }
-  
-const nums = [1, 1, 1, 2, 2, 3,3,3];
-const length = removeDuplicatesFromSortedArrayII(nums.length, nums);
-console.log(removeDuplicatesFromSortedArrayII(8, nums));
+
+const nums = [1, 1, 1, 2, 2, 3,3,3,4,4,4,5,8];
+console.log(removeDuplicatesFromSortedArrayII(nums.length, nums));
+
+// const length = removeDuplicatesFromSortedArrayII(nums.length, nums);
 // console.log(`Original Array: [${nums.join(', ')}]`);
 // console.log(`New Length: ${length}`);
 // console.log(`Modified Array: [${nums.slice(0, length).join(', ')}]`);
+
+/**
+ DSA -3
+ **/
+
+ console.log("Question=> Find next larger element [Pattern Introduction]");
+
+//  created function nextLargerElement name with two arguments n and arr. The n is represent to number of length of array. arr is the array.
+//  create nGe empty array with the size(n) of the given array to store the  next larger element
+//  filled it with -1 initialy that no larger number found yet
+//  created the stack array to keep track of indices for potential to larger element update
+//  created loop to iterate each element in arr
+// stored the current value index[i] in the currentValue var
+// created while loop as long as stack is not empty and currentValue is greater than top of stack element
+// updated the nGe array at the index stored in the top of the stack with current value, indicating that the current element is the next larger element for that element
+// then its pop the top index from the stack, as it found the larger next element.
+// outer while loop pushed the current index i to the stack for potential future update.
+// return the nGe to get the result
+
+ function nextLargerElement(n, arr) {
+  const nGe = new Array(n).fill(-1);
+  const stack = []
+
+  for( let i =0 ; i < n; i++){
+    const currentValue = arr[i];
+    while(stack.length >0 && currentValue > arr[stack[stack.length -1]]){
+      nGe[stack[stack.length -1]] = currentValue;
+      stack.pop()
+    }
+    stack.push(i)
+  }
+
+  return nGe
+
+}
+
+console.log("Question=> Compare String Given 2 strings S and T containing lowercase and '#' characters. You have to check whether these 2 strings are same or not when typed into an editor('#' being the backspace character).");
+
+// took the pointer i and j initilize to 0. These two ponter will track the current position in the S and T respectivly 
+// created the while loop to iterate the till end of corresponding strings
+// created the nested while loop to handle the backspaces in input string S
+// It iterate as long as current charactor in S[i] "#" and less than the length
+//  to ensuring the non negative index we used the Math.max(0, i-1) method here if the i is non negative, the ponter will moved on and return the i-1 if the i found the negative number its return 0, 
+//  the result store in i = 
+// same nested loop iterated for input T over here
+// used if condition i and j is less than S and T length also comparion !=== if both pointers are within bound and charector are their position dont match means string are not the same, so function retutn false
+
+// if no backspaces and charector missmatched occurred the both pointers are increamented to move to next charector in the respective strings i ++ j ++
+
+//  if both pointer hav reached end of their strings it means string has identical after considering the backspace and function return true
+// return i === S.length && j === T.length
+
+// below code is not works for all test cases
+// function backspaceStringCompare(S, T){
+//   let i = 0, j =0;
+//   while(i < S.length || j < T.length){
+
+//     while( i < S.length && S[i] === "#"){
+//       i = Math.max(0, i-1)
+//     }
+
+//     while (j < T.length && T[i] === "#"){
+//       i = Math.max(0, j -1)
+//     }
+
+//     if( i < S.length && j < T.length && S[i] === T[j]){
+//       return false
+//     }
+//     i++;
+//     j++
+
+//     return i === S.length && j === T.length
+//   }
+// }
+
+// for all test cases
+// function backspaceStringCompare(s, t) {
+//   const processString = (str) => {
+//     const stack = [];
+
+//     for (let char of str) {
+//       if (char === '#' && stack.length > 0) {
+//         stack.pop(); // Remove the last character due to backspace
+//       } else if (char !== '#') {
+//         stack.push(char); // Add non-backspace characters to the stack
+//       }
+//     }
+
+//     return stack.join('');
+//   };
+
+//   const procsedS = processString(s);
+//   const procsedT = processString(t);
+
+//   return procsedS === procsedT;
+// }
+
+console.log("Question =>  Find length of longest valid parentheses substring");
+
+function longestValidParentheses(s) {
+  // initilize  stack with -1 to starting from the base on index
+  const stack = [-1];
+  // to store the result
+  let mxLength = 0;
+  
+  //iterate the loop till the end of input 
+  for( let i =0 ; i < s.length; i++){
+    // get the current charector 
+
+    const currentCharat = s[i];
+
+    // if current charector is opening "(" parenthesse
+    if(currentCharat === "("){
+      // push the index of  "(" into the stack
+      stack.push(i)
+    }else{
+      // if currentCharat is the closing ")" parantheses 
+      // pop the last index from the stack
+      stack.pop();
+
+      //  if stack is empty 
+      if( stack.length === 0){
+        // push the current index to serve the new base
+        stack.push(i)
+      }else{
+        // calculate the length of valid paranthesis
+
+        mxLength = Math.max(mxLength, i - stack[stack.length -1])
+      }
+    }
+
+
+  }
+return mxLength
+
+}
+const parenthesesString = "(()())";
+console.log(longestValidParentheses(parenthesesString));
+
+
+// function longestValidParentheses(s) {
+//   // Initialize stack with -1 to represent the base index
+//   const stack = [-1];
+//   // Initialize variable to track the maximum length of valid parentheses substring
+//   let maxLen = 0;
+
+//   // Iterate through the characters of the input string 's'
+//   for (let i = 0; i < s.length; i++) {
+//     // Get the current character
+//     const currentChar = s[i];
+
+//     // If the current character is an opening parenthesis '('
+//     if (currentChar === '(') {
+//       // Push the index of the opening parenthesis onto the stack
+//       stack.push(i);
+//     } else {
+//       // If the current character is a closing parenthesis ')'
+//       // Pop the last index from the stack (represents the last unmatched opening parenthesis)
+//       stack.pop();
+
+//       // If the stack is empty after popping
+//       if (stack.length === 0) {
+//         // Push the current index to serve as the new base
+//         stack.push(i);
+//       } else {
+//         // Calculate the length of the valid parentheses substring
+//         maxLen = Math.max(maxLen, i - stack[stack.length - 1]);
+//       }
+//     }
+//   }
+
+//   // Return the maximum length of the valid parentheses substring
+//   return maxLen;
+// }
+
+// // Example usage:
+// const parenthesesString = "(()())";
+// console.log(longestValidParentheses(parenthesesString)); // Output: 6
+
+
+
