@@ -5,7 +5,7 @@ import style from '../css/main.scss'
 //
 // import Nay from "../js/Nay.js";
 
-// // Edited
+// // Edited 
 // import editcode from "../js/edited.js";
 
 // // Test

@@ -907,3 +907,237 @@ console.log(removeDuplicatesFromSortedArrayII(nums.length, nums));
   return nGe
 
 }
+
+console.log("Question=>  Zigzag level order traversal of binary tree using Queue [Pattern Introduction]");
+
+// create TreeNode class object constructor to represnt the binary tree. Each node has a value (val) and reference to its left and right children
+
+class TreeNode {
+  constructor( val, left=null, middle=null, right = null){
+    this.val = val;
+    this.left = left;
+    this.right = right;
+  }
+}
+
+function ZigzagLevelOrder(root){
+  // handel the base case. if tree is empty (no root) return the empty array
+  if(!root){
+    return []
+  }
+
+  // to store the result created empty result array
+  const res = [];
+
+  // created the queue and enqueue root noot to start the travesal
+  const queue = [root];
+
+  // initialised the flag to track whether to travers left-to-right or right-to-left at each level
+  let leftToRight = true
+
+  // loop the process each level of tree untill the queue is empty
+  while(queue.length > 0){
+    //  For each level it calculate the current levelSize indicating that number nodes at current level
+    const levelSize = queue.length;
+    // create a empty array to store the nodes at current level.
+    const currentLevel = [];
+
+    // iterate through the each node at current level
+    for(let i = 0; i < levelSize; i ++){
+      // dequeue the first node from queue
+      const node = queue.shift()
+
+      // conditional logic for the zigzag travesal
+      if(leftToRight){
+        // if left to right append the value at the end of current level array
+        currentLevel.push(node.val)
+      }else{
+        // if right to left prepend the value at the start of current level arry
+        currentLevel.unshift(node.val)
+      }
+
+      // Enques the left child of the dequeue nodes if it is exists
+      if(node.left){
+        queue.push(node.left)
+      }
+      // Enques the right child of the dequeu nodes if it is exists
+      if(node.right){
+        queue.push(node.right)
+      }
+
+    }
+    // adds the completed current level array to the result
+    res.push(currentLevel);
+    // toggle the direction flag for the next level
+    leftToRight = !leftToRight
+
+
+  }
+
+  // return the result
+  return res
+
+}
+
+const root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.right = new TreeNode(2)
+root.middle = new TreeNode(2)
+root.middle.left = new TreeNode(3)
+root.middle.right = new TreeNode(3)
+root.right.left = new TreeNode(4);
+root.right.right = new TreeNode(4);
+
+console.log(ZigzagLevelOrder(root));
+
+console.log("Question => Count Distinct Elements in Window");
+
+function countDistinctWindows(arr, B) {
+  // to store the result of sliding windows
+  const result = [];
+
+  // return the empty array if the count not found, corner case
+  if(B > arr.length){
+    return result
+  }
+
+  // crrate the frequency map to travers the current window element
+  const frequencyMap = new Map();
+
+  // create the first slide window, iterate the B first element through the arr
+  for (let i = 0; i < B; i++) {
+        if (!frequencyMap.has(arr[i])) {
+          frequencyMap.set(arr[i], 1);
+        } else {
+          frequencyMap.set(arr[i], frequencyMap.get(arr[i]) + 1);
+        }
+      }
+    
+      result.push(frequencyMap.size);
+    
+      // Process subsequent windows using sliding window technique
+      for (let i = B; i < arr.length; i++) {
+        // Remove the leftmost element from the window
+        const leftElement = arr[i - B];
+        if (frequencyMap.get(leftElement) === 1) {
+          frequencyMap.delete(leftElement);
+        } else {
+          frequencyMap.set(leftElement, frequencyMap.get(leftElement) - 1);
+        }
+    
+        // Add the rightmost element to the window
+        const rightElement = arr[i];
+        if (!frequencyMap.has(rightElement)) {
+          frequencyMap.set(rightElement, 1);
+        } else {
+          frequencyMap.set(rightElement, frequencyMap.get(rightElement) + 1);
+        }
+    
+        result.push(frequencyMap.size);
+      }
+    
+      return result;
+  
+}
+
+
+function countDistinctElements(num, win, arr) {
+  // to store the result of sliding windows
+  const result = [];
+
+  // return the empty array if the count not found, corner case
+  if(win > num){
+    return result
+  }
+
+  // crrate the frequency map to travers the current window element
+  const freqMap = new Map();
+
+  // to store the count of the first win-1 element.
+  for(let i =0; i < win-1; i++ ){
+    if(freqMap.has(arr[i])){
+      freqMap.set(arr[i], freqMap.get(arr[i]) + 1)
+    }else{
+      freqMap.set(arr[i],1)
+    }
+  }
+
+
+  for(let i = win -1; i < num; i++){
+    // include the current index in the map
+    const currentVal = arr[i];
+    if(freqMap.has(currentVal)){
+      freqMap.set(currentVal, freqMap.get(currentVal) +1)
+    }else{
+      freqMap.set(currentVal, 1)
+    }
+
+    // store the size in the result
+  result.push(freqMap.size);
+
+  // drop the first element of the window
+  const win_first_indx = i -win +1;
+  if(freqMap.has(arr[win_first_indx])){
+    freqMap.set(arr[win_first_indx], freqMap.get(arr[win_first_indx])- 1);
+    if(freqMap.get(arr[win_first_indx])===0){
+      freqMap.delete(arr[win_first_indx])
+    }
+
+  }
+  
+}
+
+return result
+}
+
+const arr6 = [1, 2, 1, 3, 4, 3];
+const num1 = 6;
+const windowSize = 3;
+const distinctCounts = countDistinctElements(num1,windowSize,arr6);
+const distinctCountsWin = countDistinctWindows(arr6,windowSize);
+console.log(distinctCounts); // Output: [2, 3, 3, 2]
+console.log(distinctCountsWin); // Output: [2, 3, 3, 2]
+
+console.log("Question => Find min element present in stack");
+
+class MinStack{
+  constructor(){
+    // main stack to store the element
+    this.stack = []
+    // Auxilery stack to store the minimum element
+    this.minStack = []
+  }
+
+  push(x){
+    // push the element into the main stack
+    this.stack.push(x);
+
+    // if minStack is empty or new element is the smaller than the current minimum
+    // push the new element into the minStack
+
+    if(this.minStack.length === 0 || x <= this.minStack[this.minStack.length -1]){
+      this.minStack.push(x)
+    }
+  }
+
+  pop(){
+    // if the main stack in not empty 
+    if(this.stack.length > 0){
+      // get the top element from the main stack
+      const popElement = this.stack.pop()
+
+      // if the pop element is equal to the current minimum pop from the minStack
+      if(popElement === this.minStack[this.minStack.length -1]){
+        this.minStack.pop()
+      }
+      return popElement
+    }
+  }
+
+  findMin(){
+    // if minStack is not empty, return the top element
+    if(this.minStack.length >0){
+      return this.minStack[this.minStack.length -1]
+    }
+  }
+}
