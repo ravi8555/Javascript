@@ -1287,4 +1287,6 @@ const anaArray = "abassssabbbab"
 const anaArrayL = "ab"
 console.log("findAllAnagramsInAString",findAllAnagramsInAString(anaArray, anaArrayL));
 
+console.log("Question => Find the longest palindrome from a given string");
+
 
