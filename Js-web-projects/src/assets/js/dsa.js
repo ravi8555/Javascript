@@ -1,4 +1,4 @@
-console.log("dsajs");
+//console.log("dsajs");
 // DSA JS 1
 // https://replit.com/@marshal4world/DSA-JS-Sept-23#index.js
 
@@ -1170,7 +1170,7 @@ class MinStack{
   }
 
 }
-
+/* 
 console.log("Question => First Unique Integer");
 function firstUniqueInteger( array){
   // create an empty object to store the frequesncy of each integer
@@ -1195,3 +1195,69 @@ function firstUniqueInteger( array){
 const nums2 = [2, 3, 5, 3, 7, 2, 5];
 const result5 = firstUniqueInteger(nums2);
 console.log(result5); // Output: 7
+*/
+console.log("Find all anagrams in a string [Pattern Introduction]");
+// console.log("You are given two strings, a main string S, and a pattern P. You have to find the starting indices of the anagrams of P in S.Anagrams are permutations of a string. For P = abc,its anagrams are abc,acb,bca,bac,cba,cab.");
+/* function isIdentical(map1, map2) {
+  for (let [key, value] of map1) {
+    if (!map2.has(key) || map2.get(key) !== value) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function findAllAnagramsInAString(S, P) {
+  const countS = new Map();
+  const countP = new Map();
+
+  const result = [];
+  const K = P.length
+
+  // fill the count P with pattern string  
+  for(let i = 0 ; i < K; i++){
+    if(countP.has(P[i])){
+      countP.set(P[i], countP.get(P[i]) + 1)
+    }else{
+      countP.set(P[i], 1)
+    }
+  }
+
+
+  for(let i =0; i < K; i++){
+    if(countS.has(S[i])){
+      countS.set(S[i], countS.get(S[i]) +1)
+    }else{
+      countS.set(S[i], 1)
+    }
+  }
+    // Check if the first window is an anagram
+  if (isIdentical(countS, countP)) {
+    result.push(0);
+  }
+  for (let i = K; i < S.length; i++) {
+    // Update countS for the next window
+    const currentChar = S[i];
+    countS.set(currentChar, (countS.get(currentChar) || 0) + 1);
+
+    // Adjust countS for the character leaving the window
+    const startIndexCharacter = S[i - K];
+    countS.set(startIndexCharacter, countS.get(startIndexCharacter) - 1);
+    if (countS.get(startIndexCharacter) === 0) {
+      countS.delete(startIndexCharacter);
+    }
+
+    // Check if the current window is an anagram
+    if (isIdentical(countS, countP)) {
+      result.push(i - K + 1);
+    }
+  }
+  
+  return result
+  
+  }
+
+const anaArray = "abassssabbbab"
+const anaArrayL = "ab"
+console.log("findAllAnagramsInAString",findAllAnagramsInAString(anaArray, anaArrayL));
+*/
