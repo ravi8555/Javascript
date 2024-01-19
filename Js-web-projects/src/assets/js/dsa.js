@@ -1198,8 +1198,12 @@ console.log(result5); // Output: 7
 */
 console.log("Find all anagrams in a string [Pattern Introduction]");
 // console.log("You are given two strings, a main string S, and a pattern P. You have to find the starting indices of the anagrams of P in S.Anagrams are permutations of a string. For P = abc,its anagrams are abc,acb,bca,bac,cba,cab.");
-/* function isIdentical(map1, map2) {
+
+// ifficiently compare two map for identical charector frequency to detect the anagram 
+function isIdentical(map1, map2) {
+  // iterates through each key value pair in map1
   for (let [key, value] of map1) {
+    // if key doesnt exist in map2 or or its value doesnt match  return false
     if (!map2.has(key) || map2.get(key) !== value) {
       return false;
     }
@@ -1208,47 +1212,69 @@ console.log("Find all anagrams in a string [Pattern Introduction]");
 }
 
 function findAllAnagramsInAString(S, P) {
+  // create maps to store the frequency
   const countS = new Map();
   const countP = new Map();
 
+  //  to store the starting indices in the array 
   const result = [];
+  // store the length of pattern P
   const K = P.length
 
   // fill the count P with pattern string  
+  // iterate the each charector the P
   for(let i = 0 ; i < K; i++){
+    // if charector already exist in the countP
     if(countP.has(P[i])){
+      // increament its count 
       countP.set(P[i], countP.get(P[i]) + 1)
     }else{
+      // otherwise add to countP with count 1
       countP.set(P[i], 1)
     }
   }
 
-
+// initilize count S for the first window
+// iterate the frist K character in the S
   for(let i =0; i < K; i++){
+    // if charecter exists in the countS
     if(countS.has(S[i])){
+      // increament the count
       countS.set(S[i], countS.get(S[i]) +1)
     }else{
+      // otherwise the add the count by 1
       countS.set(S[i], 1)
     }
   }
+
+
     // Check if the first window is an anagram
   if (isIdentical(countS, countP)) {
+    // add 0 to the result
     result.push(0);
   }
+  // iterate the remainig character in the S
   for (let i = K; i < S.length; i++) {
     // Update countS for the next window
+    // sotre the current charecter
     const currentChar = S[i];
+    // increment the current charecter in the countS
     countS.set(currentChar, (countS.get(currentChar) || 0) + 1);
 
     // Adjust countS for the character leaving the window
+    // store the charecter in the leaving window
     const startIndexCharacter = S[i - K];
+
+    // decrement the count of the leaving the character in countS 
     countS.set(startIndexCharacter, countS.get(startIndexCharacter) - 1);
+    // remove it the count become 0
     if (countS.get(startIndexCharacter) === 0) {
       countS.delete(startIndexCharacter);
     }
 
     // Check if the current window is an anagram
     if (isIdentical(countS, countP)) {
+      // add its starting to the result
       result.push(i - K + 1);
     }
   }
@@ -1260,4 +1286,5 @@ function findAllAnagramsInAString(S, P) {
 const anaArray = "abassssabbbab"
 const anaArrayL = "ab"
 console.log("findAllAnagramsInAString",findAllAnagramsInAString(anaArray, anaArrayL));
-*/
+
+
