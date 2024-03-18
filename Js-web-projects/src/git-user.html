@@ -87,7 +87,7 @@
           <script type="module">
             import {
               getUserData,
-              // insertToDom,
+            //   insertToDom,
               getEachUser,
               searchGitUserRecords
             } from "./assets/js/git-user-api.js";
@@ -96,8 +96,8 @@
               const data = await getEachUser();
             //   getEachUser();
 
+            // insertToDom(data);
               searchGitUserRecords(data);
-              // insertToDom(data);
               // console.log(data);
             })();
           </script>
