@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="icon" src="assets/img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bodybg">
+
+ 
+    <!-- <div class="wrapper">
+          <div class="container">
+            <form role="search" method="get" class="search-form form" action="">
+              <label>
+                  <span class="screen-reader-text">Search for...</span>
+                  <input type="search" class="search-field" placeholder="Type something..." value="" name="s" title="" />
+              </label>
+              <input type="submit" class="search-submit button" value="&#xf002" />
+          </form>
+          </div>
+        </div> -->
+        <div class="search-container">
+            <form id="form">
+              <p id="dispmsg"></p>
+              <input type="text" id="search-bar" placeholder="Type User Name" />
+            </form>
+          </div>
+          <!-- option 1 -->
+      
+          <div class="testimonial">
+            <div class="slide-row">
+              <div class="slide-col" id="gitUserData"></div>
+            </div>
+          </div>
+        </div>   
+          <!-- option 2 -->
+      
+          <!-- <section class="testimonial_section">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-5">
+                  <div class="testimonial_box">
+                    <div class="testimonial_container">
+                      <div class="background_layer"></div>
+                      <div class="layer_content">
+                        <div class="testimonial_owlCarousel owl-carousel">
+                          <div class="testimonials">
+                            <div class="testimonial_content">
+                              <div class="testimonial_caption">
+                                <h6>Robert Clarkson</h6>
+                                <span>CEO, Axura</span>
+                              </div>
+                              <p>
+                                The team at Tectxon industry is very talented,
+                                dedicated, well organized and knowledgeable. I was
+                                most satisfied with the quality of the workmanship.
+                                They did excellent work.
+                              </p>
+                            </div>
+                            <div class="images_box">
+                              <div class="testimonial_img">
+                                <img
+                                  class="img-center"
+                                  src="https://cdn.pixabay.com/photo/2017/09/21/19/06/woman-2773007_960_720.jpg"
+                                  alt="images not found"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> -->
+      
+          <!-- <div id="main">
+            <section id="gitUserData"></section>
+          </div> -->
+          <!-- <script type="text/javascript" src="main.js"></script> -->
+
+          <script type="module">
+            import {
+              getUserData,
+              // insertToDom,
+              getEachUser,
+              searchGitUserRecords
+            } from "./assets/js/git-user-api.js";
+
+            (async function () {
+              const data = await getEachUser();
+            //   getEachUser();
+
+              searchGitUserRecords(data);
+              // insertToDom(data);
+              // console.log(data);
+            })();
+          </script>
+          
+</body>
+</html>

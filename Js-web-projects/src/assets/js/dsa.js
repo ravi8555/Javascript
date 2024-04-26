@@ -1289,4 +1289,100 @@ console.log("findAllAnagramsInAString",findAllAnagramsInAString(anaArray, anaArr
 
 console.log("Question => Find the longest palindrome from a given string");
 
+// function longestPalindrome(N, str) {
+//   const charCount = new Map()
 
+//   for(let i = 0; i < N; i++){
+//     const char = str[i];
+//     charCount.set(char, (charCount.get(char) || 0) +1)
+//   }
+
+//   let length = 0;
+//   let hasOddFreq = false
+
+//   charCount.forEach((count)=>{
+//     length += Math.floor(count/2) *2;
+//     if(count % 2 !== 0){
+//       hasOddFreq = true
+//     }   
+
+//   })
+//   if(hasOddFreq){
+//     length += 1
+//   }
+//   return length
+// }
+
+console.log("Question => K most frequent words");
+// function compare(a, b) {
+//   if (a[1] === b[1]) {
+//     return a[0].localeCompare(b[0]);
+//   }
+//   return b[1] - a[1];
+// }
+// function frequentWords(words, k) {
+//     // 1. Count word frequencies:
+//   const frequencyCnt = new Map();
+
+//   for (let i = 0; i < words.length; i++) {
+//     const word = words[i];
+//     frequencyCnt.set(word, (frequencyCnt.get(word) || 0) + 1);
+//   }
+
+//   let arr = [];
+//   frequencyCnt.forEach((value, key) => {
+//     arr.push([key, value]);
+//   });
+
+//   arr.sort(compare);
+
+//   const ans = [];
+
+//   for (let i = 0; i < k && i < arr.length; i++) {
+//     ans.push(arr[i][0]);
+//   }
+//   return ans;
+// }
+console.log("Question => function removeDuplicates(head)");
+class Node {
+  constructor(val, next) {
+    this.val = val;
+    this.next = next;
+  }
+}
+function removeDuplicates(head) {
+  if (head === null || head.next === null) {
+    return head;
+  }
+
+  const visited = new Set();
+  let current = head;
+  let previous = null;
+
+  while (current !== null) {
+    if (visited.has(current.val)) {
+      // Remove the duplicate node
+      previous.next = current.next;
+      current = current.next;
+    } else {
+      visited.add(current.val);
+      previous = current;
+      current = current.next;
+    }
+  }
+
+  return head;
+}
+
+
+
+
+const head = new Node(1, new Node(2, new Node(2, new Node(3, new Node(3, null)))));
+const headWithoutDuplicates = removeDuplicates(head);
+
+// Print the linked list without duplicates.
+let current = headWithoutDuplicates;
+while (current) {
+  console.log(current.val);
+  current = current.next;
+}

@@ -39,6 +39,9 @@ const htmlPageNames = [
   {
     pageName: 'dsa.html',
     title: 'DSA',
+  },{
+    pageName: 'git-user.html',
+    title: 'DSA',
   },
   // {
   //     pageName: 'detail-page.html',
@@ -252,7 +255,7 @@ module.exports = (env, argv) => ({
     contentBase: [path.join(__dirname, '/src')],
     watchContentBase: true,
     // compress: true,
-    port: 7000,
+    port: 8000,
     open: true,
   },
 })
