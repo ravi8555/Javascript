@@ -91,6 +91,7 @@
 //      country: "India"
 //   }
 // }
+
 // console.log(personalDetails.address.city);
 // console.log(personalDetails[address][city]);//error
 
@@ -112,18 +113,34 @@
   }
 
   userDetails.name = {...userDetails.name, first:"Rizwana", last: "Kandekar"}
-  userDetails.Department = {...userDetails.Department, name:"IT", designation:"AVP"}
+  userDetails.Department = {...userDetails.Department, name:"IT", designation:"AVP"}  
+  console.log(userDetails['Department'].name);
 
-  console.log(userDetails.Department);
-  console.log(userDetails);
+// console.log(userDetails.Department);
+// console.log(userDetails);
 
-  function addDepartment({Department:{name, designation}}){
+// const obj = {
+//     name: "Ravi"
+// }
 
-  }
-  const userData = {Department:{name:"IT", designation:"AVP"}} 
+// const {x} = obj;
+// console.log(x);
 
-  const newDeparObj = addDepartment(userData)
+// let a = 0;
+// let b = 0;
+// console.log(a/b);
 
-  console.log(newDeparObj);
+// let a = 0;
+// var b;
+// console.log(a/b);
+
+// 1.What will be the output:
+
+const readBooks = (book1, book2) => console.log(`I read '${book1}' published in '${book2}'`);
+readBooks("Rework", "2010");
+
+
+
+
 
 
