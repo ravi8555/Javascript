@@ -114,7 +114,7 @@
 
   userDetails.name = {...userDetails.name, first:"Rizwana", last: "Kandekar"}
   userDetails.Department = {...userDetails.Department, name:"IT", designation:"AVP"}  
-  console.log(userDetails['Department'].name);
+  // console.log(userDetails['Department'].name);
 
 // console.log(userDetails.Department);
 // console.log(userDetails);
@@ -136,9 +136,156 @@
 
 // 1.What will be the output:
 
-const readBooks = (book1, book2) => console.log(`I read '${book1}' published in '${book2}'`);
-readBooks("Rework", "2010");
+// const readBooks = (book1, book2) => console.log(`I read '${book1}' published in '${book2}'`);
+// readBooks("Rework", "2010");
 
+// if(1){
+//   let a = 10;
+//   let a = 20;
+// }
+// let a = 10;
+
+// func();
+// function func() {
+//   var a = 20;
+// }
+// console.log(a);
+
+// var a = 10;
+// console.log(a);
+// Lexical Scope
+// if(a==10)
+//   {
+//       const a = 20;
+//       console.log(a);
+//   }
+
+// var a = 30;
+// console.log(a);
+
+// function parent() {
+//   const message = "I am from parent =>";
+
+//   function child() {
+//     console.log(message + " Called from child function ");
+//   }
+//   child();
+// }
+
+// parent();
+
+// var x = 10; // global scope
+
+// var outerFunc = function (){ // outermost function
+//     var y = 20;
+//     console.log(x + " " + y);
+
+//       var innerFunc= function (){ // innermost function
+//         var z = 30;
+//         console.log(x + " " + y + " " + z);
+//     }
+//     innerFunc();
+// }
+// outerFunc();
+
+// var a;
+// console.log(a);
+// a = 10;
+
+
+// func ();
+
+// var func = () => {
+//   console.log("hello");
+// }
+
+// func ();
+
+// let func = function() {
+//   console.log("hello");
+// }
+
+
+
+// var func;
+
+// func(); 
+
+// const func = function() {
+//   console.log("hello");
+// }
+
+
+function bikeRepair(funcToExecuteLater){
+  console.log("Working on bike");
+  //once the work is done
+  funcToExecuteLater();
+}
+
+function callOwner(){
+  console.log("Take back bike");
+}
+bikeRepair(callOwner);
+
+// function waitFunction(doSomethingAfterWaiting){
+//   console.log("waiting for the game start")
+//   doSomethingAfterWaiting()
+// }
+
+// function gameSetTime(){
+//   setTimeout(()=>{
+//     console.log("Game Now Started after 2 sec");
+//   }, 3000)
+// }
+// waitFunction(gameSetTime)
+
+// function waitFunction(callback){
+//   console.log("Game Loding...");
+//   setTimeout(callback, 2000)
+// }
+
+// function doSomethingAfterWaiting(){
+//   console.log("Welcome to my game");
+// }
+// waitFunction(doSomethingAfterWaiting)
+
+
+// }
+// if(aman === yatish){
+//   console.log("The number are same");
+// }else{
+//   console.log("hello");
+// }
+
+// let winHe = window.innerHeight
+// console.log(winHe);
+// const sec = document.querySelectorAll('section')
+
+// sec.forEach((ele)=>{
+//   ele.style.height = winHe + "px";
+// })
+
+// const list = document.getElementById('list');
+// let loadMoreBtn = document.getElementById('loadMore');
+
+// let listP = document.querySelectorAll('#list p')
+
+// // console.log("LoadmoreBtn",loadMoreBtn);
+// loadMoreBtn.addEventListener("click", (ele)=>{
+  
+//   for(let i = 0; i < listP.length; i++){
+
+//     listP[i].style.display = "block"
+//     console.log(listP[i]);
+//   }
+//   console.log("Click");
+// })
+
+// let e = 10 * "5";
+//     console.log(e);
+const oddNoArray = [1, 3, 5];
+oddNoArray[50] = 199;
+console.log( oddNoArray.length );
 
 
 
