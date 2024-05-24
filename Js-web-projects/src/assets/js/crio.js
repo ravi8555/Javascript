@@ -1216,13 +1216,13 @@ function nonMutatingConcat(original, attach) {
 const ans = nonMutatingConcat([1, 2, 3], [4, 5])
 console.log(ans)
 
-function sentensify(str) {
-  // You only need to implement this function.
-  const strString = str.split('-')
-  const result = strString.join(' ')
-  return result
-}
-console.log(sentensify('May-the-force-be-with-you'))
+// function sentensify(str) {
+//   // You only need to implement this function.
+//   const strString = str.split('-')
+//   const result = strString.join(' ')
+//   return result
+// }
+// console.log(sentensify('May-the-force-be-with-you'))
 
 function sentensify1(str) {
   // You only need to implement this function.
@@ -1239,22 +1239,22 @@ function sentensify1(str) {
 }
 console.log(sentensify1('May,the,force,be,with,you'))
 
-function methodOnObject(name, age, college, city, country) {
-  const person = {
-    name: name,
-    age: age,
-    getCity: function () {
-      return name + ' Lives in ' + city + '.'
-    },
-    college: college,
-    country: country,
-  }
-  return person
-}
+// function methodOnObject(name, age, college, city, country) {
+//   const person = {
+//     name: name,
+//     age: age,
+//     getCity: function () {
+//       return name + ' Lives in ' + city + '.'
+//     },
+//     college: college,
+//     country: country,
+//   }
+//   return person
+// }
 
-console.log(
-  methodOnObject('Ankit Ghosh', 21, 'IIT Delhi', 'Delhi', 'India').getCity()
-)
+// console.log(
+//   methodOnObject('Ankit Ghosh', 21, 'IIT Delhi', 'Delhi', 'India').getCity()
+// )
 // async function fetchApi() {
 //   try {
 //     const fetchData = await fetch('https://api.github.com/users')
@@ -1306,3 +1306,12 @@ console.log(`Is "${word2}" a palindrome? ${wordKit.isPalindrome(word2)}`) // Sho
 
 const word3 = 'alpha'
 console.log(`Make "${word3}" a palindrome: "${wordKit.makePalindrome(word3)}"`) // Should print "alphaahpla"
+
+console.log("=============>");
+console.log(2 + 5 + "3");
+console.log(1 +  "2" + "2");
+console.log(1 +  +"2" + "2");
+console.log(1 +  -"1" + "2");
+console.log(+"1" +  "1" + "2");
+console.log( "A" - "B" + "2");
+console.log( "A" - "B" + 2);
