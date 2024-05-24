@@ -8,6 +8,9 @@
 // API
 // https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo
 
+// Free API
+// https://jsonplaceholder.typicode.com/
+
 // const { map } = require('jquery')
 
 //replit.com/@MayankTiwari9/crio-js-1-b2-May-2023#session-6/exercise.js
@@ -35,6 +38,9 @@
 
 // DSA JS 1
 // https://replit.com/@marshal4world/DSA-JS-Sept-23#index.js
+
+// MEARN -1 
+// https://github.com/ajomadlabs/crio/tree/master/src
 
 // github ref
 // function satHi() {

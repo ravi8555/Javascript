@@ -255,7 +255,7 @@ module.exports = (env, argv) => ({
     contentBase: [path.join(__dirname, '/src')],
     watchContentBase: true,
     // compress: true,
-    port: 2000,
+    port: 8000,
     open: true,
   },
 })
