@@ -11,6 +11,9 @@
 // Free API
 // https://jsonplaceholder.typicode.com/
 
+// Question API
+// https://the-trivia-api.com/api/questions/
+
 // const { map } = require('jquery')
 
 //replit.com/@MayankTiwari9/crio-js-1-b2-May-2023#session-6/exercise.js

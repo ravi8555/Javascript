@@ -1,6 +1,6 @@
 // console.log("Revision");
 
-const { event } = require("jquery");
+// const { event } = require("jquery");
 
 // const arr = [1,2,8,9,6]
 // const n = arr.length
@@ -98,24 +98,24 @@ const { event } = require("jquery");
 // console.log(personalDetails[address][city]);//error
 
 
-  const userDetails = {
-    name: {
-      first: "Kapil",
-      last: "Raghuwanshi",
-    },
-    jobTitle: "JS Instructor @ Crio.do",
-    email: {
-      work: "kapil@epsilon.com",
-      personal: "",
-    },
-    status: {
-      isOnline: true,
-      isVerified: false,
-    }
-  }
+  // const userDetails = {
+  //   name: {
+  //     first: "Kapil",
+  //     last: "Raghuwanshi",
+  //   },
+  //   jobTitle: "JS Instructor @ Crio.do",
+  //   email: {
+  //     work: "kapil@epsilon.com",
+  //     personal: "",
+  //   },
+  //   status: {
+  //     isOnline: true,
+  //     isVerified: false,
+  //   }
+  // }
 
-  userDetails.name = {...userDetails.name, first:"Rizwana", last: "Kandekar"}
-  userDetails.Department = {...userDetails.Department, name:"IT", designation:"AVP"}  
+  // userDetails.name = {...userDetails.name, first:"Rizwana", last: "Kandekar"}
+  // userDetails.Department = {...userDetails.Department, name:"IT", designation:"AVP"}  
   // console.log(userDetails['Department'].name);
 
 // console.log(userDetails.Department);
@@ -419,12 +419,12 @@ const numArray =  [1,4,5,6,7,8,9];
 
 // we want to arrange a bunch of students according to their names in alphabetical order.
 
-const shoppingList = [
-  { name: "Milk", price: 3 },
-  { name: "Eggs", price: 5 },
-  { name: "Bread", price: 2 },
-  { name: "Cheese", price: 12 }
-];
+// const shoppingList = [
+//   { name: "Milk", price: 3 },
+//   { name: "Eggs", price: 5 },
+//   { name: "Bread", price: 2 },
+//   { name: "Cheese", price: 12 }
+// ];
 
 // const getItem = shoppingList.find((item)=> item.price >= 5);
 // console.log(getItem);
@@ -693,7 +693,35 @@ const imageGallery = [
 //   return getAdultPerson
 // }
 // console.log(olderAge(users));
+// function sayHi() {
+//   console.log(name);
+//   console.log(age);
+//   let age = 21;
+//   var name = 'Lydia';
+// }
 
+// console.log(sayHi());
 
+// for(var i =0 ; i <5; i++){
+//   setTimeout(()=> console.log(i), 1)
+// }
+// for(let i =0 ; i <3; i++){
+//   setTimeout(()=> console.log(i), 1)
+// }
 
+const shape = {
+  radius : 10,
+  diameter(){
+    return this.radius * 2
+  },
+  perimeter: () => 2* Math.PI * this.radius,
+}
+
+console.log(shape.diameter());
+console.log(shape.perimeter());
+
+var testValue;
+!function test(){
+    testValue = 3
+}();
  

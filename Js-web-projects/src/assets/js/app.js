@@ -62,7 +62,7 @@ import style from '../css/main.scss'
 // Calculator
 // import quiz from "../js/quize-1.js"
 // import bruteFroce from '../js/brute-force.js'
-import crio from '../js/crio.js'
+// import crio from '../js/crio.js'
 
 // import dsa from '../js/dsa.js'
 // import gitUserApi from '../js/git-user-api.js'
@@ -84,4 +84,6 @@ import crio from '../js/crio.js'
 
 // circle
 
-import res from '../js/revision.js'
+// import res from '../js/revision.js'
+import challenge from '../js/challenges.js'
+
