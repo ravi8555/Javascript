@@ -709,19 +709,43 @@ const imageGallery = [
 //   setTimeout(()=> console.log(i), 1)
 // }
 
-const shape = {
-  radius : 10,
-  diameter(){
-    return this.radius * 2
-  },
-  perimeter: () => 2* Math.PI * this.radius,
-}
+// const shape = {
+//   radius : 10,
+//   diameter(){
+//     return this.radius * 2
+//   },
+//   perimeter: () => 2* Math.PI * this.radius,
+// }
 
-console.log(shape.diameter());
-console.log(shape.perimeter());
+// console.log(shape.diameter());
+// console.log(shape.perimeter());
 
-var testValue;
-!function test(){
-    testValue = 3
-}();
+// var testValue;
+// !function test(){
+//     testValue = 3
+// }(); 
  
+// +true;
+// console.log(!'Lydia');
+
+// const bird = {
+//   size: 'small',
+// };
+
+// const mouse = {
+//   name: 'Mickey',
+//   small: true,
+// };
+
+const bird = {
+  size: 'small',
+};
+
+const mouse = {
+  name: 'Mickey',
+  small: true,
+};
+
+// console.log(mouse.bird.size);
+// console.log(mouse[bird.size]);
+console.log(mouse[bird["size"]]);
