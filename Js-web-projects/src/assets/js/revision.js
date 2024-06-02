@@ -737,15 +737,84 @@ const imageGallery = [
 //   small: true,
 // };
 
-const bird = {
-  size: 'small',
-};
+// const bird = {
+//   size: 'small',
+// };
 
-const mouse = {
-  name: 'Mickey',
-  small: true,
-};
+// const mouse = {
+//   name: 'Mickey',
+//   small: true,
+// };
 
 // console.log(mouse.bird.size);
 // console.log(mouse[bird.size]);
-console.log(mouse[bird["size"]]);
+// console.log(mouse[bird["size"]]);
+
+// let c = { greeting: 'Hey!' };
+// let d;
+
+// d = c;
+// c.greeting = 'Hello';
+// console.log(d.greeting);
+"use strict"
+// let greeting;
+// greetign = {}; // Typo!
+// console.log(greetign);
+
+// function bark() {
+//   console.log('Woof!');
+// }
+// bark.animal = 'dog'
+
+// function Person(firstName, lastName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+// }
+
+// const member = new Person('Lydia', 'Hallie');
+// Person.prototype.getFullName = function() {
+//   return `${this.firstName} ${this.lastName}`;
+// };
+
+// // console.log(member.member);
+// console.log(member.getFullName());
+
+// function Person(firstName, lastName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+// }
+
+// const lydia = new Person('Lydia', 'Hallie');
+// const sarah = Person('Sarah', 'Smith');
+
+// console.log(lydia);
+// console.log(sarah);
+
+// function sum(a, b) {
+//   return a + b;
+// }
+
+// sum(1, '2');
+
+// console.log(sum(1, '2'));
+
+// let number = 0;
+
+// console.log(number++);
+// console.log(++number);
+// console.log(number);
+
+function getPersonInfo(one, two, three) {
+  console.log(one);
+  console.log(two);
+  console.log(three);
+}
+
+const person = 'Lydia';
+const age = 21;
+
+getPersonInfo`${person} is ${age} years old`;
+getPersonInfo(`${person} is ${age} years old`)
+
+// console.log(getPersonInfo(`${person} is ${age} years old`));
+
