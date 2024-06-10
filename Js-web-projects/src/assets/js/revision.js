@@ -804,17 +804,21 @@ const imageGallery = [
 // console.log(++number);
 // console.log(number);
 
-function getPersonInfo(one, two, three) {
-  console.log(one);
-  console.log(two);
-  console.log(three);
-}
+// function getPersonInfo(one, two, three) {
+//   console.log(one);
+//   console.log(two);
+//   console.log(three);
+// }
 
-const person = 'Lydia';
-const age = 21;
+// const person = 'Lydia';
+// const age = 21;
 
-getPersonInfo`${person} is ${age} years old`;
-getPersonInfo(`${person} is ${age} years old`)
+// getPersonInfo`${person} is ${age} years old`;
+// getPersonInfo(`${person} is ${age} years old`)
 
 // console.log(getPersonInfo(`${person} is ${age} years old`));
+
+var testValue;
+function test() { testValue = 3; }
+();
 
