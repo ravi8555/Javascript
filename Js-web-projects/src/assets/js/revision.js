@@ -746,6 +746,32 @@ const imageGallery = [
 //   small: true,
 // };
 
+// // console.log(mouse.bird.size);
+// // console.log(mouse[bird.size]);
+// console.log(mouse[bird["size"]]);
+
+// let a = 3;
+// let b = new Number(3);
+// let c = 3;
+
+// // console.log(a == b);
+// console.log(a === b);
+// console.log(b === c);
+
+
+class Chameleon {
+  static colorChange(newColor) {
+    this.newColor = newColor;
+    return this.newColor;
+  }
+
+  constructor({ newColor = 'green' } = {}) {
+    this.newColor = newColor;
+  }
+}
+
+const freddie = new Chameleon({ newColor: 'purple' });
+console.log(freddie.newColor);
 // console.log(mouse.bird.size);
 // console.log(mouse[bird.size]);
 // console.log(mouse[bird["size"]]);
