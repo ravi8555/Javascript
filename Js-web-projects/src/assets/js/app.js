@@ -27,7 +27,7 @@ import style from '../css/main.scss'
 // import faqCollapse from "../js/faq-collapse.js";
 
 // form
-import form from '../js/form.js'
+// import form from '../js/form.js'
 
 // // Progress
 // import progrssStep from "../js/progress-steps.js";

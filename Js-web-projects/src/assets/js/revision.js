@@ -759,19 +759,36 @@ const imageGallery = [
 // console.log(b === c);
 
 
-class Chameleon {
-  static colorChange(newColor) {
-    this.newColor = newColor;
-    return this.newColor;
-  }
+// class Chameleon {
+//   static colorChange(newColor) {
+//     this.newColor = newColor;
+//     return this.newColor;
+//   }
 
-  constructor({ newColor = 'green' } = {}) {
-    this.newColor = newColor;
-  }
-}
+//   constructor({ newColor = 'green' } = {}) {
+//     this.newColor = newColor;
+//   }
+// }
 
-const freddie = new Chameleon({ newColor: 'purple' });
-console.log(freddie.newColor);
+// const freddie = new Chameleon({ newColor: 'purple' });
+// console.log(freddie.colorChange('orange'));
+
+// class Chameleon {
+//   static colorChange(newColor) {
+//     this.newColor = newColor;
+//     return this.newColor;
+//   }
+
+//   constructor({ newColor = 'green' } = {}) {
+//     this.newColor = newColor;
+//   }
+// }
+
+// const freddie = new Chameleon({ newColor: 'purple' });
+// console.log(freddie.newColor);
+
+
+
 // console.log(mouse.bird.size);
 // console.log(mouse[bird.size]);
 // console.log(mouse[bird["size"]]);
@@ -782,7 +799,7 @@ console.log(freddie.newColor);
 // d = c;
 // c.greeting = 'Hello';
 // console.log(d.greeting);
-"use strict"
+// "use strict"
 // let greeting;
 // greetign = {}; // Typo!
 // console.log(greetign);
@@ -830,17 +847,17 @@ console.log(freddie.newColor);
 // console.log(++number);
 // console.log(number);
 
-function getPersonInfo(one, two, three) {
-  console.log(one);
-  console.log(two);
-  console.log(three);
-}
+// function getPersonInfo(one, two, three) {
+//   console.log(one);
+//   console.log(two);
+//   console.log(three);
+// }
 
-const person = 'Lydia';
-const age = 21;
+// const person = 'Lydia';
+// const age = 21;
 
-getPersonInfo`${person} is ${age} years old`;
-getPersonInfo(`${person} is ${age} years old`)
+// getPersonInfo`${person} is ${age} years old`;
+// getPersonInfo(`${person} is ${age} years old`)
 
 // console.log(getPersonInfo(`${person} is ${age} years old`));
 
