@@ -861,3 +861,7 @@ const imageGallery = [
 
 // console.log(getPersonInfo(`${person} is ${age} years old`));
 
+var testValue;
+function test() { testValue = 3; }
+
+
