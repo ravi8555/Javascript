@@ -846,5 +846,5 @@ console.log(freddie.newColor);
 
 var testValue;
 function test() { testValue = 3; }
-();
+
 
