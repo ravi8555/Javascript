@@ -861,7 +861,19 @@ const imageGallery = [
 
 // console.log(getPersonInfo(`${person} is ${age} years old`));
 
-var testValue;
-function test() { testValue = 3; }
+// function getAge(...args) {
+//   console.log(typeof args);
+// }
 
+// getAge(21);
 
+// function getAge() {
+//   'use strict';
+//   age = 21;
+//   console.log(age);
+// }
+
+// getAge();
+
+const sum = eval('10*10+5');
+console.log(sum);
