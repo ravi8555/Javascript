@@ -771,7 +771,24 @@ const imageGallery = [
 // }
 
 // const freddie = new Chameleon({ newColor: 'purple' });
+// console.log(freddie.colorChange('orange'));
+
+// class Chameleon {
+//   static colorChange(newColor) {
+//     this.newColor = newColor;
+//     return this.newColor;
+//   }
+
+//   constructor({ newColor = 'green' } = {}) {
+//     this.newColor = newColor;
+//   }
+// }
+
+// const freddie = new Chameleon({ newColor: 'purple' });
 // console.log(freddie.newColor);
+
+
+
 // console.log(mouse.bird.size);
 // console.log(mouse[bird.size]);
 // console.log(mouse[bird["size"]]);
@@ -846,5 +863,19 @@ const imageGallery = [
 
 // var testValue;
 // function test() { testValue = 3; }
+// function getAge(...args) {
+//   console.log(typeof args);
+// }
 
+// getAge(21);
 
+// function getAge() {
+//   'use strict';
+//   age = 21;
+//   console.log(age);
+// }
+
+// getAge();
+
+const sum = eval('10*10+5');
+console.log(sum);
