@@ -759,19 +759,19 @@ const imageGallery = [
 // console.log(b === c);
 
 
-class Chameleon {
-  static colorChange(newColor) {
-    this.newColor = newColor;
-    return this.newColor;
-  }
+// class Chameleon {
+//   static colorChange(newColor) {
+//     this.newColor = newColor;
+//     return this.newColor;
+//   }
 
-  constructor({ newColor = 'green' } = {}) {
-    this.newColor = newColor;
-  }
-}
+//   constructor({ newColor = 'green' } = {}) {
+//     this.newColor = newColor;
+//   }
+// }
 
-const freddie = new Chameleon({ newColor: 'purple' });
-console.log(freddie.newColor);
+// const freddie = new Chameleon({ newColor: 'purple' });
+// console.log(freddie.newColor);
 // console.log(mouse.bird.size);
 // console.log(mouse[bird.size]);
 // console.log(mouse[bird["size"]]);
@@ -782,7 +782,7 @@ console.log(freddie.newColor);
 // d = c;
 // c.greeting = 'Hello';
 // console.log(d.greeting);
-"use strict"
+// "use strict"
 // let greeting;
 // greetign = {}; // Typo!
 // console.log(greetign);
@@ -844,7 +844,7 @@ console.log(freddie.newColor);
 
 // console.log(getPersonInfo(`${person} is ${age} years old`));
 
-var testValue;
-function test() { testValue = 3; }
+// var testValue;
+// function test() { testValue = 3; }
 
 
