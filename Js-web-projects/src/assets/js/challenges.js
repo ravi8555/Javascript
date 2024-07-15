@@ -1,6 +1,6 @@
 var testValue;
 function test() { testValue = 3; }
-console.log(testValue);
+// console.log(testValue);
 
 var myNum = 143;
 let myWord = "I Love You";
@@ -31,7 +31,7 @@ let asignVal = "Its Raning";
 //  console.log(reassign);
 
 function add(a, b){
-    console.log(a + b);
+    // console.log(a + b);
 }
 add(3, 5);
 
@@ -56,7 +56,7 @@ stockTotalItem(totalItem, soldItem);
     const appleStock = appleDetails.itemStock;
     const appleAvgPrice =Math.round(appleStock/applePrice)
 
-    console.log("Apple Avg",appleAvgPrice);
+    // console.log("Apple Avg",appleAvgPrice);
 
     const myAppleStockValue = `${appleDetails.fruit} stock value is ${appleDetails.price} * ${appleDetails.itemStock} = ${appleDetails.price * appleDetails.itemStock}` 
 
@@ -68,76 +68,243 @@ stockTotalItem(totalItem, soldItem);
         return accumolator + currentfruitPricr.price
     }, 0)
 
-    console.log("TotalStock =>", totalStockItem);
+    // console.log("TotalStock =>", totalStockItem);
     
     const getAvgPrice = `${Math.floor(totalStockItem / totalFruitsPrice)}`
     const getRemainder = `Total Remainder is ${Math.round(totalStockItem % totalFruitsPrice)}`
     // console.log(getTotalAvg, getRemainder);
 
     totalStockItem += 10;
-    console.log(totalStockItem);
+    // console.log(totalStockItem);
 
     totalItem -= 15;
-    console.log(totalItem);
+    // console.log(totalItem);
 
     if(applePrice > getRemainder){
-        console.log("Apple Price Is Okay");
+        // console.log("Apple Price Is Okay");
     }else{
-        console.log("Apple Price Is less than Fruits Avarage");
+        // console.log("Apple Price Is less than Fruits Avarage");
     }
 
     if(applePrice < totalStockItem){
-        console.log("Apple Price Is Okay");
+        // console.log("Apple Price Is Okay");
     }else{
-        console.log("Apple Price Is less than Fruits Avarage");
+        // console.log("Apple Price Is less than Fruits Avarage");
     }
 
     if(appleAvgPrice <= applePrice){
-        console.log(`We are getting loss `);
+        // console.log(`We are getting loss `);
     }
     if(appleAvgPrice >= applePrice){
-        console.log(`We are getting Proffit `);
+        // console.log(`We are getting Proffit `);
     }
     let converTostring = totalStockItem.toString()
     let converTostring1 = String(totalStockItem)
     let converTostring2 = "" + totalStockItem
-    console.log("totalStockItem",converTostring1);
-    console.log(typeof converTostring1);
-    console.log(typeof totalStockItem);
-    console.log(typeof converTostring2);
+    // console.log("totalStockItem",converTostring1);
+    // console.log(typeof converTostring1);
+    // console.log(typeof totalStockItem);
+    // console.log(typeof converTostring2);
 
     if(converTostring1 == totalStockItem){
-        console.log("The Value are same");
+        // console.log("The Value are same");
     }else{
-        console.log("The Value are 'NOT' same");
+        // console.log("The Value are 'NOT' same");
 
     }
 
     if(converTostring1 === totalStockItem){
-        console.log("The Value are same");
+        // console.log("The Value are same");
     }else{
-        console.log("The Value are 'NOT' same");
+        // console.log("The Value are 'NOT' same");
 
     }
-    console.log(getAvgPrice);
+    // console.log(getAvgPrice);
     
     if(getAvgPrice >= 8 && totalStockItem == "141" ){
-        console.log("The && condition true");
+        // console.log("The && condition true");
     }else{
-        console.log("The && condition False");
+        // console.log("The && condition False");
 
     }
     if(!converTostring){
-        console.log("Negative codition true");
+        // console.log("Negative codition true");
     }else{
-        console.log("Negative codition False");
+        // console.log("Negative codition False");
     }
 
     const myTernery = converTostring === 141 ? "Its string " : "Its Number";
-    console.log(myTernery);
+    // console.log(myTernery);
+
+/*  Day-3
+ Activity -1
+ Task -1 
+*/
+
+const personInfoObj = [
+    {name : "Prafulla",Age : 30,number : 10},
+    {name : "Gargi", Age : 3,number : -3},
+    {name : "Ravindra", Age : 40,number : 11},
+    {name : "Advait", Age : 8,number : 4},
+    {name : "Nitin", Age : 35,number : 13}
+]
+
+let perDetails = personInfoObj.find(person => person.name === "Prafulla");
+const perDetailsNum = perDetails.number
+const perDetailsAge = perDetails.Age
+if(perDetailsNum > 0){
+    console.log(`The Number is Positive ${perDetailsNum}`)
+}else if(perDetailsNum < 0){
+    console.log(`The Number is Negative`)
+}else{
+    console.log(`The Number is Zero `)
+}
+
+if(perDetailsAge >= 18){
+    console.log(`The perosn is Adult can do the Vote`);
+}else{
+    console.log(`The perosn can not do the Cast`);
+}
+
+/*  Activity - 2 ==> Task - 3  */
+
+let getAges = personInfoObj.map( person => person.Age);
+console.log(getAges);//[30, 3, 40, 8, 35]
+
+const sortLarge3 = getAges.sort((a,b) => a - b);
+console.log(sortLarge3.reverse().slice(0, 3));
+
+let firstLarges = -Infinity;
+let secondLarges = -Infinity;
+let thirdLarges = -Infinity;
+
+for(let i = 0; i < getAges.length; i++){
+    let currentAge = getAges[i];
+
+    if(currentAge > firstLarges){
+        thirdLarges = secondLarges;
+        secondLarges = firstLarges;
+        firstLarges = currentAge
+    }else if(currentAge > secondLarges){
+        thirdLarges = secondLarges;
+        secondLarges = currentAge
+    }else if(currentAge > thirdLarges){
+        thirdLarges = currentAge 
+    }
+}
+
+const largest3 = [firstLarges, secondLarges, thirdLarges]
+console.log(largest3);
+
+/*  Activity - 3 ==> Task - 4  */
+
+let day ;
+
+switch(new Date().getDay()){
+    case 0:
+    day = "Sunday";
+    break;
+    
+    case 1:
+    day = "Monday";
+    break;
+
+    case 2:
+    day = "Tuesday";
+    break;
+
+    case 3:
+    day = "Wednesday";
+    break;
+
+    case 4:
+    day = "Thursday";
+    break;
+
+    case 5:
+    day = "Friday";
+    break;
+
+    case 6:
+    day = "Saturday";
+    break;
+
+    default :
+    day = "Unkonwn Day"
+
+}
+console.log(day); 
+
+/*  Activity - 3 ==> Task - 5  */
+let score = 30;
+let grade;
+
+switch(true){
+    case (score >= 90):
+    grade = "A";
+    break;
+    case(score >= 80):
+    grade = "B"
+    break;
+
+    case(score >= 70):
+    grade = "C";
+    break;
+
+    case (score >= 60):
+    grade = "D";
+    break;
+    
+    default :
+    grade = "Under grade"
+
+}
+
+console.log(grade);
+
+/*  Activity - 4 ==> Task - 6  */
+
+
+console.log(typeof getAges); // Should log 'object' since it's an array
+
+const getAgeAvg = getAges.reduce((accumulator, currentAge) => {
+    return accumulator + currentAge;
+}, 0) // getAges.length;
+
+console.log(getAgeAvg); // This will log the average age
+
+const isOddEven = getAgeAvg % 2 === 0 ? "The Avarage is Odd" : "The Avarge is Even";
+
+console.log(isOddEven);
+
+let numArry = [20, 50, 30];
+
+function getTotal(numbers){
+    let sum = 0;
+    for(let i = 0; i <numbers.length; i++){
+        sum += numbers[i]
+    }
+    return sum
+}
+console.log(getTotal(numArry));
+
+/*  Activity - 5 ==> Task - 7  */
+
+const LeapYear = (year)=>{
+    if(year % 400 == 0){
+        return true
+    }else if(year % 100 == 0){
+        return false
+    }else if(year % 4 ==0){
+        return true
+    }else{
+        return false
+    }
+}
+
+console.log(LeapYear(1600));
 
 
 
-// var testValue;
-// function test() { testValue = 3; }
-// console.log(testValue);
+
+

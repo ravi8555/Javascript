@@ -128,7 +128,7 @@ console.log('find Prime Num')
 // /**===== Quesstion 7 ====**/
 // // find the next index in Array
 
-// console.log('Question Find Next Index')
+console.log('Question Find Next Index')
 // /* function zombieAttack(arr) {
 //   // converted arr string to array using split method and stored in new var
 //   let arrName = arr.split(',')
@@ -157,7 +157,7 @@ console.log('find Prime Num')
 // }
 // */
 
-// console.log('Question Find Next Index')
+console.log('Question Find Next Index')
 
 // function zombieAttack(arr) {
 //   let arrName = arr.split(',')
@@ -177,7 +177,7 @@ console.log('find Prime Num')
 // }
 // console.log(zombieAttack('Rameo, Kevin, Zombie, Jacky, Adam'))
 
-// console.log('Question Reverse The string');
+console.log('Question Reverse The string');
 // 1
 // 1. create function reverseString and set parameter str to get the input
 // 2. create empty var to store the reverse string reversStr
