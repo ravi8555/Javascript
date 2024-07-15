@@ -42,6 +42,9 @@ const htmlPageNames = [
   },{
     pageName: 'git-user.html',
     title: 'DSA',
+  },{
+    pageName: 'form-validation.html',
+    title: 'FORM',
   },
   // {
   //     pageName: 'detail-page.html',

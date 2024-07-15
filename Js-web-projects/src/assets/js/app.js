@@ -84,7 +84,7 @@ import style from '../css/main.scss'
 
 // circle
 
-// import res from '../js/revision.js'
+import res from '../js/revision.js'
 import challenge from '../js/challenges.js' 
-import challenge1 from '../js/challenges.js' 
+
 

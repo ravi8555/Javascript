@@ -814,6 +814,7 @@ const imageGallery = [
 //   this.lastName = lastName;
 // }
 
+
 // const member = new Person('Lydia', 'Hallie');
 // Person.prototype.getFullName = function() {
 //   return `${this.firstName} ${this.lastName}`;
@@ -837,7 +838,7 @@ const imageGallery = [
 //   return a + b;
 // }
 
-// sum(1, '2');
+// // sum(1, '2');
 
 // console.log(sum(1, '2'));
 
@@ -875,5 +876,37 @@ const imageGallery = [
 
 // getAge();
 
-const sum = eval('10*10+5');
-console.log(sum);
+// const sum = eval('10*10+5');
+// console.log(sum);
+
+// sessionStorage.setItem('cool_secret', 123);
+
+// var num = 8;
+// var num = 10;
+
+// console.log(num);
+
+
+// const obj = { 1: 'a', 2: 'b', 3: 'c' };
+// const set = new Set([1, 2, 3, 4, 5]);
+
+// console.log(obj.hasOwnProperty('1'));
+// console.log(obj.hasOwnProperty(1));
+// console.log(set.has('1'));
+// console.log(set.has(1));
+
+// const obj = { a: 'one', b: 'two', a: 'three' };
+// console.log(obj);
+
+// for (let i = 1; i < 5; i++) {
+//   if (i === 2) continue;
+//   console.log(i);
+// }
+
+String.prototype.giveLydiaPizza = () => {
+  return 'Just give Lydia pizza already!';
+};
+
+const name = 'Lydia';
+
+console.log(name.giveLydiaPizza())
