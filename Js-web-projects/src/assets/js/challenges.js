@@ -304,6 +304,107 @@ const LeapYear = (year)=>{
 
 console.log(LeapYear(1600));
 
+// /*  Activity - 1 ==> Task - 1  */
+for(let i = 1; i <= 10; i++){
+   console.log(`${i}`);
+    
+}
+/*  Activity - 1 ==> Task - 2  */
+const num = 5;
+for(let i = 1; i <= 10; i++){
+   console.log(`Table of ${i} x ${num} = ${i * num}`);    
+}
+
+/*  Activity - 2 ==> Task - 3  */
+let sumNum = 0
+let i =1 ;
+while(i <= 10){
+    sumNum += i;
+    i++
+}
+console.log(sumNum);
+
+/*  Activity - 2 ==> Task -4  */
+let n = 10;
+while(n >= 1){
+    console.log(n);
+   n--
+}
+
+/*  Activity - 3 ==> Task - 5  */
+let j = 1;
+do{
+    console.log(j);
+    j++
+}while( j <= 5)
+
+/*  Activity - 3 ==> Task - 6  */
+
+function factorial(num){
+    if(num === 0 || num ===1) return 1 ;
+
+    let res = 1;
+    let i = 1;
+
+    do{
+        res *= i;
+        i++
+    }while( i <= num);
+
+    return res
+
+}
+
+console.log(factorial(-5));
+
+let num2 = 5;
+let fact =1;
+do{
+    fact = fact * num2;
+    num2--;
+}while(num2>0)
+
+let matrix = 5;
+
+for(let i =0 ; i < matrix; i++){
+    let row = ""
+    for( let j = 0; j <= i; j++){
+        // row = row + "* "
+        row += "* "
+
+    }
+    console.log(row);
+}
+
+for(let i = 1; i <= 10; i++){
+    if((i === 5)){
+        continue
+    }
+    console.log("continue",i);
+}
+console.log("\n");
+for(let i = 1; i <= 10; i++){
+    if(!(i === 5)){
+        console.log("continue",i);
+    }
+    continue
+}
+
+console.log("\n")
+
+for(let i =1; i <= 10; i++){
+    if(i === 7){
+        console.log(`The detected number is ${i}`);
+        break;
+    }
+    console.log(i);
+}
+
+
+
+
+
+
 
 
 
