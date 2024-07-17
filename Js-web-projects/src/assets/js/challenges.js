@@ -533,16 +533,15 @@ const calculateTotalFare = (trainNumber, passenger) => {
 console.log(calculateTotalFare(12345, 5));
 console.log("\n");
 function getTrainsByDay(day){
-    const filterTrainsByWeekDays = trainsDetails.filter((day) => day.days.includes("Mon")|| day.days.includes("Tue")|| day.days.includes("Wed")|| day.days.includes("Thu")|| day.days.includes("Fri"));
+    
+    const filterTrainsByWeekDays = trainsDetails.filter((day) => day.days.includes("Mon")|| day.days.includes("Tue")|| day.days.includes("Wed")|| day.days.includes("Thu")|| day.days.includes("Fri")|| (day === "Daily"));
 
-   const mapTrainsNum = filterTrainsByWeekDays.map((train) => train.trainNumber);
-//    console.log();
-
+    const mapTrainsNum = filterTrainsByWeekDays.map((train) => `\n Train No. is ${train.trainNumber}  Runs on the Days ${train.days} \n`);
     const filterTrainsByWeekend = trainsDetails.filter((day) => day.days.includes("Sun")|| day.days.includes("Sat"));
     const filterTrainsByDaily = trainsDetails.filter((day) => day.days.includes("Daily"));
 
     if((day === "Mon") || (day === "Tue") || (day === "Wed") || (day === "Thu") ||( day === "Fri") || (day === "Daily")){
-        return `Train No. ${mapTrainsNum} Runs on the Days ${filterTrainsByWeekDays}`
+        return ` ${mapTrainsNum}`
     }else if((day === "Sat") || (day === "Sun") || (day === "Daily")){
         return filterTrainsByWeekend
     }else if(day === "Daily"){
@@ -552,7 +551,7 @@ function getTrainsByDay(day){
     }
 }
 
-console.log(getTrainsByDay("Sun"));
+console.log(getTrainsByDay("Daily"));
 
 
 
