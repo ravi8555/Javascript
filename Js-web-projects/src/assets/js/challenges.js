@@ -400,7 +400,7 @@
 //     console.log(i);
 // }
 
-
+// DAY 05
 /*  Activity - 1 ==> Task - 1  */
 function checkOddEvenNum(num) {
     return num % 2 === 0 ? "The number is even" : "The Number is Odd"
@@ -409,12 +409,13 @@ console.log(checkOddEvenNum(6));
 
 /*  Activity - 1 ==> Task - 2  */
 function getSquareNum(num) {
+    // return n ** 2;
     return num * num
 }
 console.log(getSquareNum(5));
 console.log("\n");
 
-/*  Activity - 2 ==> Task - 1  */
+/*  Activity - 2 ==> Task - 3  */
 const restaurants = [
     { name: "The Curry House", cuisine: "Indian", averagePrice: 25, isOpen: true, },
     { name: "Mamma Mia", cuisine: "Italian", averagePrice: 30, isOpen: false, },
@@ -447,7 +448,7 @@ console.log(getAvaragePrice(restaurants));
 // let highestMax2 = Math.max(...removeHighest.map((item) => item.averagePrice));
 // console.log(highestMax1, highestMax2);
 
-/*  Activity - 2 ==> Task - 2  */
+/*  Activity - 2 ==> Task - 4  */
 function getPizzaDetails(restaurants) {
     const pizzaObj = restaurants.filter((item) => item.name === "Pizza")[0];
     if (pizzaObj) {
@@ -460,7 +461,7 @@ function getPizzaDetails(restaurants) {
 }
 console.log(getPizzaDetails(restaurants));
 
-/*  Activity - 3 ==> Task - 1  */
+/*  Activity - 3 ==> Task - 5  */
 const twoSum = (num1, num2) => num1 + num2;
 console.log(twoSum(5, 3));
 
@@ -476,18 +477,18 @@ const getTwoLowerNumSum = () => {
 }
 console.log(getTwoLowerNumSum());
 
-/*  Activity - 3 ==> Task - 2  */
+/*  Activity - 3 ==> Task - 6  */
 const checkChar = (str, char) => str.includes(char);
 console.log(`The Charector is ${checkChar("LS Digital", "D")}`);
 
-/*  Activity - 4 ==> Task -1  */
+/*  Activity - 4 ==> Task -7  */
 const parametrFunc = (parmeter1, parameter2) => {
     parameter2 = "Dhadave";
     return { parmeter1, parameter2 }
 }
 console.log(parametrFunc("Ravindra"));
 
-/*  Activity - 4 ==> Task -2  */
+/*  Activity - 4 ==> Task -8 */
 const parametrFunc1 = (parmName, paramAge) => {
     if (typeof paramAge !== "number") {
         console.log(`"Please enter the Number in second parameter" ${parmName}`);
@@ -497,7 +498,7 @@ const parametrFunc1 = (parmName, paramAge) => {
 }
 console.log(parametrFunc1("Prafulla", 40));
 
-/*  Activity - 5 ==> Task -1  */
+/*  Activity - 5 ==> Task -9  */
 const trainsDetails = [
     {"trainNumber":12345,"origin":"Mumbai Central","destination":"Delhi","departureTime":"10:00 AM","arrivalTime":"08:00 PM","duration":"10h 0m","days":["Mon","Wed","Fri"],"fare":1500},
     {"trainNumber":54678,"origin":"Chennai Central","destination":"Kolkata","departureTime":"07:30 AM","arrivalTime":"05:30 PM","duration":"10h 0m","days":["Tue","Thu","Sat"],"fare":1800},
@@ -525,6 +526,18 @@ console.log(getMaxFare1);
 const getMinFare1 = Math.min(...getTrainsFare)                    
 console.log(getMinFare1);
 
+const maxOfTwo = function (n1, n2) {
+    if (n1 > n2) {
+        return n1 + " is maximum.";
+    } else if (n2 > n1) {
+        return n2 + " is maximum.";
+    }
+    return `${n1} and ${n2} are equal.`;
+};
+console.log(maxOfTwo(20, 80));
+
+
+// Task -10
 const calculateTotalFare = (trainNumber, passenger) => {
     const trainObj = trainsDetails.find((originSrc) => originSrc.origin === "Mumbai Central");
     const trainFare = trainObj.fare * passenger;
@@ -553,10 +566,52 @@ function getTrainsByDay(day){
 
 console.log(getTrainsByDay("Daily"));
 
+// / Task 9 : Write a higher-order function that takes a function and a number , and calls the function that many times .
 
+function repeatFunction(fn, times) {
+    for (let i = 0; i < times; i++) {
+        fn();
+    }
+}
 
+// Example usage:
+const sayHello = () => {
+    console.log("Hello!");
+};
 
+repeatFunction(sayHello, 5); // This will print "Hello!" 5 times
 
+// Task 10 : Write a higher-order function that takes two functions and a value , applies the first function to the value , and then applies the second function to the result .
+
+function applyFunctions(fn1, fn2, value) {
+    const result1 = fn1(value);
+    const result2 = fn2(result1);
+    return result2;
+}
+
+// Example usage:
+const add2 = (x) => x + 2;
+const multiplyBy3 = (x) => x * 3;
+
+const result = applyFunctions(add2, multiplyBy3, 5); // (5 + 2) * 3 = 21
+console.log(result); // This will print 21
+
+//Task 10 -
+function superFunction(func01, func02, theValue) {
+    let response = func01(theValue);
+    let result = func02(response);
+    return console.log("So the final result is", result);
+}
+
+function sumFunc(theValue) {
+    return theValue + 10;
+}
+
+function multiplyFunc(theValue) {
+    return theValue * 5;
+}
+
+superFunction(sumFunc, multiplyFunc, 6)
 
 
 
