@@ -913,11 +913,23 @@ const imageGallery = [
 
 // console.log(name.giveLydiaPizza())
 
-const a = {};
-const b = { key: 'b' };
-const c = { key: 'c' };
+// const a = {};
+// const b = { key: 'b' };
+// const c = { key: 'c' };
 
-a[b] = 123;
-a[c] = 456;
+// a[b] = 123;
+// a[c] = 456;
 
-console.log(a[b]);
+// console.log(a[b]);
+
+// const foo = () => console.log('First');
+// const bar = () => setTimeout(
+//   () =>{ console.log('Second'), 1}
+// );
+// const baz = () => console.log('Third');
+
+// bar();
+// foo();
+// baz();
+
+
