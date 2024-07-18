@@ -568,53 +568,114 @@ console.log(getTrainsByDay("Daily"));
 
 // / Task 9 : Write a higher-order function that takes a function and a number , and calls the function that many times .
 
-function repeatFunction(fn, times) {
-    for (let i = 0; i < times; i++) {
-        fn();
+// function repeatFunction(fn, times) {
+//     for (let i = 0; i < times; i++) {
+//         fn();
+//     }
+// }
+
+// // Example usage:
+// const sayHello = () => {
+//     console.log("Hello!");
+// };
+
+// repeatFunction(sayHello, 5); // This will print "Hello!" 5 times
+
+// // Task 10 : Write a higher-order function that takes two functions and a value , applies the first function to the value , and then applies the second function to the result .
+
+// function applyFunctions(fn1, fn2, value) {
+//     const result1 = fn1(value);
+//     const result2 = fn2(result1);
+//     return result2;
+// }
+
+// // Example usage:
+// const add2 = (x) => x + 2;
+// const multiplyBy3 = (x) => x * 3;
+
+// const result = applyFunctions(add2, multiplyBy3, 5); // (5 + 2) * 3 = 21
+// console.log(result); // This will print 21
+
+// //Task 10 -
+// function superFunction(func01, func02, theValue) {
+//     let response = func01(theValue);
+//     let result = func02(response);
+//     return console.log("So the final result is", result);
+// }
+
+// function sumFunc(theValue) {
+//     return theValue + 10;
+// }
+
+// function multiplyFunc(theValue) {
+//     return theValue * 5;
+// }
+
+// superFunction(sumFunc, multiplyFunc, 6)
+
+
+// /*  Day-3 
+//  Activity -1 //  Task -1 
+// */
+
+const numArray = [1,2,3,7,9];
+console.log(numArray);
+
+//  Activity -1 //  Task -2
+const firstIndex = numArray[0]
+const lastIndex =numArray[numArray.length-1]
+console.log(firstIndex, lastIndex);
+
+//  Activity -2 //  Task -3
+const addNum = numArray.push(11);
+console.log(numArray);
+
+//  Activity -2 //  Task -4
+const removeLast = numArray.pop()
+console.log(numArray);
+//  Activity -2 //  Task -5
+
+const removeFirst = numArray.shift()
+console.log(numArray);
+
+//  Activity -2 //  Task -6
+const addFirst = numArray.unshift(5)
+console.log(numArray);
+
+//  Activity -3 //  Task - 7
+const doubleNum = numArray.map((num) => num + num)
+console.log(doubleNum);
+
+//  Activity -3 //  Task - 8
+const filterEvenNum = numArray.filter((geteven) => geteven % 2 === 0)
+console.log("Even Number",filterEvenNum);
+
+//  Activity -3 //  Task - 9
+const sumOfall = numArray.reduce((accumulator, currentnum) => accumulator + currentnum, 0)
+console.log(sumOfall);
+
+//  Activity -4 //  Task - 10
+for(let i =0; i < numArray.length; i++){
+    console.log(numArray[i]);
+}
+//  Activity -4 //  Task - 11
+numArray.forEach((num)=> console.log("number",num))
+// console.log(printArray);
+
+//  Activity -5 //  Task - 12
+let matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+console.log(matrix);
+
+const twoDArray = [[1,2,3],[4,5,6],[7,8,9]];
+
+let matrixStr = "";
+for(let i =0; i < 4; i++){
+    for(let j =0; j <4; j++){
+        matrixStr = matrixStr + matrix[i][j] + " "
     }
+    matrixStr +="\n"
 }
-
-// Example usage:
-const sayHello = () => {
-    console.log("Hello!");
-};
-
-repeatFunction(sayHello, 5); // This will print "Hello!" 5 times
-
-// Task 10 : Write a higher-order function that takes two functions and a value , applies the first function to the value , and then applies the second function to the result .
-
-function applyFunctions(fn1, fn2, value) {
-    const result1 = fn1(value);
-    const result2 = fn2(result1);
-    return result2;
-}
-
-// Example usage:
-const add2 = (x) => x + 2;
-const multiplyBy3 = (x) => x * 3;
-
-const result = applyFunctions(add2, multiplyBy3, 5); // (5 + 2) * 3 = 21
-console.log(result); // This will print 21
-
-//Task 10 -
-function superFunction(func01, func02, theValue) {
-    let response = func01(theValue);
-    let result = func02(response);
-    return console.log("So the final result is", result);
-}
-
-function sumFunc(theValue) {
-    return theValue + 10;
-}
-
-function multiplyFunc(theValue) {
-    return theValue * 5;
-}
-
-superFunction(sumFunc, multiplyFunc, 6)
-
-
-
+console.log(matrixStr);
 
 
 
