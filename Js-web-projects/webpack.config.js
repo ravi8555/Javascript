@@ -46,10 +46,10 @@ const htmlPageNames = [
     pageName: 'form-validation.html',
     title: 'FORM',
   },
-  // {
-  //     pageName: 'detail-page.html',
-  //     title: 'Lsdigital gallery'
-  // },
+  {
+      pageName: 'challenge.html',
+      title: 'ChaiAurCode'
+  },
 ]
 let htmlFileName = htmlPageNames.map((htmlPage) => htmlPage.pageName)
 let multipleHtmlPlugins = htmlPageNames.map((name) => {

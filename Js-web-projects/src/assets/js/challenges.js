@@ -543,7 +543,7 @@ const calculateTotalFare = (trainNumber, passenger) => {
     const trainFare = trainObj.fare * passenger;
     return `"Total Fare is ${trainFare} of the Tran No. ${trainNumber} for the passenger ${passenger}. The maximum Fare of Train is ${getMaxFare} for the per person"`    
 }
-console.log(calculateTotalFare(12345, 5));
+console.log("Total Fare ===>",calculateTotalFare(76543, 5));
 console.log("\n");
 function getTrainsByDay(day){
     
