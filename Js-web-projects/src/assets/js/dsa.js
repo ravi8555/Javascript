@@ -4,6 +4,17 @@
 
 // console.log(Given coordinates of a point (x,y) in 2D plane, find in which quadrant does this point lie.)
 // coordinates is the fourth part x, -x, y, -y
+
+// https://gist.github.com/ayush-crio/0a3555588ce4d2bed063df49fda8dc90
+// https://gist.github.com/ayush-crio/5d45238bfee5923b7fbe9755255fca97
+// https://gist.github.com/ayush-crio/17f71501a0df11eac5bc9c280ec248e5
+// https://gist.github.com/ayush-crio/0a3555588ce4d2bed063df49fda8dc90
+// https://gist.github.com/ayush-crio/5d45238bfee5923b7fbe9755255fca97
+
+// Level 3 Interview Blitz Session 1
+// https://docs.google.com/forms/d/e/1FAIpQLSe4dMkmD1LmlGnUtsmiaK_oxBvabndDPEcAibFKmKGiLJTY1A/viewform
+
+
 function findQuadarnt(x, y) {
   if (x > 0 && y > 0) {
     return 1
@@ -1387,12 +1398,214 @@ while (current) {
   current = current.next;
 }
 
+console.log("Question => You are given a list of n integers, and your task is to calculate the number of distinct values in the list.");
 
-// https://gist.github.com/ayush-crio/0a3555588ce4d2bed063df49fda8dc90
-// https://gist.github.com/ayush-crio/5d45238bfee5923b7fbe9755255fca97
-// https://gist.github.com/ayush-crio/17f71501a0df11eac5bc9c280ec248e5
-// https://gist.github.com/ayush-crio/0a3555588ce4d2bed063df49fda8dc90
-// https://gist.github.com/ayush-crio/5d45238bfee5923b7fbe9755255fca97
+function distinctNumbers(n, nums){
+  // creating the setMap to store the unique value
+  const getDistinctNum = new Set();
 
-// Level 3 Interview Blitz Session 1
-// https://docs.google.com/forms/d/e/1FAIpQLSe4dMkmD1LmlGnUtsmiaK_oxBvabndDPEcAibFKmKGiLJTY1A/viewform
+  // insert value in set using for loop
+  for(let i = 0; i<n ; i++){
+    getDistinctNum.add(nums[i])
+  }
+
+  // return the size of unique value
+  return distinctNumbers.size
+}
+
+const n4 = 5;
+const nums1 = [2,2,3,3,5,2];
+
+console.log(distinctNumbers(n4, nums1));
+
+
+
+console.log("Question =>You are given a list of words present in a book. Find out the count of unique words present in that book.")
+
+function uniqueWords(n,s) {
+  // create set to store to the string
+  const uniqueStr = new Set()
+
+  // insert the string into the array using loop
+  for(let i = 0; i <n; i++){
+    uniqueStr.add(s[i])
+  }
+
+  // return the size of string
+  return uniqueStr.size
+
+}
+let num4 = 5;
+let strnew = "RAVINDRA is looking for for is change"
+
+console.log( uniqueWords(num4,strnew));
+
+
+console.log("Question =>You are given a string which comprises lower case alphabets (a-z), upper case alphabets (A-Z), numbers, (0-9) and special characters like !,-.; etc.You are supposed to find out which character occurs the maximum number of times and its occurrence count in the given string. If two characters occur equal number of times, you have to output the character with the lower ASCII value.For example, if your string was: aaaaAAAA, your output would be: A 4, because A has lower ASCII value than a.")
+
+function mostFrequent(text) {
+  // to store the key charector and value initialise the Map data structue
+  const hasmapMostfreq = new Map();
+
+  // run the for loop over all charector ch trouout the text string
+  
+  for(let i =0 ; i < text.length; i ++){
+    let cha = text[i];
+    
+    // get the frequency of charector (cha) from hasmapMostfreq or default 0;
+    let freq = hasmapMostfreq.get(cha) || 0;
+
+    // put the frequency of charector in hashmap cha as a freq+1;
+    hasmapMostfreq.set(cha, freq+1);
+
+    
+    // initialise the result charector and stor the maximumnumber;
+   
+    
+  }
+  // console.log(hasmapMostfreq);
+
+  let res = "";
+  let maxFrequency = 0;
+
+  // runs a loop overall keys (charector cha) of hasmap
+
+  for(const [cha, freq] of hasmapMostfreq){
+    // get the frequency of charector cha in freq integer
+    // let freq = hasmapMostfreq.get(cha) || 0;
+    
+
+// if frequecny is > maxfrequency
+    if(freq > maxFrequency){
+      res = cha;
+      maxFrequency = freq
+    }
+    
+    // frequency == maxFrequency
+    else if(freq==maxFrequency && cha < res){
+      // if cha < result 
+      res = cha
+    }
+  }
+
+  return [res, maxFrequency]
+}
+
+console.log(mostFrequent("A cat with rabiesretardsa dudefor no apparent reason."));
+
+const hashmap = new Map();
+hashmap.set('apple', 3);
+hashmap.set('banana', 5);
+hashmap.set('cherry', 2);
+hashmap.set('date', 4);
+const result11 = hashmap.get('apple') + hashmap.get('banana') * hashmap.get('cherry');
+console.log(result11);
+
+// What will be the output of the console.log statement?
+
+// const hashmap1 = new Map();
+// hashmap1.set('apple', 3);
+// hashmap.set('banana', 5);
+// hashmap1.set('cherry', 2);
+// hashmap1.set('date', 4);
+// console.log(hashmap1);
+// let result2 = 0;
+// for (const [fruit, count] of hashmap) {
+//   if (count % 2 === 0) {
+//     result2 += count;
+//   } else {
+//     result2 -= count;
+//   }
+// }
+// console.log(result2);
+
+// const mySet = new Set();
+// mySet.add(1);
+// mySet.add(2);
+// mySet.add(3);
+// mySet.add(2);
+
+// console.log("size",mySet.size);
+
+// const mySet2 = new Set([1, 2, 3]);
+// mySet2.add(4);
+// mySet2.delete(2);
+
+// console.log([...mySet2]);
+
+console.log("Question =>NthFibonacciNumber Given an integer n, you have to find the nth fibonacci number. The fibonacci sequence is given by 0,1,1,2,3,5,8,... where 0 and 1 are the 0th and 1st fibonacci numbers respectively and every consecutive number is the sum of the previous two numbers in the sequence.")
+
+
+function nthFibonacciNumber(n) {
+  // if 1 is 0 return 0 "first base case"
+  if(n ==0){
+    return 0
+  }
+
+  // if 1 is 1 then return 1
+  if(1==1){
+    return 1
+  }
+  
+  // smaller problem 
+  // If n is greater than 1, the function recursively calls itself twice
+  let fib1 = nthFibonacciNumber(n-1)
+  let fib2 = nthFibonacciNumber(n-2);
+
+  // bigproblem 
+  // the two recursive calls are added together to obtain the nth Fibonacci number.
+  let res = fib1 + fib2;
+
+  return res
+}
+
+console.log("Question =>TribonacciBasic The Tribonacci sequence Tn is defined as follows: T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.Given n, return the value of Tn")
+
+function tribonacci(n) {
+  // base case
+  if(n==0){
+    return 0
+  }
+  if(n==1){
+    return 1
+  }
+  if(n==2){
+    return 1
+  }
+
+  // recursive call
+
+  // get the answer for tribonnachi (n-1) as trib1
+  let trib1 = tribonacci(n-1)
+
+  // get the answer for tribonnachi (n-2) as trib2
+  let trib2 = tribonacci(n-2)
+
+  // get the answer for tribonnachi (n-1) as trib3
+  let trib3 = tribonacci(n-3)
+
+  // store the result in (trib1 + trib2 + trib3)
+
+  const result = trib1 + trib2 + trib3
+
+  return result
+}
+
+console.log("Question =>Factorial Given a number n, you have to calculate the factorial of that number.Note : No inbuilt function to be used")
+
+function factorial(n) {
+  // base case 
+  if(n==0 || n==1){
+    return 1
+  }
+
+  // get small answer by calling factorial(n-1)
+  const smallans = factorial(n-1);
+
+  // store the result in big answer
+  const biganswer = smallans*N;
+
+  // return the result
+  return result
+}
+
