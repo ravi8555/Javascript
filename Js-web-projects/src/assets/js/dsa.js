@@ -1611,170 +1611,419 @@
 
 console.log("Question => word count in given string")
 
-function wordCount(text){
-  // initialise the var to store the count
-  let count = 0;
-  // flag the word coun inword
-  let inWord = false;
-// iterating the value usin for loop
-  for(let i = 0; i < text.length; i++){
-    // check input string is empty
-    if(text[i] !== ' '){
-      if(!inWord){
-        count ++
-        inWord = true
-      }
-    }else{
-      inWord = false
-    }
-  }
-  return count
-}
-console.log(wordCount(" word count in given  string "));
-// second approach
-const wordscount = (str)=>{
-  // hadle the edge cases;
-  if(str.trim() === ""){
-    return 0
-  }
-  // remove the spaces and get the each word by converting into array  
-  const words = str.trim().split(/\s+/);
-  
-  return words.length
-}
-console.log(wordscount(" word count in given  string "));
-
-function addMetirx(matrix1, matrix2){
-
-  // check the both matrix are same
-  if(matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length){
-    return
-  }
-  // initiliasing the empty array to store the result
-  const result = []
-
-  // usign the nested for loop itereting the both matrix value
-  for(let i =0; i< matrix1.length; i++){
-    // to push the matrix rows into column intililise the empty rows
-    const row = []
-    for(let j =0; j <matrix1[0].length; j++){
-      row.push(matrix1[i][j] + matrix2[i][j])
-    }
-    result.push(row)
-  }
-
-  // return the result
-
-  return result
-
-
-}
-
-// Recursive Example
-// Example usage:
-const m1 = [[1, 2], [3, 4]];
-const m2 = [[5, 6], [7, 8]];
-console.log(addMetirx(m1, m2));
-
-
-function power(base, exponent) {
-  if (exponent === 0) return 1;
-  return base * power(base, exponent - 1);
-}
-
-const result = power(2, 3);
-2*(2, 3-1)
-2*(2,2)
-console.log(result);
-
-
-function gcd(a, b) {
-  if (b === 0) return a;
-  return gcd(b, a % b);
-}
-
-const result2 = gcd(48, 18)
-console.log(result2);
-
-
-function recursiveSum(n) {
-  if (n === 1) return 1;
-  return n + recursiveSum(n - 1);
-}
-
-const result3 = recursiveSum(4);
-console.log(result3);
-
-function recursiveReverse(str) {
-  if (str === "") return "";
-  return recursiveReverse(str.substr(1)) + str[0];
-}
-
-const result4 = recursiveReverse("world");
-console.log(result4);
- 
-function countDown(n) {
-  if (n <= 0) return;
-  console.log(n);
-  countDown(n - 1);
-}
-console.log(countDown(5));
-
-function sumOddNumbers(n) {
-  if (n <= 0) return 0;
-  if (n % 2 !== 0) {
-    return n + sumOddNumbers(n - 2);
-  }
-  return sumOddNumbers(n - 1);
-}
-
-const result5 = sumOddNumbers(7);
-console.log(result5);
- 
-function generatePascalTriangle(row, col) {
-  if (col === 0 || col === row) return 1;
-  return generatePascalTriangle(row - 1, col - 1) + generatePascalTriangle(row - 1, col);
-}
-
-const result6 = generatePascalTriangle(5, 2);
-console.log("generatePascalTriangle",result6);
-
-
-function gcd1(a, b) {
-  // Base case: If b is 0, the GCD is a
-  if (b == 0) {
-    return a;
-  }
-  // Recursive case: Call gcd with b and the remainder of a divided by b
-  return gcd1(b, a % b);
-}
-
-// function findGCDs(testCases) {
-//   const results = [];
-//   for (const [a, b] of testCases) {
-//     results.push(gcd(a, b));
+// function wordCount(text){
+//   // initialise the var to store the count
+//   let count = 0;
+//   // flag the word coun inword
+//   let inWord = false;
+// // iterating the value usin for loop
+//   for(let i = 0; i < text.length; i++){
+//     // check input string is empty
+//     if(text[i] !== ' '){
+//       if(!inWord){
+//         count ++
+//         inWord = true
+//       }
+//     }else{
+//       inWord = false
+//     }
 //   }
-//   return results;
+//   return count
+// }
+// console.log(wordCount(" word count in given  string "));
+// // second approach
+// const wordscount = (str)=>{
+//   // hadle the edge cases;
+//   if(str.trim() === ""){
+//     return 0
+//   }
+//   // remove the spaces and get the each word by converting into array  
+//   const words = str.trim().split(/\s+/);
+  
+//   return words.length
+// }
+// console.log(wordscount(" word count in given  string "));
+
+// function addMetirx(matrix1, matrix2){
+
+//   // check the both matrix are same
+//   if(matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length){
+//     return
+//   }
+//   // initiliasing the empty array to store the result
+//   const result = []
+
+//   // usign the nested for loop itereting the both matrix value
+//   for(let i =0; i< matrix1.length; i++){
+//     // to push the matrix rows into column intililise the empty rows
+//     const row = []
+//     for(let j =0; j <matrix1[0].length; j++){
+//       row.push(matrix1[i][j] + matrix2[i][j])
+//     }
+//     result.push(row)
+//   }
+
+//   // return the result
+
+//   return result
+
+
 // }
 
+// // Recursive Example
+// // Example usage:
+// const m1 = [[1, 2], [3, 4]];
+// const m2 = [[5, 6], [7, 8]];
+// console.log(addMetirx(m1, m2));
 
-console.log("Question=> Given a number, return the reverse of that number.");
-// method-1 recursive
-function reverseNum(n) {    
-  let rev = 0;
-  let isNegative = n < 0;
-  n = Math.abs(n);  // Work with positive equivalent if n is negative
 
-  while (n > 0) {
-    rev = rev * 10 + n % 10;
-    n = Math.floor(n / 10);
-  }
+// function power(base, exponent) {
+//   if (exponent === 0) return 1;
+//   return base * power(base, exponent - 1);
+// }
 
-  return isNegative ? -rev : rev;
+// const result = power(2, 3);
+// 2*(2, 3-1)
+// 2*(2,2)
+// console.log(result);
+
+
+// function gcd(a, b) {
+//   if (b === 0) return a;
+//   return gcd(b, a % b);
+// }
+
+// const result2 = gcd(48, 18)
+// console.log(result2);
+
+
+// function recursiveSum(n) {
+//   if (n === 1) return 1;
+//   return n + recursiveSum(n - 1);
+// }
+
+// const result3 = recursiveSum(4);
+// console.log(result3);
+
+// function recursiveReverse(str) {
+//   if (str === "") return "";
+//   return recursiveReverse(str.substr(1)) + str[0];
+// }
+
+// const result4 = recursiveReverse("world");
+// console.log(result4);
+ 
+// function countDown(n) {
+//   if (n <= 0) return;
+//   console.log(n);
+//   countDown(n - 1);
+// }
+// console.log(countDown(5));
+
+// function sumOddNumbers(n) {
+//   if (n <= 0) return 0;
+//   if (n % 2 !== 0) {
+//     return n + sumOddNumbers(n - 2);
+//   }
+//   return sumOddNumbers(n - 1);
+// }
+
+// const result5 = sumOddNumbers(7);
+// console.log(result5);
+ 
+// function generatePascalTriangle(row, col) {
+//   if (col === 0 || col === row) return 1;
+//   return generatePascalTriangle(row - 1, col - 1) + generatePascalTriangle(row - 1, col);
+// }
+
+// const result6 = generatePascalTriangle(5, 2);
+// console.log("generatePascalTriangle",result6);
+
+
+// function gcd1(a, b) {
+//   // Base case: If b is 0, the GCD is a
+//   if (b == 0) {
+//     return a;
+//   }
+//   // Recursive case: Call gcd with b and the remainder of a divided by b
+//   return gcd1(b, a % b);
+// }
+
+// // function findGCDs(testCases) {
+// //   const results = [];
+// //   for (const [a, b] of testCases) {
+// //     results.push(gcd(a, b));
+// //   }
+// //   return results;
+// // }
+
+
+// console.log("Question=> Given a number, return the reverse of that number.");
+// // method-1 recursive
+// function reverseNum(n) {    
+//   let rev = 0;
+//   let isNegative = n < 0;
+//   n = Math.abs(n);  // Work with positive equivalent if n is negative
+
+//   while (n > 0) {
+//     rev = rev * 10 + n % 10;
+//     n = Math.floor(n / 10);
+//   }
+
+//   return isNegative ? -rev : rev;
+// }
+
+// // Sample inputs and testing the function
+// const result7 = reverseNum(1000); // Expected output: 54321
+// console.log("reverseNum",result7); // 54321
+
+
+// METHOD -2
+// This method converts the number to a string, splits it into an array of characters, reverses the array, and then joins it back together.
+
+// const num = 202;
+// const reversNum = parseInt(String(num).split("").reverse().join(""), 10);
+// console.log("reversNum",reversNum);
+
+
+// function flipInt(n) {
+//   let digit, result = 0;
+//   while (n) {
+//       digit = n % 10;
+//       result = (result * 10) + digit;
+//       n = n / 10 | 0; // Remove right-most digit
+//   }
+//   return result;
+// }
+// const numToReverse = +prompt("Enter a value");
+// const reversedValue = flipInt(numToReverse);
+// console.log("Reversed number:", reversedValue);
+
+
+// console.log("Question => Write a function that reverses a string.");
+
+// function reverseString(s) {
+//     let i = 0;
+//     let j = s.length - 1;
+//     let charArray = s.split('');
+
+//     while (i < j) {
+//         let temp = charArray[i];
+//         charArray[i] = charArray[j];
+//         charArray[j] = temp;
+
+//         i++;
+//         j--;
+//     }
+//     return charArray.join('');
+// }
+
+// console.log(reverseString("abc"));
+
+// // console.log("Question =>Given a string, convert lowercase to uppercase without using any inbuilt function.")
+// function capitlalLetter(str){
+//   let result = "";
+// for (let i = 0; i < str.length; i++) {
+//   let charCode = str.charCodeAt(i);
+
+//    if (charCode >= 97 && charCode <= 122) {
+//     charCode -= 32;
+//   }
+//   let capitalizedChar = String.fromCharCode(charCode);
+//   result += capitalizedChar;
+// }
+// return result
+// }
+// console.log(capitlalLetter("Hello"));
+
+
+// console.log("Question => Given a string count the frequency of each vowel in it.")
+
+
+// function countVowels(s) {
+//   let m = new Map();
+//   let n = s.length;
+//   for (let i = 0; i < n; i++) {
+//     let ch = s[i];
+
+//      if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+//       {
+//         if (m.has(ch)) {
+//           m.set(ch, m.get(ch) + 1);
+//         } else {
+//           m.set(ch, 1);
+//         }
+//       }
+//     }
+//     return m;
+//   }
+
+//   console.log(countVowels("KAvita I Love you"));
+
+console.log("Question =>Given a string S.Implement an algorithm to determine if a string has all unique characters.");
+
+// function isUnique(s) {
+//     let st = new Set();
+//     let n = s.length;    
+//      for (let i = 0; i < n; ++i) {
+//       if(st.has(s[i])){
+//         return false
+//       }
+//       st.add(s[i]);
+//     } 
+//     return true  
+// }
+// console.log(isUnique("abcd"));
+
+console.log("Question not solved =>Diagonal Sum () Debug Given a matrix of dimensions n x m, you are tasked with finding the sum of elements by starting at the index (i, j) and moving in a diagonal order. Write a function that takes the matrix, starting index (i, j), and returns the sum of the elements encountered while moving diagonally. If the starting index is invalid, return")
+
+// function diagonalSum(matrix,n,m,i,j) {
+//   // Check for invalid starting index
+//   if (i >= n || j >= m || i < 0 || j < 0) {
+//     return -1;
+//   }
+
+// let diagonalSum = 0;
+// let row = i;
+// let col = j;
+
+// while (row < n && col < m) {
+//   diagonalSum += matrix[row][col];
+//   row++;
+//   col++;
+// }
+
+// return diagonalSum;
+// }
+
+console.log("Question => Nth Fibonacci Number Debug Given a number n, you have to find the number of Fibonacci numbers lesser than n.")
+
+// function nthFibonacciNumber(n) {
+//   if (n <= 0) {
+//       return 0;
+//     }
+//   if (n === 1) {
+//       return 1;
+//     }
+//      let n1=1;
+//      let n2 = 1;
+//      let fib_count = 2;    
+  
+//       while (true)  {
+//         let fib = n1+n2;
+//         if(fib >= n){
+//             break
+//         }
+//           n1 = n2;
+//           n2 = fib;
+//           fib_count ++ 
+//       }
+  
+//       return fib_count;
+//   }
+
+// Example usage
+// const input = `1`;
+// const n = parseInt(input.trim(), 10);
+
+// const result9 = countFibonacciNumbersLessThan(n);
+// console.log(result9);
+
+console.log("Question =>Search Target Debug Given an array of N distinct integers and a target value X, return 1 if the target is found. If not found then return -1")
+// Note - Try implementing with O(NlogN) runtime complexity.
+
+// function searchTarget(N,A,X) {
+
+//   A.sort((a, b) => a -b )
+  
+//   let left = 0; 
+//   let right = N - 1; 
+//    while (left <= right)
+//   { 
+//       let mid = Math.floor(left + (right - left) / 2); 
+//       // let mid = parseInt(mid);
+      
+//       if (A[mid] === X) {
+//           return 1; 
+//       } else if (A[mid] < X) { 
+//           left = mid + 1; 
+//       } else { 
+//           right = mid - 1; 
+//       }
+//   }
+  
+//    return -1;
+// }
+
+console.log("Question =>CountPrimesBasic Count the number of prime numbers less than a non-negative number, n.")
+
+
+
+// function isPrime(num) {
+//   if (num <= 1) return false;
+//   for (let factorNum = 2; factorNum * factorNum <= num; factorNum++) {
+//     if (num % factorNum === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// function countPrimes(n) {
+//   let count = 0;
+
+//   for (let i = 2; i < n; i++) { // Loop until n-1
+//     if (isPrime(i)) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// const n10 = 20;
+// console.log(countPrimes(n10));
+
+// // method - 2 Using Sieve of Eratosthenes (Optimized Approach)
+// function countPrimes(n) {
+//   if (n <= 2) return 0;
+
+//   const isPrime = new Array(n).fill(true);
+//   isPrime[0] = isPrime[1] = false; // 0 and 1 are not prime numbers
+
+//   for (let i = 2; i * i < n; i++) {
+//     if (isPrime[i]) {
+//       for (let j = i * i; j < n; j += i) {
+//         isPrime[j] = false;
+//       }
+//     }
+//   }
+
+//   let count = 0;
+//   for (let i = 2; i < n; i++) {
+//     if (isPrime[i]) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// // Example usage
+// const n = 10;
+// console.log(countPrimes(n)); // Expected output: 4 (primes less than 10 are 2, 3, 5, 7)
+
+console.log("Question =>Given an array of numbers, find GCD of the array elements.The greatest common divisor of two numbers is the largest positive integer that evenly divides both numbers.")
+
+function gcd(a,b){
+if(b==0){
+  return a
+}
+return gcd(b, a%b)
 }
 
-// Sample inputs and testing the function
-const result7 = reverseNum(1000); // Expected output: 54321
-console.log("reverseNum",result7); // 54321
-
-
+function gcdOfArray(n,arr) {
+    let res = arr[0];
+    for(let i =0; i< n; i++){
+      res = gcd(arr[i], res)
+    }
+    return res
+}

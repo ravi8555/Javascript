@@ -64,7 +64,6 @@ import style from '../css/main.scss'
 // import bruteFroce from '../js/brute-force.js'
 // import crio from '../js/crio.js'
 
-import dsa from '../js/dsa.js'
 // import gitUserApi from '../js/git-user-api.js'
 // import studentJson from '../js/student_data.js'
 // import LeetQApi from '../js/leet-code-question-api.js'
@@ -91,5 +90,7 @@ import dsa from '../js/dsa.js'
 // import challenge from '../js/challenge-9.js' 
 // import challenge10 from '../js/challenge-10.js' 
 // import challenge11 from '../js/challenges-11.js' 
+// import dsa from '../js/dsa.js'
+import matrix from '../js/DSA/matrix.js'
 
 
