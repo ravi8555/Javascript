@@ -179,15 +179,16 @@ function printNum(matrix){
   // const fColFRow = matrix[0][0]
   const fColFRow3 = matrix[n-1][n-1]
   const fColFRow4 = matrix[3][3]
-  const fColFRow5 = matrix[n-1].pop()
   const flatMatrix = matrix.flat();
   const fColFRow6 = flatMatrix[flatMatrix.length - 1];
+  const fColFRow5 = matrix[n-1].pop() // Access the element directly or keep it below because
+  
   // const fColFRow1 = matrix[n-1][0]
   // const fColFRow2 = matrix[n-2][n-3]
   // const fColTRow = matrix[0][2]
   // const fColTRow1 = matrix[0][n-2]
   // const TcolSRow = matrix[2][1]
-  // const TcolSRow1 = matrix[n-2][n-3]
+  // const lastCol = matrix[n-1][n-1]
 
   // let fRow = []
   // let fCol = []
@@ -202,7 +203,8 @@ function printNum(matrix){
     fColFRow3,
     fColFRow4,
     fColFRow5,
-    fColFRow6
+    fColFRow6,
+    // lastCol
     // fColFRow,
     // fColFRow1, 
     // fColFRow2,
@@ -220,5 +222,19 @@ const printMtrix = [
   [55, 66, 77, 88]
 ];
 console.log("printNum",printNum(printMtrix) );
+
+function printDiagonal(mtx){
+  let n = mtx.length;
+  const primeD = mtx[0][0]
+  const lastD = mtx[n-1][n-1]
+  let midD = []
+  // for(let i =0 ; i < n; i++){
+  //   midD.push(mtx[i][i])
+  // } 
+  return [lastD]
+}
+
+console.log(printDiagonal(printMtrix));
+
 
 
