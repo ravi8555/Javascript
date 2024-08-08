@@ -39,11 +39,17 @@ const htmlPageNames = [
   {
     pageName: 'dsa.html',
     title: 'DSA',
+  },{
+    pageName: 'git-user.html',
+    title: 'DSA',
+  },{
+    pageName: 'form-validation.html',
+    title: 'FORM',
   },
-  // {
-  //     pageName: 'detail-page.html',
-  //     title: 'Lsdigital gallery'
-  // },
+  {
+      pageName: 'challenge.html',
+      title: 'ChaiAurCode'
+  },
 ]
 let htmlFileName = htmlPageNames.map((htmlPage) => htmlPage.pageName)
 let multipleHtmlPlugins = htmlPageNames.map((name) => {
@@ -135,9 +141,9 @@ module.exports = (env, argv) => ({
         : './css/scss/[name].[contenthash].css',
     }),
     // new HtmlWebpackPartialsPlugin({
-    //   path:path.join(__dirname,'./src/toast-notification.html'),
+    //   path:path.join(__dirname,'./src/form.html'),
     //     location:'toastNotification',
-    //   template_filename: ['index.html', 'form.html']
+    //   template_filename: ['form.html']
     // }),
     //  new HtmlWebpackPartialsPlugin({
     //     path:path.join(__dirname,'src/dad-jokes.html'),
@@ -252,7 +258,7 @@ module.exports = (env, argv) => ({
     contentBase: [path.join(__dirname, '/src')],
     watchContentBase: true,
     // compress: true,
-    port: 7000,
+    port: 8000,
     open: true,
   },
 })

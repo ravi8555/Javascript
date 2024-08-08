@@ -1,0 +1,2 @@
+Build a team-based task manager with Next.js, Neon, and Clerk
+https://clerk.com/blog/build-a-team-based-task-manager-with-organizations?utm_source=cooper_press&utm_medium=newsletter&utm_campaign=task-based-manager
