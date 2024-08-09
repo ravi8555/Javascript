@@ -1,0 +1,60 @@
+Matrix
+to print 
+const printMtrix = [
+  [10, 20, 30, 40, 21,],
+  [11, 22, 33, 44, 32,],
+  [50, 60, 70, 80, 41,],
+  [55, 66, 77, 88, 51],
+  [57, 67, 47, 38, 61],
+  
+];
+topLeft = mtx[0][0] // 10
+topRight = mtx[0][n-1] // 21
+bottomRight = mtx[n-1][n-1] // 61
+bottomLeft = mtx[n-1][0] // 55
+
+// Row
+firstRow.push(mtx[0][i]) 
+firstRow2.push(mtx[n-4][i])
+
+FourthRow.push(mtx[3][i]);
+lastRow.push(mtx[n-1][i]);
+
+/* Cols */
+firstCol.push(mtx[i][0])
+secondCol.push(mtx[i][1]) 
+lastCol.push(mtx[i][n-1])
+
+    
+Diagonal
+primeryD.push(mtx[i][i]) // where row and column indexs are same
+secondaryD.push(mtx[i][n-i-1])
+secondaryDfBottom.push(mtx[n-i-1][i]) //[57, 66, 70, 44, 21
+primeryDfBottom.push(mtx[n-i-1][n-i-1])//61, 88, 70, 22, 10]
+
+Question == > You are given a list of n integers, and your task is to calculate the number of distinct values in the list
+Ans => in this problem I used setMap method to solve problem 
+
+1) new Set()
+2) add set value using for loop add()
+3) return the size of 
+
+Question == > Pascal Triengle
+=> create matrix MAT array of aary with 1
+=> let mat = [[1]];
+=> creating Row using loop till n
+=> push the empty array in the  matrix MAT
+=> creating column go till i index, ie <= jth column
+=> if i = 1 above assigned and j=0 hence [1(i) - 1 = 0] [0][1] && [0(i-1)][-1(0-0)] there for it is false first time excuite else
+=> push MAT[i] mat[i-1][j]&& mat[i-1][j-1]
+=> else mat[i] push 1
+=> return mat
+
+Question == > Happy Number || replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1
+
+create function to get sum of squre digit
+=> declare var to store the number result sumOfsquare
+=> iteratre the number using while loop till get the result 0 n>=0
+=> store the last digit value in currentSum var using modullo operator n%10
+=> assign the result of currentSum square root
+=> remove the last digit number from n by deviding 10

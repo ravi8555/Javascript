@@ -3,12 +3,13 @@ const printMtrix = [
   [11, 22, 33, 44, 32,],
   [50, 60, 70, 80, 41,],
   [55, 66, 77, 88, 51],
-  [55, 66, 77, 88, 61],
+  [57, 67, 47, 38, 61],
   
 ];
 
 function learnPrintMatrix(mtx){
   let n = mtx.length;
+  let indices = []
   // const findx = mtx 
   const fColFindx = mtx[0][0] //10
   const sColTindex = mtx[1][2] // 33
@@ -16,8 +17,8 @@ function learnPrintMatrix(mtx){
   // corners
   const topLeft = mtx[0][0] // 10
   const topRight = mtx[0][n-1] // 40
-  const bottomLeft = mtx[n-1][0] // 55
   const bottomRight = mtx[n-1][n-1] // 88
+  const bottomLeft = mtx[n-1][0] // 55
 
   // Rows
   const firstRow = []
@@ -27,6 +28,7 @@ function learnPrintMatrix(mtx){
   const ThiRow = []
   const FourthRow = []
   const FourthRow1 = []
+  const lastRow = []
 
   // Coulmns
   const col1 = []
@@ -38,6 +40,8 @@ function learnPrintMatrix(mtx){
   // Diagonal
   let pMidD = [];
   let sMidD = [];
+  const secondaryDfBottom = []
+  const primeryDfBottom =[]
 
   let sumP = 0
   let sumS = 0
@@ -48,44 +52,53 @@ function learnPrintMatrix(mtx){
     // first Row
     firstRow.push(mtx[0][i]) 
     firstRow2.push(mtx[n-4][i]) 
-    // // Second Row
-    // secRow.push(mtx[1][i]);
-    // // Third Row
-    // ThiRow.push(mtx[2][i])
-    // // FourthRow
+    // Second Row
+    secRow.push(mtx[1][i]);
+    // Third Row
+    ThiRow.push(mtx[2][i])
+    // FourthRow
     FourthRow.push(mtx[3][i]);
-    FourthRow1.push(mtx[n-1][i]);
+    lastRow.push(mtx[n-1][i]);
+
+    
 
     // firstCol
-    // col1.push(mtx[i][0])
-    // // secondCol
-    // col2.push(mtx[i][1])    
+    col1.push(mtx[i][0])
+    // secondCol
+    col2.push(mtx[i][1])    
     // column 4
-    // col4.push(mtx[i][n-1])
-    // col41.push(mtx[i][3])
-
-
-
+    col4.push(mtx[i][n-1])
+    col41.push(mtx[i][3])
+    
+    // Diaogoanl
 
     /* these are the elements where the row index and column index are the same.
     // So, when i is 0, mtx[i][i] is mtx[0][0], which is the first element of the primary diagonal. When i is 1, mtx[i][i] is mtx[1][1], and so on. This way, you traverse the primary diagonal of the matrix. */
-    // pMidD.push(mtx[i][i])
+    pMidD.push(mtx[i][i])
 
     // secondery Diaogonal
-    // sMidD.push(mtx[i][n-i-1])
+    sMidD.push(mtx[i][n-i-1])
+
+    // Diagoanl start from bottom left to top right
+    secondaryDfBottom.push(mtx[n-i-1][i]) //[57, 66, 70, 44, 21
+    
+    // Diagoanl start from bottom right to top left
+    // primeryDfBottom.push(mtx[i][n - i - 1])
+    primeryDfBottom.push(mtx[n-i-1][n-i-1])
+    // console.log(indices.push([n-i-1][n-i-1]));
     
     // add sum primery Diaogonal
-    sumP += mtx[i][i];
+    // sumP += mtx[i][i];
 
     // add sum secondary Diaogonal
-    sumS+=mtx[i][n-i-1]
+    // sumS+=mtx[i][n-i-1]
 
     // Skiping the middle same number to add in secondary Diaogonal
     // not equal to even matrix 5x5 
-    if(i !== Math.floor(n/2) ){
-      sumS += mtx[i][n-i-1]
-      sMidD.push(mtx[i][n-i-1])
-    }
+    // if(i !== Math.floor(n/2) ){
+    //   sumS += mtx[i][n-i-1]
+    //   sMidD.push(mtx[i][n-i-1])
+    // }
     // return
 
   } 
@@ -93,11 +106,11 @@ function learnPrintMatrix(mtx){
     // fColFindx,
     // sColTindex,
 
-    /* // Corners
-    topLeft,
+   // Corners
+    /* topLeft,
     topRight,
     bottomRight,
-    bottomLeft,*/
+    bottomLeft, */
 
     /* Rows*/
     // firstRow,
@@ -106,6 +119,8 @@ function learnPrintMatrix(mtx){
     // secRow,
     // ThiRow,
     // FourthRow,
+    // FourthRow1,
+    // lastRow,
     
 
     // Coulmns 
@@ -116,12 +131,13 @@ function learnPrintMatrix(mtx){
 
     // pMidD,
     // sMidD,
+    // secondaryDfBottom,
+    primeryDfBottom,
     // totalSum,
     // sumP,
     // sumS,
-    sMidD,
-
-    sumP + sumS
+    // sMidD,
+    // sumP + sumS
     // last
   ]
 }
@@ -300,7 +316,49 @@ function pascalsTriangle(n) {
   }
   return pascal
 }
-console.log(pascalsTriangle(5));
+// console.log(pascalsTriangle(5));
+
+
+function pascalsTriangle1(n) {
+// create matrix MAT array of aary with 1
+  let mat = [[1]];
+// creating Row using loop till n
+  for(let i =1; i <n;i++){
+    // push the empty array in the  matrix MAT
+    mat.push([]); // [[1] []]
+    // creating column go till i index, ie <= jth column
+    for(let j =0; j <=i; j++){
+      
+      // i = 1 above assigned and j=0 hence [1(i) - 1 = 0] [0][1] && [0(i-1)][-1(0-0)] there for it is false first time excuite else
+      // push MAT[i] mat[i-1][j]&& mat[i-1][j-1]
+      // else mat[i] push 1
+      // return MAT
+      if(mat[i-1][j] && mat[i-1][j-1]){
+        mat[i].push( mat[i-1][j] + mat[i-1][j-1])
+      }else{
+        mat[i].push( 1 )
+      }
+      
+    }
+  }
+  return mat
+}
+
+console.log( pascalsTriangle1(5));
+
+function sumSqrDigit(n){
+  let sumsquareDigit = 0;
+
+  while(n > 0){
+     let currentDigit = n %10 ;
+     sumsquareDigit += (currentDigit * currentDigit);
+     n = Math.floor(n/10)
+  } 
+
+  return sumsquareDigit
+}
+console.log(sumSqrDigit(25));
+
 
 
 
