@@ -542,7 +542,83 @@ return result.join(' ')
 console.log(secretAgent("One, two"));
 
 
+console.log("Question => SchoolAdmission, You will be given a string containing words in the wrong order and without any spaces. Instead of a space to separate two words, there will be a number in place of the space. This number also indicates the position of the word in the final sentence. You have to rearrange the words based on the numbers and form the sentence. See sample input for clear understanding.");
 
+// function SchoolAdmission(s){
+//   // create a array of words size 10
+//   const words = new Array(10);
+
+//   // create current string and set it to empty 
+//   let curr = "";
+
+//   // itererate overall the charector of input string
+//   for(let i = 0; i< s.length; i++){
+//     // add the charector to the curent word if its letter
+//     if(s[i] >= "a" && s[i] <= "z"){
+//       curr += s[i]
+//     }
+//     // else 
+//     else{
+//       words[s-'0'] = curr;
+
+//       curr=''
+//     }
+
+//     // form an output string and set it ot an empty string
+//     let output = " ";
+//     // iterate over the words;
+//     for(let i =0; i< words.length; i++){
+//       // if output is not empty add to space it;
+//       if(output !== ''){
+//         output+= " "
+//       }
+//       // if the words is null then contnue
+//       if(words[i] == null){
+//         continue
+//       }
+//     }
+//     return output
+//   }
+
+// } 
+// 
+function schoolAdmission(s) {
+  // Create an array of words with size 10
+  const words = new Array(10).fill("");
+
+  // Create current string and set it to empty 
+  let curr = "";
+
+  // Iterate over all the characters of the input string
+  for (let i = 0; i < s.length; i++) {
+    // Add the character to the current word if it's a letter
+    if (s[i] >= "a" && s[i] <= "z") {
+      curr += s[i];
+    } 
+    // Otherwise, store the current word in the correct position in the array
+    else {
+      words[parseInt(s[i], 10)] = curr;
+      curr = '';
+    }
+  }
+
+  // Form an output string and set it to an empty string
+  let output = "";
+
+  // Iterate over the words array
+  for (let i = 0; i < words.length; i++) {
+    // If the word is not empty, add it to the output
+    if (words[i] !== "") {
+      if (output !== '') {
+        output += " ";
+      }
+      output += words[i];
+    }
+  }
+
+  return output;
+}
+console.log(schoolAdmission("ab1cd2ef3"));
 
 
 
