@@ -52,9 +52,33 @@ Question == > Pascal Triengle
 
 Question == > Happy Number || replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1
 
-create function to get sum of squre digit
-=> declare var to store the number result sumOfsquare
+create function to get sum of sumOfsquare
+=> declare var to store the number result  squreDigit
 => iteratre the number using while loop till get the result 0 n>=0
 => store the last digit value in currentSum var using modullo operator n%10
 => assign the result of currentSum square root
-=> remove the last digit number from n by deviding 10
+=> remove the last digit number from n by deviding 10 and round floor the value
+=> return the squreDigit
+
+The above problem statement is proceesing the reapeat number hence I am considering the set data strucute
+create function happyNumber
+=> to store the unique value set new Var perveSetnum
+=> convert the negative number to positive using abs method to avoide the negative number entry, corner case
+=> run the loop till become 1, hence I used the while lopp n != 1
+=> In the condition if the number is not 1 then add to perveSetnum using .add() method
+=> assign n to sumOfsquare(n) to check the sum of square root 
+=> check if this number added before or duplicate number n to using .has(n) method.
+=> return false in condition if not happy number its calculation same number
+=> retutn true outside loop
+
+
+Question == > Given a column title as it appears in an Excel sheet, return its corresponding column number.
+
+
+
+
+
+
+
+
+

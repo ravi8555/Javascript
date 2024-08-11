@@ -359,6 +359,25 @@ function sumSqrDigit(n){
 }
 console.log(sumSqrDigit(25));
 
+function happyNumber(n){
+  let prevDigitSet = new Set();
+
+  n= Math.abs(n)
+
+  while( n != 1){
+    prevDigitSet.add(n);
+
+    n= sumSqrDigit(n);
+
+    if(prevDigitSet.has(n)){
+      return false
+    }
+  }
+  return true
+
+}
+
+console.log(happyNumber(13));
 
 
 
