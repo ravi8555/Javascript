@@ -71,10 +71,42 @@ create function happyNumber
 => return false in condition if not happy number its calculation same number
 => retutn true outside loop
 
-
 Question == > Given a column title as it appears in an Excel sheet, return its corresponding column number.
 
+Break the problem, each number has own unocorn[ASCII  code] key value which is known as charCodeAt. A stand for 65. if we get A =1, means 65- 1 = 64 the is the value place for 0th index. A is 1, B is 2.... and Z is 26
 
+=> assign the var ans to store the result
+=> Here we are Iterating over values directly hence use for of loop with ch var // (const ch of n)
+=> In the loop set map = integer ch charcodeAt - 64
+=> update the ans as *26 (for handling multi-letter column titles. so 1 to 26 is 1 column, to jump on another column we have to multiply by 26);
+=> add value to the map +=;
+=> return ans
+
+Question == > MathProfessor, The names of the students in his class are given as an array of strings. Another string, B, is given, consisting of lowercase English letters. For each name in the array of strings, he wants to calculate the number of unique letters from string B that appear in that name.
+
+/*
+Above problem statement we have to count the unique charector which is present in B and A is the name of Students, Match B with A and set it on visited
+
+1) we have to create match function to correctly handles counting unique common characters.
+2) we have to ceate The mathProfessor function for correctly iterates over the names and stores the results.
+*/
+
+1 match function with taking 2 parameter A B
+=> create a set for visited charector using set
+=> run the loop over all ch from A (cnt ch of A)
+=> In the loop we have to add the visited charector using add method
+=> create the count var with 0 to store the count
+=> check the another string B using urn loop over all ch in B
+=> in the loop check if the visited is there (using has(ch) method then add to the count ++
+=> delete the the duplicated from visited using delete method
+
+2) create math profeesor function using n, a, B parameter;
+=> create the result empty array withing function to store the result
+=> iterate the all indices with length of array n(let index =0; index<n;index++)
+=> in loop hold the value of current index create the var and assign the index with A=a[index]
+=> crete the count var with  match function
+=> store in the result array with the same index result[index] = count
+=> return result
 
 
 

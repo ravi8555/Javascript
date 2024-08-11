@@ -283,103 +283,263 @@ function learnPrintMatrix(mtx){
 
 // console.log("Question => PascalsTriangle Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.Pascal’s triangle is a pattern in which a number in a row b, is the sum of the number exactly above it a, and the number to the left of a, c.");
 
-function pascalsTriangle(n) {
-  // make a 2dList of intinger pascal array
-  const pascal = []
-// running loop for every row till n-1
-  for(let row =1; row <=n ; row++){
-    // get the previous list of intinger from pascal 
-    const prev = (row === 1) ? [] : pascal[pascal.length -1]
+// function pascalsTriangle(n) {
+//   // make a 2dList of intinger pascal array
+//   const pascal = []
+// // running loop for every row till n-1
+//   for(let row =1; row <=n ; row++){
+//     // get the previous list of intinger from pascal 
+//     const prev = (row === 1) ? [] : pascal[pascal.length -1]
 
-    // make 1D list of initigers current
-    const curr = []
+//     // make 1D list of initigers current
+//     const curr = []
 
-    // run the for loop for every coulmns [0-row-1]
-    for(let col = 0 ; col <=row-1; col ++){
-      // add value as a pascal previous row's col's index
-      const x= col>= pascal.length ? 0 :prev[col];
+//     // run the for loop for every coulmns [0-row-1]
+//     for(let col = 0 ; col <=row-1; col ++){
+//       // add value as a pascal previous row's col's index
+//       const x= col>= pascal.length ? 0 :prev[col];
 
-      // and add col-1 nth index in the previous array
-      const y = col-1<0?0 : prev[col-1]
+//       // and add col-1 nth index in the previous array
+//       const y = col-1<0?0 : prev[col-1]
 
-      if(row === 1){
-        curr.push(1)
-      }
-      else{
-        curr.push(x+y)
-      }
+//       if(row === 1){
+//         curr.push(1)
+//       }
+//       else{
+//         curr.push(x+y)
+//       }
 
-    }
-    // add the 1st list current in 2-d list pascal
-    pascal.push(curr)
+//     }
+//     // add the 1st list current in 2-d list pascal
+//     pascal.push(curr)
 
-  }
-  return pascal
-}
-// console.log(pascalsTriangle(5));
+//   }
+//   return pascal
+// }
+// // console.log(pascalsTriangle(5));
 
 
-function pascalsTriangle1(n) {
-// create matrix MAT array of aary with 1
-  let mat = [[1]];
-// creating Row using loop till n
-  for(let i =1; i <n;i++){
-    // push the empty array in the  matrix MAT
-    mat.push([]); // [[1] []]
-    // creating column go till i index, ie <= jth column
-    for(let j =0; j <=i; j++){
+// function pascalsTriangle1(n) {
+// // create matrix MAT array of aary with 1
+//   let mat = [[1]];
+// // creating Row using loop till n
+//   for(let i =1; i <n;i++){
+//     // push the empty array in the  matrix MAT
+//     mat.push([]); // [[1] []]
+//     // creating column go till i index, ie <= jth column
+//     for(let j =0; j <=i; j++){
       
-      // i = 1 above assigned and j=0 hence [1(i) - 1 = 0] [0][1] && [0(i-1)][-1(0-0)] there for it is false first time excuite else
-      // push MAT[i] mat[i-1][j]&& mat[i-1][j-1]
-      // else mat[i] push 1
-      // return MAT
-      if(mat[i-1][j] && mat[i-1][j-1]){
-        mat[i].push( mat[i-1][j] + mat[i-1][j-1])
-      }else{
-        mat[i].push( 1 )
-      }
+//       // i = 1 above assigned and j=0 hence [1(i) - 1 = 0] [0][1] && [0(i-1)][-1(0-0)] there for it is false first time excuite else
+//       // push MAT[i] mat[i-1][j]&& mat[i-1][j-1]
+//       // else mat[i] push 1
+//       // return MAT
+//       if(mat[i-1][j] && mat[i-1][j-1]){
+//         mat[i].push( mat[i-1][j] + mat[i-1][j-1])
+//       }else{
+//         mat[i].push( 1 )
+//       }
       
-    }
+//     }
+//   }
+//   return mat
+// }
+
+// console.log( pascalsTriangle1(5));
+
+// function sumSqrDigit(n){
+//   let sumsquareDigit = 0;
+
+//   while(n > 0){
+//      let currentDigit = n %10 ;
+//      sumsquareDigit += (currentDigit * currentDigit);
+//      n = Math.floor(n/10)
+//   } 
+
+//   return sumsquareDigit
+// }
+// console.log(sumSqrDigit(25));
+
+// function happyNumber(n){
+//   let prevDigitSet = new Set();
+
+//   n= Math.abs(n)
+
+//   while( n != 1){
+//     prevDigitSet.add(n);
+
+//     n= sumSqrDigit(n);
+
+//     if(prevDigitSet.has(n)){
+//       return false
+//     }
+//   }
+//   return true
+
+// }
+
+// console.log(happyNumber(13));
+// console.log("Question => Given a column title as it appears in an Excel sheet, return its corresponding column number.");
+
+
+// function excelSheetColumnNumber(s){
+//   //declare the var to store the Answer 
+//   let ans = 0;
+
+//   // run a loop over all the charector ch from string
+//   for( let ch of s){
+
+//     // set map  integer ch charCodeAt(0) -64 (the A chnarector value unocorn[ASCII  code] value is 65), so here we are pointing value as 0 position, 1 = A, B(second posiotion) = 2 so on...
+//     let map = ch.charCodeAt(0) -64;
+
+//     // Update the ans as ans * 26
+//     // (why is 26 , 1 stand for A, B stand for 2, 26 stand for Z)
+
+//     ans = ans * 26;
+
+//     // add value to map;
+//     ans+= map;
+
+//   }
+
+//   return ans
+
+// }
+
+// console.log(excelSheetColumnNumber("AA"));
+
+// console.log("Question ==> MathProfessor, The names of the students in his class are given as an array of strings. Another string, B, is given, consisting of lowercase English letters. For each name in the array of strings, he wants to calculate the number of unique letters from string B that appear in that name (not including duplicates).");
+// /*
+// Above problem statement we have to count the unique charector which is present in B and A is the name of Students, Match B with A and set it on visited
+
+// 1) we have to create match function to correctly handles counting unique common characters.
+// 2) we have to ceate The mathProfessor function for correctly iterates over the names and stores the results.
+// */
+
+
+// // creting match function with 2 parameter A B mathProfessor
+// function match(A, B){
+//   // create a set of visited charector
+//   const visited = new Set();
+
+//   // run loop over all charector ch from A;
+//   for(const ch of A){
+//     // store them to the visited using add method
+//     visited.add(ch);
+//   }
+
+//   // store the count initilized the count with 0
+//   let count = 0
+
+//   // loop overall charector ch from B
+//   for(const ch of B){
+//     //  if the that charector is present in my map using has method
+//     if(visited.has(ch)){
+//       // add to count (increment)
+//       count ++
+//       // remove the duplicate from set
+//       visited.delete(ch)
+//     }
+//   }
+
+//   return count
+// }
+// function mathProfessor(n, a, B){
+//   // create a array of intgersto store the result
+
+//   const result = []; 
+//   // run the loop over all string A in the array a
+//   for (let index = 0; index < n; index++){
+//     // to hold the value of current index
+//     const A=a[index];
+
+//     // get the matching count from the match function;
+
+//     const count = match(A, B);
+
+//     // store count in the result array at the same index
+//     result[index] = count
+//   } 
+
+//   // return the result
+//   return result
+
+// }
+
+// let strA = "Ravindra, kavita, Advait";
+// const strB = "avi"
+// console.log(mathProfessor(4, strA));
+
+console.log("Question ==> SecretAgentII, Rahul works as a secret agent. So, he decided to reverse all the words in the message which have an odd length. Print the final message which he will be sending to his teammates.");
+
+
+// In above problem statement we are using two pointer approach with only reserse the odd number only
+// 1. create function to reverse a portion of an array or string in-place.
+
+// 2. create function for update the result with reverse words
+
+//  create function with 3 parameter result, left_start, right_end
+// result store the string (left_start index(inplace) right_end(inplace))
+function reverse(result, left_start, right_end){
+// run a while loop until start is less than end
+while(left_start < right_end){
+// inside the loop  create temp var to store the left_start index result[left_start]
+const temp = result[left_start];
+// move the left index to right result[left_start] = result[right_end];
+result[left_start] = result[right_end];
+
+// assign right_end index value to temp result[right_end] = temp TO swap right to left
+result[right_end] = temp
+
+// increment left_start by 1 to move toward the middle
+left_start ++
+// decrement the right_end by 1 (--) moving towards the middle of section reverse
+right_end --
   }
-  return mat
 }
+// let result = ['Ravindra', 'Dhadave', 'full', 'Atamaram', 'is']; // Original array
+// let left_start = 1; // Index of 'b'
+// let right_end = 3;  // Index of 'd'
+// reverse(result, left_start, right_end)
 
-console.log( pascalsTriangle1(5));
+// console.log(result);
+// create function secret agent
 
-function sumSqrDigit(n){
-  let sumsquareDigit = 0;
+function secretAgent(s){
+// covert the input string into array using split method and store it in result
+const result = s.split(' ');
 
-  while(n > 0){
-     let currentDigit = n %10 ;
-     sumsquareDigit += (currentDigit * currentDigit);
-     n = Math.floor(n/10)
+// set the two pointer position with 0
+let left_start = 0;
+let right_end = 0
+
+// run a loop untill start is less than s input
+while(left_start < s.length){
+  // set a end as start
+
+  right_end = left_start
+
+  // run while loon the end is not less than strings length and charector is not equal to sapce. result we have split in charactor result[end] !== " "
+  while(right_end < s.length && result[right_end] != " "){
+    // increment the end by 1
+    right_end ++
   } 
 
-  return sumsquareDigit
-}
-console.log(sumSqrDigit(25));
+  // calculate the length as (end -start)
+  let length = right_end -left_start;
 
-function happyNumber(n){
-  let prevDigitSet = new Set();
-
-  n= Math.abs(n)
-
-  while( n != 1){
-    prevDigitSet.add(n);
-
-    n= sumSqrDigit(n);
-
-    if(prevDigitSet.has(n)){
-      return false
-    }
+  // check if the length is odd
+  if(length %2 != 0){
+    // CALL the reverse function on the portion (start, end-1)
+    reverse(result, left_start, right_end -1)
   }
-  return true
-
+  // set the start as end +1
+  left_start = right_end + 1
 }
-
-console.log(happyNumber(13));
-
-
+// return result as a string 
+return result.join(' ')
+}
+// secretAgent(result)
+console.log(secretAgent("One, two"));
 
 
 
