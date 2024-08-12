@@ -472,28 +472,27 @@ function learnPrintMatrix(mtx){
 console.log("Question ==> SecretAgentII, Rahul works as a secret agent. So, he decided to reverse all the words in the message which have an odd length. Print the final message which he will be sending to his teammates.");
 
 
-// In above problem statement we are using two pointer approach with only reserse the odd number only
-// 1. create function to reverse a portion of an array or string in-place.
-
-// 2. create function for update the result with reverse words
+  // In above problem statement we have to reserse only the odd numbers. we are using two pointer approach with
+  // 1. create function to reverse a portion of an array or string in-place.
+  // 2. create function for update the result with reverse words
 
 //  create function with 3 parameter result, left_start, right_end
 // result store the string (left_start index(inplace) right_end(inplace))
 function reverse(result, left_start, right_end){
 // run a while loop until start is less than end
-while(left_start < right_end){
+  while(left_start < right_end){
 // inside the loop  create temp var to store the left_start index result[left_start]
-const temp = result[left_start];
+    let temp = result[left_start];
 // move the left index to right result[left_start] = result[right_end];
-result[left_start] = result[right_end];
+    result[left_start] = result[right_end];
 
 // assign right_end index value to temp result[right_end] = temp TO swap right to left
-result[right_end] = temp
+    result[right_end] = temp
 
 // increment left_start by 1 to move toward the middle
-left_start ++
+    left_start ++
 // decrement the right_end by 1 (--) moving towards the middle of section reverse
-right_end --
+    right_end --
   }
 }
 // let result = ['Ravindra', 'Dhadave', 'full', 'Atamaram', 'is']; // Original array
@@ -506,7 +505,7 @@ right_end --
 
 function secretAgent(s){
 // covert the input string into array using split method and store it in result
-const result = s.split(' ');
+  let result = s.split('');
 
 // set the two pointer position with 0
 let left_start = 0;
@@ -518,10 +517,11 @@ while(left_start < s.length){
 
   right_end = left_start
 
-  // run while loon the end is not less than strings length and charector is not equal to sapce. result we have split in charactor result[end] !== " "
-  while(right_end < s.length && result[right_end] != " "){
+  // run while loop the end is not less than strings length and charector is not equal to sapce. 
+  // result we have split in charactor result[end] !== " "
+  while(right_end < s.length && result[right_end] !== " "){
     // increment the end by 1
-    right_end ++
+    right_end ++;
   } 
 
   // calculate the length as (end -start)
@@ -536,89 +536,95 @@ while(left_start < s.length){
   left_start = right_end + 1
 }
 // return result as a string 
-return result.join(' ')
+return result.join('')
 }
+
 // secretAgent(result)
-console.log(secretAgent("One, two"));
+
 
 
 console.log("Question => SchoolAdmission, You will be given a string containing words in the wrong order and without any spaces. Instead of a space to separate two words, there will be a number in place of the space. This number also indicates the position of the word in the final sentence. You have to rearrange the words based on the numbers and form the sentence. See sample input for clear understanding.");
 
-// function SchoolAdmission(s){
-//   // create a array of words size 10
-//   const words = new Array(10);
+function SchoolAdmission(s){
+   // create a array of words size 10
+   const words = new Array(10);
 
-//   // create current string and set it to empty 
-//   let curr = "";
+   // create current string and set it to empty 
+   let curr = "";
+ 
+   // itererate overall the charector of input string
+   for(let i = 0; i< s.length; i++){
+     // add the charector to the curent word if its letter
+     if(s[i] >= "a" && s[i] <= "z"){
+       curr += s[i]
+     }
+     // else 
+     else{
+       words[parseInt(s[i], 10)] = curr;
+ 
+ 
+       curr=''
+     }
+ }
+     // form an output string and set it ot an empty string
+     let output = " ";
+     // iterate over the words;
+     for(let i =0; i< words.length; i++){
+       // if output is not empty add to space it;
+       if(output !== ''){
+         output+= " "
+       }
+       // if the words is null then contnue
+       if(words[i] == null){
+         continue;
+       }
+     //   otherwise add the word to outpup
+    
+         output+= words[i]
+     
+     }
+     return output
 
-//   // itererate overall the charector of input string
-//   for(let i = 0; i< s.length; i++){
-//     // add the charector to the curent word if its letter
-//     if(s[i] >= "a" && s[i] <= "z"){
-//       curr += s[i]
-//     }
-//     // else 
-//     else{
-//       words[s-'0'] = curr;
+} 
 
-//       curr=''
-//     }
+console.log(SchoolAdmission("ab1cd2ef3"));
 
-//     // form an output string and set it ot an empty string
-//     let output = " ";
-//     // iterate over the words;
-//     for(let i =0; i< words.length; i++){
-//       // if output is not empty add to space it;
-//       if(output !== ''){
-//         output+= " "
-//       }
-//       // if the words is null then contnue
-//       if(words[i] == null){
-//         continue
-//       }
-//     }
-//     return output
-//   }
+console.log("Question => WordFrequencies, You are given a list of words present in a book. Your younger brother is really curious to know the frequencies of each word present inside the book.Write a program to calculate the frequencies of each word present in the book in sorted order.");
 
-// } 
-// 
-function schoolAdmission(s) {
-  // Create an array of words with size 10
-  const words = new Array(10).fill("");
+// break the problem 
+// frequency of each words in sorted order
+// DS = > Map [key(freq), value(words)]
 
-  // Create current string and set it to empty 
-  let curr = "";
+// => create function wordsFrequencies with words parameter
+// sort the input using sort method
+// store the freQuency using map DS Object
+// run the for loop 
+// get the old frequecy from the freQuency object, using get method, store it in oldfreq var || default 0
+// update the freQuency of the word using set method,
+// create result array of pairs to store the freq and value
+// run a for loop over the key-value pairs in the object (let [key, value] of freQuency.entries())
+// inside the loop push [key,value] in the result 
+// return result
 
-  // Iterate over all the characters of the input string
-  for (let i = 0; i < s.length; i++) {
-    // Add the character to the current word if it's a letter
-    if (s[i] >= "a" && s[i] <= "z") {
-      curr += s[i];
-    } 
-    // Otherwise, store the current word in the correct position in the array
-    else {
-      words[parseInt(s[i], 10)] = curr;
-      curr = '';
-    }
+function wordsFrequencies(words){
+  words.sort();
+  const freQuency = new Map()
+
+  for(let word of words){
+    const oldfreq = freQuency.get(word) || 0;
+
+    freQuency.set(word, oldfreq +1)
   }
 
-  // Form an output string and set it to an empty string
-  let output = "";
+  const result = [];
 
-  // Iterate over the words array
-  for (let i = 0; i < words.length; i++) {
-    // If the word is not empty, add it to the output
-    if (words[i] !== "") {
-      if (output !== '') {
-        output += " ";
-      }
-      output += words[i];
-    }
+  for(let [key, value] of freQuency.entries()){
+    result.push([key, value])
   }
 
-  return output;
+  return result
 }
-console.log(schoolAdmission("ab1cd2ef3"));
+
 
 
 
