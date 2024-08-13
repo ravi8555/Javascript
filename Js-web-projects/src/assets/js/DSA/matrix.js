@@ -607,10 +607,13 @@ console.log("Question => WordFrequencies, You are given a list of words present 
 // return result
 
 function wordsFrequencies(words){
-  words.sort();
+
+  const covertwordArray = words.split(' ')
+
+  let sortwords = covertwordArray.sort();
   const freQuency = new Map()
 
-  for(let word of words){
+  for(let word of sortwords){
     const oldfreq = freQuency.get(word) || 0;
 
     freQuency.set(word, oldfreq +1)
@@ -624,6 +627,31 @@ function wordsFrequencies(words){
 
   return result
 }
+const wordcount = "Advait, Ravindra, Kavita, Advait, Vihaan";
+console.log(wordsFrequencies(wordcount));
+
+console.log("Question => Tesla is testing their new car which they will be launching soon. The driver of the car started recording the speed of the car. Let’s assume he always starts with a speed of 1500. Whenever his speed changed, he recorded this change in an array. This array is given to you as input. You have to return a result array with two numbers - the highest speed he ever reached and his final speed.");
+
+function tesla(diffs,n) {
+  // set current speed and mxspeed
+
+  let currentSpeed = 1500;
+  let maxSpeed = 1500;
+
+  // run for loop from 0th to n-1 over diffs array
+  for(let i =0 ; i <= n-1; i++){
+    // store the value in ithe index in diffs var
+    let diff = diffs[i]
+
+      // add diffs in the curr speed
+      currentSpeed += diff
+    // update the maxspeed as a maximum of maxSeeod and current speed
+    maxSpeed= Math.max(maxSpeed, currentSpeed)
+  }
+
+  return [maxSpeed, currentSpeed]
+}
+
 
 
 
