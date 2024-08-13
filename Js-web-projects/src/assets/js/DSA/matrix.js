@@ -543,8 +543,34 @@ return result.join('')
 
 
 
-console.log("Question => SchoolAdmission, You will be given a string containing words in the wrong order and without any spaces. Instead of a space to separate two words, there will be a number in place of the space. This number also indicates the position of the word in the final sentence. You have to rearrange the words based on the numbers and form the sentence. See sample input for clear understanding.");
+console.log("Question => SchoolAdmission, You will be given a string containing words in the wrong order and without any spaces. Instead of a space to separate two words, there will be a number in place of the space. This number also indicates the position of the word in the final sentence. You have to rearrange the words based on the numbers and form the sentence. See sample input for clear understanding. number max till 10");
 
+// breakdown the problem
+// input string with number, number indicate the place of words, rearrange the word place as per the order
+// DS to store the Array of size 10
+// traverse the array and once get the number ex(ab1cd2ef3) so ab1 1 is find so store the ab on 1st index of array
+// first loop travese the input and store it in DS
+// Second loop travese through the words [DS] for Separate words, Handle empty words, Construct output string:
+
+
+// check the letter and add it to current and store the number in Array
+// TC - O(n)
+// SC - O(n)
+
+// Brute froce approach
+// => create function SchoolAdmission with s parameter
+// => create a new array of "words" size 10 to traverse and store
+// => create current string and set it to empty 
+// => iterate overall the charector of input string
+// => in loop check the if its letter in current index s[i] >= "a" && s[i] <= "z" and ADD to current;
+// => in else if it is not letter and its number add that words in to the array for that number posiotion means we got ex(ab1cd2ef3) so ab at 1 words[s[i]-0]= current
+// => empty the current string (set as words to an empty array)
+// => assign the var output as a empty string
+// => iterate the words for Separate words, Handle empty words, Construct output string:
+// => in loop if output is not empty add a space to it
+// => if word is null, do the continue
+// => otherwise add the words to output
+// => return output
 function SchoolAdmission(s){
    // create a array of words size 10
    const words = new Array(10);
@@ -560,9 +586,8 @@ function SchoolAdmission(s){
      }
      // else 
      else{
-       words[parseInt(s[i], 10)] = curr;
- 
- 
+      words[s[i]-0]= curr
+      //  words[parseInt(s[i], 10)] = curr; 
        curr=''
      }
  }
@@ -596,8 +621,8 @@ console.log("Question => WordFrequencies, You are given a list of words present 
 // DS = > Map [key(freq), value(words)]
 
 // => create function wordsFrequencies with words parameter
-// sort the input using sort method
-// store the freQuency using map DS Object
+// sort the input using using sort method
+// store the freQuency using hashMap DS Object
 // run the for loop 
 // get the old frequecy from the freQuency object, using get method, store it in oldfreq var || default 0
 // update the freQuency of the word using set method,
@@ -607,10 +632,11 @@ console.log("Question => WordFrequencies, You are given a list of words present 
 // return result
 
 function wordsFrequencies(words){
+
   words.sort();
   const freQuency = new Map()
 
-  for(let word of words){
+  for(let word in words){
     const oldfreq = freQuency.get(word) || 0;
 
     freQuency.set(word, oldfreq +1)
