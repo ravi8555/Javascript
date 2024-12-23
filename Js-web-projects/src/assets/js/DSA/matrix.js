@@ -543,8 +543,34 @@ return result.join('')
 
 
 
-console.log("Question => SchoolAdmission, You will be given a string containing words in the wrong order and without any spaces. Instead of a space to separate two words, there will be a number in place of the space. This number also indicates the position of the word in the final sentence. You have to rearrange the words based on the numbers and form the sentence. See sample input for clear understanding.");
+console.log("Question => SchoolAdmission, You will be given a string containing words in the wrong order and without any spaces. Instead of a space to separate two words, there will be a number in place of the space. This number also indicates the position of the word in the final sentence. You have to rearrange the words based on the numbers and form the sentence. See sample input for clear understanding. number max till 10");
 
+// breakdown the problem
+// input string with number, number indicate the place of words, rearrange the word place as per the order
+// DS to store the Array of size 10
+// traverse the array and once get the number ex(ab1cd2ef3) so ab1 1 is find so store the ab on 1st index of array
+// first loop travese the input and store it in DS
+// Second loop travese through the words [DS] for Separate words, Handle empty words, Construct output string:
+
+
+// check the letter and add it to current and store the number in Array
+// TC - O(n)
+// SC - O(n)
+
+// Brute froce approach
+// => create function SchoolAdmission with s parameter
+// => create a new array of "words" size 10 to traverse and store
+// => create current string and set it to empty 
+// => iterate overall the charector of input string
+// => in loop check the if its letter in current index s[i] >= "a" && s[i] <= "z" and ADD to current;
+// => in else if it is not letter and its number add that words in to the array for that number posiotion means we got ex(ab1cd2ef3) so ab at 1 words[s[i]-0]= current
+// => empty the current string (set as words to an empty array)
+// => assign the var output as a empty string
+// => iterate the words for Separate words, Handle empty words, Construct output string:
+// => in loop if output is not empty add a space to it
+// => if word is null, do the continue
+// => otherwise add the words to output
+// => return output
 function SchoolAdmission(s){
    // create a array of words size 10
    const words = new Array(10);
@@ -560,9 +586,8 @@ function SchoolAdmission(s){
      }
      // else 
      else{
-       words[parseInt(s[i], 10)] = curr;
- 
- 
+      words[s[i]-0]= curr
+      //  words[parseInt(s[i], 10)] = curr; 
        curr=''
      }
  }
@@ -591,29 +616,34 @@ console.log(SchoolAdmission("ab1cd2ef3"));
 
 console.log("Question => WordFrequencies, You are given a list of words present in a book. Your younger brother is really curious to know the frequencies of each word present inside the book.Write a program to calculate the frequencies of each word present in the book in sorted order.");
 
-// break the problem 
+// understand the problem  
 // frequency of each words in sorted order
 // DS = > Map [key(freq), value(words)]
 
 // => create function wordsFrequencies with words parameter
-// sort the input using sort method
-// store the freQuency using map DS Object
-// run the for loop 
-// get the old frequecy from the freQuency object, using get method, store it in oldfreq var || default 0
-// update the freQuency of the word using set method,
-// create result array of pairs to store the freq and value
-// run a for loop over the key-value pairs in the object (let [key, value] of freQuency.entries())
-// inside the loop push [key,value] in the result 
-// return result
+// => sort the input using using sort method
+// => store the freQuency using hashMap DS Object
+// => run the for loop in the loop we are using for of accesing the value directly. 
+// => (Iterates over each word in the sorted sortedWords array.
+// Checks if the word exists in the frequency map.If it exists, 
+// increments its count. If it doesn't exist, sets the frequency to 1.)
+
+// => get the old frequecy from the freQuency object, using get method, store it in oldfreq var || default 0
+
+// => update the freQuency of the word using set method,
+
+// => create result array of pairs to store the freq and value
+// => run a the second for loop over the key-value pairs in the object (let [key, value] of freQuency.entries())
+
+// => inside the loop push [key,value] in the result 
+// => return result
 
 function wordsFrequencies(words){
-
-  const covertwordArray = words.split(' ')
-
-  let sortwords = covertwordArray.sort();
+const wordArray = words.split(', ')
+let sortedWord = wordArray.sort();
   const freQuency = new Map()
 
-  for(let word of sortwords){
+  for(let word of sortedWord){
     const oldfreq = freQuency.get(word) || 0;
 
     freQuency.set(word, oldfreq +1)
@@ -632,25 +662,107 @@ console.log(wordsFrequencies(wordcount));
 
 console.log("Question => Tesla is testing their new car which they will be launching soon. The driver of the car started recording the speed of the car. Let’s assume he always starts with a speed of 1500. Whenever his speed changed, he recorded this change in an array. This array is given to you as input. You have to return a result array with two numbers - the highest speed he ever reached and his final speed.");
 
-function tesla(diffs,n) {
-  // set current speed and mxspeed
+// => Understand the problem
+// => start speed is 1500
+// => given input is speed + -
+// => findout the maximum and final speed(not minumum)
 
-  let currentSpeed = 1500;
-  let maxSpeed = 1500;
+// => finalizie the approach
+// => create function with 2 parament diffs(array) and n length
+// => set maxSpeed is 1500 currentSpeed assuming same as maxSpeed 
+// => run the loop till the n length of diffs
+// => store the value of ith index in the diffs with new var
+// => add the the diffs in to the currentSpeed +=
+// => getting the maxSpeed number from currentSpeed using Math.max(maxSpeed, currentSpeed) method and store it into var
+// => return the maxSpeed and CurrentSpeed
 
-  // run for loop from 0th to n-1 over diffs array
-  for(let i =0 ; i <= n-1; i++){
-    // store the value in ithe index in diffs var
-    let diff = diffs[i]
 
-      // add diffs in the curr speed
-      currentSpeed += diff
-    // update the maxspeed as a maximum of maxSeeod and current speed
-    maxSpeed= Math.max(maxSpeed, currentSpeed)
+console.log("Question => ClassRepresentative, The sports teacher told the students of a class to assemble in the playground. The order in which the students are standing in the playground is given in an array where each element of the array represents the height of student[i]. Rahul, the class leader, is asked to check if the heights of students at even positions are monotonic (i.e either in non-decreasing order or non-increasing order). Say 'increasing' if the students at even positions are standing in non-decreasing order of their heights. Else say “decreasing” if the students at even positions are standing in non-increasing order. Else, say “none”.");
+
+function classRepresentative(numbers) {
+  // taking 2 var non-incre and non-decre as a true
+  let nonIcre = true;
+  let nonDecre = true;
+
+  // taking n as length of 
+  let n = numbers.length
+
+  // run a for loop overall Even indices [2, n-1] by 2 gap
+  for(let index = 2; index < n-1; index +=2){
+    // if number indecx is num[index] > num[index -2]
+    if(numbers[index] > numbers[index -2]){
+
+      // marked all the nonIncre = False
+      nonIcre = false
+    }
+
+    // if num[index] < num[index -2]
+    if(numbers[index] < numbers[index -2]){
+      // marked all nonDecre = False
+      nonDecre = false
+    } 
+
+
+  }
+   // if nonDecre is true return Increasing
+   if(nonDecre === true ){
+    return "increasing"
   }
 
-  return [maxSpeed, currentSpeed]
+  // if nonIcre is true return Dcreasing
+  if(nonIcre === true ){
+    return "decreasing"
+  }
+
+  return "none"
+
 }
+const numb = [12, 65, 15, 72, 19, 72]
+
+console.log(classRepresentative(numb));
+
+
+
+
+
+
+
+
+
+
+
+
+function tesla(diffs,n) {
+   // set current speed and mxspeed
+
+   let currentSpeed = 1500;
+   let maxSpeed = 1500;
+ 
+   // run for loop from 0th to n-1 over diffs array
+   for(let i =0 ; i <= n-1; i++){
+    // for(let i =0 ; i <n; i++){
+     // store the value in ithe index in diffs var
+     let diff = diffs[i] 
+       // add diffs in the curr speed
+       currentSpeed += diff
+     // update the maxspeed as a maximum of maxSeeod and current speed
+     maxSpeed= Math.max(maxSpeed, currentSpeed);
+
+   }
+ 
+   return [maxSpeed, currentSpeed]
+}
+const diffs1 = [100, -200, 350, 100, -600]
+
+console.log(tesla(diffs1, 3));
+
+// let currSp = 1700
+// let maxSp = 1900
+
+// const chekSp = Math.max(currSp, maxSp);
+
+// console.log(chekSp);
+
 
 
 
