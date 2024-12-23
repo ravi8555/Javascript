@@ -603,8 +603,7 @@ function SchoolAdmission(s){
        if(words[i] == null){
          continue;
        }
-     //   otherwise add the word to outpup
-    
+      // otherwise add the word to outpup    
          output+= words[i]
      
      }
