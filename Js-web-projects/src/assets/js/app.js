@@ -92,6 +92,7 @@ import style from '../css/main.scss'
 // import challenge11 from '../js/challenges-11.js' 
 // import dsa from '../js/dsa.js'
 // import matrix from '../js/DSA/matrix.js'
-import clouser from '../js/buttonClickApi.js'
+// import clouser from '../js/buttonClickApi.js'
+import clouser from '../js/search.js'
 
 
