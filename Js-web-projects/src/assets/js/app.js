@@ -93,6 +93,7 @@ import style from '../css/main.scss'
 // import dsa from '../js/dsa.js'
 // import matrix from '../js/DSA/matrix.js'
 // import clouser from '../js/buttonClickApi.js'
-import clouser from '../js/search.js'
+// import clouser from '../js/search.js'
+import clouser from './timer.js'
 
 
