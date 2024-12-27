@@ -94,6 +94,7 @@ import style from '../css/main.scss'
 // import matrix from '../js/DSA/matrix.js'
 // import clouser from '../js/buttonClickApi.js'
 // import clouser from '../js/search.js'
-import clouser from './timer.js'
+// import clouser from './timer.js'
+import countDown from './countdown.js'
 
 
