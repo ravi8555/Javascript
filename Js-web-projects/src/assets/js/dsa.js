@@ -30,6 +30,7 @@
 //   "You are given a positive integer 'N'. You have to find the sum of first 'N' natural numbers."
 // )
 // // n = 1+2+3+4+5+6+7+8+9 = 55
+   
 // // to get the nature sum we can refer our school days formula n*(n+1)/2 === js (n*(n+1)/2)
 // function naturalSum(n) {
 //   // 1

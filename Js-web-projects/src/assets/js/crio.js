@@ -14,6 +14,8 @@
 // Question API
 // https://the-trivia-api.com/api/questions/
 
+// https://fakestoreapi.com/
+
 // const { map } = require('jquery')
 
 //replit.com/@MayankTiwari9/crio-js-1-b2-May-2023#session-6/exercise.js
@@ -782,13 +784,7 @@ function greeting(day) {
 //   })
 // }
 // console.log(getFullName(obj));
-// var ages = [32, 33, 16, 40]
-// function canVote(ages) {
-//   const voterAge = ages.filter((age) => age >= 18)
-//   return voterAge
-//   // You only need to implement this function.
-// }
-// console.log(canVote(ages))
+
 
 // setTimeout(getFn("You should log in"), 3000); // only works when this fn returns a fn
 // setTimeout(() => alert("You should log in"), 3000); right, and can pass parameters
@@ -814,8 +810,9 @@ fetch('https://api.kanye.rest/')
   })
 
 
+console.log("Filter ===>");
 
-// const arr = [1,1,2,2,3,4,1]
+// const arr = [1,1,2,2,3,4,1,7]
 // const without = [1,2];
 // function removeListedValues(arr, without) {
 //  const res = arr.filter( item => !without.includes(item))
@@ -824,6 +821,33 @@ fetch('https://api.kanye.rest/')
 // }
 
 // console.log(removeListedValues(arr, without));
+
+// function filterArr(persDetails) {
+//   let dataFilter = persDetails.filter((data) => {
+//     let lowerCasecity = data.city.toLowerCase()
+//     return lowerCasecity === 'bangalore' || lowerCasecity === 'hyderabad'
+//   })
+//   return dataFilter
+// }
+
+//  const persDetails = [
+//   { name: "John", city: "delhi" },
+//   { name: "Peter", city: "bangalore" },
+//   { name: "Mike", city: "Bangalore" },
+//   { name: "Rachel", city: "Hyderabad" },
+// ];
+
+// console.log(filterArr(persDetails));
+
+
+// var ages = [32, 33, 16, 40]
+// function canVote(ages) {
+//   const voterAge = ages.filter((age) => age >= 33)
+//   return voterAge
+//   // You only need to implement this function.
+// }
+// console.log(canVote(ages))
+
 
 // function personDetail(a, b) {
 //   return{
@@ -933,22 +957,7 @@ date = '18-07-2023'
 // }
 // console.log(findLength(["LSDigital", "Aug", undefined]));
 
-// function filterArr(arr) {
-//   let dataFilter = arr.filter((data) => {
-//     let lowerCasecity = data.city.toLowerCase()
-//     return lowerCasecity === 'bangalore' || lowerCasecity === 'hyderabad'
-//   })
-//   return dataFilter
-// }
 
-//  const arr = [
-//   { name: "John", city: "delhi" },
-//   { name: "Peter", city: "bangalore" },
-//   { name: "Mike", city: "Bangalore" },
-//   { name: "Rachel", city: "Hyderabad" },
-// ];
-
-// console.log(filterArr(arr));
 
 // async function getApiData(){
 //   let response = await fetch("https://run.mocky.io/v3/511fa794-6bfb-4c9f-9adb-9e18d62d7003");
