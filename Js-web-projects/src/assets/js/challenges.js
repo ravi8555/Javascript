@@ -677,6 +677,21 @@ for(let i =0; i < 4; i++){
 }
 console.log(matrixStr);
 
+// Write a function that takes a string (a) and a number (n) as argument. Return the nth character of 'a'.
+
+const nthCharector = (str, n) =>{
+    if(n < 1 || n > str.length){
+        return null
+    }
+    return str[n -1]
+}
+console.log(nthCharector("Ravindra", 11));
+
+// Map
+
+
+
+
 
 
 
