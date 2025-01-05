@@ -10,5 +10,5 @@ function  checkForSubstr(str, k){
         return false
     }
 }
-console.log(checkForSubstr("Next time there won’t be a next time", "time"));
+console.log(checkForSubstr("Next time there won't be a next time", "time"));
 
