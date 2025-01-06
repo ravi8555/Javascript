@@ -4,5 +4,7 @@ Js-web-projects/package-lock.json/
 leetcode/node_modules/
 leetcode/dist/
 Js-web-projects/.vscode/
+package-lock.json/
+package-lock.json
 /.idea
 .vscode/*
