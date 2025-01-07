@@ -43,13 +43,13 @@
 // }
 // stockTotalItem(totalItem, soldItem);
 
-//     const fruits = [
-//         { fruit: "Apple", price: 1.5, itemStock:20 },
-//         { fruit: "Pomegranate", price: 2, itemStock:25 },
-//         { fruit: "Orange", price: 8, itemStock:33 },
-//         { fruit: "Mango", price: 2.0, itemStock:3 },
-//         { fruit: "Pineapple", price: 3.0, itemStock:50 },
-//     ];
+    // const fruits = [
+    //     { fruit: "Apple", price: 1.5, itemStock:20 },
+    //     { fruit: "Pomegranate", price: 2, itemStock:25 },
+    //     { fruit: "Orange", price: 8, itemStock:33 },
+    //     { fruit: "Mango", price: 2.0, itemStock:3 },
+    //     { fruit: "Pineapple", price: 3.0, itemStock:50 },
+    // ];
 
 //     const appleDetails = fruits.find(item => item.fruit === "Apple")
 //     const applePrice = appleDetails.price;
@@ -402,35 +402,35 @@
 
 // DAY 05
 /*  Activity - 1 ==> Task - 1  */
-function checkOddEvenNum(num) {
-    return num % 2 === 0 ? "The number is even" : "The Number is Odd"
-}
-console.log(checkOddEvenNum(6));
+// function checkOddEvenNum(num) {
+//     return num % 2 === 0 ? "The number is even" : "The Number is Odd"
+// }
+// console.log(checkOddEvenNum(6));
 
-/*  Activity - 1 ==> Task - 2  */
-function getSquareNum(num) {
-    // return n ** 2;
-    return num * num
-}
-console.log(getSquareNum(5));
-console.log("\n");
+// /*  Activity - 1 ==> Task - 2  */
+// function getSquareNum(num) {
+//     // return n ** 2;
+//     return num * num
+// }
+// console.log(getSquareNum(5));
+// console.log("\n");
 
 /*  Activity - 2 ==> Task - 3  */
-const restaurants = [
-    { name: "The Curry House", cuisine: "Indian", averagePrice: 25, isOpen: true, },
-    { name: "Mamma Mia", cuisine: "Italian", averagePrice: 30, isOpen: false, },
-    { name: "Masala Dosa", cuisine: "Indian", averagePrice: 30, isOpen: false, },
-    { name: "Pizza", cuisine: "America", averagePrice: 50, isOpen: true, },
-    { name: "ZoolIce", cuisine: "Fance", averagePrice: 20, isOpen: true, },
-    // Add more restaurant objects as needed
-];
+// const restaurants = [
+//     { name: "The Curry House", cuisine: "Indian", averagePrice: 25, isOpen: true, },
+//     { name: "Mamma Mia", cuisine: "Italian", averagePrice: 30, isOpen: false, },
+//     { name: "Masala Dosa", cuisine: "Indian", averagePrice: 30, isOpen: false, },
+//     { name: "Pizza", cuisine: "America", averagePrice: 50, isOpen: true, },
+//     { name: "ZoolIce", cuisine: "Fance", averagePrice: 20, isOpen: true, },
+//     // Add more restaurant objects as needed
+// ];
 
-function getAvaragePrice(maxTwoNum) {
-    const mapTwonum = maxTwoNum.map((item) => item.averagePrice);
-    mapTwonum.sort((a, b) => b - a);
-    return mapTwonum.slice(0, 2)
-}
-console.log(getAvaragePrice(restaurants));
+// function getAvaragePrice(maxTwoNum) {
+//     const mapTwonum = maxTwoNum.map((item) => item.averagePrice);
+//     mapTwonum.sort((a, b) => b - a);
+//     return mapTwonum.slice(0, 2)
+// }
+// console.log(getAvaragePrice(restaurants));
 
 // const getAvaragePrice = 
 // console.log(getAvaragePrice);
@@ -449,122 +449,122 @@ console.log(getAvaragePrice(restaurants));
 // console.log(highestMax1, highestMax2);
 
 /*  Activity - 2 ==> Task - 4  */
-function getPizzaDetails(restaurants) {
-    const pizzaObj = restaurants.filter((item) => item.name === "Pizza")[0];
-    if (pizzaObj) {
-        const name = pizzaObj.name
-        const cusine = pizzaObj.cuisine;
-        const concanateStr = name + " " + cusine
-        return concanateStr
-    }
+// function getPizzaDetails(restaurants) {
+//     const pizzaObj = restaurants.filter((item) => item.name === "Pizza")[0];
+//     if (pizzaObj) {
+//         const name = pizzaObj.name
+//         const cusine = pizzaObj.cuisine;
+//         const concanateStr = name + " " + cusine
+//         return concanateStr
+//     }
 
-}
-console.log(getPizzaDetails(restaurants));
+// }
+// console.log(getPizzaDetails(restaurants));
 
-/*  Activity - 3 ==> Task - 5  */
-const twoSum = (num1, num2) => num1 + num2;
-console.log(twoSum(5, 3));
+// /*  Activity - 3 ==> Task - 5  */
+// const twoSum = (num1, num2) => num1 + num2;
+// console.log(twoSum(5, 3));
 
-const getTwoLowerNumSum = () => {
-    const getTwoPrices = restaurants.map((item) => item.averagePrice)
-        .sort((a, b) => a - b)
-        .slice(0, 2);
+// const getTwoLowerNumSum = () => {
+//     const getTwoPrices = restaurants.map((item) => item.averagePrice)
+//         .sort((a, b) => a - b)
+//         .slice(0, 2);
 
-    const twoSum1 = getTwoPrices.reduce((accumulator, currentNum) => {
-        return accumulator + currentNum
-    }, 0)
-    return twoSum1
-}
-console.log(getTwoLowerNumSum());
+//     const twoSum1 = getTwoPrices.reduce((accumulator, currentNum) => {
+//         return accumulator + currentNum
+//     }, 0)
+//     return twoSum1
+// }
+// console.log(getTwoLowerNumSum());
 
-/*  Activity - 3 ==> Task - 6  */
-const checkChar = (str, char) => str.includes(char);
-console.log(`The Charector is ${checkChar("LS Digital", "D")}`);
+// /*  Activity - 3 ==> Task - 6  */
+// const checkChar = (str, char) => str.includes(char);
+// console.log(`The Charector is ${checkChar("LS Digital", "D")}`);
 
-/*  Activity - 4 ==> Task -7  */
-const parametrFunc = (parmeter1, parameter2) => {
-    parameter2 = "Dhadave";
-    return { parmeter1, parameter2 }
-}
-console.log(parametrFunc("Ravindra"));
+// /*  Activity - 4 ==> Task -7  */
+// const parametrFunc = (parmeter1, parameter2) => {
+//     parameter2 = "Dhadave";
+//     return { parmeter1, parameter2 }
+// }
+// console.log(parametrFunc("Ravindra"));
 
 /*  Activity - 4 ==> Task -8 */
-const parametrFunc1 = (parmName, paramAge) => {
-    if (typeof paramAge !== "number") {
-        console.log(`"Please enter the Number in second parameter" ${parmName}`);
-    } else {
-        console.log(`"Hi Greeting!" ${paramAge}`);
-    }
-}
-console.log(parametrFunc1("Prafulla", 40));
+// const parametrFunc1 = (parmName, paramAge) => {
+//     if (typeof paramAge !== "number") {
+//         console.log(`"Please enter the Number in second parameter" ${parmName}`);
+//     } else {
+//         console.log(`"Hi Greeting!" ${paramAge}`);
+//     }
+// }
+// console.log(parametrFunc1("Prafulla", 40));
 
 /*  Activity - 5 ==> Task -9  */
-const trainsDetails = [
-    {"trainNumber":12345,"origin":"Mumbai Central","destination":"Delhi","departureTime":"10:00 AM","arrivalTime":"08:00 PM","duration":"10h 0m","days":["Mon","Wed","Fri"],"fare":1500},
-    {"trainNumber":54678,"origin":"Chennai Central","destination":"Kolkata","departureTime":"07:30 AM","arrivalTime":"05:30 PM","duration":"10h 0m","days":["Tue","Thu","Sat"],"fare":1800},
-    {"trainNumber":90123,"origin":"Bangalore City Jn.","destination":"Hyderabad Decan","departureTime":"12:00 PM","arrivalTime":"10:00 PM","duration":"10h 0m","days":["Daily"],"fare":1200},
-    {"trainNumber":78901,"origin":"Ahmedabad Jn.","destination":"Jaipur Jn.","departureTime":"05:00 PM","arrivalTime":"03:00 AM","duration":"10h 0m","days":["Sun","Tue"],"fare":1000},
-    {"trainNumber":34567,"origin":"Pune Junction","destination":"Goa","departureTime":"09:15 AM","arrivalTime":"07:15 PM","duration":"10h 0m","days":["Mon","Wed","Fri","Sat"],"fare":1400},
-    {"trainNumber":67890,"origin":"Secunderabad Jn.","destination":"Bhubaneswar","departureTime":"02:00 PM","arrivalTime":"12:00 PM","days":"Travel time exceeds 24 hours (1d 22h)","fare":2500},
-    {"trainNumber":10234,"origin":"Kanpur Central","destination":"Lucknow Nr.","departureTime":"06:30 AM","arrivalTime":"08:30 AM","duration":"2h 0m","days":["Daily"],"fare":500},
-    {"trainNumber":98765,"origin":"Delhi","destination":"Mumbai Central","departureTime":"11:00 PM","arrivalTime":"09:00 AM","duration":"10h 0m","days":["Sun"],"fare":1600},
-    {"trainNumber":87654,"origin":"Kolkata","destination":"Chennai Central","departureTime":"06:00 AM","arrivalTime":"04:00 PM","duration":"10h 0m","days":["Mon","Wed","Fri"],"fare":1700},
-    {"trainNumber":76543,"origin":"Hyderabad Decan","destination":"Bangalore City Jn.","departureTime":"09:00 PM","arrivalTime":"07:00 AM","duration":"10h 0m","days":["Daily"],"fare":1300}
-];
+// const trainsDetails = [
+//     {"trainNumber":12345,"origin":"Mumbai Central","destination":"Delhi","departureTime":"10:00 AM","arrivalTime":"08:00 PM","duration":"10h 0m","days":["Mon","Wed","Fri"],"fare":1500},
+//     {"trainNumber":54678,"origin":"Chennai Central","destination":"Kolkata","departureTime":"07:30 AM","arrivalTime":"05:30 PM","duration":"10h 0m","days":["Tue","Thu","Sat"],"fare":1800},
+//     {"trainNumber":90123,"origin":"Bangalore City Jn.","destination":"Hyderabad Decan","departureTime":"12:00 PM","arrivalTime":"10:00 PM","duration":"10h 0m","days":["Daily"],"fare":1200},
+//     {"trainNumber":78901,"origin":"Ahmedabad Jn.","destination":"Jaipur Jn.","departureTime":"05:00 PM","arrivalTime":"03:00 AM","duration":"10h 0m","days":["Sun","Tue"],"fare":1000},
+//     {"trainNumber":34567,"origin":"Pune Junction","destination":"Goa","departureTime":"09:15 AM","arrivalTime":"07:15 PM","duration":"10h 0m","days":["Mon","Wed","Fri","Sat"],"fare":1400},
+//     {"trainNumber":67890,"origin":"Secunderabad Jn.","destination":"Bhubaneswar","departureTime":"02:00 PM","arrivalTime":"12:00 PM","days":"Travel time exceeds 24 hours (1d 22h)","fare":2500},
+//     {"trainNumber":10234,"origin":"Kanpur Central","destination":"Lucknow Nr.","departureTime":"06:30 AM","arrivalTime":"08:30 AM","duration":"2h 0m","days":["Daily"],"fare":500},
+//     {"trainNumber":98765,"origin":"Delhi","destination":"Mumbai Central","departureTime":"11:00 PM","arrivalTime":"09:00 AM","duration":"10h 0m","days":["Sun"],"fare":1600},
+//     {"trainNumber":87654,"origin":"Kolkata","destination":"Chennai Central","departureTime":"06:00 AM","arrivalTime":"04:00 PM","duration":"10h 0m","days":["Mon","Wed","Fri"],"fare":1700},
+//     {"trainNumber":76543,"origin":"Hyderabad Decan","destination":"Bangalore City Jn.","departureTime":"09:00 PM","arrivalTime":"07:00 AM","duration":"10h 0m","days":["Daily"],"fare":1300}
+// ];
 
-// find the trains with maximum and minimum fare
-const getTrainsFare = trainsDetails.map((fares) => fares.fare);
+// // find the trains with maximum and minimum fare
+// const getTrainsFare = trainsDetails.map((fares) => fares.fare);
 
-console.log(getTrainsFare);
+// console.log(getTrainsFare);
 
-const getMaxFare = getTrainsFare
-                    .sort((a, b) => b - a)
-                    .slice(0, 1)
+// const getMaxFare = getTrainsFare
+//                     .sort((a, b) => b - a)
+//                     .slice(0, 1)
 
-const getMaxFare1 = Math.max(...getTrainsFare)                    
-console.log(getMaxFare1);
-const getMinFare1 = Math.min(...getTrainsFare)                    
-console.log(getMinFare1);
+// const getMaxFare1 = Math.max(...getTrainsFare)                    
+// console.log(getMaxFare1);
+// const getMinFare1 = Math.min(...getTrainsFare)                    
+// console.log(getMinFare1);
 
-const maxOfTwo = function (n1, n2) {
-    if (n1 > n2) {
-        return n1 + " is maximum.";
-    } else if (n2 > n1) {
-        return n2 + " is maximum.";
-    }
-    return `${n1} and ${n2} are equal.`;
-};
-console.log(maxOfTwo(20, 80));
+// const maxOfTwo = function (n1, n2) {
+//     if (n1 > n2) {
+//         return n1 + " is maximum.";
+//     } else if (n2 > n1) {
+//         return n2 + " is maximum.";
+//     }
+//     return `${n1} and ${n2} are equal.`;
+// };
+// console.log(maxOfTwo(20, 80));
 
 
-// Task -10
-const calculateTotalFare = (trainNumber, passenger) => {
-    const trainObj = trainsDetails.find((originSrc) => originSrc.origin === "Mumbai Central");
-    const trainFare = trainObj.fare * passenger;
-    return `"Total Fare is ${trainFare} of the Tran No. ${trainNumber} for the passenger ${passenger}. The maximum Fare of Train is ${getMaxFare} for the per person"`    
-}
-console.log("Total Fare ===>",calculateTotalFare(76543, 5));
-console.log("\n");
-function getTrainsByDay(day){
+// // Task -10
+// const calculateTotalFare = (trainNumber, passenger) => {
+//     const trainObj = trainsDetails.find((originSrc) => originSrc.origin === "Mumbai Central");
+//     const trainFare = trainObj.fare * passenger;
+//     return `"Total Fare is ${trainFare} of the Tran No. ${trainNumber} for the passenger ${passenger}. The maximum Fare of Train is ${getMaxFare} for the per person"`    
+// }
+// console.log("Total Fare ===>",calculateTotalFare(76543, 5));
+// console.log("\n");
+// function getTrainsByDay(day){
     
-    const filterTrainsByWeekDays = trainsDetails.filter((day) => day.days.includes("Mon")|| day.days.includes("Tue")|| day.days.includes("Wed")|| day.days.includes("Thu")|| day.days.includes("Fri")|| (day === "Daily"));
+//     const filterTrainsByWeekDays = trainsDetails.filter((day) => day.days.includes("Mon")|| day.days.includes("Tue")|| day.days.includes("Wed")|| day.days.includes("Thu")|| day.days.includes("Fri")|| (day === "Daily"));
 
-    const mapTrainsNum = filterTrainsByWeekDays.map((train) => `\n Train No. is ${train.trainNumber}  Runs on the Days ${train.days} \n`);
-    const filterTrainsByWeekend = trainsDetails.filter((day) => day.days.includes("Sun")|| day.days.includes("Sat"));
-    const filterTrainsByDaily = trainsDetails.filter((day) => day.days.includes("Daily"));
+//     const mapTrainsNum = filterTrainsByWeekDays.map((train) => `\n Train No. is ${train.trainNumber}  Runs on the Days ${train.days} \n`);
+//     const filterTrainsByWeekend = trainsDetails.filter((day) => day.days.includes("Sun")|| day.days.includes("Sat"));
+//     const filterTrainsByDaily = trainsDetails.filter((day) => day.days.includes("Daily"));
 
-    if((day === "Mon") || (day === "Tue") || (day === "Wed") || (day === "Thu") ||( day === "Fri") || (day === "Daily")){
-        return ` ${mapTrainsNum}`
-    }else if((day === "Sat") || (day === "Sun") || (day === "Daily")){
-        return filterTrainsByWeekend
-    }else if(day === "Daily"){
-        return filterTrainsByDaily
-    }else{
-        console.log("Please Enter The Day");
-    }
-}
+//     if((day === "Mon") || (day === "Tue") || (day === "Wed") || (day === "Thu") ||( day === "Fri") || (day === "Daily")){
+//         return ` ${mapTrainsNum}`
+//     }else if((day === "Sat") || (day === "Sun") || (day === "Daily")){
+//         return filterTrainsByWeekend
+//     }else if(day === "Daily"){
+//         return filterTrainsByDaily
+//     }else{
+//         console.log("Please Enter The Day");
+//     }
+// }
 
-console.log(getTrainsByDay("Daily"));
+// console.log(getTrainsByDay("Daily"));
 
 // / Task 9 : Write a higher-order function that takes a function and a number , and calls the function that many times .
 
@@ -618,81 +618,199 @@ console.log(getTrainsByDay("Daily"));
 //  Activity -1 //  Task -1 
 // */
 
-const numArray = [1,2,3,7,9];
-console.log(numArray);
+// const numArray = [1,2,3,7,9];
+// console.log(numArray);
 
-//  Activity -1 //  Task -2
-const firstIndex = numArray[0]
-const lastIndex =numArray[numArray.length-1]
-console.log(firstIndex, lastIndex);
+// //  Activity -1 //  Task -2
+// const firstIndex = numArray[0]
+// const lastIndex =numArray[numArray.length-1]
+// console.log(firstIndex, lastIndex);
 
-//  Activity -2 //  Task -3
-const addNum = numArray.push(11);
-console.log(numArray);
+// //  Activity -2 //  Task -3
+// const addNum = numArray.push(11);
+// console.log(numArray);
 
-//  Activity -2 //  Task -4
-const removeLast = numArray.pop()
-console.log(numArray);
-//  Activity -2 //  Task -5
+// //  Activity -2 //  Task -4
+// const removeLast = numArray.pop()
+// console.log(numArray);
+// //  Activity -2 //  Task -5
 
-const removeFirst = numArray.shift()
-console.log(numArray);
+// const removeFirst = numArray.shift()
+// console.log(numArray);
 
-//  Activity -2 //  Task -6
-const addFirst = numArray.unshift(5)
-console.log(numArray);
+// //  Activity -2 //  Task -6
+// const addFirst = numArray.unshift(5)
+// console.log(numArray);
 
-//  Activity -3 //  Task - 7
-const doubleNum = numArray.map((num) => num + num)
-console.log(doubleNum);
+// //  Activity -3 //  Task - 7
+// const doubleNum = numArray.map((num) => num + num)
+// console.log(doubleNum);
 
-//  Activity -3 //  Task - 8
-const filterEvenNum = numArray.filter((geteven) => geteven % 2 === 0)
-console.log("Even Number",filterEvenNum);
+// //  Activity -3 //  Task - 8
+// const filterEvenNum = numArray.filter((geteven) => geteven % 2 === 0)
+// console.log("Even Number",filterEvenNum);
 
-//  Activity -3 //  Task - 9
-const sumOfall = numArray.reduce((accumulator, currentnum) => accumulator + currentnum, 0)
-console.log(sumOfall);
+// //  Activity -3 //  Task - 9
+// const sumOfall = numArray.reduce((accumulator, currentnum) => accumulator + currentnum, 0)
+// console.log(sumOfall);
 
-//  Activity -4 //  Task - 10
-for(let i =0; i < numArray.length; i++){
-    console.log(numArray[i]);
+// //  Activity -4 //  Task - 10
+// for(let i =0; i < numArray.length; i++){
+//     console.log(numArray[i]);
+// }
+// //  Activity -4 //  Task - 11
+// numArray.forEach((num)=> console.log("number",num))
+// // console.log(printArray);
+
+// //  Activity -5 //  Task - 12
+// let matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+// console.log(matrix);
+
+// const twoDArray = [[1,2,3],[4,5,6],[7,8,9]];
+
+// let matrixStr = "";
+// for(let i =0; i < 4; i++){
+//     for(let j =0; j <4; j++){
+//         matrixStr = matrixStr + matrix[i][j] + " "
+//     }
+//     matrixStr +="\n"
+// }
+// console.log(matrixStr);
+
+console.log("Write a function that takes a string (a) and a number (n) as argument. Return the nth character of 'a'");
+
+// .
+
+// const nthCharector = (str, n) =>{
+//     if(n < 1 || n > str.length){
+//         return null
+//     }
+//     return str[n -1]
+// }
+// const nthChar = (str, n)=>{
+//   if(n < 0 && n <= n.length){
+//     return str.charAt(n-1)
+//   }else{
+//    return null
+//   }
+// }
+// console.log(nthCharector("Ravindra", 1));
+console.log("Create a function `formatDate` that takes a Date object and returns a formatted string in the format 'dd-mm-yyyy'");
+
+//
+
+// function formatDate(date){
+//   // let day = String(date.getDate()).padStart(2, '0');
+//   // let month = String(date.getMonth() + 1).padStart(2, '0');
+//   // let year = String(date.getFullYear());
+//   // return `${day}-${month}-${year}`
+
+//   let day = date.getDate(); // Get the day of the month
+//   let month = date.getMonth() + 1; // Months are 0-based, so add 1
+//   let year = date.getFullYear(); // Get the full year
+
+//   // Add leading zero to day and month if necessary
+//   day = day < 10 ? '0' + day : day;
+//   month = month < 10 ? '0' + month : month;
+
+//   // Format the date as 'dd-mm-yyyy'
+//   return `${day}-${month}-${year}`;
+
+// }
+console.log("Create a function `getDayName` that takes a Date object and returns the day of the week as a string");
+
+// function getDayName(date){
+//   let weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+//   let daysOfweek = weekDays[date.getDay()];
+//   return daysOfweek
+// }
+// const daysName = new Date();
+// console.log(getDayName(daysName));
+
+console.log("Write a function that takes a string (a) as argument. Extract the first half a. Return the result");
+
+function halfOfString(a){
+  const length = a.length;
+  const firstPart = a.substring(0, Math.floor(length /2 ));
+  return firstPart
+
 }
-//  Activity -4 //  Task - 11
-numArray.forEach((num)=> console.log("number",num))
-// console.log(printArray);
+console.log(halfOfString("LS Digital"));
 
-//  Activity -5 //  Task - 12
-let matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
-console.log(matrix);
 
-const twoDArray = [[1,2,3],[4,5,6],[7,8,9]];
+const newFruits = [
+    { fruit: "Apple", price: 1.5, itemStock: 20, color: "Red", countryOfOrigin: "USA" },
+    { fruit: "Pomegranate", price: 2, itemStock: 25, color: "Red", countryOfOrigin: "India" },
+    { fruit: "Orange", price: 8, itemStock: 33, color: "Orange", countryOfOrigin: "Brazil" },
+    { fruit: "Mango", price: 2.0, itemStock: 30, color: "Yellow", countryOfOrigin: "India" },
+    { fruit: "Pineapple", price: 3.0, itemStock: 50, color: "Brown", countryOfOrigin: "Philippines" },
+    { fruit: "Banana", price: 1.0, itemStock: 40, color: "Yellow", countryOfOrigin: "Ecuador" },
+    { fruit: "Strawberry", price: 2.5, itemStock: 30, color: "Red", countryOfOrigin: "Mexico" },
+    { fruit: "Grapes", price: 3.5, itemStock: 60, color: "Purple", countryOfOrigin: "Italy" },
+    { fruit: "Blueberry", price: 4.0, itemStock: 20, color: "Blue", countryOfOrigin: "Canada" }
+  ];
+  
+  const findFruitsWithHighPrice = () =>{
+    // Find the fruit with the highest price.
+    // sorted fruits by dcesending order || first slice used for the copy of the original array and avoide the mutiting the origin array
 
-let matrixStr = "";
-for(let i =0; i < 4; i++){
-    for(let j =0; j <4; j++){
-        matrixStr = matrixStr + matrix[i][j] + " "
+    const sortHighestPriceFruit = newFruits.slice().sort((a, b) => b.price - a.price)
+    const maptheHipriceFruit = sortHighestPriceFruit[0];    
+    // const maptheHipriceFruit = sortHighestPriceFruit.slice(0, 2); 
+    // const maptheHipriceFruit = sortHighestPriceFruit.map((fruit) =>  fruit.price);
+    console.log(maptheHipriceFruit);   
+    
+    // Find the fruit with the lowest stock.
+    const sortTheLowestStock = newFruits.slice().sort((a, b) => a.itemStock - b.itemStock);
+    const getTheLowestStockFruit = sortTheLowestStock[0];
+    // console.log(getTheLowestStockFruit);
+    
+    // Calculate the total cost of all fruits in stock.
+    const gettotalCost = newFruits.reduce((accumulator, currentItem) =>{
+      return accumulator + (currentItem.itemStock * currentItem.price)
+    },0);
+    // console.log(gettotalCost);
+
+    // Get the single appple cost of fruit apple in stock.
+    const singleAppleCost = newFruits.filter((fruitName) => fruitName.fruit === "Apple").reduce((acc , curr) => acc + curr.price, 0);
+    // console.log(singleAppleCost);
+
+    // Calculate the total cost of fruit apple in stock.
+    const totalAppleCost = newFruits.filter((fruitName) => fruitName.fruit === "Apple").reduce((acc , curr) => acc + (curr.price * curr.itemStock), 0);
+    // console.log(totalAppleCost);
+
+    // Calculate the fruit with the highest stock-to-price ratio
+    function calculateHighestToPriceRatio(fruitsitem){
+      let highestRatio = 0;
+      let highestFruits = null;
+
+      for(let fruit of fruitsitem){
+        const ratio = fruit.itemStock / fruit.price;
+        if(ratio > highestRatio){
+          highestRatio = ratio;
+          highestFruits = fruit.fruit
+        }
+      }
+      return highestFruits
     }
-    matrixStr +="\n"
-}
-console.log(matrixStr);
+    // console.log(calculateHighestToPriceRatio(newFruits));
+    
+    // Create a new array containing only the names of the fruits.
+    const mapTheNameFruit = newFruits.map((fruitname)=> fruitname.fruit)
+    // console.log(mapTheNameFruit);
+    
+    // Create a new array containing only the fruits with a price greater than 2.
+    const fruitWithpriceGretTwo = newFruits.filter((fruit) => fruit.price > 2 );
+    // console.log(fruitWithpriceLessTwo);
 
-// Write a function that takes a string (a) and a number (n) as argument. Return the nth character of 'a'.
-
-const nthCharector = (str, n) =>{
-    if(n < 1 || n > str.length){
-        return null
-    }
-    return str[n -1]
-}
-console.log(nthCharector("Ravindra", 11));
-
-// Map
-
-
-
-
-
+    // Create a new array containing only the fruits with stock less than 10.
+    const fruitWithStockLess30 = newFruits.filter((fruit) => fruit.itemStock < 30)
+    console.log(fruitWithStockLess30);
+    
+    
+    
+  }
+  findFruitsWithHighPrice()
 
 
 

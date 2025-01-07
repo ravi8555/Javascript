@@ -766,7 +766,7 @@ console.log('map extractNames from object')
 // }
 // console.log(extractNames(people));
 
-console.log('map calculateAverage from numbers input')
+console.log('map calculate Average from numbers input')
 
 // Implement a function calculateAverage that takes an array of numbers as input and returns the average of all the numbers in the array.
 

@@ -10,7 +10,7 @@ If both these indexes are the same, then return true. Otherwise, return false. *
 //         return false
 //     }
 // }
-// console.log(checkForSubstr("Next time there won’t be a next time", "time"));
+// console.log(checkForSubstr("Next time there won't be a next time", "time"));
 console.log("Question ===> Write a function that takes a string as argument. The string contains the substring 'is'. Return the index of 'is'.")
 // function getIndexOfsub(str, k){
 //     for(let i = 0; i < str.length - k.length; i++){

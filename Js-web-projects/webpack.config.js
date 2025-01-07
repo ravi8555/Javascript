@@ -4,7 +4,9 @@ const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+// const OptimizeCSSAssetsPlugin = require('css-minimizer-webpack-plugin')
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 const CopyPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
 const htmlPageNames = [
@@ -82,7 +84,7 @@ module.exports = (env, argv) => ({
   optimization: {
     minimizer: [
       // new TerserPlugin(),
-      new OptimizeCSSAssetsPlugin(),
+      new CssMinimizerPlugin(),
       new CopyPlugin({
         patterns: [
           { from: 'src/*.html', to: '[name].[ext]' },
