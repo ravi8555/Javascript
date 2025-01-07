@@ -806,7 +806,25 @@ const newFruits = [
     // Create a new array containing only the fruits with stock less than 10.
     const fruitWithStockLess30 = newFruits.filter((fruit) => fruit.itemStock < 30)
     console.log(fruitWithStockLess30);
+
+    // Sort the fruits array by price in ascending order.
+    const sortByPriceAscending = newFruits.sort((a, b) => a.price -b.price);
+    console.log("Sort by price", sortByPriceAscending);
+
+    // Sort the fruits array by stock in descending order.
+    const sortByitemSrockDesc = newFruits.sort((a,b)=> b.itemStock - a.itemStock)
+    console.log(sortByitemSrockDesc);
+
+    // Find the total stock of all fruits.
+    const totalStock = newFruits.reduce((acc, curritem) => acc + curritem.itemStock,0)
+    console.log("total Stock", totalStock);
+
+    // Check if a specific fruit exists in the array.
+    const findApple = newFruits.find ((item)=> item.fruit === "Apple");
+    console.log(findApple);
     
+    
+
     
     
   }
