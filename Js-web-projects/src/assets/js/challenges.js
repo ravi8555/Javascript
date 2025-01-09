@@ -738,7 +738,7 @@ function halfOfString(a){
 console.log(halfOfString("LS Digital"));
 
 
-const newFruits = [
+const fruitStocks = [
     { fruit: "Apple", price: 1.5, itemStock: 20, color: "Red", countryOfOrigin: "USA" },
     { fruit: "Pomegranate", price: 2, itemStock: 25, color: "Red", countryOfOrigin: "India" },
     { fruit: "Orange", price: 8, itemStock: 33, color: "Orange", countryOfOrigin: "Brazil" },
@@ -754,29 +754,29 @@ const newFruits = [
     // Find the fruit with the highest price.
     // sorted fruits by dcesending order || first slice used for the copy of the original array and avoide the mutiting the origin array
 
-    const sortHighestPriceFruit = newFruits.slice().sort((a, b) => b.price - a.price)
+    const sortHighestPriceFruit = fruitStocks.slice().sort((a, b) => b.price - a.price)
     const maptheHipriceFruit = sortHighestPriceFruit[0];    
     // const maptheHipriceFruit = sortHighestPriceFruit.slice(0, 2); 
     // const maptheHipriceFruit = sortHighestPriceFruit.map((fruit) =>  fruit.price);
     console.log(maptheHipriceFruit);   
     
     // Find the fruit with the lowest stock.
-    const sortTheLowestStock = newFruits.slice().sort((a, b) => a.itemStock - b.itemStock);
+    const sortTheLowestStock = fruitStocks.slice().sort((a, b) => a.itemStock - b.itemStock);
     const getTheLowestStockFruit = sortTheLowestStock[0];
     // console.log(getTheLowestStockFruit);
     
     // Calculate the total cost of all fruits in stock.
-    const gettotalCost = newFruits.reduce((accumulator, currentItem) =>{
+    const gettotalCost = fruitStocks.reduce((accumulator, currentItem) =>{
       return accumulator + (currentItem.itemStock * currentItem.price)
     },0);
     // console.log(gettotalCost);
 
     // Get the single appple cost of fruit apple in stock.
-    const singleAppleCost = newFruits.filter((fruitName) => fruitName.fruit === "Apple").reduce((acc , curr) => acc + curr.price, 0);
+    const singleAppleCost = fruitStocks.filter((fruitName) => fruitName.fruit === "Apple").reduce((acc , curr) => acc + curr.price, 0);
     // console.log(singleAppleCost);
 
     // Calculate the total cost of fruit apple in stock.
-    const totalAppleCost = newFruits.filter((fruitName) => fruitName.fruit === "Apple").reduce((acc , curr) => acc + (curr.price * curr.itemStock), 0);
+    const totalAppleCost = fruitStocks.filter((fruitName) => fruitName.fruit === "Apple").reduce((acc , curr) => acc + (curr.price * curr.itemStock), 0);
     // console.log(totalAppleCost);
 
     // Calculate the fruit with the highest stock-to-price ratio
@@ -793,19 +793,47 @@ const newFruits = [
       }
       return highestFruits
     }
-    // console.log(calculateHighestToPriceRatio(newFruits));
+    // console.log(calculateHighestToPriceRatio(fruitStocks));
     
     // Create a new array containing only the names of the fruits.
-    const mapTheNameFruit = newFruits.map((fruitname)=> fruitname.fruit)
+    const mapTheNameFruit = fruitStocks.map((fruitname)=> fruitname.fruit)
     // console.log(mapTheNameFruit);
     
     // Create a new array containing only the fruits with a price greater than 2.
-    const fruitWithpriceGretTwo = newFruits.filter((fruit) => fruit.price > 2 );
+    const fruitWithpriceGretTwo = fruitStocks.filter((fruit) => fruit.price > 2 );
     // console.log(fruitWithpriceLessTwo);
 
     // Create a new array containing only the fruits with stock less than 10.
-    const fruitWithStockLess30 = newFruits.filter((fruit) => fruit.itemStock < 30)
+    const fruitWithStockLess30 = fruitStocks.filter((fruit) => fruit.itemStock < 30)
     console.log(fruitWithStockLess30);
+
+    // Update the price of a specific fruit.
+    const updatePriceSpecificFruit = fruitStocks.reduce((acc, fruit) =>{
+      if(fruit.fruit === "Mango"){
+        return [...acc, {...fruit, price:10.2}]
+      }
+      return [...acc, fruit]
+    },[]);
+    console.log(updatePriceSpecificFruit);
+
+    const mango = fruitStocks.find((item) => item.fruit === "Mango")
+    if(mango){
+      mango.price = 10.2
+    }
+
+    const changeFruitPrice = fruitStocks.map((fruit)=>{
+      if(fruit.fruit === "Mango"){
+        return {...fruit, price:10.2}
+      }
+      return fruit
+    });
+
+    fruitStocks.filter(fruit => fruit.fruit === "Mange").forEach(item => {item.price = 10.2})
+
+    console.log(fruitStocks);
+    
+
+    
     
     
     
