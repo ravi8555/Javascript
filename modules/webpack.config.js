@@ -8,6 +8,7 @@ const webpack = require('webpack');
 const htmlPageNames = [
   { pageName: 'index.html', title: 'Home Page' },
   { pageName: 'components/htmlComponents/todo.html', title: 'To Do' },
+  { pageName: 'components/htmlComponents/currencyTracer.html', title: 'Currency Tracker' },
 ];
 
 module.exports = (env, argv) => ({
