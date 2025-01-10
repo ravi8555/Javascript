@@ -1,80 +1,17 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const TerserPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const OptimizeCSSAssetsPlugin = require('css-minimizer-webpack-plugin')
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
-const CopyPlugin = require('copy-webpack-plugin')
-const webpack = require('webpack')
 const htmlPageNames = [
-  {
-    pageName: 'index.html',
-    title: '',
-  },
-  {
-    pageName: 'todo.html',
-    title: 'To Do',
-  },
-  {
-    pageName: 'calculator.html',
-    title: 'Calculator',
-  },
-  {
-    pageName: 'quize.html',
-    title: 'Quize',
-  },
-  {
-    pageName: 'crio-js.html',
-    title: '',
-  },
-  {
-    pageName: 'leet-code-question-api.html',
-    title: '',
-  },
-  {
-    pageName: 'form.html',
-    title: 'Form',
-  },
-  {
-    pageName: 'dsa.html',
-    title: 'DSA',
-  },{
-    pageName: 'git-user.html',
-    title: 'DSA',
-  },{
-    pageName: 'form-validation.html',
-    title: 'FORM',
-  },
-  {
-      pageName: 'challenge.html',
-      title: 'ChaiAurCode'
-  },
-  {
-    pageName: 'search.html',
-    title: 'Search Users data'
-},
-{
-  pageName: 'timer.html',
-  title: 'Search Users data'
-},
-]
-let htmlFileName = htmlPageNames.map((htmlPage) => htmlPage.pageName)
-let multipleHtmlPlugins = htmlPageNames.map((name) => {
-  return new HtmlWebpackPlugin({
-    // template: `./src/${name.pageName}`,
-    filename: `${name.pageName}`,
-    // chunks: [`${name.pageName}`],
-    // chunks: [name.pageName.replace(/-(\w)/g, (match, c) => c.toUpperCase())],
-    title: name.title,
-    template: path.resolve(__dirname, `src/${name.pageName}`),
-  })
-})
+  { pageName: 'index.html', title: 'Home Page' },
+  { pageName: 'html/todo.html', title: 'To Do' },
+];
 
 module.exports = (env, argv) => ({
-  mode: argv.mode,
+  mode: argv.mode || 'development',
   devtool: argv.mode === 'development' ? 'source-map' : false,
   entry: ['./src/assets/js/app.js', './src/assets/css/main.scss'],
   output: {
@@ -82,53 +19,30 @@ module.exports = (env, argv) => ({
     filename: 'js/[name].[contenthash].js',
   },
   optimization: {
-    minimizer: [
-      // new TerserPlugin(),
-      new CssMinimizerPlugin(),
-      new CopyPlugin({
-        patterns: [
-          { from: 'src/*.html', to: '[name].[ext]' },
-          // { from: './src/assets', to: './assets' },
-          { from: './src/assets/img', to: './img' },
-          { from: './src/assets/video', to: './video' },
-          // { from: "./src/assets/favicon.ico", to: "./favicon.ico" },
-          // { from: './src/assets/images/*',to: 'images/[name].[ext]'}
-        ],
-      }),
-    ],
+    splitChunks: { chunks: 'all' },
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            only: ['./src'],
-            // name: '[name][ext]',
-            // outputPath :'./js/'
           },
         },
       },
       {
-        test: /\.(scss)$/,
+        test: /\.scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              url: false,
-            },
-          },
+          MiniCssExtractPlugin.loader,
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [['autoprefixer']],
+                plugins: ['autoprefixer'],
               },
             },
           },
@@ -136,139 +50,76 @@ module.exports = (env, argv) => ({
             loader: 'sass-loader',
             options: {
               implementation: require('sass'),
+              sassOptions: {
+                silenceDeprecations: ['legacy-js-api'],
+              },
             },
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name][ext]',
+        },
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
+      },
     ],
   },
+  resolve: {
+    // This alias helps to suppress the warning related to 'sass.dart.js'
+    alias: {
+      'sass/sass.dart.js': false, // Disable resolving this problematic file
+    },
+    extensions: ['.js', '.json'],
+    fallback: {
+      fs: false,
+      module: false,
+    },
+  },
   plugins: [
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      // filename: 'assets/app.css',
-      filename: argv.mode
-        ? './css/[name].[contenthash].css'
-        : './css/scss/[name].[contenthash].css',
+      filename: 'css/[name].[contenthash].css',
     }),
-    // new HtmlWebpackPartialsPlugin({
-    //   path:path.join(__dirname,'./src/form.html'),
-    //     location:'toastNotification',
-    //   template_filename: ['form.html']
-    // }),
-    //  new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/dad-jokes.html'),
-    //     location:'dadJoke',
-    //     template_filename: htmlFileName
-    //    }),
-    //     new HtmlWebpackPartialsPlugin({
-    //         path:path.join(__dirname,'src/event-keycodes.html'),
-    //         location:'eventkeycode',
-    //         template_filename: htmlFileName
-    //     }),
-    //    new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/faq-collapse.html'),
-    //     location:'faq',
-    //     template_filename: htmlFileName
-    //    }),
-    // new HtmlWebpackPartialsPlugin({
-    //   path: path.join(__dirname, './src/form.html'),
-    //   location: 'form-validation',
-    //   // template: path.resolve(__dirname, 'src/index.html')
-    //   template_filename: htmlFileName,
-    // }),
-    //    new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/progress-steps.html'),
-    //     location:'progress-steps',
-    //     template_filename: htmlFileName
-    //    }),
-    //   new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/sound-board.html'),
-    //     location:'sound-board',
-    //     template_filename: htmlFileName
-    //    }),
-    //   new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/incrementing-counter.html'),
-    //     location:'counter',
-    //     template_filename: htmlFileName
-    //    }),
-    // new HtmlWebpackPartialsPlugin({
-    //   path: path.join(__dirname, 'src/movie-app.html'),
-    //   location: 'movie',
-    //   template_filename: htmlFileName,
-    // }),
-    // new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/random-choice-picker.html'),
-    //     location:'random-color',
-    //     template_filename: htmlFileName
-    //    }),
-    // new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/animated-navigation.html'),
-    //     location:'navigation',
-    //     template_filename: htmlFileName
-    //    }),
-
-    //    new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/drink-water.html'),
-    //     location:'drinkwater',
-    //     template_filename: htmlFileName
-    //    }),
-    //    new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/background-slider.html'),
-    //     location:'background',
-    //     template_filename: htmlFileName
-    //    }),
-    //    new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/button-ripple-effect.html'),
-    //     location:'ripple',
-    //     template_filename: htmlFileName
-    //    }),
-    //    new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/drawing-app.html'),
-    //     location:'drwaapp',
-    //     template_filename: htmlFileName
-    //    }),
-    //     new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/content-placeholder.html'),
-    //     location:'contPlace',
-    //     template_filename: htmlFileName
-    //    }),
-    //    new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/drag-n-drop.html'),
-    //     location:'drag-and-drop',
-    //     template_filename: htmlFileName
-    //    }),
-    //     new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/sticky-navigation.html'),
-    //     location:'sticky-navbar',
-    //     template_filename: htmlFileName
-    //    }),
-    //    new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'src/double-vertical-slider.html'),
-    //     location:'doublevsld',
-    //     template_filename: htmlFileName
-    //    }),
-    // new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'./src/footer.html'),
-    //     location:'footer',
-    //     template_filename: htmlFileName
-    // }),
-    // new HtmlWebpackPartialsPlugin({
-    //   path: path.join(__dirname, './src/todo.html'),
-    //   location: 'header',
-    //   // template: path.resolve(__dirname, 'src/index.html')
-    //   template_filename: htmlFileName,
-    // }),
+    new CopyPlugin({
+      patterns: [
+        { from: './src/assets/img', to: 'img' },
+        { from: './src/assets/video', to: 'video' },
+      ],
+    }),
+    ...htmlPageNames.map(
+      (name) =>
+        new HtmlWebpackPlugin({
+          filename: name.pageName,
+          title: name.title,
+          template: path.resolve(__dirname, `src/${name.pageName}`),
+        })
+    ),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery',
     }),
-  ].concat(multipleHtmlPlugins),
+  ],
   devServer: {
-    contentBase: [path.join(__dirname, '/src')],
-    watchContentBase: true,
-    // compress: true,
+    static: path.resolve(__dirname, 'dist'),
     port: 8000,
     open: true,
+    hot: true,
   },
-})
+  // Suppress 'Critical dependency' warnings from Sass
+  ignoreWarnings: [
+    {
+      module: /sass\.dart\.js/,
+      message: /Critical dependency/,
+    },
+  ],
+});
+

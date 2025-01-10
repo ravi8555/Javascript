@@ -1,4 +1,7 @@
-import style from '../css/main.scss'
+console.log("***** APP JS Loaded *******");
+
+import stripAnsi from 'strip-ansi';
+import '../css/main.scss'
 // import style1 from '../css/main.css';
 // import component from './component.js';
 // import componentCircle from './circle.js'
@@ -96,10 +99,10 @@ import style from '../css/main.scss'
 // import clouser from './timer.js'
 // import countDown from './countdown.js'
 
-import challenge from '../js/challenges.js' 
+import '../js/challenges.js' 
 // import matrix from '../js/DSA/dsa-1.js'
 // import JSQuestion from './JS-Questions/js1.js'
-console.log("***** OOP *******");
 import JSQuestion from './oop/oop.js'
+
 
 

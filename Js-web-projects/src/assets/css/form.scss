@@ -1,6 +1,9 @@
+$bgcolor: salmon;
+body{
+  background: $bgcolor;
+}
 
-  
-  .form-container {
+.form-container {
     background-color:#fff;
     padding: 20px 40px;
     border-radius: 5px;
