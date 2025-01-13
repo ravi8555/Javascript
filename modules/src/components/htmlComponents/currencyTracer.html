@@ -3,13 +3,13 @@
    <head>
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Currency</title> 
+	    <title><%= htmlWebpackPlugin.options.title %></title>
 	    <link rel="stylesheet" type="text/css" href="mystyle.css"/>
    </head>
    <body>
    		  <div class="wrapper">
 	   		  <h1>Currency Tracker</h1>
-	   		  <form onsubmit="getCurrency(event)">
+	   		  <form onsubmit="handleClick(event)">
                 <input
                     type="text"
                     id="currencyInput"
@@ -27,6 +27,8 @@
 
    		  </div>  
  
-
+<script>
+   
+</script>
    </body>
 </html>
