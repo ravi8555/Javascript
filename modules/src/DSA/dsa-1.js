@@ -38,6 +38,26 @@ console.log("Question ==>Find the Leap year");
 //         return false
 //     }
 // }
+/* Year divisible by 400: Always a leap year.
+Year divisible by 100 but not by 3: Common year.
+Year divisible by 100: Common year.
+Year divisible by 4: Leap year.
+Other years: Common year. */
+// function isLeap(n) {
+//     if (n % 400 === 0) {
+//       return 'leap year';
+//     } else if (n % 100 === 0) {
+//       if (n % 3 !== 0) {
+//         return 'common year';
+//       } else {
+//         return 'common year';
+//       }
+//     } else if (n % 4 === 0) {
+//       return 'leap year';
+//     } else {
+//       return 'common year';
+//     }
+//   }
 // console.log(leapYear(2024));
 
 console.log("Question 4.  FindElement");

@@ -29,7 +29,7 @@ import '../css/main.scss'
 // import studentJson from '../../challenges/JS-Questions/student_data.js'
 // import gitUserApi from '../../challenges/JS-Questions/git-user-api.js'
 // import jsDomManu from '../../challenges/JS-Questions/me_jsDom_v2.js'
-import currencyTracer from '../../components/jsComponents/currencyTracker'
+// import currencyTracer from '../../components/jsComponents/currencyTracker'
 
 
 // import clouser from '../../challenges/JS-Questions/buttonClickApi.js'
@@ -43,12 +43,13 @@ import currencyTracer from '../../components/jsComponents/currencyTracker'
 // import challenge from '../../challenges/JS-Questions/challenge-9.js' 
 // import challenge10 from '../../challenges/JS-Questions/challenge-10.js' 
 // import challenge11 from '../../challenges/JS-Questions/challenges-11.js' 
-// import '../../challenges/JS-Questions/challenges.js' 
+import JSChallenge from '../../challenges/JS-Questions/challenges.js' 
 // import JSQuestion from '../../challenges/JS-Questions/js1.js'
 
 /****** ****** ****** ****** ****** ******   DSA   ****** ****** ****** ****** ****** ******  */
 // import dsa from '../../challenges/JS-Questions/dsa.js'
 // import matrix from '../../challenges/JS-Questions/DSA/matrix.js'
+import matrix from '../../DSA/prime_number.js'
 // import matrix from '../../DSA/dsa-1.js'
 
 // import bruteFroce from '../../challenges/JS-Questions/brute-force.js'

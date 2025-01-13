@@ -729,13 +729,36 @@ console.log("Create a function `getDayName` that takes a Date object and returns
 
 console.log("Write a function that takes a string (a) as argument. Extract the first half a. Return the result");
 
-function halfOfString(a){
-  const length = a.length;
-  const firstPart = a.substring(0, Math.floor(length /2 ));
-  return firstPart
+// function halfOfString(a){
+//   const length = a.length;
+//   const firstPart = a.substring(0, Math.floor(length /2 ));
+//   return firstPart
 
+// }
+// console.log(halfOfString("LS Digital"));
+
+console.log("Question function called randomInRange(min, max) that generates a random integer between a given minimum value (inclusive) and a maximum value (exclusive).");
+
+export const randomInRange = (min, max) => {
+	// Write your code here
+	return Math.floor(Math.random() * (max - min)) + min
 }
-console.log(halfOfString("LS Digital"));
+console.log(randomInRange(2, 30));
+
+function myFunction(a, b, c, d, e, f) {
+  const sumResult = a + b - c;
+  const subStractResult = sumResult - c;
+  const multiplyres = subStractResult * d;
+  const devideMutlRes = multiplyres / e
+  const power = Math.pow(devideMutlRes, f);
+  return power;
+}
+console.log("mindOrder",myFunction(6, 5, 4, 3, 2, 1));
+console.log(myFunction(6,2,1,4,2,3));
+console.log(myFunction(2,3,6,4,2,3));
+
+
+
 
 
 const fruitStocks = [
@@ -807,7 +830,6 @@ const fruitStocks = [
     const fruitWithStockLess30 = fruitStocks.filter((fruit) => fruit.itemStock < 30)
     console.log(fruitWithStockLess30);
 
-<<<<<<< HEAD:Js-web-projects/src/assets/js/challenges.js
     // Update the price of a specific fruit.
     const updatePriceSpecificFruit = fruitStocks.reduce((acc, fruit) =>{
       if(fruit.fruit === "Mango"){
@@ -835,7 +857,6 @@ const fruitStocks = [
     
 
     
-=======
     // Sort the fruits array by price in ascending order.
     const sortByPriceAscending = newFruits.sort((a, b) => a.price -b.price);
     console.log("Sort by price", sortByPriceAscending);
@@ -851,14 +872,13 @@ const fruitStocks = [
     // Check if a specific fruit exists in the array.
     const findApple = newFruits.find ((item)=> item.fruit === "Apple");
     console.log(findApple);
->>>>>>> 04871c5cf9503b46d37635e1ad9c250b3e3b2b53:modules/src/challenges/JS-Questions/challenges.js
     
     
 
     
     
   }
-  findFruitsWithHighPrice()
+  // findFruitsWithHighPrice()
 
 
 
