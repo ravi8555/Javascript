@@ -47,9 +47,9 @@ import JSChallenge from '../../challenges/JS-Questions/challenges.js'
 // import JSQuestion from '../../challenges/JS-Questions/js1.js'
 
 /****** ****** ****** ****** ****** ******   DSA   ****** ****** ****** ****** ****** ******  */
-// import dsa from '../../challenges/JS-Questions/dsa.js'
+// import dsa from '../../DSA/dsa.js'
 // import matrix from '../../challenges/JS-Questions/DSA/matrix.js'
-import matrix from '../../DSA/prime_number.js'
+// import matrix from '../../DSA/prime_number.js'
 // import matrix from '../../DSA/dsa-1.js'
 
 // import bruteFroce from '../../challenges/JS-Questions/brute-force.js'

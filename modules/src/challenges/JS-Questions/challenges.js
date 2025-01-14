@@ -739,23 +739,44 @@ console.log("Write a function that takes a string (a) as argument. Extract the f
 
 console.log("Question function called randomInRange(min, max) that generates a random integer between a given minimum value (inclusive) and a maximum value (exclusive).");
 
-export const randomInRange = (min, max) => {
-	// Write your code here
-	return Math.floor(Math.random() * (max - min)) + min
-}
-console.log(randomInRange(2, 30));
+// export const randomInRange = (min, max) => {
+// 	// Write your code here
+// 	return Math.floor(Math.random() * (max - min)) + min
+// }
+// console.log(randomInRange(2, 30));
 
-function myFunction(a, b, c, d, e, f) {
-  const sumResult = a + b - c;
-  const subStractResult = sumResult - c;
-  const multiplyres = subStractResult * d;
-  const devideMutlRes = multiplyres / e
-  const power = Math.pow(devideMutlRes, f);
-  return power;
+// function myFunction(a, b, c, d, e, f) {
+//   // const sumResult = a + b;
+//   // const subStractResult = sumResult - c;
+//   // const multiplyres = subStractResult * d;
+//   // const devideMutlRes = multiplyres / e
+//   // const power = Math.pow(devideMutlRes, f);
+//   // return power;
+
+//  return ((a + b - c) * d / e) ** f  
+// }
+
+// console.log("mindOrder",myFunction(6, 5, 4, 3, 2, 1));
+// console.log(myFunction(6,2,1,4,2,3));
+// console.log(myFunction(2,3,6,4,2,3));
+
+console.log("Question => Check whether a string contains another string and concatenate ==== Write a function that takes two strings (a and b) as arguments. If a contains b, append b to the beginning of a. If not, append it to the end. Return the concatenation");
+
+function checkWhetherString(a, b){
+  // let result = ""
+  // if(a.includes(b)){
+  //   result = b + a
+  // }else{
+  //   result = a +b
+  // }
+  //  return result
+
+  return a.includes(b) ? b +a : a + b
 }
-console.log("mindOrder",myFunction(6, 5, 4, 3, 2, 1));
-console.log(myFunction(6,2,1,4,2,3));
-console.log(myFunction(2,3,6,4,2,3));
+// console.log(checkWhetherString("Today is 14 ", "Today"));
+// console.log(checkWhetherString("Hello ", "World"));
+
+
 
 
 
@@ -777,108 +798,168 @@ const fruitStocks = [
     // Find the fruit with the highest price.
     // sorted fruits by dcesending order || first slice used for the copy of the original array and avoide the mutiting the origin array
 
-    const sortHighestPriceFruit = fruitStocks.slice().sort((a, b) => b.price - a.price)
-    const maptheHipriceFruit = sortHighestPriceFruit[0];    
-    // const maptheHipriceFruit = sortHighestPriceFruit.slice(0, 2); 
-    // const maptheHipriceFruit = sortHighestPriceFruit.map((fruit) =>  fruit.price);
-    console.log(maptheHipriceFruit);   
+    // const sortHighestPriceFruit = fruitStocks.slice().sort((a, b) => b.price - a.price)
+    // const maptheHipriceFruit = sortHighestPriceFruit[0];    
+    // // const maptheHipriceFruit = sortHighestPriceFruit.slice(0, 2); 
+    // // const maptheHipriceFruit = sortHighestPriceFruit.map((fruit) =>  fruit.price);
+    // console.log(maptheHipriceFruit);   
     
-    // Find the fruit with the lowest stock.
-    const sortTheLowestStock = fruitStocks.slice().sort((a, b) => a.itemStock - b.itemStock);
-    const getTheLowestStockFruit = sortTheLowestStock[0];
-    // console.log(getTheLowestStockFruit);
+    // // Find the fruit with the lowest stock.
+    // const sortTheLowestStock = fruitStocks.slice().sort((a, b) => a.itemStock - b.itemStock);
+    // const getTheLowestStockFruit = sortTheLowestStock[0];
+    // // console.log(getTheLowestStockFruit);
     
-    // Calculate the total cost of all fruits in stock.
-    const gettotalCost = fruitStocks.reduce((accumulator, currentItem) =>{
-      return accumulator + (currentItem.itemStock * currentItem.price)
-    },0);
-    // console.log(gettotalCost);
+    // // Calculate the total cost of all fruits in stock.
+    // const gettotalCost = fruitStocks.reduce((accumulator, currentItem) =>{
+    //   return accumulator + (currentItem.itemStock * currentItem.price)
+    // },0);
+    // // console.log(gettotalCost);
 
-    // Get the single appple cost of fruit apple in stock.
-    const singleAppleCost = fruitStocks.filter((fruitName) => fruitName.fruit === "Apple").reduce((acc , curr) => acc + curr.price, 0);
-    // console.log(singleAppleCost);
+    // // Get the single appple cost of fruit apple in stock.
+    // const singleAppleCost = fruitStocks.filter((fruitName) => fruitName.fruit === "Apple").reduce((acc , curr) => acc + curr.price, 0);
+    // // console.log(singleAppleCost);
 
-    // Calculate the total cost of fruit apple in stock.
-    const totalAppleCost = fruitStocks.filter((fruitName) => fruitName.fruit === "Apple").reduce((acc , curr) => acc + (curr.price * curr.itemStock), 0);
-    // console.log(totalAppleCost);
+    // // Calculate the total cost of fruit apple in stock.
+    // const totalAppleCost = fruitStocks.filter((fruitName) => fruitName.fruit === "Apple").reduce((acc , curr) => acc + (curr.price * curr.itemStock), 0);
+    // // console.log(totalAppleCost);
 
-    // Calculate the fruit with the highest stock-to-price ratio
-    function calculateHighestToPriceRatio(fruitsitem){
-      let highestRatio = 0;
-      let highestFruits = null;
+    // // Calculate the fruit with the highest stock-to-price ratio
+    // function calculateHighestToPriceRatio(fruitsitem){
+    //   let highestRatio = 0;
+    //   let highestFruits = null;
 
-      for(let fruit of fruitsitem){
-        const ratio = fruit.itemStock / fruit.price;
-        if(ratio > highestRatio){
-          highestRatio = ratio;
-          highestFruits = fruit.fruit
-        }
-      }
-      return highestFruits
+    //   for(let fruit of fruitsitem){
+    //     const ratio = fruit.itemStock / fruit.price;
+    //     if(ratio > highestRatio){
+    //       highestRatio = ratio;
+    //       highestFruits = fruit.fruit
+    //     }
+    //   }
+    //   return highestFruits
+    // }
+    // // console.log(calculateHighestToPriceRatio(fruitStocks));
+    
+    // // Create a new array containing only the names of the fruits.
+    // const mapTheNameFruit = fruitStocks.map((fruitname)=> fruitname.fruit)
+    // // console.log(mapTheNameFruit);
+    
+    // // Create a new array containing only the fruits with a price greater than 2.
+    // const fruitWithpriceGretTwo = fruitStocks.filter((fruit) => fruit.price > 2 );
+    // // console.log(fruitWithpriceLessTwo);
+
+    // // Create a new array containing only the fruits with stock less than 10.
+    // const fruitWithStockLess30 = fruitStocks.filter((fruit) => fruit.itemStock < 30)
+    // console.log(fruitWithStockLess30);
+
+    // // Update the price of a specific fruit.
+    // const updatePriceSpecificFruit = fruitStocks.reduce((acc, fruit) =>{
+    //   if(fruit.fruit === "Mango"){
+    //     return [...acc, {...fruit, price:10.2}]
+    //   }
+    //   return [...acc, fruit]
+    // },[]);
+
+    // console.log(updatePriceSpecificFruit);
+
+    // const mango = fruitStocks.find((item) => item.fruit === "Mango")
+    // if(mango){
+    //   mango.price = 10.2
+    // }
+
+    // const changeFruitPrice = fruitStocks.map((fruit)=>{
+    //   if(fruit.fruit === "Mango"){
+    //     return {...fruit, price:10.2}
+    //   }
+    //   return fruit
+    // });
+
+    // fruitStocks.filter(fruit => fruit.fruit === "Mango").forEach(item => {item.price = 10.2})
+
+    // console.log(fruitStocks);
+    
+
+    
+    // // Sort the fruits array by price in ascending order.
+    // const sortByPriceAscending = fruitStocks.sort((a, b) => a.price -b.price);
+    // console.log("Sort by price", sortByPriceAscending);
+
+    // // Sort the fruits array by stock in descending order.
+    // const sortByitemSrockDesc = fruitStocks.sort((a,b)=> b.itemStock - a.itemStock)
+    // console.log(sortByitemSrockDesc);
+
+    // // Find the total stock of all fruits.
+    // const totalStock = fruitStocks.reduce((acc, curritem) => acc + curritem.itemStock,0)
+    // console.log("total Stock", totalStock);
+
+    // // Check if a specific fruit exists in the array.
+    // const findApple = fruitStocks.find ((item)=> item.fruit === "Apple");
+    // console.log(findApple);
+    
+    // Update the stock of a specific fruit.
+    // const updateStockItem = fruitStocks.reduce((acc, currentitem)=>{
+    //   if(currentitem.fruit === "Apple"){
+    //     return [...acc, {...currentitem, itemStock : 350}]
+    //   }
+    //   return [...acc, currentitem]
+    // },[])
+    
+    // console.log("updateStockItem", updateStockItem);
+
+    // Add a new fruit to the array.
+                                        
+    // const updateNewFruits = fruitStocks.find((item) => item.fruit === "Apple")
+    // if(updateNewFruits){
+    //   fruitStocks.push({
+    //     fruit: "Orange", price: 2.0, itemStock: 80, color: "Orange", countryOfOrigin: "India"
+    //   })
+  
+    // }
+    fruitStocks.push({
+      fruit: "Kivi", price: 2.0, itemStock: 80, color: "Orange", countryOfOrigin: "India"
+    })
+    
+    console.log("Old", fruitStocks);
+    // Remove a fruit from the array.
+    const removeSpecificFruit = fruitStocks.find((item) => item.fruit === "Kivi");
+    if(removeSpecificFruit){
+      fruitStocks.splice(0, 5, removeSpecificFruit)
     }
-    // console.log(calculateHighestToPriceRatio(fruitStocks));
     
-    // Create a new array containing only the names of the fruits.
-    const mapTheNameFruit = fruitStocks.map((fruitname)=> fruitname.fruit)
-    // console.log(mapTheNameFruit);
-    
-    // Create a new array containing only the fruits with a price greater than 2.
-    const fruitWithpriceGretTwo = fruitStocks.filter((fruit) => fruit.price > 2 );
-    // console.log(fruitWithpriceLessTwo);
-
-    // Create a new array containing only the fruits with stock less than 10.
-    const fruitWithStockLess30 = fruitStocks.filter((fruit) => fruit.itemStock < 30)
-    console.log(fruitWithStockLess30);
-
-    // Update the price of a specific fruit.
-    const updatePriceSpecificFruit = fruitStocks.reduce((acc, fruit) =>{
-      if(fruit.fruit === "Mango"){
-        return [...acc, {...fruit, price:10.2}]
-      }
-      return [...acc, fruit]
-    },[]);
-    console.log(updatePriceSpecificFruit);
-
-    const mango = fruitStocks.find((item) => item.fruit === "Mango")
-    if(mango){
-      mango.price = 10.2
-    }
-
-    const changeFruitPrice = fruitStocks.map((fruit)=>{
-      if(fruit.fruit === "Mango"){
-        return {...fruit, price:10.2}
-      }
-      return fruit
-    });
-
-    fruitStocks.filter(fruit => fruit.fruit === "Mange").forEach(item => {item.price = 10.2})
-
-    console.log(fruitStocks);
-    
-
-    
-    // Sort the fruits array by price in ascending order.
-    const sortByPriceAscending = newFruits.sort((a, b) => a.price -b.price);
-    console.log("Sort by price", sortByPriceAscending);
-
-    // Sort the fruits array by stock in descending order.
-    const sortByitemSrockDesc = newFruits.sort((a,b)=> b.itemStock - a.itemStock)
-    console.log(sortByitemSrockDesc);
-
-    // Find the total stock of all fruits.
-    const totalStock = newFruits.reduce((acc, curritem) => acc + curritem.itemStock,0)
-    console.log("total Stock", totalStock);
-
-    // Check if a specific fruit exists in the array.
-    const findApple = newFruits.find ((item)=> item.fruit === "Apple");
-    console.log(findApple);
+   
+    console.log("updateNewFruits", fruitStocks);
     
     
 
     
     
   }
-  // findFruitsWithHighPrice()
+  findFruitsWithHighPrice()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
