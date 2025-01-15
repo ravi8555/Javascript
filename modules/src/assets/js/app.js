@@ -45,6 +45,7 @@ import '../css/main.scss'
 // import challenge11 from '../../challenges/JS-Questions/challenges-11.js' 
 import JSChallenge from '../../challenges/JS-Questions/challenges.js' 
 // import JSQuestion from '../../challenges/JS-Questions/js1.js'
+// import DateTime from '../../challenges/JS-Questions/date_time.js'
 
 /****** ****** ****** ****** ****** ******   DSA   ****** ****** ****** ****** ****** ******  */
 // import dsa from '../../DSA/dsa.js'

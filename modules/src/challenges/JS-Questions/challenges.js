@@ -920,10 +920,7 @@ const fruitStocks = [
     
     console.log("Old", fruitStocks);
     // Remove a fruit from the array.
-    const removeSpecificFruit = fruitStocks.find((item) => item.fruit === "Kivi");
-    if(removeSpecificFruit){
-      fruitStocks.splice(0, 5, removeSpecificFruit)
-    }
+
     
    
     console.log("updateNewFruits", fruitStocks);
@@ -933,7 +930,62 @@ const fruitStocks = [
     
     
   }
-  findFruitsWithHighPrice()
+  // findFruitsWithHighPrice()
+
+  /* 1.Find the fruit with the highest price.
+2.Find the fruit with the lowest stock.
+3.Calculate the total cost of all fruits in stock.
+4.Find the fruit with the highest stock-to-price ratio.
+5.Create a new array containing only the names of the fruits.
+6.Create a new array containing only the fruits with a price greater than 2.
+Create a new array containing only the fruits with stock less than 10.
+Sort the fruits array by price in ascending order.
+Sort the fruits array by stock in descending order.
+Find the total stock of all fruits.
+Check if a specific fruit exists in the array.
+Update the price of a specific fruit.
+Update the stock of a specific fruit.
+Add a new fruit to the array.
+Remove a fruit from the array. */
+
+const dryFruits = [
+    {"item_name": "Almonds", "item_price": 15.99, "stock_items": 120, "country": "USA", "color": "Brown", "taste": "Nutty"},
+    {"item_name": "Cashews", "item_price": 12.99, "stock_items": 200, "country": "India", "color": "Pale Yellow", "taste": "Sweet"},
+    {"item_name": "Walnuts", "item_price": 10.99, "stock_items": 150, "country": "China", "color": "Brown", "taste": "Bitter"},
+    {"item_name": "Pistachios", "item_price": 18.99, "stock_items": 100, "country": "Iran", "color": "Green", "taste": "Sweet"},
+    {"item_name": "Hazelnuts", "item_price": 14.99, "stock_items": 80, "country": "Turkey", "color": "Brown", "taste": "Nutty"},
+    {"item_name": "Pecans", "item_price": 16.99, "stock_items": 90, "country": "Mexico", "color": "Brown", "taste": "Sweet"},
+    {"item_name": "Macadamia Nuts", "item_price": 22.99, "stock_items": 60, "country": "Australia", "color": "Cream", "taste": "Buttery"},
+    {"item_name": "Brazil Nuts", "item_price": 19.99, "stock_items": 70, "country": "Brazil", "color": "Brown and White", "taste": "Earthy"},
+    {"item_name": "Pine Nuts", "item_price": 24.99, "stock_items": 50, "country": "Russia", "color": "Pale Yellow", "taste": "Sweet"},
+    {"item_name": "Chestnuts", "item_price": 9.99, "stock_items": 110, "country": "Italy", "color": "Brown", "taste": "Sweet"} ]
+
+    // 1
+    const findDryFruitsWithHighPrice = ()=> dryFruits.slice().sort((a, b) => b.item_price - a.item_price);
+    // console.log(findDryFruitsWithHighPrice());
+    // 2
+    const findDFwithLowPrice = dryFruits.slice().sort((a,b) => a.item_price - b.item_price)
+    // console.log(findDFwithLowPrice);
+    // 3
+    const totalCostOfAllDryFruits= dryFruits.reduce((acc, currentItem) => {
+        return acc + (currentItem.item_price * currentItem.stock_items);        
+      },0)
+    // console.log(Math.floor(totalCostOfAllDryFruits));
+    // 5 
+    const drFruitNames = dryFruits.map((dryfruit) => dryfruit.item_name);
+    // console.log(drFruitNames);
+    // 6
+    const getDryFruitGT15 = dryFruits.filter((item)=> item.item_price > 15)
+    // const getDryFruitGT15 = dryFruits.reduce((acc, cur)=>{
+    //   return acc + (cur.item_price >= 15)
+    // },0)
+    console.log(getDryFruitGT15);
+    console.log(!null);
+    
+    
+    
+    
+   
 
 
 
