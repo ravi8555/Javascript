@@ -114,7 +114,7 @@ clock = () =>{
   inSpan[0].innerHTML = Math.floor(diffSec / 3600 / 24);
   // Convert into Hour
   inSpan[1].innerHTML = Math.floor((diffSec / 3600) % 24);
-  // Convert into Seconnds
+  // Convert into Minutes
   inSpan[2].innerHTML = Math.floor((diffSec / 60) % 60);
   // Convert into Seconnds
   inSpan[3].innerHTML = Math.floor(diffSec % 60 )

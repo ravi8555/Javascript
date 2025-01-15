@@ -2028,3 +2028,38 @@ function gcdOfArray(n,arr) {
     }
     return res
 }
+
+console.log("Question ==>  Given a DNA strand, return its RNA complement (per RNA transcription).Both DNA and RNA strands are a sequence of ucleotides.The four nucleotides found in DNA are adenine (A), cytosine (C), guanine (G) and thymine (T).The four nucleotides found in RNA are adenine (A), cytosine (C), guanine (G) and uracil (U).Given a DNA strand, its transcribed RNA strand is formed by replacing each nucleotide with its complement:G -> C, C -> G, T -> A, A -> U");
+
+// method1
+function toRna(dna){
+  const complement ={
+    G : "C",
+    C : "G",
+    T : "A",
+    A : "U"
+  }
+  return dna.split('').map(nucleotides => complement[nucleotides] || "").join('')
+}
+console.log(toRna("GATC"));
+
+// method 2
+function toRna1(dna){
+  let rna = ""
+  for(let nucleotide of dna){
+    switch(nucleotide){
+      case 'G' : rna += 'C';
+      break;
+      case 'C' : rna += 'G'
+      break;
+      case 'T' : rna += 'A'
+      break;
+      case 'A' : rna += 'U'
+      break;
+      default : throw new Error("Invalid nucleotide in DNA strand")
+    }
+  }
+  return rna
+}
+console.log(toRna1("GATC"));
+
