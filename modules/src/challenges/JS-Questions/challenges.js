@@ -981,8 +981,57 @@ const dryFruits = [
     // },0)
     console.log(getDryFruitGT15);
     console.log(!null);
-    
-    
+    const numbers = [1, 2, 3, 4, 5];
+
+ function myReduce (data, reduceCallback){
+      const newData = data.reduce(reduceCallback, [])
+      return newData
+  }
+
+  const getData = ((acc, curindex) => acc + curindex.item_name) 
+  const sum = myReduce(dryFruits, getData);
+  console.log(sum);
+  
+  
+  class Person{
+    constructor(firstName, lastName, middleNmae){
+        if (!firstName || !lastName) {
+            throw new Error("Both firstName and lastName are required");
+        }
+        this.firstName = firstName;
+        this.lastName = lastName
+    }
+
+    fullName(){
+        return `MY Full Name Is ${this.firstName} ${this.lastName}`
+    }
+   
+
+}
+
+
+class Employee extends Person{
+    constructor(firstName, lastName, position, salary){
+        super(firstName, lastName);
+
+        if (typeof position !== "string" || position.trim() === "") {
+            throw new Error("Position must be a valid string");
+        }
+        if (typeof salary !== "number" || salary < 0) {
+            throw new Error("Salary must be a positive number");
+        }
+
+        this.position = position;
+        this.salary = salary
+    }
+    toString(){
+       return `${this.fullName()}, Position: ${this.position}, Salary ${this.salary}`
+    }
+}
+
+
+const emp = new Employee("Prafulla", "Patil", "Full Stack", 5555500);
+console.log(emp.toString());
     
     
    

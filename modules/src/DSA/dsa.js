@@ -2063,3 +2063,12 @@ function toRna1(dna){
 }
 console.log(toRna1("GATC"));
 
+console.log("Write a function areAnagrams(strOne, strTwo), which takes two strings: strOne and strTwo as arguments. The function should return true if the two strings are anagrams and false otherwise.");
+
+
+
+
+
+
+
+

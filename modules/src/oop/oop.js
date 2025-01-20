@@ -4,8 +4,6 @@
 //          this.age =  age;
 //     }
 
-import { TRUE } from "sass";
-
 //     greet(){
 //         return `Hello my Name is ${this.name} and age is ${this.age}`
 //     }
@@ -58,4 +56,49 @@ Create an instance of the Car class and call the getDetails method to test it.*/
 
 // export default Book
 
+function classInheritance (){
+
+class Person{
+    constructor(firstName, lastName){
+        if (!firstName || !lastName) {
+            throw new Error("Both firstName and lastName are required");
+        }
+        this.firstName = firstName;
+        this.lastName = lastName
+    }
+
+    fullName(){
+        return `MY Full Name Is ${this.firstName} ${this.lastName}`
+    }
+
+    
+
+}
+
+
+class Employee extends Person{
+    constructor(firstName, lastName, position, salary){
+        super(firstName, lastName);
+
+        if (typeof position !== "string" || position.trim() === "") {
+            throw new Error("Position must be a valid string");
+        }
+        if (typeof salary !== "number" || salary < 0) {
+            throw new Error("Salary must be a positive number");
+        }
+
+        this.position = position;
+        this.salary = salary
+    }
+    toString(){
+       return `${this.fullName()}, Position: ${this.position}, Salary ${this.salary}`
+    }
+}
+
+
+const emp = new Employee("Prafulla", "Patil", "Front End Dev", 500);
+console.log(emp.toString());
+
+}
+classInheritance()
 
