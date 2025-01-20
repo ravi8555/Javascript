@@ -48,7 +48,7 @@ import '../css/main.scss'
 import JSChallenge from '../../challenges/JS-Questions/challenges.js' 
 
 /****** ****** ****** ****** ****** ******   DSA   ****** ****** ****** ****** ****** ******  */
-// import dsa from '../../DSA/dsa.js'
+import dsa from '../../DSA/dsa.js'
 // import matrix from '../../challenges/JS-Questions/DSA/matrix.js'
 // import matrix from '../../DSA/prime_number.js'
 // import matrix from '../../DSA/dsa-1.js'

@@ -2031,39 +2031,54 @@ function gcdOfArray(n,arr) {
 
 console.log("Question ==>  Given a DNA strand, return its RNA complement (per RNA transcription).Both DNA and RNA strands are a sequence of ucleotides.The four nucleotides found in DNA are adenine (A), cytosine (C), guanine (G) and thymine (T).The four nucleotides found in RNA are adenine (A), cytosine (C), guanine (G) and uracil (U).Given a DNA strand, its transcribed RNA strand is formed by replacing each nucleotide with its complement:G -> C, C -> G, T -> A, A -> U");
 
-// method1
-function toRna(dna){
-  const complement ={
-    G : "C",
-    C : "G",
-    T : "A",
-    A : "U"
-  }
-  return dna.split('').map(nucleotides => complement[nucleotides] || "").join('')
-}
-console.log(toRna("GATC"));
+// // method1
+// function toRna(dna){
+//   const complement ={
+//     G : "C",
+//     C : "G",
+//     T : "A",
+//     A : "U"
+//   }
+//   return dna.split('').map(nucleotides => complement[nucleotides] || "").join('')
+// }
+// console.log(toRna("GATC"));
 
-// method 2
-function toRna1(dna){
-  let rna = ""
-  for(let nucleotide of dna){
-    switch(nucleotide){
-      case 'G' : rna += 'C';
-      break;
-      case 'C' : rna += 'G'
-      break;
-      case 'T' : rna += 'A'
-      break;
-      case 'A' : rna += 'U'
-      break;
-      default : throw new Error("Invalid nucleotide in DNA strand")
-    }
-  }
-  return rna
-}
-console.log(toRna1("GATC"));
+// // method 2
+// function toRna1(dna){
+//   let rna = ""
+//   for(let nucleotide of dna){
+//     switch(nucleotide){
+//       case 'G' : rna += 'C';
+//       break;
+//       case 'C' : rna += 'G'
+//       break;
+//       case 'T' : rna += 'A'
+//       break;
+//       case 'A' : rna += 'U'
+//       break;
+//       default : throw new Error("Invalid nucleotide in DNA strand")
+//     }
+//   }
+//   return rna
+// }
+// console.log(toRna1("GATC"));
 
 console.log("Write a function areAnagrams(strOne, strTwo), which takes two strings: strOne and strTwo as arguments. The function should return true if the two strings are anagrams and false otherwise.");
+
+console.log("function that will be used to retrieve the nth largest element from an unsorted array. The first one is an unsorted array (e.g., [ 43, 56, 23, 89, 88, 90, 99, 652]), and the second one is a number n (e.g., 4) representing the position of the largest element that we want to find.");
+const lgArray = [ 43, 56, 23, 89, 88, 90, 99, 652]
+function nthLargestNumber(lgArray, nth){
+  // sort the array in ascendin order
+  const sortNth = lgArray.sort((a, b) => b - a)
+  console.log(sortNth);
+  return sortNth[nth -1]
+  // const findIndex = 
+  
+
+}
+console.log(nthLargestNumber(lgArray, 4));
+
+
 
 
 

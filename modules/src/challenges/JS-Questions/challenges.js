@@ -776,6 +776,19 @@ function checkWhetherString(a, b){
 // console.log(checkWhetherString("Today is 14 ", "Today"));
 // console.log(checkWhetherString("Hello ", "World"));
 
+console.log("Question ==> String indexOf Lab create a custom findSubstringIndex function that accepts two parameters (a text string and a substring to be found) and returns the index of the substring in the text using the indexOf method.");
+
+const findSubstringIndex = (text, sub) => {
+	// Your code here
+  if(text.substring(sub)){
+    return text.indexOf(sub)
+  }else{
+    return -1
+  }
+}
+console.log(findSubstringIndex("Hi welcome to LS Digital Group", "LS"));
+
+
 
 
 
@@ -993,45 +1006,6 @@ const dryFruits = [
   console.log(sum);
   
   
-  class Person{
-    constructor(firstName, lastName, middleNmae){
-        if (!firstName || !lastName) {
-            throw new Error("Both firstName and lastName are required");
-        }
-        this.firstName = firstName;
-        this.lastName = lastName
-    }
-
-    fullName(){
-        return `MY Full Name Is ${this.firstName} ${this.lastName}`
-    }
-   
-
-}
-
-
-class Employee extends Person{
-    constructor(firstName, lastName, position, salary){
-        super(firstName, lastName);
-
-        if (typeof position !== "string" || position.trim() === "") {
-            throw new Error("Position must be a valid string");
-        }
-        if (typeof salary !== "number" || salary < 0) {
-            throw new Error("Salary must be a positive number");
-        }
-
-        this.position = position;
-        this.salary = salary
-    }
-    toString(){
-       return `${this.fullName()}, Position: ${this.position}, Salary ${this.salary}`
-    }
-}
-
-
-const emp = new Employee("Prafulla", "Patil", "Full Stack", 5555500);
-console.log(emp.toString());
     
     
    
