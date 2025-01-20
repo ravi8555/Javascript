@@ -776,6 +776,19 @@ function checkWhetherString(a, b){
 // console.log(checkWhetherString("Today is 14 ", "Today"));
 // console.log(checkWhetherString("Hello ", "World"));
 
+console.log("Question ==> String indexOf Lab create a custom findSubstringIndex function that accepts two parameters (a text string and a substring to be found) and returns the index of the substring in the text using the indexOf method.");
+
+const findSubstringIndex = (text, sub) => {
+	// Your code here
+  if(text.substring(sub)){
+    return text.indexOf(sub)
+  }else{
+    return -1
+  }
+}
+console.log(findSubstringIndex("Hi welcome to LS Digital Group", "LS"));
+
+
 
 
 
@@ -981,8 +994,18 @@ const dryFruits = [
     // },0)
     console.log(getDryFruitGT15);
     console.log(!null);
-    
-    
+    const numbers = [1, 2, 3, 4, 5];
+
+ function myReduce (data, reduceCallback){
+      const newData = data.reduce(reduceCallback, [])
+      return newData
+  }
+
+  const getData = ((acc, curindex) => acc + curindex.item_name) 
+  const sum = myReduce(dryFruits, getData);
+  console.log(sum);
+  
+  
     
     
    
