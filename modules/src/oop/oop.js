@@ -71,7 +71,6 @@ class Person{
         return `MY Full Name Is ${this.firstName} ${this.lastName}`
     }
 
-    
 
 }
 
@@ -101,4 +100,39 @@ console.log(emp.toString());
 
 }
 classInheritance()
+
+class Item{
+    constructor(title, author, year){
+        this.title = title
+        this.author = author
+        this.year = year
+    }
+    getDetails(){
+        return `Book Title: ${this.title} Author name ${this.author} Published year: ${this.year}`
+    }
+}
+
+class Book extends Item{
+    constructor(title, author, year, genre, ISBN){
+        super(title, author, year)
+        this.genre = genre;
+        this.ISBN = ISBN
+    }
+
+    getDetails(){
+        return `${super.getDetails()} Gener : ${this.genre} ISBN ${this.ISBN}`
+    }
+}
+
+const liberyItem = new Item("Mindset", "Carol Dweck", "2006", "", "1254825BN");
+
+const bookItem = new Book("Mindset", "Carol Dweck", "2006", "Self help Book", "1254825BN");
+// console.log(bookItem.getDetails());
+
+console.log(liberyItem.getDetails());
+
+
+
+
+
 

@@ -45,10 +45,10 @@ import '../css/main.scss'
 // import challenge11 from '../../challenges/JS-Questions/challenges-11.js' 
 // import JSQuestion from '../../challenges/JS-Questions/js1.js'
 // import DateTime from '../../challenges/JS-Questions/date_time.js'
-import JSChallenge from '../../challenges/JS-Questions/challenges.js' 
+// import JSChallenge from '../../challenges/JS-Questions/challenges.js' 
 
 /****** ****** ****** ****** ****** ******   DSA   ****** ****** ****** ****** ****** ******  */
-import dsa from '../../DSA/dsa.js'
+// import dsa from '../../DSA/dsa.js'
 // import matrix from '../../challenges/JS-Questions/DSA/matrix.js'
 // import matrix from '../../DSA/prime_number.js'
 // import matrix from '../../DSA/dsa-1.js'
@@ -57,7 +57,7 @@ import dsa from '../../DSA/dsa.js'
 // import crio from '../../challenges/JS-Questions/crio.js'
 
 /****** ****** ****** ****** ****** ******   OOP   ****** ****** ****** ****** ****** ******  */
-// import opp from '../../oop/oop.js'
+import opp from '../../oop/oop.js'
 
 
 

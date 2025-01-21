@@ -771,22 +771,62 @@ function checkWhetherString(a, b){
   // }
   //  return result
 
-  return a.includes(b) ? b +a : a + b
+  // return a.includes(b) ? b +a : a + b
 }
 // console.log(checkWhetherString("Today is 14 ", "Today"));
 // console.log(checkWhetherString("Hello ", "World"));
 
 console.log("Question ==> String indexOf Lab create a custom findSubstringIndex function that accepts two parameters (a text string and a substring to be found) and returns the index of the substring in the text using the indexOf method.");
 
-const findSubstringIndex = (text, sub) => {
-	// Your code here
-  if(text.substring(sub)){
-    return text.indexOf(sub)
-  }else{
-    return -1
-  }
-}
-console.log(findSubstringIndex("Hi welcome to LS Digital Group", "LS"));
+// const findSubstringIndex = (text, sub) => {
+// 	// Your code here
+//   if(text.substring(sub)){
+//     return text.indexOf(sub)
+//   }else{
+//     return -1
+//   }
+// }
+// console.log(findSubstringIndex("Hi welcome to LS Digital Group", "LS"));
+
+console.log("Question ==>  Implementing a function called joinElementsWithUnderscore(array) that takes an array as input and returns a string. The returned string should consist of all the array elements joined by an underscore _.");
+// const arrayFrt = ['grape'];
+// export const joinElementsWithUnderscore = (array) => {
+//   // return array.join('_')
+//   if(!Array.isArray(array) || array.length === 0){
+  //     return " "
+  //   }
+  // 	let result = ""
+  
+  //   for(let i = 0 ; i < array.length; i++){
+    //     result += array[i];
+    //     if(i < array.length -1){
+      //       result += "_"
+      //     }    
+      //   }
+      
+      //   return result
+      
+      
+      // }
+      // // Example usage:
+      // console.log(joinElementsWithUnderscore(['apple', 'banana', 'cherry'])); // Output: apple_banana_cherry
+      // console.log(joinElementsWithUnderscore(['apple', ' ', 'cherry'])); // Output: apple_ _cherry
+      // console.log(joinElementsWithUnderscore(['apple', 123, 'cherry'])); // Output: apple_123_cherry
+      // console.log(joinElementsWithUnderscore([])); // Output: 
+      // console.log(joinElementsWithUnderscore(['single'])); // Output: single
+      
+console.log("Question ==> create and throw a custom error, and then catch and log the errors properly.");
+// function myCustomError(array){
+//   try{
+//     if(!Array.isArray(array)){
+//       throw new Error('myCustomError: Input is not an array')
+//     }
+//   }catch(error){
+//     console.error(error.message)
+//   }
+// }
+// myCustomError("")
+
 
 
 
