@@ -66,14 +66,11 @@ class Person{
         this.firstName = firstName;
         this.lastName = lastName
     }
-
     fullName(){
         return `MY Full Name Is ${this.firstName} ${this.lastName}`
     }
 
-
 }
-
 
 class Employee extends Person{
     constructor(firstName, lastName, position, salary){
@@ -118,7 +115,6 @@ class Book extends Item{
         this.genre = genre;
         this.ISBN = ISBN
     }
-
     getDetails(){
         return `${super.getDetails()} Gener : ${this.genre} ISBN ${this.ISBN}`
     }
@@ -131,8 +127,20 @@ const bookItem = new Book("Mindset", "Carol Dweck", "2006", "Self help Book", "1
 
 console.log(liberyItem.getDetails());
 
+// LBPWQSVU9LX7YZTCYCT95A46
+/* 
+Stage 1 User Registeration
+After fill form Email, mobile, password and confirm password data post on server and recevied it through the api
+admin can get the access of all data on admin page
+user will received email on Email Id successfuly, "User register sucessfully"
 
+Stage 2
+user will login using mobile otp first time after that mobile number or email ID is User ID, and password is from the filled form data
+will get
 
+I have done the stage1 
+I want to complete the stage 2
 
+*/
 
 
