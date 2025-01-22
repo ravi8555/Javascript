@@ -1,0 +1,8 @@
+https://ryanmulligan.dev/blog/detect-js-support-in-css/
+https://codepen.io/jackrugile/pen/ExBLEwa
+
+Clock wheel
+https://codepen.io/cbolson/pen/azoVvZm
+
+Happy New Year text threeJS
+https://codepen.io/prisoner849/pen/gbYgjom
