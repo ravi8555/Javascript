@@ -121,8 +121,8 @@ class Book extends Item{
 }
 
 const liberyItem = new Item("Mindset", "Carol Dweck", "2006", "", "1254825BN");
-
 const bookItem = new Book("Mindset", "Carol Dweck", "2006", "Self help Book", "1254825BN");
+
 // console.log(bookItem.getDetails());
 
 console.log(liberyItem.getDetails());

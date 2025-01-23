@@ -6,9 +6,33 @@ const printMtrix = [
   [57, 67, 47, 38, 61],
   
 ];
-
+const mgicSquareMtx = [
+  [4, 9, 1],
+  [3, 5, 7],
+  [8, 1, 6]  
+];
 function learnPrintMatrix(mtx){
   let n = mtx.length;
+
+  // Diagonal
+  // let pMidD = [];
+  // let sMidD = [];
+  const secondaryDfBottom = []
+  // const primeryDfBottom =[]
+
+  for(let i =0; i < n; i++){
+    secondaryDfBottom.push(mtx[n-i-1][n-i-1])
+  }
+
+  return[
+        // pMidD,
+    // sMidD,
+    secondaryDfBottom,
+    // primeryDfBottom, 
+    
+  ]
+
+  /* 
   let indices = []
   // const findx = mtx 
   const fColFindx = mtx[0][0] //10
@@ -45,11 +69,9 @@ function learnPrintMatrix(mtx){
 
   let sumP = 0
   let sumS = 0
-
-
-  for(let i =0 ; i < n; i++){
-
-    // first Row
+ */
+/*   for(let i =0 ; i < n; i++){
+/*     // first Row
     firstRow.push(mtx[0][i]) 
     firstRow2.push(mtx[n-4][i]) 
     // Second Row
@@ -73,7 +95,7 @@ function learnPrintMatrix(mtx){
     // Diaogoanl
 
     /* these are the elements where the row index and column index are the same.
-    // So, when i is 0, mtx[i][i] is mtx[0][0], which is the first element of the primary diagonal. When i is 1, mtx[i][i] is mtx[1][1], and so on. This way, you traverse the primary diagonal of the matrix. */
+    // So, when i is 0, mtx[i][i] is mtx[0][0], which is the first element of the primary diagonal. When i is 1, mtx[i][i] is mtx[1][1], and so on. This way, you traverse the primary diagonal of the matrix. */ /*
     pMidD.push(mtx[i][i])
 
     // secondery Diaogonal
@@ -100,49 +122,58 @@ function learnPrintMatrix(mtx){
     //   sMidD.push(mtx[i][n-i-1])
     // }
     // return
+   
 
-  } 
-  return [
-    // fColFindx,
-    // sColTindex,
+  } */
 
-   // Corners
-    /* topLeft,
-    topRight,
-    bottomRight,
-    bottomLeft, */
+  // return [
 
-    /* Rows*/
-    // firstRow,
-    // firstRow1,
-    // firstRow2,
-    // secRow,
-    // ThiRow,
-    // FourthRow,
-    // FourthRow1,
-    // lastRow,
     
 
-    // Coulmns 
-    // col1,
-    // col2,
-    // col4,
-    // col41,
+  //   /* 
 
-    // pMidD,
-    // sMidD,
-    // secondaryDfBottom,
-    primeryDfBottom,
-    // totalSum,
-    // sumP,
-    // sumS,
-    // sMidD,
-    // sumP + sumS
-    // last
-  ]
+  //   // fColFindx,
+  //   // sColTindex,
+
+  //  // Corners
+  //   /* topLeft,
+  //   topRight,
+  //   bottomRight,
+  //   bottomLeft, */
+
+  //   /* Rows*//*
+  //   // firstRow,
+  //   // firstRow1,
+  //   // firstRow2,
+  //   // secRow,
+  //   // ThiRow,
+  //   // FourthRow,
+  //   // FourthRow1,
+  //   // lastRow,
+    
+
+  //   // Coulmns 
+  //   // col1,
+  //   // col2,
+  //   // col4,
+  //   // col41,
+
+  //   // pMidD,
+  //   // sMidD,
+  //   // secondaryDfBottom,
+  //   // primeryDfBottom,
+  //   // totalSum,
+  //   // sumP,
+  //   // sumS,
+  //   // sMidD,
+  //   // sumP + sumS
+  //   // last
+
+  //   */
+  // ]
 }
 
-// console.log(learnPrintMatrix(printMtrix));
+console.log("learnPrintMatrix",learnPrintMatrix(mgicSquareMtx));
 // print matrix 
 // function printMatrix(size) {
 //     for (let i = 0; i < size; i++) {
@@ -761,8 +792,6 @@ console.log(tesla(diffs1, 3));
 // const chekSp = Math.max(currSp, maxSp);
 
 // console.log(chekSp);
-
-
 
 
 

@@ -817,15 +817,35 @@ console.log("Question ==>  Implementing a function called joinElementsWithUnders
       
 console.log("Question ==> create and throw a custom error, and then catch and log the errors properly.");
 // function myCustomError(array){
-//   try{
-//     if(!Array.isArray(array)){
-//       throw new Error('myCustomError: Input is not an array')
-//     }
-//   }catch(error){
-//     console.error(error.message)
-//   }
-// }
-// myCustomError("")
+  //   try{
+    //     if(!Array.isArray(array)){
+      //       throw new Error('myCustomError: Input is not an array')
+      //     }
+      //   }catch(error){
+        //     console.error(error.message)
+        //   }
+        // }
+        // myCustomError("")
+        
+console.log("Question ==>Remove all whitespace from a string. 1.Return an empty string when given an empty string 2.Return the same string when given a string with no whitespace. 3.Ignore leading and trailing whitespace. 4.Handle strings with only whitespace characters.4.Handle strings with multiple consecutive whitespace characters")
+
+export const removeWhitespaces = (string)=>{
+  if(string === " "){
+    return  "";
+  }
+  const result = string.replace(/\s+/g, '')
+  return result
+
+}
+// Test cases
+console.log(removeWhitespaces("")); // ""
+console.log(removeWhitespaces("HelloWorld")); // "HelloWorld"
+console.log(removeWhitespaces("  Hello World  ")); // "HelloWorld"
+console.log(removeWhitespaces("     ")); // ""
+console.log(removeWhitespaces("Hello   World")); // "HelloWorld"
+
+
+
 
 
 
@@ -991,8 +1011,8 @@ const fruitStocks = [
 4.Find the fruit with the highest stock-to-price ratio.
 5.Create a new array containing only the names of the fruits.
 6.Create a new array containing only the fruits with a price greater than 2.
-Create a new array containing only the fruits with stock less than 10.
-Sort the fruits array by price in ascending order.
+7.Create a new array containing only the fruits with stock less than 10.
+8.Sort the fruits array by price in ascending order.
 Sort the fruits array by stock in descending order.
 Find the total stock of all fruits.
 Check if a specific fruit exists in the array.
@@ -1005,24 +1025,43 @@ const dryFruits = [
     {"item_name": "Almonds", "item_price": 15.99, "stock_items": 120, "country": "USA", "color": "Brown", "taste": "Nutty"},
     {"item_name": "Cashews", "item_price": 12.99, "stock_items": 200, "country": "India", "color": "Pale Yellow", "taste": "Sweet"},
     {"item_name": "Walnuts", "item_price": 10.99, "stock_items": 150, "country": "China", "color": "Brown", "taste": "Bitter"},
-    {"item_name": "Pistachios", "item_price": 18.99, "stock_items": 100, "country": "Iran", "color": "Green", "taste": "Sweet"},
+    {"item_name": "Pistachios", "item_price": 1.99, "stock_items": 100, "country": "Iran", "color": "Green", "taste": "Sweet"},
     {"item_name": "Hazelnuts", "item_price": 14.99, "stock_items": 80, "country": "Turkey", "color": "Brown", "taste": "Nutty"},
     {"item_name": "Pecans", "item_price": 16.99, "stock_items": 90, "country": "Mexico", "color": "Brown", "taste": "Sweet"},
     {"item_name": "Macadamia Nuts", "item_price": 22.99, "stock_items": 60, "country": "Australia", "color": "Cream", "taste": "Buttery"},
     {"item_name": "Brazil Nuts", "item_price": 19.99, "stock_items": 70, "country": "Brazil", "color": "Brown and White", "taste": "Earthy"},
     {"item_name": "Pine Nuts", "item_price": 24.99, "stock_items": 50, "country": "Russia", "color": "Pale Yellow", "taste": "Sweet"},
     {"item_name": "Chestnuts", "item_price": 9.99, "stock_items": 110, "country": "Italy", "color": "Brown", "taste": "Sweet"} ]
-
+    
+    
     // 1
-    const findDryFruitsWithHighPrice = ()=> dryFruits.slice().sort((a, b) => b.item_price - a.item_price);
-    // console.log(findDryFruitsWithHighPrice());
-    // 2
-    const findDFwithLowPrice = dryFruits.slice().sort((a,b) => a.item_price - b.item_price)
-    // console.log(findDFwithLowPrice);
-    // 3
-    const totalCostOfAllDryFruits= dryFruits.reduce((acc, currentItem) => {
-        return acc + (currentItem.item_price * currentItem.stock_items);        
-      },0)
+    // const findDryFruitsWithHighPrice = ()=> dryFruits.slice().sort((a, b) => b.item_price - a.item_price);
+    // // console.log(findDryFruitsWithHighPrice());
+    // // 2
+    // const findDFwithLowPrice = dryFruits.slice().sort((a,b) => a.item_price - b.item_price)
+    // // console.log(findDFwithLowPrice);
+    // // 3
+    // const totalCostOfAllDryFruits= dryFruits.reduce((acc, currentItem) => {
+    //     return acc + (currentItem.item_price * currentItem.stock_items);        
+    //   },0)
+    // 4
+    function calHighestTopriceRation (dryfruitItems){
+      let highestRatio =0;
+      let highestDryFruit = null;
+
+      for(let dryfruit of dryfruitItems){
+        const ratio = dryfruit.stock_items / dryfruit.item_price;
+        console.log(ratio);
+        
+        if(ratio > highestRatio){
+          highestRatio = ratio;
+          highestDryFruit = dryfruit.item_name
+        }
+      }
+      return highestDryFruit
+    } 
+    console.log("calHighestTopriceRation", calHighestTopriceRation(dryFruits));
+    
     // console.log(Math.floor(totalCostOfAllDryFruits));
     // 5 
     const drFruitNames = dryFruits.map((dryfruit) => dryfruit.item_name);

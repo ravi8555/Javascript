@@ -2072,11 +2072,13 @@ function nthLargestNumber(lgArray, nth){
   const sortNth = lgArray.sort((a, b) => b - a)
   console.log(sortNth);
   return sortNth[nth -1]
-  // const findIndex = 
-  
+   
 
 }
 console.log(nthLargestNumber(lgArray, 4));
+
+console.log("Question ==> Spell out numbers, Given a number from 0 to 999,999,999,999 spell out that number in English.");
+
 
 
 

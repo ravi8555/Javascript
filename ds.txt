@@ -14,16 +14,24 @@ bottomRight = mtx[n-1][n-1] // 61
 bottomLeft = mtx[n-1][0] // 55
 
 // Row
-firstRow.push(mtx[0][i]) 
+firstRow.push(mtx[0][i])
+firstRow.push([...mtx][0])  
 firstRow2.push(mtx[n-4][i])
 
 FourthRow.push(mtx[3][i]);
-lastRow.push(mtx[n-1][i]);
+lastRow.push(mtx[n-1][i]);[57, 67, 47, 38, 61]
+lastRow.push(mtx[n-1][n-i -1]) //reverse [61, 38, 47, 67, 57]
 
 /* Cols */
 firstCol.push(mtx[i][0])
 secondCol.push(mtx[i][1]) 
-lastCol.push(mtx[i][n-1])
+lastCol.push(mtx[i][n-1])[21,32,41,51,61]
+lastCol.push(mtx[n-1-i][n-1]) reverse [61,51,41,32,21]
+
+2 approach for the result [61,51,41,32,21]
+for (let i = n - 1; i >= 0; i--) {
+    col1.push(mtx[i][n - 1]);
+  }
 
     
 Diagonal

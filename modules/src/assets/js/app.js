@@ -49,15 +49,16 @@ import '../css/main.scss'
 
 /****** ****** ****** ****** ****** ******   DSA   ****** ****** ****** ****** ****** ******  */
 // import dsa from '../../DSA/dsa.js'
-// import matrix from '../../challenges/JS-Questions/DSA/matrix.js'
-// import matrix from '../../DSA/prime_number.js'
-// import matrix from '../../DSA/dsa-1.js'
+import matrix from '../../DSA/matrix.js'
+// import primeNum from '../../DSA/prime_number.js'
+// import findelement from '../../DSA/find_element.js'
+// import dsajsB1 from '../../DSA/dsa-1.js'
 
 // import bruteFroce from '../../challenges/JS-Questions/brute-force.js'
 // import crio from '../../challenges/JS-Questions/crio.js'
 
 /****** ****** ****** ****** ****** ******   OOP   ****** ****** ****** ****** ****** ******  */
-import opp from '../../oop/oop.js'
+// import opp from '../../oop/oop.js'
 
 
 
