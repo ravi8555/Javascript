@@ -56,47 +56,47 @@ Create an instance of the Car class and call the getDetails method to test it.*/
 
 // export default Book
 
-function classInheritance (){
+// function classInheritance (){
 
-class Person{
-    constructor(firstName, lastName){
-        if (!firstName || !lastName) {
-            throw new Error("Both firstName and lastName are required");
-        }
-        this.firstName = firstName;
-        this.lastName = lastName
-    }
-    fullName(){
-        return `MY Full Name Is ${this.firstName} ${this.lastName}`
-    }
+// class Person{
+//     constructor(firstName, lastName){
+//         if (!firstName || !lastName) {
+//             throw new Error("Both firstName and lastName are required");
+//         }
+//         this.firstName = firstName;
+//         this.lastName = lastName
+//     }
+//     fullName(){
+//         return `MY Full Name Is ${this.firstName} ${this.lastName}`
+//     }
 
-}
+// }
 
-class Employee extends Person{
-    constructor(firstName, lastName, position, salary){
-        super(firstName, lastName);
+// class Employee extends Person{
+//     constructor(firstName, lastName, position, salary){
+//         super(firstName, lastName);
 
-        if (typeof position !== "string" || position.trim() === "") {
-            throw new Error("Position must be a valid string");
-        }
-        if (typeof salary !== "number" || salary < 0) {
-            throw new Error("Salary must be a positive number");
-        }
+//         if (typeof position !== "string" || position.trim() === "") {
+//             throw new Error("Position must be a valid string");
+//         }
+//         if (typeof salary !== "number" || salary < 0) {
+//             throw new Error("Salary must be a positive number");
+//         }
 
-        this.position = position;
-        this.salary = salary
-    }
-    toString(){
-       return `${this.fullName()}, Position: ${this.position}, Salary ${this.salary}`
-    }
-}
+//         this.position = position;
+//         this.salary = salary
+//     }
+//     toString(){
+//        return `${this.fullName()}, Position: ${this.position}, Salary ${this.salary}`
+//     }
+// }
 
 
-const emp = new Employee("Prafulla", "Patil", "Front End Dev", 500);
-console.log(emp.toString());
+// const emp = new Employee("Prafulla", "Patil", "Front End Dev", 500);
+// console.log(emp.toString());
 
-}
-classInheritance()
+// }
+// classInheritance()
 
 class Item{
     constructor(title, author, year){
@@ -116,31 +116,42 @@ class Book extends Item{
         this.ISBN = ISBN
     }
     getDetails(){
-        return `${super.getDetails()} Gener : ${this.genre} ISBN ${this.ISBN}`
+        return `${super.getDetails()} Genre : ${this.genre} ISBN ${this.ISBN}`
     }
 }
 
+class Magazine extends Item{
+    constructor(title, author, year, issueNumber, month){
+        super(title, author, year);
+        this.issueNumber = issueNumber;
+        this.month = month
+    }
+    getDetails(){
+        return `${super.getDetails()} IssueNumber: ${this.issueNumber} Month: ${this.month}`
+    }
+}
+
+class DVD extends Item{
+    constructor(title, author, year, duration, director){
+        super(title, author, year);
+        this.duration = duration;
+        this.director = director
+    }
+    getDetails(){
+        return `${super.getDetails()} Duration: ${this.duration} Director: ${this.director}`
+    }
+}
+
+
+
 const liberyItem = new Item("Mindset", "Carol Dweck", "2006", "", "1254825BN");
 const bookItem = new Book("Mindset", "Carol Dweck", "2006", "Self help Book", "1254825BN");
+const magzine = new Magazine("Mindset", "Carol Dweck", "2006","01234567", "Dec 2024");
+const dvd = new DVD("Mindset", "Carol Dweck", "2006","3 Months", "Kranti Ray");
 
-// console.log(bookItem.getDetails());
+console.log(dvd.getDetails());
 
-console.log(liberyItem.getDetails());
 
-// LBPWQSVU9LX7YZTCYCT95A46
-/* 
-Stage 1 User Registeration
-After fill form Email, mobile, password and confirm password data post on server and recevied it through the api
-admin can get the access of all data on admin page
-user will received email on Email Id successfuly, "User register sucessfully"
-
-Stage 2
-user will login using mobile otp first time after that mobile number or email ID is User ID, and password is from the filled form data
-will get
-
-I have done the stage1 
-I want to complete the stage 2
-
-*/
+// Mixin 2 class
 
 

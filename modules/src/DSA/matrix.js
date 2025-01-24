@@ -14,23 +14,6 @@ const mgicSquareMtx = [
 function learnPrintMatrix(mtx){
   let n = mtx.length;
 
-  // Diagonal
-  // let pMidD = [];
-  // let sMidD = [];
-  const secondaryDfBottom = []
-  // const primeryDfBottom =[]
-
-  for(let i =0; i < n; i++){
-    secondaryDfBottom.push(mtx[n-i-1][n-i-1])
-  }
-
-  return[
-        // pMidD,
-    // sMidD,
-    secondaryDfBottom,
-    // primeryDfBottom, 
-    
-  ]
 
   /* 
   let indices = []
@@ -793,6 +776,88 @@ console.log(tesla(diffs1, 3));
 
 // console.log(chekSp);
 
+const mgicSquareMatrix = [
+  [4, 9, 2],
+  [3, 5, 7],
+  [8, 1, 6]  
+];
+// function checkMagicSquare(n, matrix) {
+//   let base_sum
 
+//   for (let i = 0; i < n; i++) {
+//     // store the sum here to match the other column are equal
+//     base_sum += matrix[0][i]
+//   }
+//   let row_sum = 0
+//   let col_sum = 0
+//   let primery_diag_sum = 0
+//   let second_diag_sum = 0
+
+//   for (let i = 0; i < n; i++) {
+//     for (let j = 0; j < n; j++) {
+//       // to use for row sum
+//       row_sum += matrix[i][j]
+//       // to use for col sum
+//       col_sum += matrix[j][i]
+
+//       if (i == j) {
+//         primery_diag_sum += matrix[i][j]
+//       }
+//       if (i + j == n - 1) {
+//         second_diag_sum += matrix[i][j]
+//       }
+//     }
+//     if (row_sum != base_sum || col_sum != base_sum) {
+//       return false
+//     }
+//     row_sum = 0
+//     col_sum = 0
+//   }
+//   if (primery_diag_sum != base_sum || second_diag_sum != base_sum) {
+//     return false
+//   }
+//   return true
+// }
+
+console.log("Magic square is a square that has the same sum along all rows, columns and diagonals.");
+function magicSqure(mtx){
+  let n = mtx.length;
+  let base_sum = 0;
+
+  for(let i =0; i<n; i++){
+    base_sum += mtx[0][i]
+  }
+  let row_sum = 0;
+  let col_sum = 0;
+  let pDia_sum = 0
+  let sDia_sum = 0;
+  for(let i =0; i < n; i++){
+    for(let j =0; j < n; j++){
+      row_sum+= mtx[i][j]
+      col_sum+= mtx[j][i];
+
+      if(i == j){
+        pDia_sum+= mtx[i][j]
+      }
+
+      if(i + j == n-1){
+        sDia_sum+= mtx[i][j]
+      }
+
+    }
+    if(row_sum != base_sum || col_sum != base_sum){
+      return false
+    }
+    row_sum = 0;
+    col_sum = 0;
+  }
+  if(base_sum != pDia_sum || base_sum != sDia_sum){
+    return false
+  }
+  return true;
+
+}
+console.log("Magic Square");
+console.log(magicSqure(mgicSquareMatrix));
 
 

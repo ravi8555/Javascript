@@ -829,21 +829,28 @@ console.log("Question ==> create and throw a custom error, and then catch and lo
         
 console.log("Question ==>Remove all whitespace from a string. 1.Return an empty string when given an empty string 2.Return the same string when given a string with no whitespace. 3.Ignore leading and trailing whitespace. 4.Handle strings with only whitespace characters.4.Handle strings with multiple consecutive whitespace characters")
 
-export const removeWhitespaces = (string)=>{
-  if(string === " "){
-    return  "";
-  }
-  const result = string.replace(/\s+/g, '')
-  return result
+// export const removeWhitespaces = (string)=>{
+//   if(string === " "){
+//     return  "";
+//   }
+//   const result = string.replace(/\s+/g, '')
+//   return result
 
+// }
+// // Test cases
+// console.log(removeWhitespaces("")); // ""
+// console.log(removeWhitespaces("HelloWorld")); // "HelloWorld"
+// console.log(removeWhitespaces("  Hello World  ")); // "HelloWorld"
+// console.log(removeWhitespaces("     ")); // ""
+// console.log(removeWhitespaces("Hello   World")); // "HelloWorld"
+
+console.log("Question ==> Random Numbers Your task is to create a function which returns a random number in the given range of values both inclusive");
+
+function randomNumberGeneratorInRange(rangeStart, rangeEnd){
+  const getRandomNumber = Math.floor(rangeStart + Math.random() * rangeEnd);
+  return getRandomNumber
 }
-// Test cases
-console.log(removeWhitespaces("")); // ""
-console.log(removeWhitespaces("HelloWorld")); // "HelloWorld"
-console.log(removeWhitespaces("  Hello World  ")); // "HelloWorld"
-console.log(removeWhitespaces("     ")); // ""
-console.log(removeWhitespaces("Hello   World")); // "HelloWorld"
-
+console.log(randomNumberGeneratorInRange(100, 1000));
 
 
 
@@ -1045,34 +1052,34 @@ const dryFruits = [
     //     return acc + (currentItem.item_price * currentItem.stock_items);        
     //   },0)
     // 4
-    function calHighestTopriceRation (dryfruitItems){
-      let highestRatio =0;
-      let highestDryFruit = null;
+    // function calHighestTopriceRation (dryfruitItems){
+    //   let highestRatio =0;
+    //   let highestDryFruit = null;
 
-      for(let dryfruit of dryfruitItems){
-        const ratio = dryfruit.stock_items / dryfruit.item_price;
-        console.log(ratio);
+    //   for(let dryfruit of dryfruitItems){
+    //     const ratio = dryfruit.stock_items / dryfruit.item_price;
+    //     console.log(ratio);
         
-        if(ratio > highestRatio){
-          highestRatio = ratio;
-          highestDryFruit = dryfruit.item_name
-        }
-      }
-      return highestDryFruit
-    } 
-    console.log("calHighestTopriceRation", calHighestTopriceRation(dryFruits));
+    //     if(ratio > highestRatio){
+    //       highestRatio = ratio;
+    //       highestDryFruit = dryfruit.item_name
+    //     }
+    //   }
+    //   return highestDryFruit
+    // } 
+    // console.log("calHighestTopriceRation", calHighestTopriceRation(dryFruits));
     
     // console.log(Math.floor(totalCostOfAllDryFruits));
     // 5 
-    const drFruitNames = dryFruits.map((dryfruit) => dryfruit.item_name);
+    // const drFruitNames = dryFruits.map((dryfruit) => dryfruit.item_name);
     // console.log(drFruitNames);
     // 6
-    const getDryFruitGT15 = dryFruits.filter((item)=> item.item_price > 15)
+    // const getDryFruitGT15 = dryFruits.filter((item)=> item.item_price > 15)
     // const getDryFruitGT15 = dryFruits.reduce((acc, cur)=>{
     //   return acc + (cur.item_price >= 15)
     // },0)
-    console.log(getDryFruitGT15);
-    console.log(!null);
+    // console.log(getDryFruitGT15);
+    // console.log(!null);
     const numbers = [1, 2, 3, 4, 5];
 
  function myReduce (data, reduceCallback){
